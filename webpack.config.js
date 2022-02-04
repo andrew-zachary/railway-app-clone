@@ -97,7 +97,7 @@ module.exports = (_, {mode})=>{
                             }
                         }:'style-loader',
                         'css-loader',
-                        //postcss for autoprefixing css
+                        //postcss for autoprefixing css and tailwind
                         'postcss-loader',
                         'sass-loader'
                     ]
@@ -107,9 +107,8 @@ module.exports = (_, {mode})=>{
                     type: 'asset/resource',
                     //image file will go to imgs folder
                     generator: {
-                        filename: (fileInfo) => {
-                            let subFolderName = fileInfo.filename.split('/');
-                            return `imgs/${subFolderName[2]}/[name][ext]`;
+                        filename: () => {
+                            return `imgs/[name][ext]`;
                         }
                     }
                 },

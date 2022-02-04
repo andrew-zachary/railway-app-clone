@@ -5,8 +5,349 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>we-love-burger</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>test</h1>
+<body class="relative overflow-x-hidden">
+    <div id="guide" class="z-[-1] opacity-75 bg-guide w-[144rem] h-[800rem] absolute top-0 left-1/2 translate-x-[-50%]"></div>
+    
+    <!-- main page nav -->
+    <nav>
+        <img src="<%= require('./assets/logo.svg') %>" alt="logo">
+        <ul>
+            <li>menu</li>
+            <li>combos</li>
+            <li>reservation</li>
+            <li>about us</li>
+            <li>contact</li>
+        </ul>
+        <img src="<%= require('./assets/vector-cart.svg') %>" alt="cart">
+    </nav>
+    <!-- main page nav -->
+
+    <!-- top section -->
+    <section id="top">
+        <h1>we love </br> burger</h1>
+        <h2>discover why</h2>
+        <button>
+            <img src="<%= require('./assets/arrow-down-btn.svg') %>" alt="open menu">
+        </button>
+    </section>
+    <!-- top section -->
+
+    <!-- hero burger -->
+    <section id="hero-burger">
+        <img src="<%= require('./assets/hero-burger.png') %>" alt="">
+    </section>
+    <!-- hero burger -->
+
+    <!-- food menu -->
+    <section id="food-menu">
+        <h1>menu</h1>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui commodi officia, placeat nostrum quis similique vitae repellat, officiis eum cum recusandae hic praesentium eligendi!</h2>
+        <article>
+            <header>
+                <h1>burgers and milkshakes</h1>
+                <ul>
+                    <li>classic burger</li>
+                    <li>cheese burger</li>
+                    <li>double cheese burger</li>
+                    <li>chocolate milkshake</li>
+                    <li>strawberry milkshake</li>
+                    <li>banana milkshake</li>
+                </ul>
+            </header>
+        </article>
+        <article>
+            <header>
+                <h1>desserts</h1>
+                <ul>
+                    <li>ice creams</li>
+                    <li>triple chocolate cookie</li>
+                    <li>new york cheesecake</li>
+                    <li>sacher cake</li>
+                    <li>chocolate muffin</li>
+                    <li>berry muffin</li>
+                </ul>
+            </header>
+        </article>
+        <article>
+            <header>if you want, you can exchange a milkshake for a drink</header>
+        </article>
+        <article>
+            <header>drinks</header>
+            <ul>
+                <li>mineral water</li>
+                <li>iced tea</li>
+                <li>orange juice</li>
+            </ul>
+        </article>
+        <button>add to cart</button>
+    </section>
+    <!-- food menu -->
+
+    <!-- combos -->
+    <section id="combos">
+        <header>
+            <h1>combos</h1>
+            <h2>we have the perfect burger combination. <br /> choose your best option</h2>
+        </header>
+        <ul>
+            <li>
+                <h1>combo 1</h1>
+                <p>
+                    classic burger
+                </p>
+                <ul>
+                    <li>chocolate</li>
+                    <li>milkshake</li>
+                </ul>
+                <p>
+                    new york cheesecake
+                </p>
+                <p>
+                    <span>00</span><span>$</span>
+                </p>
+                <p>
+                    <button>add to cart</button>
+                </p>
+            </li>
+        </ul>
+    </section>
+    <!-- combos -->
+
+    <!-- how to order -->
+    <section>
+        <header>
+            <h1>how do you order our burgers</h1>
+        </header>
+        <article>
+            <header>
+                <h1>choose</h1>
+            </header>
+            <p>
+                choose what you prefer from our menu. if you don't want to think choose directly a combo
+            </p>
+        </article>
+        <article>
+            <header>
+                <h1>order</h1>
+            </header>
+            <p>
+                you can order food online or if you prefer you can go into our restaurant
+            </p>
+        </article>
+        <article>
+            <header>
+                <h1>delivery</h1>
+            </header>
+            <p>
+                pick up your order in one of our restaurants or have it delivered in your home
+            </p>
+        </article>
+        <article>
+            <header>
+                <h1>
+                    free delivery
+                </h1>
+            </header>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt reprehenderit architecto impedit, nobis eos quis explicabo rerum facilis totam maiores.
+            </p>
+            <button>get voucher</button>
+        </article>
+    </section>
+    <!-- how to order -->
+
+    <!-- make a reservation -->
+    <section id="make-reservation">
+        <header>
+            <h1>make a reservation</h1>
+        </header>
+        <form action="#">
+            <ul>
+                <li class="form-input">
+                    <input type="text" name="people-count" id="people-count">
+                    <button>
+                        <img src="<%= require('./assets/list-arrow-btn.svg') %>" alt="">
+                    </button>
+                </li>
+                <li class="form-input">
+                    <input type="text" name="date" id="date">
+                    <button>
+                        <img src="<%= require('./assets/calender-icon.svg') %>" alt="">
+                    </button>
+                </li>
+                <li class="form-input">
+                    <input type="text" name="time" id="time">
+                    <button>
+                        <img src="<% require('./assets/clock-icon.svg') %>" alt="">
+                    </button>
+                </li>
+            </ul>
+            <ul>
+                <li class="form-input">
+                    <input type="text" name="name" id="name">
+                </li>
+                <li class="form-input">
+                    <input type="text" name="email" id="email">
+                </li>
+                <li class="form-input">
+                    <input type="text" name="phone" id="phone">
+                </li>
+            </ul>
+            <button type="submit">submit</button>
+        </form>
+    </section>
+    <!-- make a reservation -->
+
+    <!-- about us -->
+    <section id="about-us" style="background-image: url('<%= require(`./assets/fried-potatoes.png`) %>')">
+        <header>
+            <h1>about us</h1>
+        </header>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit iusto perferendis quidem, dolor temporibus magni optio consequuntur deserunt ipsam architecto rem necessitatibus quibusdam fuga harum ex, impedit odio.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit iusto perferendis quidem, dolor temporibus magni optio consequuntur deserunt ipsam architecto rem necessitatibus quibusdam fuga harum ex, impedit odio.
+        </p>
+    </section>
+    <!-- about us -->
+
+    <!-- the creators -->
+    <section id="the-creators">
+        <ul>
+            <li>
+                <h1>p</h1>
+                <div>
+                    <h1>name creator</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </li>
+            <li>
+                <h1>p</h1>
+                <div>
+                    <h1>name creator</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </li>
+        </ul>
+        <img src="<%= require('./assets/food-res-badge.png') %>" alt="badge">
+    </section>
+    <!-- the creators -->
+
+    <!-- blog -->
+    <section id="burger-blog">
+        <header>
+            <h1>burger blog</h1>
+            <h2>discover the best burger recipes</h2>
+        </header>
+        <ul>
+            <li>
+                <img src="<% require('./assets/burger-placeholder.png') %>" alt="">
+                <p>cheese burger / 26th may, 2000</p>
+                <p>Lorem, ipsum dolor sit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quia!</p>
+                <button>read more</button>
+            </li>
+        </ul>
+    </section>
+    <!-- blog -->
+
+    <!-- footer -->
+    <footer>
+        <article>
+            <header>
+                <h1>about us</h1>
+            </header>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas accusamus eaque quis laudantium aliquam labore consequatur ipsam suscipit velit reiciendis.</p>
+        </article>
+        <article>
+            <header>
+                <h1>vision</h1>
+            </header>
+            <ul>
+                <li>team</li>
+                <li>join us</li>
+                <li>ethic</li>
+                <li>goals</li>
+            </ul>
+        </article>
+        <article>
+            <header>
+                <h1>menu</h1>
+            </header>
+            <ul>
+                <li>combos</li>
+                <li>reservation</li>
+                <li>our chef</li>
+                <li>contact</li>
+            </ul>
+        </article>
+        <article>
+            <header>
+                <h1>we are here</h1>
+            </header>
+            <ul>
+                <li>123 main street</li>
+                <li>123456</li>
+            </ul>
+        </article>
+        <article>
+            <header>
+                <h1>open daily</h1>
+            </header>
+            <ul>
+                <li>every day from</li>
+                <li>11 am to 10 pm</li>
+            </ul>
+        </article>
+        <article>
+            <header>
+                <h1>call us</h1>
+            </header>
+            <ul>
+                <li>+12 345678910</li>
+            </ul>
+        </article>
+        <article>
+            <header>
+                <h1>say hello</h1>
+            </header>
+            <ul>
+                <li>hello@yourwebsite.com</li>
+                <li>www.yourwebsite.com</li>
+            </ul>
+        </article>
+        <article>
+            <form action="">
+                <input type="text" name="email" id=email />
+                <button>submit</button>
+            </form>
+        </article>
+        <article>
+            <header>
+                <h1>follow us</h1>
+            </header>
+            <ul>
+                <li>
+                    <img src="<%= require('./assets/twitter-icon.svg') %>" alt="">
+                </li>
+                <li>
+                    <img src="<%= require('./assets/facebook-icon.svg') %>" alt="">
+                </li>
+                <li>
+                    <img src="<%= require('./assets/instagram-icon.svg') %>" alt="">
+                </li>
+            </ul>
+        </article>
+        <article>
+            <header>
+                <h1>@2000 all rights reserved</h1>
+            </header>
+        </article>
+    </footer>
+    <!-- footer -->
 </body>
 </html>
