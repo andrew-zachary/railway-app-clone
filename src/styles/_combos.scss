@@ -2,4 +2,35 @@
     .swiper-button-prev::after, .swiper-button-next::after {
         color: $quaternary-color;
     }
+    //prev-next away from the edge
+    .swiper-button-prev {
+        left: 2rem
+    }
+    .swiper-button-next {
+        right: 2rem
+    }
+    //prev-next appear beneath the swiper
+    @media screen and (max-width: 768px){
+        padding-bottom: 10rem;
+        .swiper-button-prev {
+            left: 10rem
+        }
+        .swiper-button-next {
+            right: 10rem
+        }
+        .swiper-button-prev, .swiper-button-next {   
+            top: 105%;
+        }
+    }
+    .combo-swiper {
+        @media screen and (min-width: 320px){
+            width: 32rem;
+        }
+        @media screen and (min-width: 1024px){
+            width: calc((32rem * 2) + 5.2rem);
+        }
+        @media screen and (min-width: 1200px){
+            width: 100%;
+        }
+    }
 }

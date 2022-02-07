@@ -15,9 +15,17 @@ window.onload = () => {
     //create the swiper
     swiper = new Swiper('.combo-swiper', {
         breakpoints: {
-            768: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 0
+            },
+            1024: {
+                slidesPerView: 2,
+                spaceBetween: 32
+            },
+            1200: {
                 slidesPerView: 3,
-                spaceBetween: 62
+                spaceBetween: 32
             }
         },
         modules: [Navigation],

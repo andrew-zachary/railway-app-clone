@@ -1,4 +1,5 @@
 #food-menu {
+    @apply px-[1rem];
     #menu-blocks {
         #menu-block_row-1 {
             grid-template-columns: 1fr 1fr;
@@ -31,6 +32,40 @@
             li {
                 & > span {
                     @include withRtl('margin', 0 5rem 0 0, 0 0 0 5rem);
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1200px){
+        #menu-block_row-2 {
+            @apply max-w-[76.8rem] mx-auto text-center;
+            article {
+                flex-direction: column;
+                h1 {
+                    @apply flex flex-col;
+                }
+                p {
+                    padding-top: 2rem;
+                }
+            }
+        }
+        .layout-container-menu-drinks {
+            @apply max-w-[32rem] mx-auto;
+            flex-direction: column;
+            header {
+                margin: 0;
+                h1 {
+                    text-align: center;
+                }
+            }
+            ul {
+                padding-top: 2rem;
+                flex-direction: column;
+                li {
+                    padding-top: 1rem;
+                    span {
+                        margin: 0;
+                    }
                 }
             }
         }

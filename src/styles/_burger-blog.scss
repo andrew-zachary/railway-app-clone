@@ -1,5 +1,11 @@
 #burger-blog {
     ul {
         @apply grid-cols-[1fr_1fr_1fr] gap-x-[2rem];
+        li {
+            padding: 0 0.5rem;
+        }
+        @media screen and (max-width:1200px){
+            column-gap: 0.5rem;
+        }
     }
 }

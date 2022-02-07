@@ -2,6 +2,9 @@
     form {
         ul {
             @apply grid grid-cols-[1fr_1fr_1fr] justify-between gap-x-[8rem];
+            @media screen and (max-width:1200px) {
+                column-gap: 2rem;
+            }
         }
     }
 }
