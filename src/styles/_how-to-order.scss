@@ -1,0 +1,10 @@
+#how-to-order {
+    .how-to-order_row-1 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    .how-to-order_row-3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 7rem;
+    }
+}

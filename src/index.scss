@@ -7,6 +7,108 @@ $secondary-color: #ffdd67;
 $tertiary-color: #403f3f;
 $quaternary-color: white;
 
+@mixin withRtl($property, $ltr-value, $rtl-value) {
+    & {
+      #{$property}: $ltr-value;
+    }
+  
+    [dir='rtl'] & {
+      #{$property}: $rtl-value;
+    }
+}
+
 html {
     font-size: 62.5%;
 }
+
+body {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+*:focus {
+    outline: unset!important;
+}
+
+#guide {
+    @apply z-[-1] opacity-75 bg-guide w-[144rem] h-[800rem] absolute top-0 left-1/2 translate-x-[-50%];
+}
+
+.layout-container {
+    &-xlg {
+        @apply max-w-[144.2rem] mx-auto;
+    }
+    &-lg {
+        @apply max-w-[102rem] mx-auto;
+    }
+    &-menu-drinks, &-hto-plus, &-burger-blog, &-footer {
+        @apply max-w-[122rem] mx-auto;
+    }
+    &-combos-swiper, &-hto {
+        @apply max-w-[106rem] mx-auto;
+    }
+    &-the-creators {
+        @apply max-w-[102.5rem] mx-auto;
+    }
+}
+
+.layout-btn {
+    @apply font-mont font-bold uppercase rounded-full;
+    span {
+        display: inline-block;
+    }
+}
+
+.layout-input {
+    &.with-icon {
+        @include withRtl(padding, 0 1rem 0 0rem, 0 0rem 0 1rem);
+    }
+    @apply flex justify-between items-center;
+    @apply border-[0.3rem] border-quaternary-color rounded-full;
+    @apply bg-primary-color;
+    input {
+        @apply w-full;
+        @apply px-[3rem] py-[0.3rem];
+        @apply border border-2 border-quaternary-color;
+        @apply font-mont font-medium text-[2.5rem] text-quaternary-color;
+        @apply bg-transparent border-none;
+    }
+}
+
+.layout-radio {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 2rem;
+    width: 2rem;
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        &:checked ~ .checkmark {
+            background-color: $primary-color;
+        }
+    }
+    .checkmark {
+        display: inline-block;
+        border:1px solid $tertiary-color;
+        height: 2rem;
+        width: 2rem;
+        background-color: $quaternary-color;
+        border-radius: 50%;
+    }
+}
+
+@import './styles/nav';
+@import './styles/hero-burger';
+@import './styles/food-menu';
+@import './styles/combos';
+@import './styles/how-to-order';
+@import './styles/make-reservation';
+@import './styles/the-creators';
+@import './styles/burger-blog';
+@import './styles/footer';

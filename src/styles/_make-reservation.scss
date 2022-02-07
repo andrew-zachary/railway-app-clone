@@ -1,0 +1,7 @@
+#make-reservation {
+    form {
+        ul {
+            @apply grid grid-cols-[1fr_1fr_1fr] justify-between gap-x-[8rem];
+        }
+    }
+}

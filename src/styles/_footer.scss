@@ -1,0 +1,40 @@
+footer {
+    & > div {
+        @apply grid-cols-[1fr_1fr_1fr_1fr] gap-x-[10rem] gap-y-[3rem];
+        #about-us {
+            grid-column: 1 / 3;
+        }
+        #form-cell {
+            grid-column: 1 / 3;
+            .layout-input {
+                border: 0.2rem solid $primary-color;
+                input {
+                    background-color: $secondary-color;
+                    color: $tertiary-color;
+                    padding-top: 0.9rem;
+                    padding-bottom: 0.9rem;
+                    &, &::placeholder {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+        #social-cell {
+            grid-column: 3 / 5;
+            ul {
+                li {
+                    @include withRtl(margin, 0 2rem 0 0, 0 0 0 2rem);
+                }
+            }
+        }
+    }
+    .footer-cell-header {
+        @apply uppercase font-mont font-bold text-[2rem] text-tertiary-color;
+    }
+    .footer-cell-content{
+        @apply pt-[1rem] font-mont font-regular text-[2rem];
+        li {
+            text-transform: capitalize;
+        }
+    }
+}

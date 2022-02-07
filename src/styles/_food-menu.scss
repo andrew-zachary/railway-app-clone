@@ -1,0 +1,38 @@
+#food-menu {
+    #menu-blocks {
+        #menu-block_row-1 {
+            grid-template-columns: 1fr 1fr;
+            gap: 8rem;
+        }
+        #menu-block_row-2 {
+            h1 {
+                word-spacing: 0.8rem;
+            }
+        }
+    }
+    .block-title {
+        @apply font-mont font-bold text-[2.5rem] uppercase tracking-wider leading-[3rem];
+    }
+    .product-label {
+        @apply font-mont font-regular text-[2.5rem] capitalize tracking-wider leading-[3rem];
+    }
+    .products-list {
+        @apply pt-[3rem];
+    }
+    .product-price {
+        @include withRtl('margin', 0 1.5rem 0 0, 0 0 0 1.5rem);
+        @apply font-mont font-regular text-[2.5rem] text-primary-color;
+    }
+    .layout-container-menu-drinks {
+        header {
+            @include withRtl('margin', 0 7rem 0 0, 0 0 0 7rem);
+        }
+        ul {
+            li {
+                & > span {
+                    @include withRtl('margin', 0 5rem 0 0, 0 0 0 5rem);
+                }
+            }
+        }
+    }
+}

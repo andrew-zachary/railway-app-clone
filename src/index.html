@@ -7,344 +7,750 @@
     <title>we-love-burger</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body class="relative overflow-x-hidden">
-    <div id="guide" class="z-[-1] opacity-75 bg-guide w-[144rem] h-[800rem] absolute top-0 left-1/2 translate-x-[-50%]"></div>
+    <!-- <div id="guide"></div> -->
     
     <!-- main page nav -->
-    <nav>
-        <img src="<%= require('./assets/logo.svg') %>" alt="logo">
-        <ul>
-            <li>menu</li>
-            <li>combos</li>
-            <li>reservation</li>
-            <li>about us</li>
-            <li>contact</li>
-        </ul>
-        <img src="<%= require('./assets/vector-cart.svg') %>" alt="cart">
+    <nav x-data="{open: false}" class="w-full z-9998 fixed">
+        <div class="layout-container-xlg">
+            <div @click="open = !open" id="menu-icon">
+                <img src="<%= require('./assets/menu-icon.svg') %>" alt="">
+            </div>
+            <div id="logo">
+                <img src="<%= require('./assets/logo.svg') %>" alt="logo">
+            </div>
+            <div id="menu-list">
+                <ul :class="open?'items':''">
+                    <li>
+                        <a href="#">menu</a>
+                    </li>
+                    <li>
+                        <a href="#">combos</a>
+                    </li>
+                    <li>
+                        <a href="#">reservation</a>
+                    </li>
+                    <li>
+                        <a href="#">about us</a>
+                    </li>
+                    <li>
+                        <a href="#">contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="cart">
+                <img src="<%= require('./assets/vector-cart.svg') %>" alt="cart">
+            </div>
+        </div>
     </nav>
     <!-- main page nav -->
 
     <!-- top section -->
-    <section id="top">
-        <h1>we love </br> burger</h1>
-        <h2>discover why</h2>
-        <button>
-            <img src="<%= require('./assets/arrow-down-btn.svg') %>" alt="open menu">
-        </button>
+    <section id="top" class="bg-primary-color">
+        <div class="layout-container-xlg pt-[15rem] uppercase text-center font-mont text-quaternary-color">
+            <h1 class="font-black text-[10rem] leading-[13rem]">we <span class="text-secondary-color">love</span> </br> big burger</h1>
+            <h2 class="font-regular text-[4.5rem] tracking-widest p-[6rem]">discover why</h2>
+            <button>
+                <img src="<%= require('./assets/arrow-down-btn.svg') %>" alt="open menu">
+            </button>
+        </div>
     </section>
     <!-- top section -->
 
     <!-- hero burger -->
-    <section id="hero-burger">
+    <section id="hero-burger" class="flex justify-center pt-[2.5rem]">
         <img src="<%= require('./assets/hero-burger.png') %>" alt="">
     </section>
     <!-- hero burger -->
 
     <!-- food menu -->
-    <section id="food-menu">
-        <h1>menu</h1>
-        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui commodi officia, placeat nostrum quis similique vitae repellat, officiis eum cum recusandae hic praesentium eligendi!</h2>
-        <article>
+    <section id="food-menu" class="bg-quaternary-color">
+        <div class="layout-container-lg">
+            <h1 class="font-mont font-black text-[13rem] text-secondary-color leading-[12rem] uppercase text-center">menu</h1>
+            <h2 class="font-mont font-regular text-[2.5rem] text-tertiary-color leading-[3rem] pt-[5rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui commodi officia, placeat nostrum quis similique vitae repellat, officiis eum cum recusandae hic praesentium eligendi!</h2>
+            <div id="menu-blocks" class="text-tertiary-color pt-[3.5rem]">
+                <div id="menu-block_row-1" class="grid">
+                    <article>
+                        <header>
+                            <h1 class="block-title">burgers & milkshakes</h1>
+                        </header>
+                        <ul class="products-list">
+                            <li class="flex justify-between">
+                                <span class="product-label">classic burger</span>
+                                <div class="product-pick flex items-center">
+                                    <div class="product-price">
+                                        <span>$</span>
+                                        <span>00</span>
+                                    </div>
+                                    <label class="layout-radio">
+                                        <input type="checkbox" name="classic-burger" id="classic-burger" />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="product-label">cheese burger</span>
+                                <div class="product-pick flex items-center">
+                                    <div class="product-price">
+                                        <span>$</span>
+                                        <span>00</span>
+                                    </div>
+                                    <label class="layout-radio">
+                                        <input type="radio" name="cheese-burger" id="cheese-burger" />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="product-label">double-cheese-burger</span>
+                                <div class="product-pick flex items-center">
+                                    <div class="product-price">
+                                        <span>$</span>
+                                        <span>00</span>
+                                    </div>
+                                    <label class="layout-radio">
+                                        <input type="radio" name="double-cheese-burger" id="double-cheese-burger" />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="product-label">chocolate milkshake</span>
+                                <div class="product-pick flex items-center">
+                                    <div class="product-price">
+                                        <span>$</span>
+                                        <span>00</span>
+                                    </div>
+                                    <label class="layout-radio">
+                                        <input type="radio" name="chocolate-milkshake" id="chocolate-milkshake" />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="product-label">strawberry milkshake</span>
+                                <div class="product-pick flex items-center">
+                                    <div class="product-price">
+                                        <span>$</span>
+                                        <span>00</span>
+                                    </div>
+                                    <label class="layout-radio">
+                                        <input type="radio" name="strawberry-milkshake" id="strawberry-milkshake" />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="product-label">banana milkshake</span>
+                                <div class="product-pick flex items-center">
+                                    <div class="product-price">
+                                        <span>$</span>
+                                        <span>00</span>
+                                    </div>
+                                    <label class="layout-radio">
+                                        <input type="radio" name="banana-milkshake" id="banana-milkshake" />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="product-label"></li>
+                        </ul>
+                    </article>
+                    <article>
+                        <header class="block-title">
+                            <h1>desserts</h1>
+                        </header>
+                        <ul class="products-list">
+                            <li class="flex justify-between">
+                                <span class="product-label">ice creams</span>
+                                <div class="product-pick flex items-center">
+                                    <div class="product-price">
+                                        <span>$</span>
+                                        <span>00</span>
+                                    </div>
+                                    <label class="layout-radio">
+                                        <input type="radio" name="ice-creams" id="ice-creams" />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="product-label">triple chocolate cookie</span>
+                                <div class="product-pick flex items-center">
+                                    <div class="product-price">
+                                        <span>$</span>
+                                        <span>00</span>
+                                    </div>
+                                    <label class="layout-radio">
+                                        <input type="radio" name="triple-chocolate-cookie" id="triple-chocolate-cookie" />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="product-label">new york cheesecake</span>
+                                <div class="product-pick flex items-center">
+                                    <div class="product-price">
+                                        <span>$</span>
+                                        <span>00</span>
+                                    </div>
+                                    <label class="layout-radio">
+                                        <input type="radio" name="new-york-cheesecake" id="new-york-cheesecake" />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="product-label">sacher cake</span>
+                                <div class="product-pick flex items-center">
+                                    <div class="product-price">
+                                        <span>$</span>
+                                        <span>00</span>
+                                    </div>
+                                    <label class="layout-radio">
+                                        <input type="radio" name="sacher-cake" id="sacher-cake" />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="product-label">chocolate muffin</span>
+                                <div class="product-pick flex items-center">
+                                    <div class="product-price">
+                                        <span>$</span>
+                                        <span>00</span>
+                                    </div>
+                                    <label class="layout-radio">
+                                        <input type="radio" name="chocolate-muffin" id="chocolate-muffin" />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="product-label">berry muffin</span>
+                                <div class="product-pick flex items-center">
+                                    <div class="product-price">
+                                        <span>$</span>
+                                        <span>00</span>
+                                    </div>
+                                    <label class="layout-radio">
+                                        <input type="radio" name="berry-muffin" id="berry-muffin" />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+                <div id="menu-block_row-2" class="pt-[5rem]">
+                    <article class="font-mont font-regular text-[2.5rem] flex justify-between">
+                        <header>
+                            <h1 class="uppercase">if you want, you can exchange a milkshake for a drink</h1>
+                        </header>
+                        <p class="text-primary-color">
+                            (+ $ 0.00)
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <article class="layout-container-menu-drinks flex pt-[5rem]">
             <header>
-                <h1>burgers and milkshakes</h1>
-                <ul>
-                    <li>classic burger</li>
-                    <li>cheese burger</li>
-                    <li>double cheese burger</li>
-                    <li>chocolate milkshake</li>
-                    <li>strawberry milkshake</li>
-                    <li>banana milkshake</li>
-                </ul>
+                <h1 class="block-title">
+                    drinks
+                </h1>
             </header>
-        </article>
-        <article>
-            <header>
-                <h1>desserts</h1>
-                <ul>
-                    <li>ice creams</li>
-                    <li>triple chocolate cookie</li>
-                    <li>new york cheesecake</li>
-                    <li>sacher cake</li>
-                    <li>chocolate muffin</li>
-                    <li>berry muffin</li>
-                </ul>
-            </header>
-        </article>
-        <article>
-            <header>if you want, you can exchange a milkshake for a drink</header>
-        </article>
-        <article>
-            <header>drinks</header>
-            <ul>
-                <li>mineral water</li>
-                <li>iced tea</li>
-                <li>orange juice</li>
+            <ul class="w-full flex justify-between">
+                <li class="flex justify-between">
+                    <span class="product-label">mineral water</span>
+                    <div class="product-pick flex items-center">
+                        <div class="product-price">
+                            <span>$</span>
+                            <span>00</span>
+                        </div>
+                        <label class="layout-radio">
+                            <input type="radio" name="mineral-water" id="mineral-water" />
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </li>
+                <li class="flex justify-between">
+                    <span class="product-label">iced tea</span>
+                    <div class="product-pick flex items-center">
+                        <div class="product-price">
+                            <span>$</span>
+                            <span>00</span>
+                        </div>
+                        <label class="layout-radio">
+                            <input type="radio" name="iced-tea" id="iced-tea" />
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </li>
+                <li class="flex justify-between">
+                    <span class="product-label">orange juice</span>
+                    <div class="product-pick flex items-center">
+                        <div class="product-price">
+                            <span>$</span>
+                            <span>00</span>
+                        </div>
+                        <label class="layout-radio">
+                            <input type="radio" name="orange-juice" id="orange-juice" />
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </li>
             </ul>
         </article>
-        <button>add to cart</button>
+        <div class="flex justify-center py-[10rem]">
+            <button class="layout-btn bg-primary-color text-quaternary-color">
+                <span class="text-[2rem] px-[6rem] py-[2rem]">add to cart</span>
+            </button>
+        </div>
     </section>
     <!-- food menu -->
 
     <!-- combos -->
-    <section id="combos">
-        <header>
-            <h1>combos</h1>
-            <h2>we have the perfect burger combination. <br /> choose your best option</h2>
+    <section id="combos" class="pb-[4rem] bg-primary-color">
+        <header class="pt-[4.5rem] text-center">
+            <h1 class="uppercase font-mont font-black text-[8rem] text-secondary-color tracking-widest">combos</h1>
+            <h2 class="capitalize font-mont font-regular text-[2.5rem] leading-[3rem] text-quaternary-color">we have the perfect burger combination. <br /> choose your best option</h2>
         </header>
-        <ul>
-            <li>
-                <h1>combo 1</h1>
-                <p>
-                    classic burger
-                </p>
-                <ul>
-                    <li>chocolate</li>
-                    <li>milkshake</li>
+        <div class="layout-container-xlg relative">
+            <div class="combo-swiper layout-container-combos-swiper overflow-x-hidden mt-[5rem]">
+                <ul class="swiper-wrapper py-[3rem]">
+                    <li class="swiper-slide bg-quaternary-color shadow-primary py-[5rem] rounded-[5rem] uppercase text-center">
+                        <h1 class="font-mont font-bold text-[1.9rem]">combo 1</h1>
+                        <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            classic burger
+                        </p>
+                        <ul class="font-mont font-regular text-[1.7rem] pt-[2rem]">
+                            <li>chocolate</li>
+                            <li>milkshake</li>
+                        </ul>
+                        <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            new york cheesecake
+                        </p>
+                        <p class="font-mont font-regular text-[1.7rem] text-primary-color pt-[2rem]">
+                            <span>$</span><span>00</span>
+                        </p>
+                        <div class="flex justify-center pt-[3rem]">
+                            <button class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                                <span class="text-[2rem] px-[2rem] py-[1rem]">add to cart</span>
+                            </button>
+                        </div>  
+                    </li>
+                    <li class="swiper-slide bg-quaternary-color shadow-primary py-[5rem] rounded-[5rem] uppercase text-center">
+                        <h1 class="font-mont font-bold text-[1.9rem]">combo 2</h1>
+                        <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            classic burger
+                        </p>
+                        <ul class="font-mont font-regular text-[1.7rem] pt-[2rem]">
+                            <li>chocolate</li>
+                            <li>milkshake</li>
+                        </ul>
+                        <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            new york cheesecake
+                        </p>
+                        <p class="font-mont font-regular text-[1.7rem] text-primary-color pt-[2rem]">
+                            <span>$</span><span>00</span>
+                        </p>
+                        <div class="flex justify-center pt-[3rem]">
+                            <button class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                                <span class="text-[2rem] px-[2rem] py-[1rem]">add to cart</span>
+                            </button>
+                        </div>  
+                    </li>
+                    <li class="swiper-slide bg-quaternary-color shadow-primary py-[5rem] rounded-[5rem] uppercase text-center">
+                        <h1 class="font-mont font-bold text-[1.9rem]">combo 3</h1>
+                        <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            classic burger
+                        </p>
+                        <ul class="font-mont font-regular text-[1.7rem] pt-[2rem]">
+                            <li>chocolate</li>
+                            <li>milkshake</li>
+                        </ul>
+                        <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            new york cheesecake
+                        </p>
+                        <p class="font-mont font-regular text-[1.7rem] text-primary-color pt-[2rem]">
+                            <span>$</span><span>00</span>
+                        </p>
+                        <div class="flex justify-center pt-[3rem]">
+                            <button class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                                <span class="text-[2rem] px-[2rem] py-[1rem]">add to cart</span>
+                            </button>
+                        </div>  
+                    </li>
+                    <li class="swiper-slide bg-quaternary-color shadow-primary py-[5rem] rounded-[5rem] uppercase text-center">
+                        <h1 class="font-mont font-bold text-[1.9rem]">combo 4</h1>
+                        <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            classic burger
+                        </p>
+                        <ul class="font-mont font-regular text-[1.7rem] pt-[2rem]">
+                            <li>chocolate</li>
+                            <li>milkshake</li>
+                        </ul>
+                        <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            new york cheesecake
+                        </p>
+                        <p class="font-mont font-regular text-[1.7rem] text-primary-color pt-[2rem]">
+                            <span>$</span><span>00</span>
+                        </p>
+                        <div class="flex justify-center pt-[3rem]">
+                            <button class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                                <span class="text-[2rem] px-[2rem] py-[1rem]">add to cart</span>
+                            </button>
+                        </div>  
+                    </li>
+                    <li class="swiper-slide bg-quaternary-color shadow-primary py-[5rem] rounded-[5rem] uppercase text-center">
+                        <h1 class="font-mont font-bold text-[1.9rem]">combo 5</h1>
+                        <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            classic burger
+                        </p>
+                        <ul class="font-mont font-regular text-[1.7rem] pt-[2rem]">
+                            <li>chocolate</li>
+                            <li>milkshake</li>
+                        </ul>
+                        <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            new york cheesecake
+                        </p>
+                        <p class="font-mont font-regular text-[1.7rem] text-primary-color pt-[2rem]">
+                            <span>$</span><span>00</span>
+                        </p>
+                        <div class="flex justify-center pt-[3rem]">
+                            <button class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                                <span class="text-[2rem] px-[2rem] py-[1rem]">add to cart</span>
+                            </button>
+                        </div>  
+                    </li>
+                    <li class="swiper-slide bg-quaternary-color shadow-primary py-[5rem] rounded-[5rem] uppercase text-center">
+                        <h1 class="font-mont font-bold text-[1.9rem]">combo 6</h1>
+                        <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            classic burger
+                        </p>
+                        <ul class="font-mont font-regular text-[1.7rem] pt-[2rem]">
+                            <li>chocolate</li>
+                            <li>milkshake</li>
+                        </ul>
+                        <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            new york cheesecake
+                        </p>
+                        <p class="font-mont font-regular text-[1.7rem] text-primary-color pt-[2rem]">
+                            <span>$</span><span>00</span>
+                        </p>
+                        <div class="flex justify-center pt-[3rem]">
+                            <button class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                                <span class="text-[2rem] px-[2rem] py-[1rem]">add to cart</span>
+                            </button>
+                        </div>  
+                    </li>
                 </ul>
-                <p>
-                    new york cheesecake
-                </p>
-                <p>
-                    <span>00</span><span>$</span>
-                </p>
-                <p>
-                    <button>add to cart</button>
-                </p>
-            </li>
-        </ul>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
     </section>
     <!-- combos -->
 
     <!-- how to order -->
-    <section>
+    <section id="how-to-order" class="pb-[7rem] bg-secondary-color">
         <header>
-            <h1>how do you order our burgers</h1>
+            <h1 class="pt-[5rem] uppercase font-mont font-bold text-[5rem] text-primary-color text-center">how do you order our burgers</h1>
         </header>
-        <article>
-            <header>
-                <h1>choose</h1>
-            </header>
-            <p>
-                choose what you prefer from our menu. if you don't want to think choose directly a combo
-            </p>
-        </article>
-        <article>
-            <header>
-                <h1>order</h1>
-            </header>
-            <p>
-                you can order food online or if you prefer you can go into our restaurant
-            </p>
-        </article>
-        <article>
-            <header>
-                <h1>delivery</h1>
-            </header>
-            <p>
-                pick up your order in one of our restaurants or have it delivered in your home
-            </p>
-        </article>
-        <article>
-            <header>
-                <h1>
-                    free delivery
-                </h1>
-            </header>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt reprehenderit architecto impedit, nobis eos quis explicabo rerum facilis totam maiores.
-            </p>
-            <button>get voucher</button>
-        </article>
+        <div class="grid pt-[4rem] layout-container-hto how-to-order_row-1">
+            <article class="shadow-primary py-[8rem] text-center bg-quaternary-color rounded-full">
+                <header>
+                    <h1 class="uppercase font-mont font-bold text-[4.5rem] text-primary-color ">choose</h1>
+                </header>
+                <p class="pt-[2rem] font-mont font-regular text-[1.8rem] text-tertiary-color leading-[2.5rem]">
+                    choose what you prefer from our menu. if you don't want to think choose directly a combo
+                </p>
+            </article>
+            <article class="shadow-primary py-[8rem] px-[1rem] text-center bg-quaternary-color rounded-full">
+                <header>
+                    <h1 class="uppercase font-mont font-bold text-[4.5rem] text-primary-color">order</h1>
+                </header>
+                <p class="pt-[2rem] font-mont font-regular text-[1.8rem] text-tertiary-color leading-[2.5rem]">
+                    you can order food online or if you prefer you can go into our restaurant
+                </p>
+            </article>
+            <article class="shadow-primary py-[8rem] px-[1rem] text-center bg-quaternary-color rounded-full">
+                <header>
+                    <h1 class="uppercase font-mont font-bold text-[4.5rem] text-primary-color">delivery</h1>
+                </header>
+                <p class="pt-[2rem] px-[1rem] font-mont font-regular text-[1.8rem] text-tertiary-color leading-[2.5rem]">
+                    pick up your order in one of our restaurants or have it delivered in your home
+                </p>
+            </article>
+        </div>
+        <div class="flex justify-end layout-container-hto-plus how-to-order_row-2">
+            <span class="font-mont font-black text-primary-color text-[14rem] leading-[14rem]">+</span>
+        </div>
+        <div class="grid layout-container-hto-plus how-to-order_row-3">
+            <div>
+                <img src="<%= require('./assets/hero-burger-2.png') %>" alt="">
+            </div>
+            <article>
+                <header>
+                    <h1 class="uppercase font-mont font-black text-quaternary-color text-[10rem] leading-[10rem]">
+                        free delivery
+                    </h1>
+                </header>
+                <p class="pt-[4rem] font-mont font-regular text-[2.4rem] text-quaternary-color 4rem">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt reprehenderit architecto impedit, nobis eos quis explicabo rerum facilis totam maiores.
+                </p>
+                <div class="pt-[5rem] flex justify-center">
+                    <button class="layout-btn w-full border-[0.3rem] border-primary-color text-quaternary-color bg-primary-color">
+                        <span class="text-[2rem] py-[1rem]">get voucher</span>
+                    </button>
+                </div>
+            </article>
+        </div>
     </section>
     <!-- how to order -->
 
     <!-- make a reservation -->
-    <section id="make-reservation">
-        <header>
-            <h1>make a reservation</h1>
-        </header>
-        <form action="#">
-            <ul>
-                <li class="form-input">
-                    <input type="text" name="people-count" id="people-count">
-                    <button>
-                        <img src="<%= require('./assets/list-arrow-btn.svg') %>" alt="">
+    <section id="make-reservation" class="text-center bg-primary-color pb-[8rem]">
+        <div class="layout-container-xlg">
+            <header>
+                <h1 class="pt-[10rem] tracking-wide uppercase font-mont font-black text-[8.3rem] text-secondary-color">make a reservation</h1>
+            </header>
+            <form action="#">
+                <ul class="pt-[5rem]">
+                    <li class="layout-input with-icon">
+                        <input class="uppercase placeholder:text-quaternary-color" type="text" name="people-count" id="people-count" placeholder="people">
+                        <button>
+                            <img src="<%= require('./assets/list-arrow-btn.svg') %>" alt="">
+                        </button>
+                    </li>
+                    <li class="layout-input with-icon">
+                        <input class="uppercase placeholder:text-quaternary-color" type="text" name="date" id="date" placeholder="date">
+                        <button>
+                            <img src="<%= require('./assets/calender-icon.svg') %>" alt="">
+                        </button>
+                    </li>
+                    <li class="layout-input with-icon">
+                        <input class="uppercase placeholder:text-quaternary-color" type="text" name="time" id="time" placeholder="time">
+                        <button>
+                            <img src="<%= require('./assets/clock-icon.svg') %>" alt="">
+                        </button>
+                    </li>
+                </ul>
+                <ul class="pt-[12rem]">
+                    <li class="layout-input">
+                        <input class="uppercase placeholder:text-quaternary-color" type="text" name="name" id="name" placeholder="name">
+                    </li>
+                    <li class="layout-input">
+                        <input class="uppercase placeholder:text-quaternary-color" type="text" name="email" id="email" placeholder="email">
+                    </li>
+                    <li class="layout-input">
+                        <input class="uppercase placeholder:text-quaternary-color" type="text" name="phone" id="phone" placeholder="name">
+                    </li>
+                </ul>
+                <div class="pt-[10rem] flex justify-center">
+                    <button class="layout-btn bg-quaternary-color text-primary-color">
+                        <span class="text-[2.5rem] px-[8rem] py-[1rem] tracking-wide">submit</span>
                     </button>
-                </li>
-                <li class="form-input">
-                    <input type="text" name="date" id="date">
-                    <button>
-                        <img src="<%= require('./assets/calender-icon.svg') %>" alt="">
-                    </button>
-                </li>
-                <li class="form-input">
-                    <input type="text" name="time" id="time">
-                    <button>
-                        <img src="<% require('./assets/clock-icon.svg') %>" alt="">
-                    </button>
-                </li>
-            </ul>
-            <ul>
-                <li class="form-input">
-                    <input type="text" name="name" id="name">
-                </li>
-                <li class="form-input">
-                    <input type="text" name="email" id="email">
-                </li>
-                <li class="form-input">
-                    <input type="text" name="phone" id="phone">
-                </li>
-            </ul>
-            <button type="submit">submit</button>
-        </form>
+                </div>
+            </form>
+        </div>
     </section>
     <!-- make a reservation -->
 
     <!-- about us -->
-    <section id="about-us" style="background-image: url('<%= require(`./assets/fried-potatoes.png`) %>')">
-        <header>
-            <h1>about us</h1>
-        </header>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit iusto perferendis quidem, dolor temporibus magni optio consequuntur deserunt ipsam architecto rem necessitatibus quibusdam fuga harum ex, impedit odio.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit iusto perferendis quidem, dolor temporibus magni optio consequuntur deserunt ipsam architecto rem necessitatibus quibusdam fuga harum ex, impedit odio.
-        </p>
+    <section id="about-us" style="background-image: url('<%= require(`./assets/fried-potatoes.png`) %>'); background-repeat: no-repeat;" class="flex justify-end layout-container-xlg pb-[14rem] bg-secondary-color">
+        <div class="w-1/2">
+            <header>
+                <h1 class="pt-[10rem] uppercase font-mont font-black text-[7rem] text-primary-color">about us</h1>
+            </header>
+            <p class="pt-[5rem] font-mont font-regular text-[2.5rem] text-tertiary-color leading-[2.8rem]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit iusto perferendis quidem, dolor temporibus magni optio consequuntur deserunt ipsam architecto rem necessitatibus quibusdam fuga harum ex, impedit odio.
+            </p>
+            <p class="pt-[4rem] font-mont font-regular text-[2.5rem] text-tertiary-color leading-[2.8rem]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit iusto perferendis quidem, dolor temporibus magni optio consequuntur deserunt ipsam architecto rem necessitatibus quibusdam fuga harum ex, impedit odio.
+            </p>
+        </div>
     </section>
     <!-- about us -->
 
     <!-- the creators -->
-    <section id="the-creators">
-        <ul>
-            <li>
-                <h1>p</h1>
-                <div>
-                    <h1>name creator</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <section id="the-creators" class="bg-primary-color pb-[17rem]">
+        <div class="layout-container-the-creators">
+            <header>
+                <h1 class="uppercase pt-[15rem] font-mont font-black text-[7rem] text-secondary-color">the creators</h1>
+            </header>
+            <div class="flex justify-between">
+                <ul class="max-w-[55rem]">
+                    <li class="flex items-center pt-[3rem]">
+                        <h1 class="p-[4rem] rounded-full border-4 border-secondary-color uppercase font-mont font-bold text-[5rem] text-quaternary-color leading-[3rem]">p</h1>
+                        <div>
+                            <h1 class="capitalize font-mont font-bold text-[3rem] text-quaternary-color">name creator</h1>
+                            <p class="font-mont font-regular text-[2.2rem] text-quaternary-color">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-center pt-[3rem]">
+                        <h1 class="p-[4rem] rounded-full border-4 border-tertiary-color uppercase font-mont font-bold text-[5rem] text-quaternary-color leading-[3rem]">p</h1>
+                        <div>
+                            <h1 class="capitalize font-mont font-bold text-[3rem] text-quaternary-color">name creator</h1>
+                            <p class="font-mont font-regular text-[2.2rem] text-quaternary-color">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="w-1/2 flex items-center justify-center">
+                    <img src="<%= require('./assets/food-res-badge.png') %>" alt="badge">
                 </div>
-            </li>
-            <li>
-                <h1>p</h1>
-                <div>
-                    <h1>name creator</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </li>
-        </ul>
-        <img src="<%= require('./assets/food-res-badge.png') %>" alt="badge">
+            </div>
+        </div>
     </section>
     <!-- the creators -->
 
     <!-- blog -->
-    <section id="burger-blog">
-        <header>
-            <h1>burger blog</h1>
-            <h2>discover the best burger recipes</h2>
-        </header>
-        <ul>
-            <li>
-                <img src="<% require('./assets/burger-placeholder.png') %>" alt="">
-                <p>cheese burger / 26th may, 2000</p>
-                <p>Lorem, ipsum dolor sit.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quia!</p>
-                <button>read more</button>
-            </li>
-        </ul>
+    <section id="burger-blog" class="text-center bg-quaternary-color pb-[6rem]">
+        <div class="layout-container-burger-blog">
+            <header>
+                <h1 class="pt-[4rem] uppercase font-mont font-black text-[6.6rem] text-primary-color">burger blog</h1>
+                <h2 class="capitalize font-mont font-regular text-[3.7rem] text-tertiary-color">discover the best burger recipes</h2>
+            </header>
+            <ul class="pt-[3rem] grid">
+                <li class="text-tertiary-color">
+                    <img src="<%= require('./assets/burger-placeholder.png') %>" alt="">
+                    <p class="capitalize font-mont font-bold text-[1.4rem]">cheese burger / 26th may, 2000</p>
+                    <p class="font-mont font-bold text-[1.6rem]">Lorem, ipsum dolor sit.</p>
+                    <p class="font-mont font-regular text-[1.6rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quia!</p>
+                    <div class="pt-[3rem] flex justify-center">
+                        <button class="layout-btn text-primary-color bg-quaternary-color">
+                            <span class="font-mont font-bold text-[1.4rem]">read more</span>
+                        </button>
+                    </div>
+                </li>
+                <li class="text-tertiary-color">
+                    <img src="<%= require('./assets/burger-placeholder.png') %>" alt="">
+                    <p class="capitalize font-mont font-bold text-[1.4rem]">cheese burger / 26th may, 2000</p>
+                    <p class="font-mont font-bold text-[1.6rem]">Lorem, ipsum dolor sit.</p>
+                    <p class="font-mont font-regular text-[1.6rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quia!</p>
+                    <div class="pt-[3rem] flex justify-center">
+                        <button class="layout-btn text-primary-color bg-quaternary-color">
+                            <span class="font-mont font-bold text-[1.4rem]">read more</span>
+                        </button>
+                    </div>
+                </li>
+                <li class="text-tertiary-color">
+                    <img src="<%= require('./assets/burger-placeholder.png') %>" alt="">
+                    <p class="capitalize font-mont font-bold text-[1.4rem]">cheese burger / 26th may, 2000</p>
+                    <p class="font-mont font-bold text-[1.6rem]">Lorem, ipsum dolor sit.</p>
+                    <p class="font-mont font-regular text-[1.6rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quia!</p>
+                    <div class="pt-[3rem] flex justify-center">
+                        <button class="layout-btn text-primary-color bg-quaternary-color">
+                            <span class="font-mont font-bold text-[1.4rem]">read more</span>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </section>
     <!-- blog -->
 
     <!-- footer -->
-    <footer>
-        <article>
+    <footer class="bg-secondary-color">
+        <div class="pt-[6rem] grid layout-container-footer">
+            <article id="about-us">
+                <header>
+                    <h1 class="footer-cell-header">about us</h1>
+                </header>
+                <p class="footer-cell-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas accusamus eaque quis laudantium aliquam labore consequatur ipsam suscipit velit reiciendis.</p>
+            </article>
+            <article>
+                <header>
+                    <h1 class="footer-cell-header">vision</h1>
+                </header>
+                <ul class="footer-cell-content">
+                    <li>team</li>
+                    <li>join us</li>
+                    <li>ethic</li>
+                    <li>goals</li>
+                </ul>
+            </article>
+            <article>
+                <header>
+                    <h1 class="footer-cell-header">menu</h1>
+                </header>
+                <ul class="footer-cell-content">
+                    <li>combos</li>
+                    <li>reservation</li>
+                    <li>our chef</li>
+                    <li>contact</li>
+                </ul>
+            </article>
+            <article>
+                <header>
+                    <h1 class="footer-cell-header">we are here</h1>
+                </header>
+                <ul class="footer-cell-content">
+                    <li>123 main street</li>
+                    <li>123456</li>
+                </ul>
+            </article>
+            <article>
+                <header>
+                    <h1 class="footer-cell-header">open daily</h1>
+                </header>
+                <ul class="footer-cell-content">
+                    <li>every day from</li>
+                    <li>11 am to 10 pm</li>
+                </ul>
+            </article>
+            <article>
+                <header>
+                    <h1 class="footer-cell-header">call us</h1>
+                </header>
+                <ul class="footer-cell-content">
+                    <li>+12 345678910</li>
+                </ul>
+            </article>
+            <article>
+                <header>
+                    <h1 class="footer-cell-header">say hello</h1>
+                </header>
+                <ul class="footer-cell-content">
+                    <li>hello@yourwebsite.com</li>
+                    <li>www.yourwebsite.com</li>
+                </ul>
+            </article>
+            <article id="form-cell" class="pt-[3rem]">
+                <form action="" class="flex justify-between items-center">
+                    <div class="layout-input max-w-[30rem]">
+                        <input placeholder="Email" class="layout-input" type="text" name="email" id=email />
+                    </div>
+                    <div class="flex justify-center">
+                        <button class="layout-btn bg-primary-color text-quaternary-color">
+                            <span class="text-[1.5rem] px-[4rem] py-[1.3rem] tracking-wide">subscribe</span>
+                        </button>
+                    </div>
+                </form>
+            </article>
+            <article id="social-cell" class="pt-[3rem] flex items-center justify-between">
+                <header>
+                    <h1 class="footer-cell-header">follow us</h1>
+                </header>
+                <ul class="flex">
+                    <li>
+                        <img src="<%= require('./assets/twitter-icon.svg') %>" alt="">
+                    </li>
+                    <li>
+                        <img src="<%= require('./assets/facebook-icon.svg') %>" alt="">
+                    </li>
+                    <li>
+                        <img src="<%= require('./assets/instagram-icon.svg') %>" alt="">
+                    </li>
+                </ul>
+            </article>
+        </div>
+        <article class="pt-[6rem]">
             <header>
-                <h1>about us</h1>
-            </header>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas accusamus eaque quis laudantium aliquam labore consequatur ipsam suscipit velit reiciendis.</p>
-        </article>
-        <article>
-            <header>
-                <h1>vision</h1>
-            </header>
-            <ul>
-                <li>team</li>
-                <li>join us</li>
-                <li>ethic</li>
-                <li>goals</li>
-            </ul>
-        </article>
-        <article>
-            <header>
-                <h1>menu</h1>
-            </header>
-            <ul>
-                <li>combos</li>
-                <li>reservation</li>
-                <li>our chef</li>
-                <li>contact</li>
-            </ul>
-        </article>
-        <article>
-            <header>
-                <h1>we are here</h1>
-            </header>
-            <ul>
-                <li>123 main street</li>
-                <li>123456</li>
-            </ul>
-        </article>
-        <article>
-            <header>
-                <h1>open daily</h1>
-            </header>
-            <ul>
-                <li>every day from</li>
-                <li>11 am to 10 pm</li>
-            </ul>
-        </article>
-        <article>
-            <header>
-                <h1>call us</h1>
-            </header>
-            <ul>
-                <li>+12 345678910</li>
-            </ul>
-        </article>
-        <article>
-            <header>
-                <h1>say hello</h1>
-            </header>
-            <ul>
-                <li>hello@yourwebsite.com</li>
-                <li>www.yourwebsite.com</li>
-            </ul>
-        </article>
-        <article>
-            <form action="">
-                <input type="text" name="email" id=email />
-                <button>submit</button>
-            </form>
-        </article>
-        <article>
-            <header>
-                <h1>follow us</h1>
-            </header>
-            <ul>
-                <li>
-                    <img src="<%= require('./assets/twitter-icon.svg') %>" alt="">
-                </li>
-                <li>
-                    <img src="<%= require('./assets/facebook-icon.svg') %>" alt="">
-                </li>
-                <li>
-                    <img src="<%= require('./assets/instagram-icon.svg') %>" alt="">
-                </li>
-            </ul>
-        </article>
-        <article>
-            <header>
-                <h1>@2000 all rights reserved</h1>
+                <h1 class="uppercase bg-primary-color py-[2rem] text-center text-quaternary-color font-mont font-regular text-[1.68rem]">@2000 all rights reserved</h1>
             </header>
         </article>
     </footer>

@@ -1,0 +1,5 @@
+#burger-blog {
+    ul {
+        @apply grid-cols-[1fr_1fr_1fr] gap-x-[2rem];
+    }
+}
