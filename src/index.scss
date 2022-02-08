@@ -19,6 +19,9 @@ $quaternary-color: white;
 
 html {
     font-size: 62.5%;
+    @media screen and (max-width: 601px){
+        font-size: 44%;
+    }
 }
 
 body {
@@ -104,6 +107,7 @@ body {
 }
 
 @import './styles/nav';
+@import './styles/top';
 @import './styles/hero-burger';
 @import './styles/food-menu';
 @import './styles/combos';

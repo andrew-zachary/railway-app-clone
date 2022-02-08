@@ -1,0 +1,8 @@
+#top {
+    @media screen and (max-width: 500px) {
+        h1 {
+            font-size: calc(1rem + 12vw);
+            line-height: calc(1rem + 12vw);
+        }
+    }
+}

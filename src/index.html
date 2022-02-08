@@ -51,7 +51,7 @@
     <section id="top" class="bg-primary-color">
         <div class="layout-container-xlg pt-[15rem] uppercase text-center font-mont text-quaternary-color">
             <h1 class="font-black text-[10rem] leading-[13rem]">we <span class="text-secondary-color">love</span> </br> big burger</h1>
-            <h2 class="font-regular text-[4.5rem] tracking-widest p-[6rem]">discover why</h2>
+            <h2 class="font-regular text-[4.5rem] tracking-widest py-[6rem]">discover why</h2>
             <button>
                 <img src="<%= require('./assets/arrow-down-btn.svg') %>" alt="open menu">
             </button>
@@ -472,7 +472,7 @@
         <header>
             <h1 class="pt-[5rem] uppercase font-mont font-bold text-[5rem] text-primary-color text-center">how do you order our burgers</h1>
         </header>
-        <div class="grid pt-[4rem] layout-container-hto how-to-order_row-1">
+        <div class="pt-[4rem] layout-container-hto how-to-order_row-1">
             <article class="shadow-primary py-[8rem] text-center bg-quaternary-color rounded-full">
                 <header>
                     <h1 class="uppercase font-mont font-bold text-[4.5rem] text-primary-color ">choose</h1>
@@ -501,7 +501,7 @@
         <div class="flex justify-end layout-container-hto-plus how-to-order_row-2">
             <span class="font-mont font-black text-primary-color text-[14rem] leading-[14rem]">+</span>
         </div>
-        <div class="grid layout-container-hto-plus how-to-order_row-3">
+        <div id="free-delivery" class="grid layout-container-hto-plus how-to-order_row-3">
             <div>
                 <img src="<%= require('./assets/hero-burger-2.png') %>" alt="">
             </div>
@@ -589,12 +589,12 @@
     <!-- about us -->
 
     <!-- the creators -->
-    <section id="the-creators" class="bg-primary-color pb-[17rem]">
+    <section id="the-creators" class="bg-primary-color">
         <div class="layout-container-the-creators px-[2rem]">
             <header>
                 <h1 class="uppercase pt-[15rem] font-mont font-black text-[7rem] text-secondary-color">the creators</h1>
             </header>
-            <div class="flex justify-between">
+            <div id="info" class="flex justify-between">
                 <ul class="max-w-[55rem]">
                     <li class="flex items-center pt-[3rem]">
                         <h1 class="p-[4rem] rounded-full border-4 border-secondary-color uppercase font-mont font-bold text-[5rem] text-quaternary-color leading-[3rem]">p</h1>
@@ -611,7 +611,7 @@
                         </div>
                     </li>
                 </ul>
-                <div class="w-1/2 flex items-center justify-center">
+                <div id="food-badge-container" class="w-1/2 flex items-center justify-center">
                     <img src="<%= require('./assets/food-res-badge.png') %>" alt="badge">
                 </div>
             </div>
