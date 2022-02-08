@@ -7,8 +7,6 @@ nav {
         padding: 1rem;
     }
     & > div {
-        display: grid;
-        align-items: center;
         grid-template-columns: max-content 1fr max-content;
         #menu-icon, #cart {
             width: 3.5rem;
@@ -32,9 +30,11 @@ nav {
                     @apply uppercase font-mont font-regular text-[1.875rem] text-quaternary-color leading-6;
                     @include withRtl('margin', 0 9rem 0 0, 0 0 0 9rem);
                     a {
-                        display: inline-block;
                         line-height: 18px;
                         vertical-align: -11px;
+                    }
+                    &:last-child {
+                        padding-bottom: 2rem;
                     }
                 }
             }

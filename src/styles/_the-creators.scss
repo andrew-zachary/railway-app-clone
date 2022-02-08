@@ -1,11 +1,37 @@
 #the-creators {
     padding-bottom: 17rem;
-    #info {
-        ul {
-            li {
-                & > div {
-                    @include withRtl('margin', 0 0 0 1.5rem, 0 1.5rem 0 0);
+    & > div {
+        padding: 0 2rem;
+        header {
+            h1 {
+                padding-top: 15rem;
+                font-size: 7rem;
+            }
+        }
+        #info {
+            ul {
+                max-width: 55rem;
+                li {
+                    padding-top: 3rem;
+                    h1.name-avatar {
+                        padding: 4rem;
+                        border-width: 0.4rem;
+                        font-size: 5rem;
+                        line-height: 3rem;
+                    }
+                    div {
+                        @include withRtl('margin', 0 0 0 1.5rem, 0 1.5rem 0 0);
+                        h1 {
+                            font-size: 3rem;
+                        }
+                        p {
+                            font-size: 2.2rem;
+                        }
+                    }
                 }
+            }
+            #food-badge-container {
+                width: 50%;
             }
         }
     }

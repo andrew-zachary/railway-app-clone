@@ -1,8 +1,23 @@
 #top {
-    @media screen and (max-width: 500px) {
+    height: 100vh;
+    max-height: 80rem;
+    & > div {
+        padding-top: 30rem;
         h1 {
-            font-size: calc(1rem + 12vw);
-            line-height: calc(1rem + 12vw);
+            font-size: 10rem;
+            line-height: 13rem;
+        }
+        h2 {
+            font-size: 4.5rem;
+            padding: 6rem 0;
+        }
+    }
+    @media screen and (max-width: 500px) {
+        & > div {
+            h1 {
+                font-size: calc(1rem + 12vw);
+                line-height: calc(1rem + 12vw);
+            }
         }
     }
 }

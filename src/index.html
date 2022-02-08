@@ -14,7 +14,7 @@
     
     <!-- main page nav -->
     <nav x-data="{open: false}" class="w-full z-9998 fixed">
-        <div class="layout-container-xlg">
+        <div class="layout-container-xlg grid items-center">
             <div @click="open = !open" id="menu-icon">
                 <img src="<%= require('./assets/menu-icon.svg') %>" alt="">
             </div>
@@ -24,19 +24,19 @@
             <div id="menu-list">
                 <ul :class="open?'items':''">
                     <li>
-                        <a href="#">menu</a>
+                        <a class="inline-block" href="#">menu</a>
                     </li>
                     <li>
-                        <a href="#">combos</a>
+                        <a class="inline-block" href="#">combos</a>
                     </li>
                     <li>
-                        <a href="#">reservation</a>
+                        <a class="inline-block" href="#">reservation</a>
                     </li>
                     <li>
-                        <a href="#">about us</a>
+                        <a class="inline-block" href="#">about us</a>
                     </li>
                     <li>
-                        <a href="#">contact</a>
+                        <a class="inline-block" href="#">contact</a>
                     </li>
                 </ul>
             </div>
@@ -49,9 +49,9 @@
 
     <!-- top section -->
     <section id="top" class="bg-primary-color">
-        <div class="layout-container-xlg pt-[15rem] uppercase text-center font-mont text-quaternary-color">
-            <h1 class="font-black text-[10rem] leading-[13rem]">we <span class="text-secondary-color">love</span> </br> big burger</h1>
-            <h2 class="font-regular text-[4.5rem] tracking-widest py-[6rem]">discover why</h2>
+        <div class="layout-container-xlg uppercase text-center font-mont text-quaternary-color">
+            <h1 class="font-black">we <span class="text-secondary-color">love</span> </br> big burger</h1>
+            <h2 class="font-regular tracking-widest">discover why</h2>
             <button>
                 <img src="<%= require('./assets/arrow-down-btn.svg') %>" alt="open menu">
             </button>
@@ -60,7 +60,7 @@
     <!-- top section -->
 
     <!-- hero burger -->
-    <section id="hero-burger" class="flex justify-center pt-[2.5rem]">
+    <section id="hero-burger" class="flex justify-center">
         <img src="<%= require('./assets/hero-burger.png') %>" alt="">
     </section>
     <!-- hero burger -->
@@ -68,9 +68,9 @@
     <!-- food menu -->
     <section id="food-menu" class="bg-quaternary-color">
         <div class="layout-container-lg">
-            <h1 class="font-mont font-black text-[13rem] text-secondary-color leading-[12rem] uppercase text-center">menu</h1>
-            <h2 class="font-mont font-regular text-[2.5rem] text-tertiary-color leading-[3rem] pt-[5rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui commodi officia, placeat nostrum quis similique vitae repellat, officiis eum cum recusandae hic praesentium eligendi!</h2>
-            <div id="menu-blocks" class="text-tertiary-color pt-[3.5rem]">
+            <h1 class="menu-title font-mont font-black text-secondary-color uppercase text-center">menu</h1>
+            <h2 class="menu-disc font-mont font-regular text-tertiary-color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui commodi officia, placeat nostrum quis similique vitae repellat, officiis eum cum recusandae hic praesentium eligendi!</h2>
+            <div id="menu-blocks" class="text-tertiary-color">
                 <div id="menu-block_row-1" class="grid">
                     <article>
                         <header>
@@ -155,7 +155,6 @@
                                     </label>
                                 </div>
                             </li>
-                            <li class="product-label"></li>
                         </ul>
                     </article>
                     <article>
@@ -244,8 +243,8 @@
                         </ul>
                     </article>
                 </div>
-                <div id="menu-block_row-2" class="pt-[5rem]">
-                    <article class="font-mont font-regular text-[2.5rem] flex justify-between">
+                <div id="menu-block_row-2">
+                    <article class="font-mont font-regular flex justify-between">
                         <header>
                             <h1 class="uppercase"><span>if you want,</span><span> you can exchange a milkshake for a drink</span></h1>
                         </header>
@@ -256,7 +255,7 @@
                 </div>
             </div>
         </div>
-        <article class="layout-container-menu-drinks flex pt-[5rem]">
+        <article class="layout-container-menu-drinks flex">
             <header>
                 <h1 class="block-title">
                     drinks
@@ -313,28 +312,28 @@
     <!-- food menu -->
 
     <!-- combos -->
-    <section id="combos" class="pb-[4rem] bg-primary-color">
-        <header class="pt-[4.5rem] text-center">
-            <h1 class="uppercase font-mont font-black text-[8rem] text-secondary-color tracking-widest">combos</h1>
-            <h2 class="capitalize font-mont font-regular text-[2.5rem] leading-[3rem] text-quaternary-color">we have the perfect burger combination. <br /> choose your best option</h2>
+    <section id="combos" class="bg-primary-color">
+        <header class="text-center">
+            <h1 class="uppercase font-mont font-black text-secondary-color tracking-widest">combos</h1>
+            <h2 class="capitalize font-mont font-regular text-quaternary-color">we have the perfect burger combination. <br /> choose your best option</h2>
         </header>
         <div class="layout-container-xlg relative">
-            <div class="combo-swiper layout-container-combos-swiper overflow-x-hidden mt-[5rem]">
-                <ul class="swiper-wrapper py-[3rem]">
-                    <li class="swiper-slide px-[1rem]">
-                        <div class="slide-content bg-quaternary-color shadow-primary py-[5rem] rounded-[5rem] uppercase text-center">
-                            <h1 class="font-mont font-bold text-[1.9rem]">combo 1</h1>
-                            <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+            <div class="combo-swiper layout-container-combos-swiper overflow-x-hidden">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <div class="slide-content bg-quaternary-color shadow-primary uppercase text-center">
+                            <h1 class="font-mont font-bold">combo 1</h1>
+                            <p class="combo-name font-mont font-regular">
                                 classic burger
                             </p>
-                            <ul class="font-mont font-regular text-[1.7rem] pt-[2rem]">
+                            <ul class="font-mont font-regular">
                                 <li>chocolate</li>
                                 <li>milkshake</li>
                             </ul>
-                            <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            <p class="combo-desserts font-mont font-regular">
                                 new york cheesecake
                             </p>
-                            <p class="font-mont font-regular text-[1.7rem] text-primary-color pt-[2rem]">
+                            <p class="combo-price font-mont font-regular text-primary-color">
                                 <span>$</span><span>00</span>
                             </p>
                             <div class="flex justify-center pt-[3rem]">
@@ -344,20 +343,20 @@
                             </div>
                         </div>
                     </li>
-                    <li class="swiper-slide px-[1rem]">
-                        <div class="slide-content bg-quaternary-color shadow-primary py-[5rem] rounded-[5rem] uppercase text-center">
-                            <h1 class="font-mont font-bold text-[1.9rem]">combo 2</h1>
-                            <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                    <li class="swiper-slide">
+                        <div class="slide-content bg-quaternary-color shadow-primary uppercase text-center">
+                            <h1 class="font-mont font-bold">combo 2</h1>
+                            <p class="combo-name font-mont font-regular">
                                 classic burger
                             </p>
-                            <ul class="font-mont font-regular text-[1.7rem] pt-[2rem]">
+                            <ul class="font-mont font-regular">
                                 <li>chocolate</li>
                                 <li>milkshake</li>
                             </ul>
-                            <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            <p class="combo-desserts font-mont font-regular">
                                 new york cheesecake
                             </p>
-                            <p class="font-mont font-regular text-[1.7rem] text-primary-color pt-[2rem]">
+                            <p class="combo-price font-mont font-regular text-primary-color">
                                 <span>$</span><span>00</span>
                             </p>
                             <div class="flex justify-center pt-[3rem]">
@@ -367,20 +366,20 @@
                             </div>
                         </div>
                     </li>
-                    <li class="swiper-slide px-[1rem]">
-                        <div class="slide-content bg-quaternary-color shadow-primary py-[5rem] rounded-[5rem] uppercase text-center">
-                            <h1 class="font-mont font-bold text-[1.9rem]">combo 3</h1>
-                            <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                    <li class="swiper-slide">
+                        <div class="slide-content bg-quaternary-color shadow-primary uppercase text-center">
+                            <h1 class="font-mont font-bold">combo 3</h1>
+                            <p class="combo-name font-mont font-regular">
                                 classic burger
                             </p>
-                            <ul class="font-mont font-regular text-[1.7rem] pt-[2rem]">
+                            <ul class="font-mont font-regular">
                                 <li>chocolate</li>
                                 <li>milkshake</li>
                             </ul>
-                            <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            <p class="combo-desserts font-mont font-regular">
                                 new york cheesecake
                             </p>
-                            <p class="font-mont font-regular text-[1.7rem] text-primary-color pt-[2rem]">
+                            <p class="combo-price font-mont font-regular text-primary-color">
                                 <span>$</span><span>00</span>
                             </p>
                             <div class="flex justify-center pt-[3rem]">
@@ -390,20 +389,20 @@
                             </div>
                         </div>
                     </li>
-                    <li class="swiper-slide px-[1rem]">
-                        <div class="slide-content bg-quaternary-color shadow-primary py-[5rem] rounded-[5rem] uppercase text-center">
-                            <h1 class="font-mont font-bold text-[1.9rem]">combo 4</h1>
-                            <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                    <li class="swiper-slide">
+                        <div class="slide-content bg-quaternary-color shadow-primary uppercase text-center">
+                            <h1 class="font-mont font-bold">combo 4</h1>
+                            <p class="combo-name font-mont font-regular">
                                 classic burger
                             </p>
-                            <ul class="font-mont font-regular text-[1.7rem] pt-[2rem]">
+                            <ul class="font-mont font-regular">
                                 <li>chocolate</li>
                                 <li>milkshake</li>
                             </ul>
-                            <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            <p class="combo-desserts font-mont font-regular">
                                 new york cheesecake
                             </p>
-                            <p class="font-mont font-regular text-[1.7rem] text-primary-color pt-[2rem]">
+                            <p class="combo-price font-mont font-regular text-primary-color">
                                 <span>$</span><span>00</span>
                             </p>
                             <div class="flex justify-center pt-[3rem]">
@@ -413,20 +412,20 @@
                             </div>
                         </div>
                     </li>
-                    <li class="swiper-slide px-[1rem]">
-                        <div class="slide-content bg-quaternary-color shadow-primary py-[5rem] rounded-[5rem] uppercase text-center">
-                            <h1 class="font-mont font-bold text-[1.9rem]">combo 5</h1>
-                            <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                    <li class="swiper-slide">
+                        <div class="slide-content bg-quaternary-color shadow-primary uppercase text-center">
+                            <h1 class="font-mont font-bold">combo 5</h1>
+                            <p class="combo-name font-mont font-regular">
                                 classic burger
                             </p>
-                            <ul class="font-mont font-regular text-[1.7rem] pt-[2rem]">
+                            <ul class="font-mont font-regular">
                                 <li>chocolate</li>
                                 <li>milkshake</li>
                             </ul>
-                            <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            <p class="combo-desserts font-mont font-regular">
                                 new york cheesecake
                             </p>
-                            <p class="font-mont font-regular text-[1.7rem] text-primary-color pt-[2rem]">
+                            <p class="combo-price font-mont font-regular text-primary-color">
                                 <span>$</span><span>00</span>
                             </p>
                             <div class="flex justify-center pt-[3rem]">
@@ -436,20 +435,20 @@
                             </div>
                         </div>
                     </li>
-                    <li class="swiper-slide px-[1rem]">
-                        <div class="slide-content bg-quaternary-color shadow-primary py-[5rem] rounded-[5rem] uppercase text-center">
-                            <h1 class="font-mont font-bold text-[1.9rem]">combo 6</h1>
-                            <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                    <li class="swiper-slide">
+                        <div class="slide-content bg-quaternary-color shadow-primary uppercase text-center">
+                            <h1 class="font-mont font-bold">combo 6</h1>
+                            <p class="combo-name font-mont font-regular">
                                 classic burger
                             </p>
-                            <ul class="font-mont font-regular text-[1.7rem] pt-[2rem]">
+                            <ul class="font-mont font-regular">
                                 <li>chocolate</li>
                                 <li>milkshake</li>
                             </ul>
-                            <p class="font-mont font-regular text-[1.7rem] pt-[3rem]">
+                            <p class="combo-desserts font-mont font-regular">
                                 new york cheesecake
                             </p>
-                            <p class="font-mont font-regular text-[1.7rem] text-primary-color pt-[2rem]">
+                            <p class="combo-price font-mont font-regular text-primary-color">
                                 <span>$</span><span>00</span>
                             </p>
                             <div class="flex justify-center pt-[3rem]">
@@ -468,38 +467,38 @@
     <!-- combos -->
 
     <!-- how to order -->
-    <section id="how-to-order" class="pb-[7rem] px-[1rem] bg-secondary-color">
-        <header>
-            <h1 class="pt-[5rem] uppercase font-mont font-bold text-[5rem] text-primary-color text-center">how do you order our burgers</h1>
+    <section id="how-to-order" class="bg-secondary-color">
+        <header class="main">
+            <h1 class="uppercase font-mont font-bold text-primary-color text-center">how do you order our burgers</h1>
         </header>
-        <div class="pt-[4rem] layout-container-hto how-to-order_row-1">
-            <article class="shadow-primary py-[8rem] text-center bg-quaternary-color rounded-full">
+        <div class="layout-container-hto how-to-order_row-1">
+            <article class="shadow-primary text-center bg-quaternary-color rounded-full">
                 <header>
-                    <h1 class="uppercase font-mont font-bold text-[4.5rem] text-primary-color ">choose</h1>
+                    <h1 class="uppercase font-mont font-bold text-primary-color ">choose</h1>
                 </header>
-                <p class="pt-[2rem] font-mont font-regular text-[1.8rem] text-tertiary-color leading-[2.5rem]">
+                <p class="font-mont font-regular text-tertiary-color">
                     choose what you prefer from our menu. if you don't want to think choose directly a combo
                 </p>
             </article>
-            <article class="shadow-primary py-[8rem] px-[1rem] text-center bg-quaternary-color rounded-full">
+            <article class="shadow-primary text-center bg-quaternary-color rounded-full">
                 <header>
-                    <h1 class="uppercase font-mont font-bold text-[4.5rem] text-primary-color">order</h1>
+                    <h1 class="uppercase font-mont font-bold text-primary-color">order</h1>
                 </header>
-                <p class="pt-[2rem] font-mont font-regular text-[1.8rem] text-tertiary-color leading-[2.5rem]">
+                <p class="font-mont font-regular text-tertiary-color">
                     you can order food online or if you prefer you can go into our restaurant
                 </p>
             </article>
-            <article class="shadow-primary py-[8rem] px-[1rem] text-center bg-quaternary-color rounded-full">
+            <article class="shadow-primary text-center bg-quaternary-color rounded-full">
                 <header>
                     <h1 class="uppercase font-mont font-bold text-[4.5rem] text-primary-color">delivery</h1>
                 </header>
-                <p class="pt-[2rem] px-[1rem] font-mont font-regular text-[1.8rem] text-tertiary-color leading-[2.5rem]">
+                <p class="font-mont font-regular text-tertiary-color">
                     pick up your order in one of our restaurants or have it delivered in your home
                 </p>
             </article>
         </div>
         <div class="flex justify-end layout-container-hto-plus how-to-order_row-2">
-            <span class="font-mont font-black text-primary-color text-[14rem] leading-[14rem]">+</span>
+            <span class="font-mont font-black text-primary-color">+</span>
         </div>
         <div id="free-delivery" class="grid layout-container-hto-plus how-to-order_row-3">
             <div>
@@ -507,11 +506,11 @@
             </div>
             <article>
                 <header>
-                    <h1 class="uppercase font-mont font-black text-quaternary-color text-[10rem] leading-[10rem]">
+                    <h1 class="uppercase font-mont font-black text-quaternary-color">
                         free delivery
                     </h1>
                 </header>
-                <p class="pt-[4rem] font-mont font-regular text-[2.4rem] text-quaternary-color 4rem">
+                <p class="font-mont font-regular text-quaternary-color">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt reprehenderit architecto impedit, nobis eos quis explicabo rerum facilis totam maiores.
                 </p>
                 <div class="pt-[5rem] flex justify-center">
@@ -525,10 +524,10 @@
     <!-- how to order -->
 
     <!-- make a reservation -->
-    <section id="make-reservation" class="text-center bg-primary-color pb-[8rem] px-[1rem]">
+    <section id="make-reservation" class="text-center bg-primary-color">
         <div class="layout-container-xlg">
             <header>
-                <h1 class="pt-[10rem] tracking-wide uppercase font-mont font-black text-[8.3rem] text-secondary-color">make a reservation</h1>
+                <h1 class="tracking-wide uppercase font-mont font-black text-secondary-color">make a reservation</h1>
             </header>
             <form action="#">
                 <ul>
@@ -573,15 +572,15 @@
     <!-- make a reservation -->
 
     <!-- about us -->
-    <section id="about-us" style="background-image: url('<%= require(`./assets/fried-potatoes.png`) %>'); background-repeat: no-repeat;" class="flex justify-end layout-container-xlg pb-[14rem] bg-secondary-color">
+    <section id="about-us-footer" style="background-image: url('<%= require(`./assets/fried-potatoes.png`) %>'); background-repeat: no-repeat;" class="flex justify-end layout-container-xlg bg-secondary-color">
         <div>
             <header>
-                <h1 class="pt-[10rem] uppercase font-mont font-black text-[7rem] text-primary-color">about us</h1>
+                <h1 class=" uppercase font-mont font-black text-primary-color">about us</h1>
             </header>
-            <p class="pt-[5rem] font-mont font-regular text-[2.5rem] text-tertiary-color leading-[2.8rem]">
+            <p class="text-top font-mont font-regular text-tertiary-color">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit iusto perferendis quidem, dolor temporibus magni optio consequuntur deserunt ipsam architecto rem necessitatibus quibusdam fuga harum ex, impedit odio.
             </p>
-            <p class="pt-[4rem] font-mont font-regular text-[2.5rem] text-tertiary-color leading-[2.8rem]">
+            <p class="text-bottom font-mont font-regular text-tertiary-color">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit iusto perferendis quidem, dolor temporibus magni optio consequuntur deserunt ipsam architecto rem necessitatibus quibusdam fuga harum ex, impedit odio.
             </p>
         </div>
@@ -590,28 +589,28 @@
 
     <!-- the creators -->
     <section id="the-creators" class="bg-primary-color">
-        <div class="layout-container-the-creators px-[2rem]">
+        <div class="layout-container-the-creators">
             <header>
-                <h1 class="uppercase pt-[15rem] font-mont font-black text-[7rem] text-secondary-color">the creators</h1>
+                <h1 class="uppercase font-mont font-black text-secondary-color">the creators</h1>
             </header>
             <div id="info" class="flex justify-between">
-                <ul class="max-w-[55rem]">
-                    <li class="flex items-center pt-[3rem]">
-                        <h1 class="p-[4rem] rounded-full border-4 border-secondary-color uppercase font-mont font-bold text-[5rem] text-quaternary-color leading-[3rem]">p</h1>
+                <ul>
+                    <li class="flex items-center">
+                        <h1 class="name-avatar rounded-full border-secondary-color uppercase font-mont font-bold  text-quaternary-color">p</h1>
                         <div>
-                            <h1 class="capitalize font-mont font-bold text-[3rem] text-quaternary-color">name creator</h1>
-                            <p class="font-mont font-regular text-[2.2rem] text-quaternary-color">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <h1 class="capitalize font-mont font-bold text-quaternary-color">name creator</h1>
+                            <p class="font-mont font-regular text-quaternary-color">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
                         </div>
                     </li>
-                    <li class="flex items-center pt-[3rem]">
-                        <h1 class="p-[4rem] rounded-full border-4 border-tertiary-color uppercase font-mont font-bold text-[5rem] text-quaternary-color leading-[3rem]">p</h1>
+                    <li class="flex items-center">
+                        <h1 class="name-avatar rounded-full border-tertiary-color uppercase font-mont font-bold text-quaternary-color">p</h1>
                         <div>
-                            <h1 class="capitalize font-mont font-bold text-[3rem] text-quaternary-color">name creator</h1>
-                            <p class="font-mont font-regular text-[2.2rem] text-quaternary-color">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <h1 class="capitalize font-mont font-bold text-quaternary-color">name creator</h1>
+                            <p class="font-mont font-regular text-quaternary-color">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
                         </div>
                     </li>
                 </ul>
-                <div id="food-badge-container" class="w-1/2 flex items-center justify-center">
+                <div id="food-badge-container" class="flex items-center justify-center">
                     <img src="<%= require('./assets/food-res-badge.png') %>" alt="badge">
                 </div>
             </div>
@@ -620,18 +619,18 @@
     <!-- the creators -->
 
     <!-- blog -->
-    <section id="burger-blog" class="text-center bg-quaternary-color pb-[6rem]">
+    <section id="burger-blog" class="text-center bg-quaternary-color">
         <div class="layout-container-burger-blog">
             <header>
-                <h1 class="pt-[4rem] uppercase font-mont font-black text-[6.6rem] text-primary-color">burger blog</h1>
-                <h2 class="capitalize font-mont font-regular text-[3.7rem] text-tertiary-color">discover the best burger recipes</h2>
+                <h1 class="uppercase font-mont font-black text-primary-color">burger blog</h1>
+                <h2 class="capitalize font-mont font-regular text-tertiary-color">discover the best burger recipes</h2>
             </header>
-            <ul class="pt-[3rem] grid">
+            <ul class="grid">
                 <li class="text-tertiary-color">
                     <img src="<%= require('./assets/burger-placeholder.png') %>" alt="">
-                    <p class="capitalize font-mont font-bold text-[1.4rem]">cheese burger / 26th may, 2000</p>
-                    <p class="font-mont font-bold text-[1.6rem]">Lorem, ipsum dolor sit.</p>
-                    <p class="font-mont font-regular text-[1.6rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quia!</p>
+                    <p class="post-name capitalize font-mont font-bold">cheese burger / 26th may, 2000</p>
+                    <p class="post-small-disc font-mont font-bold">Lorem, ipsum dolor sit.</p>
+                    <p class="post-excerpt font-mont font-regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quia!</p>
                     <div class="pt-[3rem] flex justify-center">
                         <button class="layout-btn text-primary-color bg-quaternary-color">
                             <span class="font-mont font-bold text-[1.4rem]">read more</span>
@@ -640,20 +639,20 @@
                 </li>
                 <li class="text-tertiary-color">
                     <img src="<%= require('./assets/burger-placeholder.png') %>" alt="">
-                    <p class="capitalize font-mont font-bold text-[1.4rem]">cheese burger / 26th may, 2000</p>
-                    <p class="font-mont font-bold text-[1.6rem]">Lorem, ipsum dolor sit.</p>
-                    <p class="font-mont font-regular text-[1.6rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quia!</p>
+                    <p class="post-name capitalize font-mont font-bold">cheese burger / 26th may, 2000</p>
+                    <p class="post-small-disc font-mont font-bold">Lorem, ipsum dolor sit.</p>
+                    <p class="post-excerpt font-mont font-regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quia!</p>
                     <div class="pt-[3rem] flex justify-center">
                         <button class="layout-btn text-primary-color bg-quaternary-color">
-                            <span class="font-mont font-bold text-[1.4rem]">read more</span>
+                            <span class="font-mont font-bold">read more</span>
                         </button>
                     </div>
                 </li>
                 <li class="text-tertiary-color">
                     <img src="<%= require('./assets/burger-placeholder.png') %>" alt="">
-                    <p class="capitalize font-mont font-bold text-[1.4rem]">cheese burger / 26th may, 2000</p>
-                    <p class="font-mont font-bold text-[1.6rem]">Lorem, ipsum dolor sit.</p>
-                    <p class="font-mont font-regular text-[1.6rem]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quia!</p>
+                    <p class="post-name capitalize font-mont font-bold">cheese burger / 26th may, 2000</p>
+                    <p class="post-small-disc font-mont font-bold">Lorem, ipsum dolor sit.</p>
+                    <p class="post-excerpt font-mont font-regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quia!</p>
                     <div class="pt-[3rem] flex justify-center">
                         <button class="layout-btn text-primary-color bg-quaternary-color">
                             <span class="font-mont font-bold text-[1.4rem]">read more</span>
@@ -667,7 +666,7 @@
 
     <!-- footer -->
     <footer class="bg-secondary-color">
-        <div class="pt-[6rem] grid layout-container-footer">
+        <div class="grid layout-container-footer">
             <article id="about-us">
                 <header>
                     <h1 class="footer-cell-header">about us</h1>
@@ -731,7 +730,7 @@
                     <li>www.yourwebsite.com</li>
                 </ul>
             </article>
-            <article id="form-cell" class="pt-[3rem]">
+            <article id="form-cell">
                 <form action="" class="flex justify-between items-center">
                     <div class="layout-input form-input">
                         <input placeholder="Email" class="layout-input" type="text" name="email" id=email />
@@ -743,7 +742,7 @@
                     </div>
                 </form>
             </article>
-            <article id="social-cell" class="pt-[3rem] flex items-center justify-between">
+            <article id="social-cell" class="flex items-center justify-between">
                 <header>
                     <h1 class="footer-cell-header">follow us</h1>
                 </header>
@@ -760,9 +759,9 @@
                 </ul>
             </article>
         </div>
-        <article class="pt-[6rem]">
+        <article class="end-footer">
             <header>
-                <h1 class="uppercase bg-primary-color py-[2rem] text-center text-quaternary-color font-mont font-regular text-[1.68rem]">@2000 all rights reserved</h1>
+                <h1 class="uppercase bg-primary-color text-center text-quaternary-color font-mont font-regular ">@2000 all rights reserved</h1>
             </header>
         </article>
     </footer>

@@ -1,8 +1,31 @@
 #burger-blog {
+    padding-bottom: 6rem;
+    & > div {
+        header {
+            h1 {
+                padding-top: 4rem;
+                font-size: 6.6rem;
+            }
+            h2 {
+                font-size: 3.7rem;
+            }
+        }
+    }
     ul {
-        @apply grid-cols-[1fr_1fr_1fr] gap-x-[2rem];
+        padding-top: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
         li {
             padding: 0 0.5rem;
+            .post-name {
+                font-size: 1.4rem;
+            }
+            .post-small-disc {
+                font-size: 1.6rem;
+            }
+            .post-excerpt {
+                font-size: 1.6rem;
+            }
         }
         @media screen and (max-width:1200px){
             column-gap: 0.5rem;

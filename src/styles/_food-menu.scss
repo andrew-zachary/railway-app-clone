@@ -1,13 +1,29 @@
 #food-menu {
-    @apply px-[1rem];
+    padding: 0 1rem;
+    & > div {
+        .menu-title {
+            font-size: 13rem;
+            line-height: 13rem;
+        }
+        .menu-disc {
+            padding-top: 5rem;
+            font-size: 2.5rem;
+            line-height: 3rem;
+        }
+    }
     #menu-blocks {
+        padding-top: 3.5rem;
         #menu-block_row-1 {
             grid-template-columns: 1fr 1fr;
             gap: 8rem;
         }
         #menu-block_row-2 {
+            padding-top: 5rem;
             h1 {
                 word-spacing: 0.8rem;
+            }
+            article {
+                font-size: 2.5rem;
             }
         }
     }
@@ -25,6 +41,7 @@
         @apply font-mont font-regular text-[2.5rem] text-primary-color;
     }
     .layout-container-menu-drinks {
+        padding-top: 5rem;
         header {
             @include withRtl('margin', 0 7rem 0 0, 0 0 0 7rem);
         }
@@ -70,7 +87,7 @@
             }
         }
     }
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 992px){
         #menu-blocks {
             #menu-block_row-1 {
                 @apply max-w-[51.2rem] mx-auto;

@@ -1,17 +1,48 @@
 #how-to-order {
+    padding: 0rem 1rem 7rem 1rem;
+    header.main {
+        padding-top: 5rem;
+        font-size: 5rem;
+    }
     .how-to-order_row-1 {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        padding-top: 4rem;
         article {
-            max-width: 32rem;
-            @include withRtl(margin, 0 2rem 0 0, 0 0 0 2rem)
+            padding: 8rem 0rem;
+            width: 32rem;
+            @include withRtl(margin, 0 2rem 0 0, 0 0 0 2rem);
+            h1 {
+                font-size: 4.5rem;
+            }
+            p {
+                padding-top: 2rem;
+                font-size: 1.8rem;
+                line-height: 2.5rem;
+            }
+        }
+    }
+    .how-to-order_row-2 {
+        span {
+            font-size: 14rem;
+            line-height: 14rem;
         }
     }
     .how-to-order_row-3 {
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
         gap: 7rem;
+        header {
+            h1 {
+                font-size: 10rem;
+                line-height: 10rem;
+            }
+        }
+        p {
+            padding-top: 4rem;
+            font-size: 2.4rem;
+        }
     }
     @media screen and (max-width: 1024px){
         .how-to-order_row-3 {

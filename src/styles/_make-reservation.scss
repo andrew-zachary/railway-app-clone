@@ -1,4 +1,11 @@
 #make-reservation {
+    padding: 0rem 1rem 8rem 1rem;
+    header {
+        h1 {
+            padding-top: 10rem;
+            font-size: 8.3rem;
+        }
+    }
     form {
         ul {
             @apply grid grid-cols-[1fr_1fr_1fr] justify-between gap-x-[8rem];
