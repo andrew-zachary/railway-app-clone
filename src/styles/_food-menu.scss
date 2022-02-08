@@ -70,4 +70,16 @@
             }
         }
     }
+    @media screen and (max-width: 768px){
+        #menu-blocks {
+            #menu-block_row-1 {
+                @apply max-w-[51.2rem] mx-auto;
+                grid-template-columns: 1fr;
+                gap: 0rem;
+                article:nth-child(2) {
+                    padding-top: 3rem;
+                }
+            }
+        } 
+    }
 }

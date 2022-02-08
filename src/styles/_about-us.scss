@@ -1,0 +1,10 @@
+#about-us {
+    & > div {
+        @apply w-1/2 px-[2rem];
+    }
+    @media screen and (max-width:768px){
+        & > div {
+            @apply w-full px-[2rem];
+        }
+    }
+}

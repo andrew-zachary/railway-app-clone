@@ -21,8 +21,11 @@ nav {
         }
         #menu-list {
             overflow: hidden;
+            height: 100%;
             ul {
+                height: 100%;
                 display: flex;
+                align-items: center;
                 justify-content: flex-end;
                 transition: all 0.3s linear;
                 li {
@@ -56,6 +59,7 @@ nav {
                 ul {
                     max-height: 0;
                     opacity: 0;
+                    align-items: unset;
                     &.items {
                         max-height: 100vh;
                         opacity: 1;

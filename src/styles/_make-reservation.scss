@@ -2,8 +2,32 @@
     form {
         ul {
             @apply grid grid-cols-[1fr_1fr_1fr] justify-between gap-x-[8rem];
-            @media screen and (max-width:1200px) {
+            &:nth-child(1) {
+                padding-top: 5rem;
+            }
+            &:nth-child(2) {
+                padding-top: 12rem;
+            }
+        }
+    }
+    @media screen and (max-width:1200px) {
+        form {
+            ul {
                 column-gap: 2rem;
+            }
+        }
+    }
+    @media screen and (max-width: 992px) {
+        form {
+            @apply max-w-[50rem] mx-auto;
+            ul {
+                @apply grid-cols-[1fr] gap-x-[0rem];
+                &:nth-child(2) {
+                    padding: 0;
+                }
+                li {
+                    margin-top: 3rem;
+                }
             }
         }
     }

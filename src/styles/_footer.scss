@@ -50,6 +50,18 @@ footer {
         }
         @media screen and (max-width: 1200px) {
             column-gap: 3rem;
+            #we-are-here {
+                grid-column: 1 / 3;
+            }
+            #open-daily {
+                grid-column: 3 / 5
+            }
+            #call-us {
+                grid-column: 1 / 3;
+            }
+            #say-hello {
+                grid-column: 3 / 5;
+            }
         }
     }
     .footer-cell-header {
