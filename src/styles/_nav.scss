@@ -33,9 +33,6 @@ nav {
                         line-height: 18px;
                         vertical-align: -11px;
                     }
-                    &:last-child {
-                        padding-bottom: 2rem;
-                    }
                 }
             }
         }
@@ -75,6 +72,9 @@ nav {
                         padding-top: 3rem;
                         margin: 0;
                         text-align: center;
+                        &:last-child {
+                            padding-bottom: 2rem;
+                        }
                     }
                 }
             }
