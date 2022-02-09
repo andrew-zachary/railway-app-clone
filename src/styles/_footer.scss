@@ -1,10 +1,10 @@
 footer {
-    & > div {
+    & > ul {
         padding-top: 6rem;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 10rem;
         row-gap: 3rem;
-        article {
+        li {
             padding: 0 1rem;
             .footer-cell-header {
                 @apply uppercase font-mont font-bold text-[2rem] text-tertiary-color;
@@ -58,7 +58,7 @@ footer {
         }
     }
     @media screen and (max-width:1200px) {
-        & > div {
+        & > ul {
             column-gap: 3rem;
             #form-cell {
                 form {
@@ -91,7 +91,7 @@ footer {
         }
     }
     @media screen and (max-width: 768px) {
-        & > div {
+        & > ul {
             grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
             column-gap: 0;
             #about-us, #vision, #menu, #we-are-here, #open-daily, #call-us, #say-hello, #form-cell, #social-cell {
