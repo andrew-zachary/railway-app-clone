@@ -46,3 +46,19 @@
         }
     }
 }
+#peopleModal {
+    .form-input {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 4rem 0rem;
+        @include withRtl(text-align, left, right);
+    }
+}
+.main-modal {
+    .modal-footer {
+        padding-top: 3rem;
+        width: 32rem;
+        margin: 0 auto;
+    }
+}

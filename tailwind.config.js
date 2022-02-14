@@ -31,7 +31,8 @@ module.exports = {
         'primary-color': '#ff9292',
         'secondary-color': '#ffdd67',
         'tertiary-color': '#403f3f',
-        'quaternary-color': 'white'
+        'quaternary-color': 'white',
+        'dim-modal': '#403f3fcc'
       },
       boxShadow: {
         'primary': '0rem 1.7rem 2.016rem 0.384rem rgba(0, 0, 0, 0.21)'

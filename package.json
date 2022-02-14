@@ -45,8 +45,10 @@
     "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
-    "lodash-es": "^4.17.21",
-    "swiper": "^7.4.1"
+    "alpinejs": "^3.9.0",
+    "flatpickr": "^4.6.9",
+    "swiper": "^7.4.1",
+    "validate.js": "^0.13.1"
   },
   "browserslist": [
     "> 1%",

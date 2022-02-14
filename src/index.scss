@@ -65,6 +65,9 @@ body {
 .layout-input {
     &.with-icon {
         @include withRtl(padding, 0 1rem 0 0rem, 0 0rem 0 1rem);
+        @media screen and (max-width: 601px){
+            @include withRtl(padding, 0 2rem 0 0rem, 0 0rem 0 2rem);
+        }
     }
     @apply flex justify-between items-center;
     @apply border-[0.3rem] border-quaternary-color rounded-full;
@@ -75,10 +78,13 @@ body {
         @apply border border-2 border-quaternary-color;
         @apply font-mont font-medium text-[2.5rem] text-quaternary-color;
         @apply bg-transparent border-none;
+        @media screen and (max-width: 601px){
+            padding: 1rem 3rem;
+        }
     }
 }
 
-.layout-checkbox {
+.layout-checkable {
     display: block;
     position: relative;
     cursor: pointer;
@@ -103,6 +109,101 @@ body {
         width: 2rem;
         background-color: $quaternary-color;
         border-radius: 50%;
+    }
+    &.size-lg {
+        height: 4rem;
+        width: 4rem;
+        @include withRtl(margin, 0 2rem 0 0, 0 0 0 2rem);
+        .checkmark {
+            height: 4rem;
+            width: 4rem;
+        }
+    }
+    &.primary-colored {
+        input {
+            &:checked ~ .checkmark {
+                background-color: $primary-color;
+            }
+        }
+    }
+}
+
+.flatpickr-calendar {
+    .flatpickr-weekdays {
+        background-color: $primary-color;
+        color: $quaternary-color;
+        border: unset;
+    }
+    .flatpickr-days {
+        background-color: $primary-color;
+        color: $quaternary-color;
+        .flatpickr-day {
+            color: $quaternary-color;
+            &.today:hover, &.today:focus {
+                background-color: $secondary-color;
+                color: $tertiary-color;
+            }
+            &.startRange.nextMonthDay, &.endRange.nextMonthDay {
+                // background-color: $primary-color;
+                // color: $quaternary-color;
+            }
+            &.notAllowed.prevMonthDay, &.notAllowed.nextMonthDay {
+                // background-color: $primary-color;
+                // color: $quaternary-color;
+            }
+            &.nextMonthDay {
+                color: rgba(57,57,57,0.3);
+            }
+            &.flatpickr-disabled, &.flatpickr-disabled:hover {
+                // background-color: $secondary-color;
+                // color: $tertiary-color;
+            }
+            &:hover, &.selected {
+                background-color: $secondary-color;
+                color: $tertiary-color;
+            }
+        }
+    }
+    .flatpickr-months {
+        .flatpickr-innerContainer {
+            background-color: $primary-color;
+        }
+        .flatpickr-month,.flatpickr-prev-month, .flatpickr-next-month, .flatpickr-next-month:hover, .flatpickr-current-month {
+            background-color: $primary-color;
+            color: $quaternary-color;
+            svg {
+                path {
+                    stroke: $quaternary-color;
+                    stroke-width: 0.2rem;
+                }
+            }
+        }
+        .flatpickr-current-month {
+            span.cur-month, input.cur-year, input.cur-year[disabled]:hover, .flatpickr-monthDropdown-months, span.flatpickr-weekday {
+                background-color: $primary-color;
+                color: $quaternary-color;
+            }
+        }
+    }
+    .flatpickr-weekwrapper {
+        span.flatpickr-day, span.flatpickr-day:hover {
+            background-color: $primary-color;
+            color: $quaternary-color;
+        }
+    }
+    .flatpickr-time {
+        input {
+            background-color: $primary-color;
+            color: $quaternary-color;
+        }
+        .flatpickr-time-separator {
+            background-color: $primary-color;
+            color: $quaternary-color;
+        }
+        .flatpickr-am-pm {
+            background-color: $primary-color;
+            color: $quaternary-color;
+        }
     }
 }
 

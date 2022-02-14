@@ -7,7 +7,7 @@
     <title>we-love-burger</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body class="relative overflow-x-hidden">
     <!-- <div id="guide"></div> -->
@@ -50,7 +50,7 @@
     <!-- top section -->
     <section id="top" class="bg-primary-color">
         <div class="layout-container-xlg uppercase text-center font-mont text-quaternary-color">
-            <h1 class="font-black">we <span class="text-secondary-color">love</span> </br> big burger</h1>
+            <h1 class="font-black">we <span class="text-secondary-color">love</span> </br> cheezo</h1>
             <h2 class="font-regular tracking-widest">discover why</h2>
             <button>
                 <img src="<%= require('./assets/arrow-down-btn.svg') %>" alt="open menu">
@@ -84,7 +84,7 @@
                                         <span>$</span>
                                         <span>00</span>
                                     </div>
-                                    <label class="layout-checkbox">
+                                    <label class="layout-checkable">
                                         <input type="checkbox" name="classic-burger" id="classic-burger" />
                                         <span class="checkmark"></span>
                                     </label>
@@ -97,7 +97,7 @@
                                         <span>$</span>
                                         <span>00</span>
                                     </div>
-                                    <label class="layout-checkbox">
+                                    <label class="layout-checkable">
                                         <input type="checkbox" name="cheese-burger" id="cheese-burger" />
                                         <span class="checkmark"></span>
                                     </label>
@@ -110,7 +110,7 @@
                                         <span>$</span>
                                         <span>00</span>
                                     </div>
-                                    <label class="layout-checkbox">
+                                    <label class="layout-checkable">
                                         <input type="checkbox" name="double-cheese-burger" id="double-cheese-burger" />
                                         <span class="checkmark"></span>
                                     </label>
@@ -123,7 +123,7 @@
                                         <span>$</span>
                                         <span>00</span>
                                     </div>
-                                    <label class="layout-checkbox">
+                                    <label class="layout-checkable">
                                         <input type="checkbox" name="chocolate-milkshake" id="chocolate-milkshake" />
                                         <span class="checkmark"></span>
                                     </label>
@@ -136,7 +136,7 @@
                                         <span>$</span>
                                         <span>00</span>
                                     </div>
-                                    <label class="layout-checkbox">
+                                    <label class="layout-checkable">
                                         <input type="checkbox" name="strawberry-milkshake" id="strawberry-milkshake" />
                                         <span class="checkmark"></span>
                                     </label>
@@ -149,7 +149,7 @@
                                         <span>$</span>
                                         <span>00</span>
                                     </div>
-                                    <label class="layout-checkbox">
+                                    <label class="layout-checkable">
                                         <input type="checkbox" name="banana-milkshake" id="banana-milkshake" />
                                         <span class="checkmark"></span>
                                     </label>
@@ -169,7 +169,7 @@
                                         <span>$</span>
                                         <span>00</span>
                                     </div>
-                                    <label class="layout-checkbox">
+                                    <label class="layout-checkable">
                                         <input type="checkbox" name="ice-creams" id="ice-creams" />
                                         <span class="checkmark"></span>
                                     </label>
@@ -182,7 +182,7 @@
                                         <span>$</span>
                                         <span>00</span>
                                     </div>
-                                    <label class="layout-checkbox">
+                                    <label class="layout-checkable">
                                         <input type="checkbox" name="triple-chocolate-cookie" id="triple-chocolate-cookie" />
                                         <span class="checkmark"></span>
                                     </label>
@@ -195,7 +195,7 @@
                                         <span>$</span>
                                         <span>00</span>
                                     </div>
-                                    <label class="layout-checkbox">
+                                    <label class="layout-checkable">
                                         <input type="checkbox" name="new-york-cheesecake" id="new-york-cheesecake" />
                                         <span class="checkmark"></span>
                                     </label>
@@ -208,7 +208,7 @@
                                         <span>$</span>
                                         <span>00</span>
                                     </div>
-                                    <label class="layout-checkbox">
+                                    <label class="layout-checkable">
                                         <input type="checkbox" name="sacher-cake" id="sacher-cake" />
                                         <span class="checkmark"></span>
                                     </label>
@@ -221,7 +221,7 @@
                                         <span>$</span>
                                         <span>00</span>
                                     </div>
-                                    <label class="layout-checkbox">
+                                    <label class="layout-checkable">
                                         <input type="checkbox" name="chocolate-muffin" id="chocolate-muffin" />
                                         <span class="checkmark"></span>
                                     </label>
@@ -234,7 +234,7 @@
                                         <span>$</span>
                                         <span>00</span>
                                     </div>
-                                    <label class="layout-checkbox">
+                                    <label class="layout-checkable">
                                         <input type="checkbox" name="berry-muffin" id="berry-muffin" />
                                         <span class="checkmark"></span>
                                     </label>
@@ -269,7 +269,7 @@
                             <span>$</span>
                             <span>00</span>
                         </div>
-                        <label class="layout-checkbox">
+                        <label class="layout-checkable">
                             <input type="checkbox" name="mineral-water" id="mineral-water" />
                             <span class="checkmark"></span>
                         </label>
@@ -282,7 +282,7 @@
                             <span>$</span>
                             <span>00</span>
                         </div>
-                        <label class="layout-checkbox">
+                        <label class="layout-checkable">
                             <input type="checkbox" name="iced-tea" id="iced-tea" />
                             <span class="checkmark"></span>
                         </label>
@@ -295,7 +295,7 @@
                             <span>$</span>
                             <span>00</span>
                         </div>
-                        <label class="layout-checkbox">
+                        <label class="layout-checkable">
                             <input type="checkbox" name="orange-juice" id="orange-juice" />
                             <span class="checkmark"></span>
                         </label>
@@ -524,45 +524,118 @@
     <!-- how to order -->
 
     <!-- make a reservation -->
-    <section id="make-reservation" class="text-center bg-primary-color">
+    <section x-data id="make-reservation" class="text-center bg-primary-color">
         <div class="layout-container-xlg">
             <header>
                 <h1 class="tracking-wide uppercase font-mont font-black text-secondary-color">make a reservation</h1>
             </header>
             <form action="#">
                 <ul>
-                    <li class="layout-input with-icon">
-                        <input class="uppercase placeholder:text-quaternary-color" type="text" name="people-count" id="people-count" placeholder="people">
-                        <button>
-                            <img src="<%= require('./assets/list-arrow-btn.svg') %>" alt="">
-                        </button>
+                    <li x-data="{openModal:false}">
+                        <div @click="openModal = true" class="click-area layout-input with-icon">
+                            <input :value="$store.rsSection['people number'].text" @click="openModal = true" class="uppercase placeholder:text-quaternary-color" type="text" name="people-count" id="people-count" placeholder="people">
+                            <button type="button">
+                                <img src="<%= require('./assets/list-arrow-btn.svg') %>" alt="">
+                            </button>
+                        </div>
+                        <div class="text-4xl text-tertiary-color mt-6" x-text="$store.rsSection.errors['people number']"></div>
+                        <template x-teleport="body">
+                            <div x-show="openModal" id="peopleModal" class="main-modal flex flex-col justify-center fixed top-0 left-0 z-9999 w-screen h-screen bg-dim-modal">
+                                <div class="modal-body text-center text-secondary-color text-6xl capitalize font-mont font-bold">
+                                    <form class="grid justify-center content-center w-full h-full" action="#">
+                                        <div class="form-input">
+                                            <label class="layout-checkable size-lg primary-colored" for="one">
+                                                <input x-data @change="$store.rsSection['people number'] = {text:'one person', value:$el.value}" type="radio" name="people" id="one" value="1x">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <span>one person</span>
+                                        </div>
+                                        <div class="form-input">
+                                            <label class="layout-checkable size-lg primary-colored" for="two">
+                                                <input x-data @change="$store.rsSection['people number'] = {text:'two people', value:$el.value}" type="radio" name="people" id="two" value="2x">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <span>two people</span>
+                                        </div>
+                                        <div class="form-input">
+                                            <label class="layout-checkable size-lg primary-colored" for="more-than-three">
+                                                <input x-data @change="$store.rsSection['people number'] = {text:'more than 3 people', value:$el.value}" type="radio" name="people" id="more-than-three" value="3x">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <span>more than 3</span>
+                                        </div>
+                                        <div class="form-input">
+                                            <label class="layout-checkable size-lg primary-colored" for="more-than-five">
+                                                <input x-data @change="$store.rsSection['people number'] = {text:'more than 5 people', value:$el.value}" type="radio" name="people" id="more-than-five" value="5x">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <span>more than 5</span>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer flex justify-around pt-5">
+                                    <button @click="openModal = false" class="border border-quaternary-color text-5xl text-secondary-color rounded-full px-32 py-4">ok</button>
+                                </div>
+                            </div>
+                        </template>
                     </li>
-                    <li class="layout-input with-icon">
-                        <input class="uppercase placeholder:text-quaternary-color" type="text" name="date" id="date" placeholder="date">
-                        <button>
-                            <img src="<%= require('./assets/calender-icon.svg') %>" alt="">
-                        </button>
+                    <li x-data="{openModal:false}">
+                        <div @click="openModal = true" class="click-area layout-input with-icon">
+                            <input :value="$store.rsSection.date" class="uppercase placeholder:text-quaternary-color" type="text" name="date" id="date" placeholder="date">
+                            <button type="button">
+                                <img src="<%= require('./assets/calender-icon.svg') %>" alt="">
+                            </button>
+                        </div>
+                        <div class="text-4xl text-tertiary-color mt-6" x-text="$store.rsSection.errors.date"></div>
+                        <template x-teleport="body">
+                            <div x-show="openModal" id="peopleModal" class="main-modal flex flex-col items-center justify-center fixed top-0 left-0 z-9999 w-screen h-screen bg-dim-modal">
+                                <div class="modal-body date-picker"></div>
+                                <div class="modal-footer flex justify-around pt-5">
+                                    <button @click="openModal = false" class="border border-quaternary-color text-5xl text-secondary-color rounded-full px-32 py-4">ok</button>
+                                </div>
+                            </div>
+                        </template>
                     </li>
-                    <li class="layout-input with-icon">
-                        <input class="uppercase placeholder:text-quaternary-color" type="text" name="time" id="time" placeholder="time">
-                        <button>
-                            <img src="<%= require('./assets/clock-icon.svg') %>" alt="">
-                        </button>
+                    <li x-data="{openModal:false}">
+                        <div @click="openModal = true" class="click-area layout-input with-icon">
+                            <input :value="$store.rsSection.time" @click="openModal = true" class="uppercase placeholder:text-quaternary-color" type="text" name="time" id="time" placeholder="time">
+                            <button type="button">
+                                <img src="<%= require('./assets/clock-icon.svg') %>" alt="">
+                            </button>
+                        </div>
+                        <div class="text-4xl text-tertiary-color mt-6" x-text="$store.rsSection.errors.time"></div>
+                        <template x-teleport="body">
+                            <div x-show="openModal" id="peopleModal" class="main-modal flex flex-col items-center justify-center fixed top-0 left-0 z-9999 w-screen h-screen bg-dim-modal">
+                                <div class="modal-body time-picker"></div>
+                                <div class="modal-footer flex justify-around pt-5">
+                                    <button @click="openModal = false" class="border border-quaternary-color text-5xl text-secondary-color rounded-full px-32 py-4">ok</button>
+                                </div>
+                            </div>
+                        </template>
                     </li>
                 </ul>
                 <ul>
-                    <li class="layout-input">
-                        <input class="uppercase placeholder:text-quaternary-color" type="text" name="name" id="name" placeholder="name">
+                    <li>
+                        <div class="layout-input">
+                            <input x-model="$store.rsSection.name" class="uppercase placeholder:text-quaternary-color" type="text" name="name" id="name" placeholder="name">
+                        </div>
+                        <div class="text-4xl text-tertiary-color mt-6" x-text="$store.rsSection.errors.name"></div>
                     </li>
-                    <li class="layout-input">
-                        <input class="uppercase placeholder:text-quaternary-color" type="text" name="email" id="email" placeholder="email">
+                    <li>
+                        <div class="layout-input">
+                            <input x-model="$store.rsSection.email" class="uppercase placeholder:text-quaternary-color" type="text" name="email" id="email" placeholder="email">
+                        </div>
+                        <div class="text-4xl text-tertiary-color mt-6" x-text="$store.rsSection.errors.email"></div>
                     </li>
-                    <li class="layout-input">
-                        <input class="uppercase placeholder:text-quaternary-color" type="text" name="phone" id="phone" placeholder="name">
+                    <li>
+                        <div class="layout-input">
+                            <input x-model="$store.rsSection.phone" class="uppercase placeholder:text-quaternary-color" type="text" name="phone" id="phone" placeholder="phone">
+                        </div>
+                        <div class="text-4xl text-tertiary-color mt-6" x-text="$store.rsSection.errors.phone"></div>
                     </li>
                 </ul>
                 <div class="pt-[10rem] flex justify-center">
-                    <button class="layout-btn bg-quaternary-color text-primary-color">
+                    <button type="button" @click="$store.rsSection.submit()" class="layout-btn bg-quaternary-color text-primary-color">
                         <span class="text-[2.5rem] px-[8rem] py-[1rem] tracking-wide">submit</span>
                     </button>
                 </div>
