@@ -21,6 +21,7 @@
             padding-top: 5rem;
             h1 {
                 word-spacing: 0.8rem;
+                @include withRtl(margin, 0 2rem 0 0, 0 0 0 2rem);
             }
             article {
                 font-size: 2.5rem;

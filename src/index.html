@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>we-love-burger</title>
+    <title>we-love-krisps</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -50,7 +50,7 @@
     <!-- top section -->
     <section id="top" class="bg-primary-color">
         <div class="layout-container-xlg uppercase text-center font-mont text-quaternary-color">
-            <h1 class="font-black">we <span class="text-secondary-color">love</span> </br> cheezo</h1>
+            <h1 class="font-black">we <span class="text-secondary-color">love</span> </br> krisps</h1>
             <h2 class="font-regular tracking-widest">discover why</h2>
             <button>
                 <img src="<%= require('./assets/arrow-down-btn.svg') %>" alt="open menu">
@@ -244,9 +244,9 @@
                     </article>
                 </div>
                 <div id="menu-block_row-2">
-                    <article class="font-mont font-regular flex justify-between">
+                    <article class="font-mont font-regular flex justify-center">
                         <header>
-                            <h1 class="uppercase"><span>if you want,</span><span> you can exchange a milkshake for a drink</span></h1>
+                            <h1 class="capitalize">... more drinks</h1>
                         </header>
                         <p class="text-primary-color">
                             (+ $ 0.00)
@@ -588,7 +588,7 @@
                         </div>
                         <div class="text-4xl text-tertiary-color mt-6" x-text="$store.rsSection.errors.date"></div>
                         <template x-teleport="body">
-                            <div x-show="openModal" id="peopleModal" class="main-modal flex flex-col items-center justify-center fixed top-0 left-0 z-9999 w-screen h-screen bg-dim-modal">
+                            <div x-show="openModal" id="dateModal" class="main-modal flex flex-col items-center justify-center fixed top-0 left-0 z-9999 w-screen h-screen bg-dim-modal">
                                 <div class="modal-body date-picker"></div>
                                 <div class="modal-footer flex justify-around pt-5">
                                     <button @click="openModal = false" class="border border-quaternary-color text-5xl text-secondary-color rounded-full px-32 py-4">ok</button>
@@ -605,7 +605,7 @@
                         </div>
                         <div class="text-4xl text-tertiary-color mt-6" x-text="$store.rsSection.errors.time"></div>
                         <template x-teleport="body">
-                            <div x-show="openModal" id="peopleModal" class="main-modal flex flex-col items-center justify-center fixed top-0 left-0 z-9999 w-screen h-screen bg-dim-modal">
+                            <div x-show="openModal" id="timeModal" class="main-modal flex flex-col items-center justify-center fixed top-0 left-0 z-9999 w-screen h-screen bg-dim-modal">
                                 <div class="modal-body time-picker"></div>
                                 <div class="modal-footer flex justify-around pt-5">
                                     <button @click="openModal = false" class="border border-quaternary-color text-5xl text-secondary-color rounded-full px-32 py-4">ok</button>
