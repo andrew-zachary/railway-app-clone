@@ -13,16 +13,16 @@
     <!-- <div id="guide"></div> -->
     
     <!-- main page nav -->
-    <nav x-data="{open: false}" class="w-full z-9998 fixed">
+    <nav x-data="{collapse: false, openCart: false}" class="w-full z-9998 fixed">
         <div class="layout-container-xlg grid items-center">
-            <div @click="open = !open" id="menu-icon">
+            <div @click="collapse = !collapse" id="menu-icon">
                 <img src="<%= require('./assets/menu-icon.svg') %>" alt="">
             </div>
             <div id="logo">
                 <img src="<%= require('./assets/logo.svg') %>" alt="logo">
             </div>
             <div id="menu-list">
-                <ul :class="open?'items':''">
+                <ul :class="collapse?'items':''">
                     <li>
                         <a class="inline-block" href="#">menu</a>
                     </li>
@@ -40,10 +40,46 @@
                     </li>
                 </ul>
             </div>
-            <div id="cart">
+            <div id="cart" @click="openCart = true">
                 <img src="<%= require('./assets/vector-cart.svg') %>" alt="cart">
             </div>
         </div>
+        <template x-teleport="body">
+            <div x-show="openCart" id="cartModal" class="main-modal flex flex-col justify-center fixed top-0 left-0 z-9999 w-screen h-screen bg-dim-modal">
+                <div class="modal-body relative h-screen overflow-y-auto text-center text-secondary-color text-5xl capitalize font-mont font-bold">
+                    <div class="closing flex justify-end">
+                        <button type="button" @click="openCart = false" class="py-4 px-6 border border-primary-color rounded-full">close</button>
+                    </div>    
+                    <ul id="picked-items" class="grid">
+                        <template x-for="item in $store.cart.collection">
+                            <li class="mt-8">
+                                <div class="ctrls flex items-center justify-center">
+                                    <button @click="$store.cart.changeItemQuantity(item.product.id, 1)" class="p-8 text-6xl border border-primary-color rounded-full relative">
+                                        <span class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">+</span>
+                                    </button>
+                                    <button @click="$store.cart.changeItemQuantity(item.product.id, -1)" class="p-8 text-6xl border border-primary-color rounded-full relative">
+                                        <span class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">-</span>
+                                    </button>
+                                </div>
+                                <span class="inline-block mt-4" x-text="item.product.name"></span>
+                                <div class="font-light text-6xl mt-2">
+                                    <span x-text="item.product.price"></span>
+                                    <span>X</span>
+                                    <span x-text="item.quantity"></span>
+                                    <span x-text="'($'+parseInt(item.product.price) * parseInt(item.quantity)+')'"></span>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                    <div id="cart-totalcharge" class="w-full mt-8 px-8 py-8 fixed bottom-0">
+                        <div class="border-t-2 pt-8 border-primary-color">
+                            <span class="text-6xl" x-text="'$ '+$store.cart.totalCharge"></span>
+                        </div>
+                        <button x-show="$store.cart.totalCharge > 0" type="button" @click="openCart = false" class="mt-8 py-4 px-6 border border-primary-color rounded-full">submit order</button>
+                    </div>
+                </div>
+            </div>
+        </template>
     </nav>
     <!-- main page nav -->
 
@@ -82,10 +118,10 @@
                                 <div class="product-pick flex items-center">
                                     <div class="product-price">
                                         <span>$</span>
-                                        <span>00</span>
+                                        <span>10</span>
                                     </div>
-                                    <label class="layout-checkable">
-                                        <input type="checkbox" name="classic-burger" id="classic-burger" />
+                                    <label x-data data-id="1" data-price="10" data-name="classic-burger" class="layout-checkable">
+                                        <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="classic-burger" id="classic-burger" />
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -95,23 +131,23 @@
                                 <div class="product-pick flex items-center">
                                     <div class="product-price">
                                         <span>$</span>
-                                        <span>00</span>
+                                        <span>20</span>
                                     </div>
-                                    <label class="layout-checkable">
-                                        <input type="checkbox" name="cheese-burger" id="cheese-burger" />
+                                    <label x-data data-id="2" data-price="20" data-name="cheese-burger" class="layout-checkable">
+                                        <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="cheese-burger" id="cheese-burger" />
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                             </li>
                             <li class="flex justify-between">
-                                <span class="product-label">double-cheese-burger</span>
+                                <span class="product-label">double cheese burger</span>
                                 <div class="product-pick flex items-center">
                                     <div class="product-price">
                                         <span>$</span>
-                                        <span>00</span>
+                                        <span>30</span>
                                     </div>
-                                    <label class="layout-checkable">
-                                        <input type="checkbox" name="double-cheese-burger" id="double-cheese-burger" />
+                                    <label x-data data-id="3" data-price="30" data-name="double-cheese-burger" class="layout-checkable">
+                                        <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="double-cheese-burger" id="double-cheese-burger" />
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -121,10 +157,10 @@
                                 <div class="product-pick flex items-center">
                                     <div class="product-price">
                                         <span>$</span>
-                                        <span>00</span>
+                                        <span>40</span>
                                     </div>
-                                    <label class="layout-checkable">
-                                        <input type="checkbox" name="chocolate-milkshake" id="chocolate-milkshake" />
+                                    <label x-data data-id="4" data-price="40" data-name="chocolate-milkshake" class="layout-checkable">
+                                        <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="chocolate-milkshake" id="chocolate-milkshake" />
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -134,10 +170,10 @@
                                 <div class="product-pick flex items-center">
                                     <div class="product-price">
                                         <span>$</span>
-                                        <span>00</span>
+                                        <span>50</span>
                                     </div>
-                                    <label class="layout-checkable">
-                                        <input type="checkbox" name="strawberry-milkshake" id="strawberry-milkshake" />
+                                    <label x-data data-id="5" data-price="50" data-name="strawberry-milkshake" class="layout-checkable">
+                                        <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="strawberry-milkshake" id="strawberry-milkshake" />
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -147,10 +183,10 @@
                                 <div class="product-pick flex items-center">
                                     <div class="product-price">
                                         <span>$</span>
-                                        <span>00</span>
+                                        <span>60</span>
                                     </div>
-                                    <label class="layout-checkable">
-                                        <input type="checkbox" name="banana-milkshake" id="banana-milkshake" />
+                                    <label x-data data-id="6" data-price="60" data-name="banana-milkshake" class="layout-checkable">
+                                        <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="banana-milkshake" id="banana-milkshake" />
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -167,10 +203,10 @@
                                 <div class="product-pick flex items-center">
                                     <div class="product-price">
                                         <span>$</span>
-                                        <span>00</span>
+                                        <span>70</span>
                                     </div>
-                                    <label class="layout-checkable">
-                                        <input type="checkbox" name="ice-creams" id="ice-creams" />
+                                    <label x-data data-id="7" data-price="70" data-name="ice-creams" class="layout-checkable">
+                                        <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="ice-creams" id="ice-creams" />
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -180,10 +216,10 @@
                                 <div class="product-pick flex items-center">
                                     <div class="product-price">
                                         <span>$</span>
-                                        <span>00</span>
+                                        <span>80</span>
                                     </div>
-                                    <label class="layout-checkable">
-                                        <input type="checkbox" name="triple-chocolate-cookie" id="triple-chocolate-cookie" />
+                                    <label x-data data-id="8" data-price="80" data-name="triple-chocolate-cookie" class="layout-checkable">
+                                        <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="triple-chocolate-cookie" id="triple-chocolate-cookie" />
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -193,10 +229,10 @@
                                 <div class="product-pick flex items-center">
                                     <div class="product-price">
                                         <span>$</span>
-                                        <span>00</span>
+                                        <span>90</span>
                                     </div>
-                                    <label class="layout-checkable">
-                                        <input type="checkbox" name="new-york-cheesecake" id="new-york-cheesecake" />
+                                    <label x-data data-id="9" data-price="90" data-name="new-york-cheesecake" class="layout-checkable">
+                                        <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="new-york-cheesecake" id="new-york-cheesecake" />
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -206,10 +242,10 @@
                                 <div class="product-pick flex items-center">
                                     <div class="product-price">
                                         <span>$</span>
-                                        <span>00</span>
+                                        <span>100</span>
                                     </div>
-                                    <label class="layout-checkable">
-                                        <input type="checkbox" name="sacher-cake" id="sacher-cake" />
+                                    <label x-data data-id="10" data-price="100" data-name="sacher-cake" class="layout-checkable">
+                                        <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="sacher-cake" id="sacher-cake" />
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -219,10 +255,10 @@
                                 <div class="product-pick flex items-center">
                                     <div class="product-price">
                                         <span>$</span>
-                                        <span>00</span>
+                                        <span>110</span>
                                     </div>
-                                    <label class="layout-checkable">
-                                        <input type="checkbox" name="chocolate-muffin" id="chocolate-muffin" />
+                                    <label x-data data-id="11" data-price="110" data-name="chocolate-muffin" class="layout-checkable">
+                                        <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="chocolate-muffin" id="chocolate-muffin" />
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -232,10 +268,10 @@
                                 <div class="product-pick flex items-center">
                                     <div class="product-price">
                                         <span>$</span>
-                                        <span>00</span>
+                                        <span>120</span>
                                     </div>
-                                    <label class="layout-checkable">
-                                        <input type="checkbox" name="berry-muffin" id="berry-muffin" />
+                                    <label x-data data-id="12" data-price="120" data-name="berry-muffin" class="layout-checkable">
+                                        <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="berry-muffin" id="berry-muffin" />
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -267,10 +303,10 @@
                     <div class="product-pick flex items-center">
                         <div class="product-price">
                             <span>$</span>
-                            <span>00</span>
+                            <span>130</span>
                         </div>
-                        <label class="layout-checkable">
-                            <input type="checkbox" name="mineral-water" id="mineral-water" />
+                        <label x-data data-id="13" data-price="130" data-name="mineral-water" class="layout-checkable">
+                            <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="mineral-water" id="mineral-water" />
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -280,10 +316,10 @@
                     <div class="product-pick flex items-center">
                         <div class="product-price">
                             <span>$</span>
-                            <span>00</span>
+                            <span>140</span>
                         </div>
-                        <label class="layout-checkable">
-                            <input type="checkbox" name="iced-tea" id="iced-tea" />
+                        <label x-data data-id="14" data-price="140" data-name="iced-tea" class="layout-checkable">
+                            <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="iced-tea" id="iced-tea" />
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -293,10 +329,10 @@
                     <div class="product-pick flex items-center">
                         <div class="product-price">
                             <span>$</span>
-                            <span>00</span>
+                            <span>150</span>
                         </div>
-                        <label class="layout-checkable">
-                            <input type="checkbox" name="orange-juice" id="orange-juice" />
+                        <label x-data data-id="15" data-price="150" data-name="orange-juice" class="layout-checkable">
+                            <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="orange-juice" id="orange-juice" />
                             <span class="checkmark"></span>
                         </label>
                     </div>

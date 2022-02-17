@@ -51,8 +51,96 @@ let reservationSchema = {
 };
 
 window.onload = () => {
-    //get elements
+    //make reservation form store
+    Alpine.store("rsSection", {
+        //['people number'] to match validation js field
+        ['people number']: {text: null, value: null},
+        date: null,
+        time: null,
+        name: null,
+        email: null,
+        phone: null,
+        errors: {
+            ['people number']: '',
+            date: '',
+            time: '',
+            name: '',
+            email: '',
+            phone: '',
+        },
+        submit() {
+            const errorsResult = validate({
+                ['people number']: this['people number'].value,
+                date: this.date,
+                time: this.time,
+                name: this.name,
+                email: this.email,
+                phone: this.phone
+            }, reservationSchema);
+            if(errorsResult === undefined) {
+                this.errors = { 
+                    ['people number']: '',
+                    date: '',
+                    time: '',
+                    name: '',
+                    email: '',
+                    phone: '',
+                }
+                console.log('form inputs are valide');
+            }else {
+                this.errors = {...errorsResult};
+            }
+        }
+    });
+    //create cart store
+    Alpine.store('cart', {
+        init() {
+            this.openCart = false;
+            this.collection = [];
+            this.totalCharge = 0;
+        },
+        addCartItem(el, root) {
+            if(el.checked) {
+                if(!this.collection.find((item)=>item.product.id === root.dataset.id)) {
+                    //push cart item
+                    this.collection.push({
+                        product: {id: root.dataset.id, name: root.dataset.name, price: root.dataset.price},
+                        quantity: 1
+                    });
+                    console.log(this.collection);
+                }
+            } else {
+                if(this.collection.find((item)=>item.product.id === root.dataset.id)) {
+                    this.collection = this.collection.filter((item)=> {
+                        return item.product.id !== root.dataset.id;
+                    });
+                }
+            }
+        },
+        changeItemQuantity(id, value) {
+            this.collection = this.collection.map((item)=> {
+                if(item.product.id === id) {
+                    item.quantity = item.quantity + value;
+                    return item
+                } else {
+                    return item
+                }
+            }).filter(item => item.quantity > 0);
+        }
+    });
+    Alpine.effect(()=>{
+        //calc cart totalCharge
+        let totalCharge = 0;
+        Alpine.store('cart').collection.forEach(item=>{
+            totalCharge += item.product.price * item.quantity;
+        });
+        Alpine.store('cart').totalCharge = totalCharge;
+    });
+    Alpine.start();
+
+    //select elements
     nav = document.querySelector('nav');
+
     //create the swiper
     swiper = new Swiper('.combo-swiper', {
         breakpoints: {
@@ -75,54 +163,13 @@ window.onload = () => {
             prevEl: '.swiper-button-prev',
         },
     });
-    //make reservation store
-    Alpine.store("rsSection", {
-        ['people number']: {text: null, value: null},
-        date: null,
-        time: null,
-        name: null,
-        email: null,
-        phone: null,
-        errors: {
-            ['people number']: '',
-            date: '',
-            time: '',
-            name: '',
-            email: '',
-            phone: '',
-        },
-        submit() {
-            const test = validate({
-                ['people number']: this['people number'].value,
-                date: this.date,
-                time: this.time,
-                name: this.name,
-                email: this.email,
-                phone: this.phone
-            }, reservationSchema);
-            if(test === undefined) {
-                this.errors = { 
-                    ['people number']: '',
-                    date: '',
-                    time: '',
-                    name: '',
-                    email: '',
-                    phone: '',
-                }
-                console.log('valide');
-            }else {
-                console.log(test);
-                this.errors = {...test};
-            }
-        }
-    });
-    Alpine.start();
-    //reservation date picker
-    flatpickr(".date-picker",{enableTime:false, inline: true, dateFormat: "Y-m-d", onChange: (_,dateStr)=>{
+
+    //reservation form date picker
+    flatpickr(".date-picker", {enableTime:false, inline: true, dateFormat: "Y-m-d", onChange: (_,dateStr)=>{
         Alpine.store('rsSection').date = dateStr;
     }});
-    //reservation time picker
-    flatpickr(".time-picker",{enableTime:true, noCalendar: true, inline: true, dateFormat: "H:i K", onChange: (_,dateStr)=>{
+    //reservation form time picker
+    flatpickr(".time-picker", {enableTime:true, noCalendar: true, inline: true, dateFormat: "H:i K", onChange: (_,dateStr)=>{
         Alpine.store('rsSection').time = dateStr;
     }});
 }

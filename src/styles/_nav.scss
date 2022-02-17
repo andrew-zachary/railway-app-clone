@@ -81,3 +81,23 @@ nav {
         }
     }
 }
+#cartModal {
+    .modal-body {
+        padding-bottom: 20rem;
+        #cart-totalcharge {
+            background-color: $tertiary-color;
+        }
+    }
+    .closing {
+        button {
+            @include withRtl(margin, 3rem 3rem 0 0, 3rem 0 0 3rem);
+        }
+    }
+    #picked-items {
+        .ctrls {
+            & > button {
+                @include withRtl(margin, 0 1rem 0 0, 0 0 0 1rem);
+            }
+        }
+    }
+}
