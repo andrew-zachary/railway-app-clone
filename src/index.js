@@ -8,7 +8,6 @@ import {validate} from 'validate.js';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 import './index.scss';
 
@@ -86,7 +85,6 @@ window.onload = () => {
                     email: '',
                     phone: '',
                 }
-                console.log('form inputs are valide');
             }else {
                 this.errors = {...errorsResult};
             }
@@ -107,7 +105,6 @@ window.onload = () => {
                         product: {id: root.dataset.id, name: root.dataset.name, price: root.dataset.price},
                         quantity: 1
                     });
-                    console.log(this.collection);
                 }
             } else {
                 if(this.collection.find((item)=>item.product.id === root.dataset.id)) {
@@ -117,15 +114,34 @@ window.onload = () => {
                 }
             }
         },
+        addCartCombo(root) {
+            this.collection.push({
+                product: {id: root.dataset.id, name: root.dataset.name, price: root.dataset.price},
+                quantity: 1
+            });
+        },
         changeItemQuantity(id, value) {
-            this.collection = this.collection.map((item)=> {
+            //update quantity
+            let collection = [];
+            collection = this.collection.map((item)=> {
                 if(item.product.id === id) {
                     item.quantity = item.quantity + value;
-                    return item
+                    return item;
                 } else {
-                    return item
+                    return item;
                 }
-            }).filter(item => item.quantity > 0);
+            });
+            //update ui
+            collection.forEach((item)=>{
+                if(item.quantity <= 0) {
+                    let formItem = document.querySelector(`label[data-id="${item.product.id}"] > input`);
+                    if(formItem) {
+                        formItem.checked = false;
+                    }
+                }
+            });
+            //update final collection
+            this.collection = collection.filter(item => item.quantity > 0);
         }
     });
     Alpine.effect(()=>{

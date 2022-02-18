@@ -51,7 +51,7 @@
                         <button type="button" @click="openCart = false" class="py-4 px-6 border border-primary-color rounded-full">close</button>
                     </div>    
                     <ul id="picked-items" class="grid">
-                        <template x-for="item in $store.cart.collection">
+                        <template x-for="item in $store.cart.collection" :key="item.product.id">
                             <li class="mt-8">
                                 <div class="ctrls flex items-center justify-center">
                                     <button @click="$store.cart.changeItemQuantity(item.product.id, 1)" class="p-8 text-6xl border border-primary-color rounded-full relative">
@@ -370,10 +370,10 @@
                                 new york cheesecake
                             </p>
                             <p class="combo-price font-mont font-regular text-primary-color">
-                                <span>$</span><span>00</span>
+                                <span>$</span><span>160</span>
                             </p>
-                            <div class="flex justify-center pt-[3rem]">
-                                <button class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                            <div x-data data-id="1001" data-name="combo-1" data-price="160" class="flex justify-center pt-[3rem]">
+                                <button @click="$store.cart.addCartCombo($root)" class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
                                     <span class="text-[2rem] px-[2rem] py-[1rem]">add to cart</span>
                                 </button>
                             </div>
@@ -393,10 +393,10 @@
                                 new york cheesecake
                             </p>
                             <p class="combo-price font-mont font-regular text-primary-color">
-                                <span>$</span><span>00</span>
+                                <span>$</span><span>170</span>
                             </p>
-                            <div class="flex justify-center pt-[3rem]">
-                                <button class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                            <div x-data data-id="1002" data-name="combo-2" data-price="170" class="flex justify-center pt-[3rem]">
+                                <button @click="$store.cart.addCartCombo($root)" class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
                                     <span class="text-[2rem] px-[2rem] py-[1rem]">add to cart</span>
                                 </button>
                             </div>
@@ -418,8 +418,8 @@
                             <p class="combo-price font-mont font-regular text-primary-color">
                                 <span>$</span><span>00</span>
                             </p>
-                            <div class="flex justify-center pt-[3rem]">
-                                <button class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                            <div x-data data-id="1003" data-name="combo-3" data-price="180" class="flex justify-center pt-[3rem]">
+                                <button @click="$store.cart.addCartCombo($root)" class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
                                     <span class="text-[2rem] px-[2rem] py-[1rem]">add to cart</span>
                                 </button>
                             </div>
@@ -441,8 +441,8 @@
                             <p class="combo-price font-mont font-regular text-primary-color">
                                 <span>$</span><span>00</span>
                             </p>
-                            <div class="flex justify-center pt-[3rem]">
-                                <button class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                            <div x-data data-id="1004" data-name="combo-4" data-price="190" class="flex justify-center pt-[3rem]">
+                                <button @click="$store.cart.addCartCombo($root)" class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
                                     <span class="text-[2rem] px-[2rem] py-[1rem]">add to cart</span>
                                 </button>
                             </div>
@@ -462,10 +462,10 @@
                                 new york cheesecake
                             </p>
                             <p class="combo-price font-mont font-regular text-primary-color">
-                                <span>$</span><span>00</span>
+                                <span>$</span><span>200</span>
                             </p>
-                            <div class="flex justify-center pt-[3rem]">
-                                <button class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                            <div x-data data-id="1005" data-name="combo-5" data-price="200" class="flex justify-center pt-[3rem]">
+                                <button @click="$store.cart.addCartCombo($root)" class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
                                     <span class="text-[2rem] px-[2rem] py-[1rem]">add to cart</span>
                                 </button>
                             </div>
@@ -485,10 +485,10 @@
                                 new york cheesecake
                             </p>
                             <p class="combo-price font-mont font-regular text-primary-color">
-                                <span>$</span><span>00</span>
+                                <span>$</span><span>210</span>
                             </p>
-                            <div class="flex justify-center pt-[3rem]">
-                                <button class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                            <div x-data data-id="1006" data-name="combo-6" data-price="210" class="flex justify-center pt-[3rem]">
+                                <button @click="$store.cart.addCartCombo($root)" class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
                                     <span class="text-[2rem] px-[2rem] py-[1rem]">add to cart</span>
                                 </button>
                             </div>
