@@ -10,16 +10,21 @@
         justify-content: center;
         padding-top: 4rem;
         article {
-            padding: 8rem 0rem;
-            width: 32rem;
+            padding: 16rem;
+            max-width: 32rem;
+            height: 100%;
+            width: 100%;
             @include withRtl(margin, 0 2rem 0 0, 0 0 0 2rem);
-            h1 {
-                font-size: 4.5rem;
-            }
-            p {
-                padding-top: 2rem;
-                font-size: 1.8rem;
-                line-height: 2.5rem;
+            & > div {
+                width: 100%;
+                h1 {
+                    font-size: 4.5rem;
+                }
+                p {
+                    padding: 2rem 3rem 0rem 3rem;
+                    font-size: 1.8rem;
+                    line-height: 2.5rem;
+                }
             }
         }
     }
@@ -62,7 +67,23 @@
             }
         }
     }
+    @media screen and (max-width: 601px){
+        .how-to-order_row-1 {
+            article {
+                & > div {
+                    p {
+                        font-size: 2.5rem;
+                    }
+                }
+            }
+        }
+    }
     @media screen and (max-width: 425px) {
+        .how-to-order_row-1 {
+            article {
+                margin: 2rem 0rem;
+            }
+        }
         #free-delivery {
             header {
                 h1 {
