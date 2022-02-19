@@ -236,8 +236,8 @@
         </ul>
     </article>
     <div class="flex justify-center py-[10rem]">
-        <button class="layout-btn bg-primary-color text-quaternary-color">
-            <span class="text-[2rem] px-[6rem] py-[2rem]">add to cart</span>
+        <button x-data @click="$store.cart.openCart = true; document.body.style.overflow = 'hidden';" class="layout-btn bg-primary-color text-quaternary-color">
+            <span class="text-[2rem] px-[6rem] py-[2rem]">open cart</span>
         </button>
     </div>
 </section>

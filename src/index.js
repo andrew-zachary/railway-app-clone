@@ -115,10 +115,14 @@ window.onload = () => {
             }
         },
         addCartCombo(root) {
-            this.collection.push({
-                product: {id: root.dataset.id, name: root.dataset.name, price: root.dataset.price},
-                quantity: 1
-            });
+            if(!this.collection.find((item)=> item.product.id === root.dataset.id)) {
+                this.collection.push({
+                    product: {id: root.dataset.id, name: root.dataset.name, price: root.dataset.price},
+                    quantity: 1
+                });
+            } else {
+                this.collection = this.collection.filter((item)=> item.product.id !== root.dataset.id)
+            }
         },
         changeItemQuantity(id, value) {
             //update quantity
