@@ -6,7 +6,7 @@
         <form action="#">
             <ul>
                 <li x-data="{openModal:false}">
-                    <div @click="openModal = true" class="click-area layout-input with-icon">
+                    <div @click="openModal = true; document.body.style.overflow = 'hidden';" class="click-area layout-input with-icon">
                         <input :value="$store.rsSection['people number'].text" @click="openModal = true" class="uppercase placeholder:text-quaternary-color" type="text" name="people-count" id="people-count" placeholder="people">
                         <button type="button">
                             <img src="../../assets/list-arrow-btn.svg" alt="">
@@ -48,13 +48,13 @@
                                 </form>
                             </div>
                             <div class="modal-footer flex justify-around pt-5">
-                                <button @click="openModal = false" class="border border-quaternary-color text-5xl text-secondary-color rounded-full px-32 py-4">ok</button>
+                                <button @click="openModal = false; document.body.style.overflow = 'unset';" class="border border-quaternary-color text-5xl text-secondary-color rounded-full px-32 py-4">ok</button>
                             </div>
                         </div>
                     </template>
                 </li>
                 <li x-data="{openModal:false}">
-                    <div @click="openModal = true" class="click-area layout-input with-icon">
+                    <div @click="openModal = true; document.body.style.overflow = 'hidden';" class="click-area layout-input with-icon">
                         <input :value="$store.rsSection.date" class="uppercase placeholder:text-quaternary-color" type="text" name="date" id="date" placeholder="date">
                         <button type="button">
                             <img src="../../assets/calender-icon.svg" alt="">
@@ -65,13 +65,13 @@
                         <div x-show="openModal" id="dateModal" class="main-modal flex flex-col items-center justify-center fixed top-0 left-0 z-9999 w-screen h-screen bg-dim-modal">
                             <div class="modal-body date-picker"></div>
                             <div class="modal-footer flex justify-around pt-5">
-                                <button @click="openModal = false" class="border border-quaternary-color text-5xl text-secondary-color rounded-full px-32 py-4">ok</button>
+                                <button @click="openModal = false; document.body.style.overflow = 'unset';" class="border border-quaternary-color text-5xl text-secondary-color rounded-full px-32 py-4">ok</button>
                             </div>
                         </div>
                     </template>
                 </li>
                 <li x-data="{openModal:false}">
-                    <div @click="openModal = true" class="click-area layout-input with-icon">
+                    <div @click="openModal = true; document.body.style.overflow = 'hidden';" class="click-area layout-input with-icon">
                         <input :value="$store.rsSection.time" @click="openModal = true" class="uppercase placeholder:text-quaternary-color" type="text" name="time" id="time" placeholder="time">
                         <button type="button">
                             <img src="../../assets/clock-icon.svg" alt="">
@@ -82,7 +82,7 @@
                         <div x-show="openModal" id="timeModal" class="main-modal flex flex-col items-center justify-center fixed top-0 left-0 z-9999 w-screen h-screen bg-dim-modal">
                             <div class="modal-body time-picker"></div>
                             <div class="modal-footer flex justify-around pt-5">
-                                <button @click="openModal = false" class="border border-quaternary-color text-5xl text-secondary-color rounded-full px-32 py-4">ok</button>
+                                <button @click="openModal = false; document.body.style.overflow = 'unset';" class="border border-quaternary-color text-5xl text-secondary-color rounded-full px-32 py-4">ok</button>
                             </div>
                         </div>
                     </template>

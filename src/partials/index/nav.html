@@ -25,15 +25,15 @@
                 </li>
             </ul>
         </div>
-        <div id="cart" @click="openCart = true">
+        <div id="cart" class="cursor-pointer" @click="openCart = true; document.body.style.overflow = 'hidden';">
             <img src="../../assets/vector-cart.svg" alt="cart">
         </div>
     </div>
     <template x-teleport="body">
-        <div x-show="openCart" id="cartModal" class="main-modal flex flex-col justify-center fixed top-0 left-0 z-9999 w-screen h-screen bg-dim-modal">
+        <div x-show="openCart" id="cartModal" class="main-modal flex flex-col justify-center fixed top-0 left-0 z-9999 w-screen h-screen bg-tertiary-color">
             <div class="modal-body relative h-screen overflow-y-auto text-center text-secondary-color text-5xl capitalize font-mont font-bold">
                 <div class="closing flex justify-end">
-                    <button type="button" @click="openCart = false" class="py-4 px-6 border border-primary-color rounded-full">close</button>
+                    <button type="button" @click="openCart = false; document.body.style.overflow = 'unset';" class="py-4 px-6 border border-primary-color rounded-full">close</button>
                 </div>    
                 <ul id="picked-items" class="grid">
                     <template x-for="item in $store.cart.collection" :key="item.product.id">
