@@ -1,6 +1,6 @@
 <nav x-data="{collapse: false}" class="w-full z-9998 fixed">
     <div class="layout-container-xlg grid items-center">
-        <div @click="collapse = !collapse" id="menu-icon">
+        <div @click="collapse = !collapse" id="menu-icon" class="cursor-pointer">
             <img src="../../assets/menu-icon.svg" alt="menu">
         </div>
         <div id="logo">
@@ -9,19 +9,19 @@
         <div id="menu-list">
             <ul :class="collapse?'items':''">
                 <li>
-                    <a class="inline-block" href="#">menu</a>
+                    <a class="nav-links inline-block" data-target-id="food-menu" href="#">menu</a>
                 </li>
                 <li>
-                    <a class="inline-block" href="#">combos</a>
+                    <a class="nav-links inline-block" data-target-id="combos" href="#">combos</a>
                 </li>
                 <li>
-                    <a class="inline-block" href="#">reservation</a>
+                    <a class="nav-links inline-block" data-target-id="make-reservation" href="#">reservation</a>
                 </li>
                 <li>
-                    <a class="inline-block" href="#">about us</a>
+                    <a class="nav-links inline-block" data-target-id="about-us-footer" href="#">about us</a>
                 </li>
                 <li>
-                    <a class="inline-block" href="#">contact</a>
+                    <a class="nav-links inline-block" data-target-id="burger-blog" href="#">blog</a>
                 </li>
             </ul>
         </div>

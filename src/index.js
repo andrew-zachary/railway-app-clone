@@ -1,10 +1,12 @@
 import "regenerator-runtime/runtime";
 import "core-js/stable";
 
-import Alpine from 'alpinejs'
-import flatpickr from 'flatpickr'
+import Alpine from 'alpinejs';
+import intersect from '@alpinejs/intersect';
+import flatpickr from 'flatpickr';
 import Swiper, {Navigation} from 'swiper';
 import {validate} from 'validate.js';
+import { scrollIntoView } from "seamless-scroll-polyfill";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -12,6 +14,7 @@ import 'swiper/css/navigation';
 import './index.scss';
 
 let nav = null;
+let navLinks = null;
 let swiper = null;
 let reservationSchema = {
     ['people number']: {
@@ -50,6 +53,8 @@ let reservationSchema = {
 };
 
 window.onload = () => {
+    //init Alpine plugins
+    Alpine.plugin(intersect)
     //make reservation form store
     Alpine.store("rsSection", {
         //['people number'] to match validation js field
@@ -160,6 +165,15 @@ window.onload = () => {
 
     //select elements
     nav = document.querySelector('nav');
+    navLinks = document.querySelectorAll('.nav-links');
+
+    //asign targets to nav links
+    navLinks.forEach(element => {
+        element.addEventListener('click', function(e){
+            let targetId = e.target.getAttribute('data-target-id');
+            scrollIntoView(document.querySelector(`#${targetId}`), { behavior: "smooth", block: "start", inline: "center" });
+        });
+    });
 
     //create the swiper
     swiper = new Swiper('.combo-swiper', {

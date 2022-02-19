@@ -47,10 +47,12 @@
     "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
+    "@alpinejs/intersect": "^3.9.0",
     "alpinejs": "^3.9.0",
     "flatpickr": "^4.6.9",
     "swiper": "^7.4.1",
-    "validate.js": "^0.13.1"
+    "validate.js": "^0.13.1",
+    "seamless-scroll-polyfill": "^2.1.8"
   },
   "browserslist": [
     "> 1%",
