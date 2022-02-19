@@ -3,15 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
-let plugins = [
-    new HtmlWebpackPlugin({
-        inject: 'body',
-        template: "./index.html",
-        filename: "index.html"
-    })
-];
-
-module.exports = (_, {mode})=>{
+module.exports = (env, {mode})=>{
+    
+    let plugins = [];
 
     let isProduction = mode==="production";
 
@@ -23,6 +17,13 @@ module.exports = (_, {mode})=>{
             }
         ));
     }
+
+    plugins.push(new HtmlWebpackPlugin({
+        inject: 'body',
+        template: "./pages/index.html",
+        filename: "index.html",
+        minify: env['html-minify']?true:false
+    }));
 
     return {
         //context workdir is recommended
@@ -78,6 +79,26 @@ module.exports = (_, {mode})=>{
         plugins,
         module: {
             rules: [
+                {
+                    test: /\.(html)$/,
+                    exclude:/src\/pages/,
+                    use: {
+                        loader: 'html-loader',
+                        options: {
+                            sources: {
+                                list: [
+                                    // All default supported tags and attributes
+                                    "...",
+                                    {
+                                        tag: "section",
+                                        attribute: "data-background-img",
+                                        type: "src",
+                                    },
+                                ]
+                            }
+                        }
+                    }
+                },
                 {
                     test: /\.(js|jsx)$/,
                     exclude: /node_modules/,

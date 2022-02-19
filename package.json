@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "webpack server --mode=development",
-    "build": "webpack --mode=production"
+    "export": "webpack --mode=production",
+    "build": "webpack --mode=production --env html-minify"
   },
   "keywords": [
     "HTML",
@@ -28,7 +29,8 @@
     "core-js": "^3.19.0",
     "css-loader": "^6.4.0",
     "cssnano": "^5.0.12",
-    "html-loader": "^3.0.0",
+    "extract-loader": "^5.1.0",
+    "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.4.3",
     "postcss-import": "^14.0.2",
