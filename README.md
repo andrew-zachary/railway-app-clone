@@ -1,23 +1,26 @@
-<p align="left">
-  <a style="text-transform:uppercase;font-size:48px" href="https://big-deals.netlify.app/">
-    big deals
-  </a>
-</p>
-<h2>eCommerce app for :</h2>
-<ul>
-  <li>searching and buying products and deals.</li>
-  <li>submit orders.</li>
-  <li>make reviews.</li>
-</ul>
-<h2><a href="https://big-deals.netlify.app">big-deals.netlify.app</a></h2>
-<p>React-Redux was used to manage app state and to implement features like :</p>
-<ul>
-<li>User login-register.</li>
-<li>Cart add-remove items, calculate total price.</li>
-<li>Orders submit and view all bills.</li>
-<li>Products & Deals view and paginate.</li>
-<li>Reviews add-update.</li>
-<li>With Modals, Spinner, Forms with validation, mobile first layout.</li>
-</ul>
+# We Love Krisps
 
-### Would like to have your feedback
+## HTML responsive template for choosing and buying fastfood .
+
+### with 9 sections were built to help website user to find products and manage a shopping cart .
+
+## has Features Like :
+
+<ul>
+  <li>
+    <h2>Nav Menu</h2>
+    <p>make it easy for user to naviage along the page with the cart and needed links.</p>
+  </li>
+  <li>
+    <h2>Food Menu</h2>
+    <p>a list of products a user can choose from by just clicking checkbox on and off.</p>
+  </li>
+  <li>
+    <h2>Combos</h2>
+    <p>responsive carousel with available food combos for user to buy from.</p>
+  </li>
+  <li>
+    <h2>Make a Reservation</h2>
+    <p>a form with validation to input how-many-people, date, time, name, email, and a phone for a reservation request.</p>
+  </li>
+</ul>
