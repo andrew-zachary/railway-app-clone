@@ -1,4 +1,5 @@
 <h2> HTML responsive template for choosing and buying fastfood .</h2>
+<p><a href="https://we-love-krisps.netlify.app">https://we-love-krisps.netlify.app</a></p>
 <p>with 9 sections were built to help website user to find products and manage a shopping cart .</p>
 
 <h2 style="font-size:12px">Has Features Like</h2>
