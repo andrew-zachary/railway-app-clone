@@ -50,9 +50,10 @@
     "@alpinejs/intersect": "^3.9.0",
     "alpinejs": "^3.9.0",
     "flatpickr": "^4.6.9",
+    "seamless-scroll-polyfill": "^2.1.8",
+    "smoothscroll-polyfill": "^0.4.4",
     "swiper": "^7.4.1",
-    "validate.js": "^0.13.1",
-    "seamless-scroll-polyfill": "^2.1.8"
+    "validate.js": "^0.13.1"
   },
   "browserslist": [
     "> 1%",

@@ -6,6 +6,7 @@ import intersect from '@alpinejs/intersect';
 import flatpickr from 'flatpickr';
 import Swiper, {Navigation} from 'swiper';
 import {validate} from 'validate.js';
+import smoothscroll from 'smoothscroll-polyfill';
 import { scrollIntoView } from "seamless-scroll-polyfill";
 
 import 'swiper/css';
@@ -53,6 +54,8 @@ let reservationSchema = {
 };
 
 window.onload = () => {
+    //smoothscroll
+    smoothscroll.polyfill();
     //init Alpine plugins
     Alpine.plugin(intersect)
     //make reservation form store
