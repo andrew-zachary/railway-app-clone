@@ -170,6 +170,7 @@ window.onload = () => {
     //asign targets to nav links
     navLinks.forEach(element => {
         element.addEventListener('click', function(e){
+            e.preventDefault();
             let targetId = e.target.getAttribute('data-target-id');
             scrollIntoView(document.querySelector(`#${targetId}`), { behavior: "smooth", block: "start", inline: "center" });
             return false;
