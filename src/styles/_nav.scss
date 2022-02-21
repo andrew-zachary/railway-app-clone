@@ -80,6 +80,15 @@ nav {
             }
         }
     }
+    @media screen and (max-width: 601px){
+        & > div {
+            #cart {
+                img {
+                    transform: scale(1.4);
+                }
+            }
+        }
+    }
 }
 #cartModal {
     .modal-body {

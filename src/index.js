@@ -172,6 +172,7 @@ window.onload = () => {
         element.addEventListener('click', function(e){
             let targetId = e.target.getAttribute('data-target-id');
             scrollIntoView(document.querySelector(`#${targetId}`), { behavior: "smooth", block: "start", inline: "center" });
+            return false;
         });
     });
 
