@@ -39,6 +39,7 @@ module.exports = {
       },
       fontFamily: {
         mont: ['Montserrat'],
+        hmPop: ['Hachi Maru Pop']
       },
       fontWeight: {
         thin: 100,

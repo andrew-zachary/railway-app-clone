@@ -17,7 +17,8 @@ import './index.scss';
 let nav = null;
 let navLinks = null;
 let swiper = null;
-let reservationSchema = {
+
+const reservationSchema = {
     ['people number']: {
         presence: {
             message: 'is required'
@@ -54,11 +55,15 @@ let reservationSchema = {
 };
 
 window.onload = () => {
-    //smoothscroll
+    //inits
     smoothscroll.polyfill();
-    //init Alpine plugins
-    Alpine.plugin(intersect)
-    //make reservation form store
+    Alpine.plugin(intersect);
+
+    //select elements
+    nav = document.querySelector('nav');
+    navLinks = document.querySelectorAll('.nav-links');
+
+    //create reservation form store
     Alpine.store("rsSection", {
         //['people number'] to match validation js field
         ['people number']: {text: null, value: null},
@@ -98,6 +103,7 @@ window.onload = () => {
             }
         }
     });
+
     //create cart store
     Alpine.store('cart', {
         init() {
@@ -156,6 +162,8 @@ window.onload = () => {
             this.collection = collection.filter(item => item.quantity > 0);
         }
     });
+
+    //alpine props effect
     Alpine.effect(()=>{
         //calc cart totalCharge
         let totalCharge = 0;
@@ -164,11 +172,9 @@ window.onload = () => {
         });
         Alpine.store('cart').totalCharge = totalCharge;
     });
-    Alpine.start();
 
-    //select elements
-    nav = document.querySelector('nav');
-    navLinks = document.querySelectorAll('.nav-links');
+    //start alpine
+    Alpine.start();
 
     //asign targets to nav links
     navLinks.forEach(element => {
@@ -207,6 +213,7 @@ window.onload = () => {
     flatpickr(".date-picker", {enableTime:false, inline: true, dateFormat: "Y-m-d", onChange: (_,dateStr)=>{
         Alpine.store('rsSection').date = dateStr;
     }});
+
     //reservation form time picker
     flatpickr(".time-picker", {enableTime:true, noCalendar: true, inline: true, dateFormat: "H:i K", onChange: (_,dateStr)=>{
         Alpine.store('rsSection').time = dateStr;

@@ -2,19 +2,26 @@
     & > div {
         padding-top: 25rem;
         h1 {
-            font-size: 10rem;
+            font-size: 6rem;
             line-height: 13rem;
+            .font-hmPop {
+                font-size: 12rem;
+            }
         }
         h2 {
             font-size: 4.5rem;
             padding: 6rem 0;
         }
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 601px) {
         & > div {
             h1 {
-                font-size: calc(1rem + 16vw);
-                line-height: calc(1rem + 16vw);
+                font-size: calc(1rem + 8vw);
+                line-height: calc(1rem + 8vw);
+                .font-hmPop {
+                    font-size: calc(1rem + 16vw);
+                    line-height: calc(1rem + 16vw);
+                }
             }
         }
     }
