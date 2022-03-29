@@ -37,7 +37,7 @@
                 </div>    
                 <ul id="picked-items" class="grid">
                     <template x-for="item in $store.cart.collection" :key="item.product.id">
-                        <li class="mt-8">
+                        <li class="mt-28">
                             <div class="ctrls flex items-center justify-center">
                                 <button @click="$store.cart.changeItemQuantity(item.product.id, 1)" class="p-8 text-6xl border border-primary-color rounded-full relative">
                                     <span class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">+</span>

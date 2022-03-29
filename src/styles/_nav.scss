@@ -103,6 +103,9 @@ nav {
         }
     }
     #picked-items {
+        li:first-of-type {
+            margin: 0;
+        }
         .ctrls {
             & > button {
                 @include withRtl(margin, 0 1rem 0 0, 0 0 0 1rem);
