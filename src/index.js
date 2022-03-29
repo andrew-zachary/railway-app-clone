@@ -1,5 +1,4 @@
 import "regenerator-runtime/runtime";
-import "core-js/stable";
 
 import Alpine from 'alpinejs';
 import intersect from '@alpinejs/intersect';
