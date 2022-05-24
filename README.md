@@ -6,16 +6,20 @@
 
 <ul>
   <li>
-    <h3>Nav Menu</h3>
-    <p>make it easy for user to naviage along the page with the cart and needed links.</p>
+    <h3>Shopping Cart</h3>
+    <p>add and remove items, calculate prices and quantities.</p>
   </li>
   <li>
-    <h3>Food Menu</h3>
-    <p>a list of products a user can choose from by just clicking checkbox on and off.</p>
+    <h3>Food Menus</h3>
+    <p>lists of products a user can choose from by just clicking checkbox on and off.</p>
   </li>
   <li>
     <h3>Combos</h3>
     <p>responsive carousel with available food combos for user to buy from.</p>
+  </li>
+  <li>
+    <h3>Sticky Nav Menu</h3>
+    <p>make it easy for user to naviage along the page with the cart and needed links.</p>
   </li>
   <li>
     <h3>Make a Reservation</h3>

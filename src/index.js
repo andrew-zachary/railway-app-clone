@@ -97,7 +97,7 @@ window.onload = () => {
                     email: '',
                     phone: '',
                 }
-            }else {
+            } else {
                 this.errors = {...errorsResult};
             }
         }
