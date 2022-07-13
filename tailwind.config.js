@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        guide: "url('./assets/body.jpg')"
+        guide: "url('../assets/body.jpg')"
       },
       screens: {
         ...defaultTheme.screens,

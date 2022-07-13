@@ -209,14 +209,18 @@ body {
     }
 }
 
-@import './styles/nav';
-@import './styles/top';
-@import './styles/hero-burger';
-@import './styles/food-menu';
-@import './styles/combos';
-@import './styles/how-to-order';
-@import './styles/make-reservation';
-@import './styles/about-us';
-@import './styles/the-creators';
-@import './styles/burger-blog';
-@import './styles/footer';
+//home
+@import './home/nav';
+@import './home/top';
+@import './home/hero-burger';
+@import './home/food-menu';
+@import './home/combos';
+@import './home/how-to-order';
+@import './home/make-reservation';
+@import './home/about-us';
+@import './home/the-creators';
+@import './home/burger-blog';
+@import './home/footer';
+
+//about
+@import './about/nav';

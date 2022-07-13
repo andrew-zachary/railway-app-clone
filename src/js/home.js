@@ -11,8 +11,6 @@ import { scrollIntoView } from "seamless-scroll-polyfill";
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import './index.scss';
-
 let nav = null;
 let navLinks = null;
 let swiper = null;
