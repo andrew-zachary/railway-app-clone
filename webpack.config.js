@@ -23,7 +23,7 @@ module.exports = (env, {mode})=>{
         template: "./pages/index.html",
         filename: "index.html",
         minify: env['html-minify']?true:false,
-        chunks: ['home', 'common']
+        chunks: ['style-loader', 'libs', 'home']
     }));
 
     plugins.push(new HtmlWebpackPlugin({
@@ -31,16 +31,17 @@ module.exports = (env, {mode})=>{
         template: "./pages/about.html",
         filename: "about.html",
         minify: env['html-minify']?true:false,
-        chunks: ['about', 'common']
+        chunks: ['style-loader', 'libs', 'about']
     }));
 
     return {
         //context workdir is recommended
         context: path.resolve(__dirname, 'src'),
         entry: {
-            home: {import: './js/home.js'},
+            'style-loader': {import: './js/style-loader.js'},
+            libs: {import: './js/libs.js'},
             about: {import: './js/about.js'},
-            common: {import: './js/common.js'}
+            home: {import: './js/home.js'}
         },
         output: {
             //js files (including vendors chunks) will go to folder js

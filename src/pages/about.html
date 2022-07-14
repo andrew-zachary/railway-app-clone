@@ -7,8 +7,15 @@
     <title>about us</title>
 </head>
 <body>
-    <div id="about-page">
+    <div id="about-page" class="layout-container">
         <h1 class="text-5xl font-mont font-bold">about us</h1>
+        <div x-data="{ open: false }">
+            <button @click="open = !open">Expand</button>
+         
+            <span x-show="open">
+              Content...
+            </span>
+        </div>
     </div>
 </body>
 </html>

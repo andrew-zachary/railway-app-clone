@@ -1,15 +1,9 @@
-import "regenerator-runtime/runtime";
+import { Alpine } from './libs.js';
 
-import Alpine from 'alpinejs';
-import intersect from '@alpinejs/intersect';
 import flatpickr from 'flatpickr';
 import Swiper, {Navigation} from 'swiper';
 import {validate} from 'validate.js';
-import smoothscroll from 'smoothscroll-polyfill';
 import { scrollIntoView } from "seamless-scroll-polyfill";
-
-import 'swiper/css';
-import 'swiper/css/navigation';
 
 let nav = null;
 let navLinks = null;
@@ -52,10 +46,6 @@ const reservationSchema = {
 };
 
 window.onload = () => {
-    //inits
-    smoothscroll.polyfill();
-    Alpine.plugin(intersect);
-
     //select elements
     nav = document.querySelector('nav');
     navLinks = document.querySelectorAll('.nav-links');

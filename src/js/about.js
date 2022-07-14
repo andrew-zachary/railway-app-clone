@@ -1,1 +1,5 @@
-console.log("about js");
+console.log("about");
+
+import { Alpine } from "./libs";
+
+Alpine.start();
