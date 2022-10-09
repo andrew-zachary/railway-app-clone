@@ -1,7 +1,7 @@
 {
-  "name": "@example/basics",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "we-love-krisps",
+  "version": "1.0.0",
+  "description": "website-template",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -11,6 +11,23 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.4.6"
-  }
+    "@alpinejs/intersect": "^3.10.4",
+    "@astrojs/tailwind": "^2.0.2",
+    "alpinejs": "^3.10.4",
+    "astro": "^1.4.6",
+    "flatpickr": "^4.6.13",
+    "seamless-scroll-polyfill": "^2.2.0",
+    "smoothscroll-polyfill": "^0.4.4",
+    "swiper": "^8.4.3",
+    "tailwindcss": "^3.1.8",
+    "validate.js": "^0.13.1"
+  },
+  "devDependencies": {
+    "sass": "^1.55.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 1 version",
+    "not dead"
+  ]
 }

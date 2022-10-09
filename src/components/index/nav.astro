@@ -1,0 +1,185 @@
+<nav x-data="{collapse: false}" class="w-full z-9998 fixed">
+    <div class="layout-container-xlg grid items-center">
+        <div @click="collapse = !collapse" id="menu-icon" class="cursor-pointer">
+            <img src="/images/menu-icon.svg" alt="menu">
+        </div>
+        <div id="logo">
+            <img src="/images/logo.svg" alt="logo">
+        </div>
+        <div id="menu-list">
+            <ul :class="collapse?'items':''">
+                <li>
+                    <a class="nav-links inline-block" data-target-id="food-menu" href="#">menu</a>
+                </li>
+                <li>
+                    <a class="nav-links inline-block" data-target-id="combos" href="#">combos</a>
+                </li>
+                <li>
+                    <a class="nav-links inline-block" data-target-id="make-reservation" href="#">reservation</a>
+                </li>
+                <li>
+                    <a class="nav-links inline-block" data-target-id="about-us-footer" href="#">about us</a>
+                </li>
+                <li>
+                    <a class="nav-links inline-block" data-target-id="burger-blog" href="#">blog</a>
+                </li>
+            </ul>
+        </div>
+        <div id="cart" class="cursor-pointer" @click="$store.cart.openCart = true; document.body.style.overflow = 'hidden';">
+            <img src="/images/vector-cart.svg" alt="cart">
+        </div>
+    </div>
+    <template x-teleport="body">
+        <div x-show="$store.cart.openCart" id="cartModal" class="main-modal flex flex-col justify-center fixed top-0 left-0 z-9999 w-screen h-screen bg-tertiary-color">
+            <div class="modal-body relative h-screen overflow-y-auto text-center text-secondary-color text-5xl capitalize font-mont font-bold">
+                <div class="closing flex justify-end">
+                    <button type="button" @click="$store.cart.openCart = false; document.body.style.overflow = 'unset';" class="py-4 px-6 border border-primary-color rounded-full">close</button>
+                </div>    
+                <ul id="picked-items" class="grid">
+                    <template x-for="item in $store.cart.collection" :key="item.product.id">
+                        <li class="mt-28">
+                            <div class="ctrls flex items-center justify-center">
+                                <button @click="$store.cart.changeItemQuantity(item.product.id, 1)" class="p-8 text-6xl border border-primary-color rounded-full relative">
+                                    <span class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">+</span>
+                                </button>
+                                <button @click="$store.cart.changeItemQuantity(item.product.id, -1)" class="p-8 text-6xl border border-primary-color rounded-full relative">
+                                    <span class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">-</span>
+                                </button>
+                            </div>
+                            <span class="inline-block mt-4" x-text="item.product.name"></span>
+                            <div class="font-light text-6xl mt-2">
+                                <span x-text="item.product.price"></span>
+                                <span>X</span>
+                                <span x-text="item.quantity"></span>
+                                <span x-text="'($'+parseInt(item.product.price) * parseInt(item.quantity)+')'"></span>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
+                <div id="cart-totalcharge" class="w-full mt-8 px-8 py-8 fixed bottom-0">
+                    <div class="border-t-2 pt-8 border-primary-color">
+                        <span class="text-6xl" x-text="'$ '+$store.cart.totalCharge"></span>
+                    </div>
+                    <button x-show="$store.cart.totalCharge > 0" type="button" @click="$store.cart.openCart = false; document.body.style.overflow = 'unset';" class="mt-8 py-4 px-6 border border-primary-color rounded-full">submit order</button>
+                </div>
+            </div>
+        </div>
+    </template>
+</nav>
+<style lang="scss">
+    nav {
+        padding: 3rem 2rem;
+        background-color: rgb(255, 146, 146);
+        transition: all 0.3s ease;
+        &.scrolling {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+        }
+        & > div {
+            grid-template-columns: max-content 1fr max-content;
+            #menu-icon, #cart {
+                width: 3.5rem;
+            }
+            #logo {
+                width: 5rem;
+            }
+            #menu-icon {
+                display: none;
+            }
+            #menu-list {
+                overflow: hidden;
+                height: 100%;
+                ul {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    transition: all 0.3s linear;
+                    li {
+                        @apply uppercase font-mont font-regular text-[1.875rem] text-quaternary-color leading-6;
+                        @include withRtl('margin', 0 9rem 0 0, 0 0 0 9rem);
+                        a {
+                            line-height: 18px;
+                            vertical-align: -11px;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width:1200px) {
+            & > div {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: min-content 1fr;
+                justify-items: center;
+                #menu-icon {
+                    grid-column: 1 / 2;
+                    display: inline-block;
+                }
+                #logo {
+                    grid-column: 2 / 3;
+                    img {
+                        width: 5rem;
+                    }
+                }
+                #cart {
+                    grid-column: 3 / 4;
+                }
+                #menu-list {
+                    grid-row: 2 / 3;
+                    grid-column: 1 / -1;
+                    ul {
+                        max-height: 0;
+                        opacity: 0;
+                        align-items: unset;
+                        &.items {
+                            max-height: 100vh;
+                            opacity: 1;
+                        }
+                        flex-direction: column;
+                        justify-content: center;
+                        li {
+                            padding-top: 3rem;
+                            margin: 0;
+                            text-align: center;
+                            &:last-child {
+                                padding-bottom: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 601px){
+            & > div {
+                #cart {
+                    img {
+                        transform: scale(1.4);
+                    }
+                }
+            }
+        }
+    }
+    #cartModal {
+        .modal-body {
+            padding-bottom: 20rem;
+            #cart-totalcharge {
+                background-color: $tertiary-color;
+            }
+        }
+        .closing {
+            button {
+                @include withRtl(margin, 3rem 3rem 0 0, 3rem 0 0 3rem);
+            }
+        }
+        #picked-items {
+            li:first-of-type {
+                margin: 0;
+            }
+            .ctrls {
+                & > button {
+                    @include withRtl(margin, 0 1rem 0 0, 0 0 0 1rem);
+                }
+            }
+        }
+    }
+</style>

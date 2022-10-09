@@ -1,0 +1,348 @@
+<section id="food-menu" class="bg-quaternary-color">
+    <div class="layout-container-lg">
+        <h1 class="menu-title font-mont font-black text-secondary-color uppercase text-center">menu</h1>
+        <h2 class="menu-disc font-mont font-regular text-tertiary-color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui commodi officia, placeat nostrum quis similique vitae repellat, officiis eum cum recusandae hic praesentium eligendi!</h2>
+        <div id="menu-blocks" class="text-tertiary-color">
+            <div id="menu-block_row-1" class="grid">
+                <article>
+                    <header>
+                        <h1 class="block-title">burgers & milkshakes</h1>
+                    </header>
+                    <ul class="products-list">
+                        <li class="flex justify-between">
+                            <span class="product-label">classic burger</span>
+                            <div class="product-pick flex items-center">
+                                <div class="product-price">
+                                    <span>$</span>
+                                    <span>10</span>
+                                </div>
+                                <label x-data data-id="1" data-price="10" data-name="classic-burger" class="layout-checkable">
+                                    <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="classic-burger" id="classic-burger" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="product-label">cheese burger</span>
+                            <div class="product-pick flex items-center">
+                                <div class="product-price">
+                                    <span>$</span>
+                                    <span>20</span>
+                                </div>
+                                <label x-data data-id="2" data-price="20" data-name="cheese-burger" class="layout-checkable">
+                                    <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="cheese-burger" id="cheese-burger" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="product-label">double cheese burger</span>
+                            <div class="product-pick flex items-center">
+                                <div class="product-price">
+                                    <span>$</span>
+                                    <span>30</span>
+                                </div>
+                                <label x-data data-id="3" data-price="30" data-name="double-cheese-burger" class="layout-checkable">
+                                    <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="double-cheese-burger" id="double-cheese-burger" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="product-label">chocolate milkshake</span>
+                            <div class="product-pick flex items-center">
+                                <div class="product-price">
+                                    <span>$</span>
+                                    <span>40</span>
+                                </div>
+                                <label x-data data-id="4" data-price="40" data-name="chocolate-milkshake" class="layout-checkable">
+                                    <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="chocolate-milkshake" id="chocolate-milkshake" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="product-label">strawberry milkshake</span>
+                            <div class="product-pick flex items-center">
+                                <div class="product-price">
+                                    <span>$</span>
+                                    <span>50</span>
+                                </div>
+                                <label x-data data-id="5" data-price="50" data-name="strawberry-milkshake" class="layout-checkable">
+                                    <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="strawberry-milkshake" id="strawberry-milkshake" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="product-label">banana milkshake</span>
+                            <div class="product-pick flex items-center">
+                                <div class="product-price">
+                                    <span>$</span>
+                                    <span>60</span>
+                                </div>
+                                <label x-data data-id="6" data-price="60" data-name="banana-milkshake" class="layout-checkable">
+                                    <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="banana-milkshake" id="banana-milkshake" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+                <article>
+                    <header class="block-title">
+                        <h1>desserts</h1>
+                    </header>
+                    <ul class="products-list">
+                        <li class="flex justify-between">
+                            <span class="product-label">ice creams</span>
+                            <div class="product-pick flex items-center">
+                                <div class="product-price">
+                                    <span>$</span>
+                                    <span>70</span>
+                                </div>
+                                <label x-data data-id="7" data-price="70" data-name="ice-creams" class="layout-checkable">
+                                    <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="ice-creams" id="ice-creams" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="product-label">triple chocolate cookie</span>
+                            <div class="product-pick flex items-center">
+                                <div class="product-price">
+                                    <span>$</span>
+                                    <span>80</span>
+                                </div>
+                                <label x-data data-id="8" data-price="80" data-name="triple-chocolate-cookie" class="layout-checkable">
+                                    <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="triple-chocolate-cookie" id="triple-chocolate-cookie" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="product-label">new york cheesecake</span>
+                            <div class="product-pick flex items-center">
+                                <div class="product-price">
+                                    <span>$</span>
+                                    <span>90</span>
+                                </div>
+                                <label x-data data-id="9" data-price="90" data-name="new-york-cheesecake" class="layout-checkable">
+                                    <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="new-york-cheesecake" id="new-york-cheesecake" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="product-label">sacher cake</span>
+                            <div class="product-pick flex items-center">
+                                <div class="product-price">
+                                    <span>$</span>
+                                    <span>100</span>
+                                </div>
+                                <label x-data data-id="10" data-price="100" data-name="sacher-cake" class="layout-checkable">
+                                    <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="sacher-cake" id="sacher-cake" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="product-label">chocolate muffin</span>
+                            <div class="product-pick flex items-center">
+                                <div class="product-price">
+                                    <span>$</span>
+                                    <span>110</span>
+                                </div>
+                                <label x-data data-id="11" data-price="110" data-name="chocolate-muffin" class="layout-checkable">
+                                    <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="chocolate-muffin" id="chocolate-muffin" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="product-label">berry muffin</span>
+                            <div class="product-pick flex items-center">
+                                <div class="product-price">
+                                    <span>$</span>
+                                    <span>120</span>
+                                </div>
+                                <label x-data data-id="12" data-price="120" data-name="berry-muffin" class="layout-checkable">
+                                    <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="berry-muffin" id="berry-muffin" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+            <div id="menu-block_row-2">
+                <article class="font-mont font-regular flex justify-center">
+                    <header>
+                        <h1 class="capitalize">... more drinks</h1>
+                    </header>
+                    <p class="text-primary-color">
+                        (+ $ 0.00)
+                    </p>
+                </article>
+            </div>
+        </div>
+    </div>
+    <article class="layout-container-menu-drinks flex">
+        <header>
+            <h1 class="block-title">
+                drinks
+            </h1>
+        </header>
+        <ul class="w-full flex justify-between">
+            <li class="flex justify-between">
+                <span class="product-label">mineral water</span>
+                <div class="product-pick flex items-center">
+                    <div class="product-price">
+                        <span>$</span>
+                        <span>130</span>
+                    </div>
+                    <label x-data data-id="13" data-price="130" data-name="mineral-water" class="layout-checkable">
+                        <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="mineral-water" id="mineral-water" />
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </li>
+            <li class="flex justify-between">
+                <span class="product-label">iced tea</span>
+                <div class="product-pick flex items-center">
+                    <div class="product-price">
+                        <span>$</span>
+                        <span>140</span>
+                    </div>
+                    <label x-data data-id="14" data-price="140" data-name="iced-tea" class="layout-checkable">
+                        <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="iced-tea" id="iced-tea" />
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </li>
+            <li class="flex justify-between">
+                <span class="product-label">orange juice</span>
+                <div class="product-pick flex items-center">
+                    <div class="product-price">
+                        <span>$</span>
+                        <span>150</span>
+                    </div>
+                    <label x-data data-id="15" data-price="150" data-name="orange-juice" class="layout-checkable">
+                        <input @change="$store.cart.addCartItem($el, $root)" type="checkbox" name="orange-juice" id="orange-juice" />
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </article>
+    <div class="flex justify-center py-[10rem]">
+        <button x-data @click="$store.cart.openCart = true; document.body.style.overflow = 'hidden';" class="layout-btn bg-primary-color text-quaternary-color">
+            <span class="text-[2rem] px-[6rem] py-[2rem]">open cart</span>
+        </button>
+    </div>
+</section>
+<style lang="scss">
+    #food-menu {
+        padding: 0 1rem;
+        & > div {
+            .menu-title {
+                font-size: 13rem;
+                line-height: 13rem;
+            }
+            .menu-disc {
+                padding-top: 5rem;
+                font-size: 2.5rem;
+                line-height: 3rem;
+            }
+        }
+        #menu-blocks {
+            padding-top: 3.5rem;
+            #menu-block_row-1 {
+                grid-template-columns: 1fr 1fr;
+                gap: 8rem;
+            }
+            #menu-block_row-2 {
+                padding-top: 5rem;
+                h1 {
+                    word-spacing: 0.8rem;
+                    @include withRtl(margin, 0 2rem 0 0, 0 0 0 2rem);
+                }
+                article {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+        .block-title {
+            @apply font-mont font-bold text-[2.5rem] uppercase tracking-wider leading-[3rem];
+        }
+        .product-label {
+            @apply font-mont font-regular text-[2.5rem] capitalize tracking-wider leading-[3rem];
+        }
+        .products-list {
+            @apply pt-[3rem];
+        }
+        .product-price {
+            @include withRtl('margin', 0 1.5rem 0 0, 0 0 0 1.5rem);
+            @apply font-mont font-regular text-[2.5rem] text-primary-color;
+        }
+        .layout-container-menu-drinks {
+            padding-top: 5rem;
+            header {
+                @include withRtl('margin', 0 7rem 0 0, 0 0 0 7rem);
+            }
+            ul {
+                li {
+                    & > span {
+                        @include withRtl('margin', 0 5rem 0 0, 0 0 0 5rem);
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 1200px){
+            #menu-block_row-2 {
+                @apply max-w-[76.8rem] mx-auto text-center;
+                article {
+                    flex-direction: column;
+                    h1 {
+                        @apply flex flex-col;
+                    }
+                    p {
+                        padding-top: 2rem;
+                    }
+                }
+            }
+            .layout-container-menu-drinks {
+                @apply max-w-[32rem] mx-auto;
+                flex-direction: column;
+                header {
+                    margin: 0;
+                    h1 {
+                        text-align: center;
+                    }
+                }
+                ul {
+                    padding-top: 2rem;
+                    flex-direction: column;
+                    li {
+                        padding-top: 1rem;
+                        span {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 992px){
+            #menu-blocks {
+                #menu-block_row-1 {
+                    @apply max-w-[51.2rem] mx-auto;
+                    grid-template-columns: 1fr;
+                    gap: 0rem;
+                    article:nth-child(2) {
+                        padding-top: 3rem;
+                    }
+                }
+            } 
+        }
+    }
+</style>

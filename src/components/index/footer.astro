@@ -1,0 +1,218 @@
+---
+---
+<footer id="contact" class="bg-secondary-color">
+    <ul class="grid layout-container-footer">
+        <li id="about-us">
+            <header>
+                <h1 class="footer-cell-header">about us</h1>
+            </header>
+            <p class="footer-cell-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas accusamus eaque quis laudantium aliquam labore consequatur ipsam suscipit velit reiciendis.</p>
+        </li>
+        <li id="vision">
+            <header>
+                <h1 class="footer-cell-header">vision</h1>
+            </header>
+            <ul class="footer-cell-content">
+                <li>team</li>
+                <li>join us</li>
+                <li>ethic</li>
+                <li>goals</li>
+            </ul>
+        </li>
+        <li id="menu">
+            <header>
+                <h1 class="footer-cell-header">menu</h1>
+            </header>
+            <ul class="footer-cell-content">
+                <li>combos</li>
+                <li>reservation</li>
+                <li>our chef</li>
+                <li>contact</li>
+            </ul>
+        </li>
+        <li id="we-are-here">
+            <header>
+                <h1 class="footer-cell-header">we are here</h1>
+            </header>
+            <ul class="footer-cell-content">
+                <li>123 main street</li>
+                <li>123456</li>
+            </ul>
+        </li>
+        <li id="open-daily">
+            <header>
+                <h1 class="footer-cell-header">open daily</h1>
+            </header>
+            <ul class="footer-cell-content">
+                <li>every day from</li>
+                <li>11 am to 10 pm</li>
+            </ul>
+        </li>
+        <li id="call-us">
+            <header>
+                <h1 class="footer-cell-header">call us</h1>
+            </header>
+            <ul class="footer-cell-content">
+                <li>+12 345678910</li>
+            </ul>
+        </li>
+        <li id="say-hello">
+            <header>
+                <h1 class="footer-cell-header">say hello</h1>
+            </header>
+            <ul class="footer-cell-content">
+                <li>hello@yourwebsite.com</li>
+                <li>www.yourwebsite.com</li>
+            </ul>
+        </li>
+        <li id="form-cell">
+            <form action="" class="flex justify-between items-center">
+                <div class="layout-input form-input">
+                    <input placeholder="Email" class="layout-input" type="text" name="email" id=email />
+                </div>
+                <div class="flex justify-center form-btn">
+                    <button class="layout-btn bg-primary-color text-quaternary-color">
+                        <span class="text-[1.5rem] px-[4rem] py-[1.3rem] tracking-wide">subscribe</span>
+                    </button>
+                </div>
+            </form>
+        </li>
+        <li id="social-cell" class="flex items-center justify-between">
+            <header>
+                <h1 class="footer-cell-header">follow us</h1>
+            </header>
+            <ul class="flex">
+                <li>
+                    <img src="/images/twitter-icon.svg" alt="">
+                </li>
+                <li>
+                    <img src="/images/facebook-icon.svg" alt="">
+                </li>
+                <li>
+                    <img src="/images/instagram-icon.svg" alt="">
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <article class="end-footer">
+        <header>
+            <h1 class="uppercase bg-primary-color text-center text-quaternary-color font-mont font-regular ">@2000 all rights reserved</h1>
+        </header>
+    </article>
+</footer>
+<style lang="scss">
+    footer {
+        & > ul {
+            padding-top: 6rem;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 10rem;
+            row-gap: 3rem;
+            li {
+                padding: 0 1rem;
+                .footer-cell-header {
+                    @apply uppercase font-mont font-bold text-[2rem] text-tertiary-color;
+                }
+                .footer-cell-content{
+                    @apply pt-[1rem] font-mont font-regular text-[2rem];
+                    li {
+                        text-transform: capitalize;
+                    }
+                }
+            }
+            #about-us {
+                grid-column: 1 / 3;
+            }
+            #form-cell {
+                padding-top: 3rem;
+                grid-column: 1 / 3;
+                //form inside
+                form {
+                    .form-input {
+                        border: 0.2rem solid $primary-color;
+                        max-width: 30rem;
+                        width: 100%;
+                        input {
+                            background-color: $secondary-color;
+                            color: $tertiary-color;
+                            padding-top: 0.9rem;
+                            padding-bottom: 0.9rem;
+                            &, &::placeholder {
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+            #social-cell {
+                padding-top: 3rem;
+                grid-column: 3 / 5;
+                ul {
+                    li {
+                        @include withRtl(margin, 0 2rem 0 0, 0 0 0 2rem);
+                    }
+                }
+            }
+        }
+        .end-footer {
+            padding-top: 6rem;
+            h1 {
+                padding: 2rem 0;
+                font-size: 1.68rem;
+            }
+        }
+        @media screen and (max-width:1200px) {
+            & > ul {
+                column-gap: 3rem;
+                #form-cell {
+                    form {
+                        flex-direction: column;
+                        @apply max-w-[34rem] mx-auto;
+                        .form-btn, .form-input {
+                            max-width: unset;
+                        }
+                        .form-btn {
+                            width: 100%;
+                            button {
+                                margin-top: 2rem;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                #we-are-here {
+                    grid-column: 1 / 3;
+                }
+                #open-daily {
+                    grid-column: 3 / 5
+                }
+                #call-us {
+                    grid-column: 1 / 3;
+                }
+                #say-hello {
+                    grid-column: 3 / 5;
+                }
+            }
+        }
+        @media screen and (max-width: 768px) {
+            & > ul {
+                grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+                column-gap: 0;
+                #about-us, #vision, #menu, #we-are-here, #open-daily, #call-us, #say-hello, #form-cell, #social-cell {
+                    grid-column: unset;
+                }
+                #about-us, #form-cell, #social-cell {
+                    grid-column: 1 / -1;
+                }
+                #social-cell {
+                    ul {
+                        margin-top: 2rem;
+                        li {
+                            margin: 0 2rem;
+                        }
+                    }
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+</style>

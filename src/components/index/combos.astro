@@ -1,0 +1,235 @@
+---
+---
+<section id="combos" class="bg-primary-color">
+    <header class="text-center">
+        <h1 class="uppercase font-mont font-black text-secondary-color tracking-widest">combos</h1>
+        <h2 class="capitalize font-mont font-regular text-quaternary-color">we have the perfect burger combination. <br /> choose your best option</h2>
+    </header>
+    <div class="layout-container-xlg relative">
+        <div class="combo-swiper layout-container-combos-swiper overflow-x-hidden">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <div class="slide-content bg-quaternary-color shadow-primary uppercase text-center">
+                        <h1 class="font-mont font-bold">combo 1</h1>
+                        <p class="combo-name font-mont font-regular">
+                            classic burger
+                        </p>
+                        <ul class="font-mont font-regular">
+                            <li>chocolate</li>
+                            <li>milkshake</li>
+                        </ul>
+                        <p class="combo-desserts font-mont font-regular">
+                            new york cheesecake
+                        </p>
+                        <p class="combo-price font-mont font-regular text-primary-color">
+                            <span>$</span><span>160</span>
+                        </p>
+                        <div x-data data-id="1001" data-name="combo-1" data-price="160" class="flex justify-center pt-[3rem]">
+                            <button @click="$store.cart.addCartCombo($root);" class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                                <span x-text="$store.cart.collection.filter(item => item.product.id === $root.dataset.id).length > 0?'remove':'add to cart'" class="text-[2rem] px-[2rem] py-[1rem]"></span>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <div class="slide-content bg-quaternary-color shadow-primary uppercase text-center">
+                        <h1 class="font-mont font-bold">combo 2</h1>
+                        <p class="combo-name font-mont font-regular">
+                            classic burger
+                        </p>
+                        <ul class="font-mont font-regular">
+                            <li>chocolate</li>
+                            <li>milkshake</li>
+                        </ul>
+                        <p class="combo-desserts font-mont font-regular">
+                            new york cheesecake
+                        </p>
+                        <p class="combo-price font-mont font-regular text-primary-color">
+                            <span>$</span><span>170</span>
+                        </p>
+                        <div x-data data-id="1002" data-name="combo-2" data-price="170" class="flex justify-center pt-[3rem]">
+                            <button @click="$store.cart.addCartCombo($root);" class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                                <span x-text="$store.cart.collection.filter(item => item.product.id === $root.dataset.id).length > 0?'remove':'add to cart'" class="text-[2rem] px-[2rem] py-[1rem]"></span>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <div class="slide-content bg-quaternary-color shadow-primary uppercase text-center">
+                        <h1 class="font-mont font-bold">combo 3</h1>
+                        <p class="combo-name font-mont font-regular">
+                            classic burger
+                        </p>
+                        <ul class="font-mont font-regular">
+                            <li>chocolate</li>
+                            <li>milkshake</li>
+                        </ul>
+                        <p class="combo-desserts font-mont font-regular">
+                            new york cheesecake
+                        </p>
+                        <p class="combo-price font-mont font-regular text-primary-color">
+                            <span>$</span><span>00</span>
+                        </p>
+                        <div x-data data-id="1003" data-name="combo-3" data-price="180" class="flex justify-center pt-[3rem]">
+                            <button @click="$store.cart.addCartCombo($root);" class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                                <span x-text="$store.cart.collection.filter(item => item.product.id === $root.dataset.id).length > 0?'remove':'add to cart'" class="text-[2rem] px-[2rem] py-[1rem]"></span>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <div class="slide-content bg-quaternary-color shadow-primary uppercase text-center">
+                        <h1 class="font-mont font-bold">combo 4</h1>
+                        <p class="combo-name font-mont font-regular">
+                            classic burger
+                        </p>
+                        <ul class="font-mont font-regular">
+                            <li>chocolate</li>
+                            <li>milkshake</li>
+                        </ul>
+                        <p class="combo-desserts font-mont font-regular">
+                            new york cheesecake
+                        </p>
+                        <p class="combo-price font-mont font-regular text-primary-color">
+                            <span>$</span><span>00</span>
+                        </p>
+                        <div x-data data-id="1004" data-name="combo-4" data-price="190" class="flex justify-center pt-[3rem]">
+                            <button @click="$store.cart.addCartCombo($root);" class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                                <span x-text="$store.cart.collection.filter(item => item.product.id === $root.dataset.id).length > 0?'remove':'add to cart'" class="text-[2rem] px-[2rem] py-[1rem]"></span>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <div class="slide-content bg-quaternary-color shadow-primary uppercase text-center">
+                        <h1 class="font-mont font-bold">combo 5</h1>
+                        <p class="combo-name font-mont font-regular">
+                            classic burger
+                        </p>
+                        <ul class="font-mont font-regular">
+                            <li>chocolate</li>
+                            <li>milkshake</li>
+                        </ul>
+                        <p class="combo-desserts font-mont font-regular">
+                            new york cheesecake
+                        </p>
+                        <p class="combo-price font-mont font-regular text-primary-color">
+                            <span>$</span><span>200</span>
+                        </p>
+                        <div x-data data-id="1005" data-name="combo-5" data-price="200" class="flex justify-center pt-[3rem]">
+                            <button @click="$store.cart.addCartCombo($root);" class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                                <span x-text="$store.cart.collection.filter(item => item.product.id === $root.dataset.id).length > 0?'remove':'add to cart'" class="text-[2rem] px-[2rem] py-[1rem]"></span>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <div class="slide-content bg-quaternary-color shadow-primary uppercase text-center">
+                        <h1 class="font-mont font-bold">combo 6</h1>
+                        <p class="combo-name font-mont font-regular">
+                            classic burger
+                        </p>
+                        <ul class="font-mont font-regular">
+                            <li>chocolate</li>
+                            <li>milkshake</li>
+                        </ul>
+                        <p class="combo-desserts font-mont font-regular">
+                            new york cheesecake
+                        </p>
+                        <p class="combo-price font-mont font-regular text-primary-color">
+                            <span>$</span><span>210</span>
+                        </p>
+                        <div x-data data-id="1006" data-name="combo-6" data-price="210" class="flex justify-center pt-[3rem]">
+                            <button @click="$store.cart.addCartCombo($root);" class="layout-btn border-[0.3rem] border-primary-color bg-quaternary-color text-primary-color">
+                                <span x-text="$store.cart.collection.filter(item => item.product.id === $root.dataset.id).length > 0?'remove':'add to cart'" class="text-[2rem] px-[2rem] py-[1rem]"></span>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</section>
+<style lang="scss">
+    #combos {
+        padding-bottom: 4rem;
+        header {
+            padding-top: 4.5rem;
+            h1 {
+                font-size: 8rem;
+            }
+            h2 {
+                font-size: 2.5rem;
+                line-height: 3rem;
+            }
+        }
+        & > div {
+            ul {
+                padding: 3rem 0;
+                li {
+                    padding: 0 1rem;
+                    .slide-content {
+                        padding: 5rem 0;
+                        border-radius: 5rem;
+                        h1 {
+                            font-size: 1.9rem;
+                        }
+                        .combo-name {
+                            font-size: 1.7rem;
+                            padding-top: 3rem;
+                        }
+                        ul {
+                            font-size: 1.7rem;
+                            padding-top: 2rem;
+                        }
+                        .combo-desserts {
+                            padding-top: 3rem;
+                            font-size: 1.7rem;
+                        }
+                        .combo-price {
+                            padding-top: 2rem;
+                            font-size: 1.7rem;
+                        }
+                    }
+                }
+            }
+        }
+        .swiper-button-prev::after, .swiper-button-next::after {
+            color: $quaternary-color;
+        }
+        //prev-next away from the edge
+        .swiper-button-prev {
+            left: 2rem
+        }
+        .swiper-button-next {
+            right: 2rem
+        }
+        //prev-next appear beneath the swiper
+        @media screen and (max-width: 768px){
+            padding-bottom: 15rem;
+            .swiper-button-prev {
+                left: 10rem
+            }
+            .swiper-button-next {
+                right: 10rem
+            }
+            .swiper-button-prev, .swiper-button-next {   
+                top: 110%;
+            }
+        }
+        .combo-swiper {
+            margin-top: 5rem;
+            @media screen and (min-width: 320px){
+                width: 32rem;
+            }
+            @media screen and (min-width: 1024px){
+                width: calc((32rem * 2) + 5.2rem);
+            }
+            @media screen and (min-width: 1200px){
+                width: 100%;
+            }
+        }
+    }
+</style>
