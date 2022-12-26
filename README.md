@@ -1,2 +1,5 @@
-<h2>HTML responsive templates</h2>
-<p><a href="https://HTML-responsive-templates.netlify.app">https://HTML-responsive-templates.netlify.app</a></p>
+# HTML Responsive Templates.
+
+Converting psd/figma/XD templates to a responsive html web pages with javascript features implemented.
+
+<a href="https://html-responsive-templates.netlify.app">https://html-responsive-templates.netlify.app</a>

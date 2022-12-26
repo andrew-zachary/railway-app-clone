@@ -1,0 +1,30 @@
+---
+const title = 'html5 responsive template';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+</head>
+<body>
+    <slot />
+</body>
+</html>
+<style lang="scss" is:global>
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+html {
+	font-size: 62.5%;
+}
+
+html, body {
+    height: 100%;
+}
+
+</style>

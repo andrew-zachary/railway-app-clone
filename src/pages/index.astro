@@ -1,3 +1,57 @@
 ---
+import Index from "../layouts/index.astro";
+
+import Slide from "../components/index/slide.astro";
+
+const title = 'html responsive templates';
+const templates = [
+    {
+        'title': 'we love krisps'
+    }
+];
 ---
-<h1>html responsive templates</h1>
+<Index>
+    <main class="h-full w-full">
+        <section id="base-swiper" class="max-w-6xl mx-auto">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <Slide>
+                        <h1>{title}</h1>
+                    </Slide>
+                    {
+                        templates.map(slide => {
+                            return <Slide>
+                                <h1>{slide.title}</h1>
+                            </Slide>
+                        })
+                    }
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+    </main>
+</Index>
+<script>
+    import Swiper from 'swiper';
+
+    const swiper = new Swiper('.swiper', {
+        slidesPerView: 1,
+        speed: 400,
+        spaceBetween: 100,
+    });
+</script>
+<style lang="scss">
+    main {
+        display: grid;
+        grid-template-columns: minmax(0px, 1fr);
+        align-items: center;
+
+        #base-swiper {
+
+            .swiper-wrapper {
+                padding: 0 50px;
+            }
+        }
+    }
+</style>
