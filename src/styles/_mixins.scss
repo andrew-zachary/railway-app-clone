@@ -1,9 +1,9 @@
 @mixin withRtl($property, $ltr-value, $rtl-value) {
     & {
-    #{$property}: $ltr-value;
+        #{$property}: $ltr-value;
     }
 
     [dir='rtl'] & {
-    #{$property}: $rtl-value;
+        #{$property}: $rtl-value;
     }
 }

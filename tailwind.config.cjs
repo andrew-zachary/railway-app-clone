@@ -25,14 +25,14 @@ module.exports = {
 				'9995': '9995'
 			},
 			colors: {
-				'primary-color': '#ff9292',
-				'secondary-color': '#ffdd67',
-				'tertiary-color': '#403f3f',
-				'quaternary-color': 'white',
-				'dim-modal': '#403f3fcc'
+				'wlk-primary-color': '#ff9292',
+				'wlk-secondary-color': '#ffdd67',
+				'wlk-tertiary-color': '#403f3f',
+				'wlk-quaternary-color': 'white',
+				'wlk-dim-modal': '#403f3fcc'
 			},
 			boxShadow: {
-				'primary': '0rem 1.7rem 2.016rem 0.384rem rgba(0, 0, 0, 0.21)'
+				'wlk-primary': '0rem 1.7rem 2.016rem 0.384rem rgba(0, 0, 0, 0.21)'
 			},
 			fontFamily: {
 				mont: ['Montserrat'],

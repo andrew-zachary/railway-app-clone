@@ -1,8 +1,8 @@
-<section id="food-menu" class="bg-quaternary-color">
+<section id="food-menu" class="bg-wlk-quaternary-color">
     <div class="layout-container-lg">
-        <h1 class="menu-title font-mont font-black text-secondary-color uppercase text-center">menu</h1>
-        <h2 class="menu-disc font-mont font-regular text-tertiary-color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui commodi officia, placeat nostrum quis similique vitae repellat, officiis eum cum recusandae hic praesentium eligendi!</h2>
-        <div id="menu-blocks" class="text-tertiary-color">
+        <h1 class="menu-title font-mont font-black text-wlk-secondary-color uppercase text-center">menu</h1>
+        <h2 class="menu-disc font-mont font-regular text-wlk-tertiary-color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui commodi officia, placeat nostrum quis similique vitae repellat, officiis eum cum recusandae hic praesentium eligendi!</h2>
+        <div id="menu-blocks" class="text-wlk-tertiary-color">
             <div id="menu-block_row-1" class="grid">
                 <article>
                     <header>
@@ -180,7 +180,7 @@
                     <header>
                         <h1 class="capitalize">... more drinks</h1>
                     </header>
-                    <p class="text-primary-color">
+                    <p class="text-wlk-primary-color">
                         (+ $ 0.00)
                     </p>
                 </article>
@@ -236,7 +236,7 @@
         </ul>
     </article>
     <div class="flex justify-center py-[10rem]">
-        <button x-data @click="$store.cart.openCart = true; document.body.style.overflow = 'hidden';" class="layout-btn bg-primary-color text-quaternary-color">
+        <button x-data @click="$store.cart.openCart = true; document.body.style.overflow = 'hidden';" class="layout-btn bg-wlk-primary-color text-wlk-quaternary-color">
             <span class="text-[2rem] px-[6rem] py-[2rem]">open cart</span>
         </button>
     </div>
@@ -283,7 +283,7 @@
         }
         .product-price {
             @include withRtl('margin', 0 1.5rem 0 0, 0 0 0 1.5rem);
-            @apply font-mont font-regular text-[2.5rem] text-primary-color;
+            @apply font-mont font-regular text-[2.5rem] text-wlk-primary-color;
         }
         .layout-container-menu-drinks {
             padding-top: 5rem;

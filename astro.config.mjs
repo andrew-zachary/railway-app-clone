@@ -10,10 +10,10 @@ export default defineConfig({
       preprocessorOptions: {
         scss: {
           additionalData: `
-            $primary-color: #ff9292;
-            $secondary-color: #ffdd67;
-            $tertiary-color: #403f3f;
-            $quaternary-color: white;
+            $wlk-primary-color: #ff9292;
+            $wlk-secondary-color: #ffdd67;
+            $wlk-tertiary-color: #403f3f;
+            $wlk-quaternary-color: white;
             @mixin withRtl($property, $ltr-value, $rtl-value) {
               & {
                 #{$property}: $ltr-value;

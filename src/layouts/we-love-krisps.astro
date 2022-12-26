@@ -77,13 +77,13 @@ const { title } = Astro.props;
 			}
 		}
 		@apply flex justify-between items-center;
-		@apply border-[0.3rem] border-quaternary-color rounded-full;
-		@apply bg-primary-color;
+		@apply border-[0.3rem] border-wlk-quaternary-color rounded-full;
+		@apply bg-wlk-primary-color;
 		input {
 			@apply w-full;
 			@apply px-[3rem] py-[0.3rem];
-			@apply border border-2 border-quaternary-color;
-			@apply font-mont font-medium text-[2.5rem] text-quaternary-color;
+			@apply border border-2 border-wlk-quaternary-color;
+			@apply font-mont font-medium text-[2.5rem] text-wlk-quaternary-color;
 			@apply bg-transparent border-none;
 			@media screen and (max-width: 601px){
 				padding: 1rem 3rem;
@@ -106,15 +106,15 @@ const { title } = Astro.props;
 			opacity: 0;
 			cursor: pointer;
 			&:checked ~ .checkmark {
-				background-color: $primary-color;
+				background-color: $wlk-primary-color;
 			}
 		}
 		.checkmark {
 			display: inline-block;
-			border:1px solid $tertiary-color;
+			border:1px solid $wlk-tertiary-color;
 			height: 2rem;
 			width: 2rem;
-			background-color: $quaternary-color;
+			background-color: $wlk-quaternary-color;
 			border-radius: 50%;
 		}
 		&.size-lg {
@@ -126,10 +126,10 @@ const { title } = Astro.props;
 				width: 4rem;
 			}
 		}
-		&.primary-colored {
+		&.wlk-primary-colored {
 			input {
 				&:checked ~ .checkmark {
-					background-color: $primary-color;
+					background-color: $wlk-primary-color;
 				}
 			}
 		}
@@ -145,33 +145,33 @@ const { title } = Astro.props;
 		.flatpickr-weekdays {
 			background-color: unset;
 			.flatpickr-weekday {
-				color: $quaternary-color;
+				color: $wlk-quaternary-color;
 			}
 		}
 		.flatpickr-days {
 			background-color: transparent;
-			color: $quaternary-color;
+			color: $wlk-quaternary-color;
 			margin-top: 2rem;
 			.flatpickr-day {
-				color: $quaternary-color;
+				color: $wlk-quaternary-color;
 				@include withRtl(margin, -0 1rem 1rem 0, 0 0 1rem 1rem);
 				&.today:hover, &.today:focus {
-					background-color: $secondary-color;
-					color: $tertiary-color;
+					background-color: $wlk-secondary-color;
+					color: $wlk-tertiary-color;
 				}
 				&.nextMonthDay {
 					color: #ffdd6780;
 				}
 				&:hover, &.selected {
-					background-color: $secondary-color;
-					color: $tertiary-color;
+					background-color: $wlk-secondary-color;
+					color: $wlk-tertiary-color;
 				}
 			}
 		}
 		.flatpickr-months {
 			svg {
 				path {
-					stroke: $quaternary-color;
+					stroke: $wlk-quaternary-color;
 					stroke-width: 0.2rem;
 				}
 			}
@@ -181,9 +181,9 @@ const { title } = Astro.props;
 			.flatpickr-current-month {
 				padding: 0px;
 				.flatpickr-monthDropdown-months {
-					color: $quaternary-color;
+					color: $wlk-quaternary-color;
 					option {
-						color: $quaternary-color;
+						color: $wlk-quaternary-color;
 						background-color: #403f3f;
 					}
 				}
@@ -200,18 +200,18 @@ const { title } = Astro.props;
 			.numInputWrapper {
 				input {
 					background-color: unset;
-					color: $quaternary-color;
+					color: $wlk-quaternary-color;
 					font-size: 4rem!important;
 				}
 			}
 			.flatpickr-time-separator {
 				background-color: unset;
-				color: $quaternary-color;
+				color: $wlk-quaternary-color;
 			}
 			.flatpickr-am-pm {
 				font-size: 4rem!important;
 				background-color: unset;
-				color: $quaternary-color;
+				color: $wlk-quaternary-color;
 			}
 		}
 	}
