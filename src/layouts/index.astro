@@ -2,7 +2,7 @@
 const title = 'html5 responsive template';
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="home">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,16 +15,12 @@ const title = 'html5 responsive template';
 </html>
 <style lang="scss" is:global>
 
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
-html {
+html[data-page=home] {
 	font-size: 62.5%;
-}
 
-html, body {
-    height: 100%;
+    &, body {
+        height: 100%;
+    }
 }
 
 </style>

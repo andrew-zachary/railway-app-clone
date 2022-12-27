@@ -6,22 +6,29 @@ import Slide from "../components/index/slide.astro";
 const title = 'html responsive templates';
 const templates = [
     {
-        'title': 'we love krisps'
+        'img': 'we-love-krisps.jpeg',
+        'url': 'we-love-krisps',
+        'bg-color': 'rgb(255,147,147)'
     }
 ];
 ---
 <Index>
     <main class="h-full w-full">
-        <section id="base-swiper" class="max-w-6xl mx-auto">
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <Slide>
-                        <h1>{title}</h1>
-                    </Slide>
+        <section id="swiper-container" class="max-w-6xl mx-auto">
+            <div class="swiper h-full">
+                <div class="swiper-wrapper h-full">
+                    <div class="swiper-slide px-20 text-center flex flex-col justify-center">
+                        <h1 class="text-5xl capitalize font-bold">{title}</h1>
+                        <p class="mt-6 text-3xl">
+                            cool responsive html web pages with all javascript features implemented.
+                        </p>
+                    </div>
                     {
                         templates.map(slide => {
                             return <Slide>
-                                <h1>{slide.title}</h1>
+                                <a href={slide.url}>
+                                    <img src="./images/we-love-krisps.jpeg" alt="">
+                                </a>
                             </Slide>
                         })
                     }
@@ -33,12 +40,17 @@ const templates = [
     </main>
 </Index>
 <script>
-    import Swiper from 'swiper';
+    import Swiper, { Navigation } from 'swiper';
 
     const swiper = new Swiper('.swiper', {
+        modules: [Navigation],
         slidesPerView: 1,
         speed: 400,
-        spaceBetween: 100,
+        spaceBetween: 0,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
     });
 </script>
 <style lang="scss">
@@ -47,11 +59,9 @@ const templates = [
         grid-template-columns: minmax(0px, 1fr);
         align-items: center;
 
-        #base-swiper {
-
-            .swiper-wrapper {
-                padding: 0 50px;
-            }
+        #swiper-container {
+            height: 100%;
+            max-height: calc(100% - 200px);
         }
     }
 </style>
