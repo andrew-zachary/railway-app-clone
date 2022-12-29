@@ -1,5 +1,8 @@
 ---
+const { url, img, bgColor } = Astro.props;
 ---
-<div class="swiper-slide px-20 flex items-center">
-    <slot />
+<div class="swiper-slide px-20 flex items-center" data-bg-color={bgColor}>
+    <a href={url}>
+        <img src={`./images/${img}`} alt="">
+    </a>
 </div>

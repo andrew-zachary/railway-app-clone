@@ -4,32 +4,28 @@ import Index from "../layouts/index.astro";
 import Slide from "../components/index/slide.astro";
 
 const title = 'html responsive templates';
-const templates = [
+const slides = [
     {
-        'img': 'we-love-krisps.jpeg',
         'url': 'we-love-krisps',
+        'img': 'we-love-krisps.jpeg',
         'bg-color': 'rgb(255,147,147)'
     }
 ];
 ---
 <Index>
-    <main class="h-full w-full">
-        <section id="swiper-container" class="max-w-6xl mx-auto">
+    <main class="h-full w-full grid items-center">
+        <section id="swiper-container" class="h-full max-w-6xl mx-auto">
             <div class="swiper h-full">
                 <div class="swiper-wrapper h-full">
-                    <div class="swiper-slide px-20 text-center flex flex-col justify-center">
-                        <h1 class="text-5xl capitalize font-bold">{title}</h1>
-                        <p class="mt-6 text-3xl">
+                    <div class="swiper-slide px-28 text-center flex flex-col justify-center">
+                        <h1 class="text-6xl capitalize font-bold">{title}</h1>
+                        <p class="mt-6 text-4xl">
                             cool responsive html web pages with all javascript features implemented.
                         </p>
                     </div>
                     {
-                        templates.map(slide => {
-                            return <Slide>
-                                <a href={slide.url}>
-                                    <img src="./images/we-love-krisps.jpeg" alt="">
-                                </a>
-                            </Slide>
+                        slides.map(slide => {
+                            return <Slide url={slide.url} img={slide.img} bgColor={slide['bg-color']} />
                         })
                     }
                 </div>
@@ -52,16 +48,28 @@ const templates = [
             prevEl: '.swiper-button-prev',
         },
     });
+
+    swiper.on('slideChange', (swiper) => {
+        const currentSlideBgColor = swiper.slides[swiper.activeIndex].getAttribute('data-bg-color') ?? 'white';
+        document.body.style.backgroundColor = currentSlideBgColor;
+    });
 </script>
 <style lang="scss">
     main {
-        display: grid;
         grid-template-columns: minmax(0px, 1fr);
-        align-items: center;
 
         #swiper-container {
-            height: 100%;
             max-height: calc(100% - 200px);
+
+            .swiper-button-next, .swiper-button-prev {
+                background-color: black;
+                padding: 4rem 2.5rem;
+                border-radius: 2.5rem;
+
+                &::after {
+                    color: white;
+                }
+            }
         }
     }
 </style>
