@@ -14,7 +14,7 @@ const slides = [
 ---
 <Index>
     <main class="h-full w-full grid items-center">
-        <section id="swiper-container" class="h-full max-w-6xl mx-auto">
+        <section id="swiper-container" class="h-full w-full max-w-6xl mx-auto">
             <div class="swiper h-full">
                 <div class="swiper-wrapper h-full">
                     <div class="swiper-slide px-28 text-center flex flex-col justify-center">
@@ -22,6 +22,17 @@ const slides = [
                         <p class="mt-6 text-4xl">
                             cool responsive html web pages with all javascript features implemented.
                         </p>
+                        <div id="main-slide-ctrl" class="flex justify-center mt-14">
+                            <a 
+                            href="https://github.com/andrew-zachary"
+                            class="btn-txt-icon
+                            px-4 py-2
+                            border border-black rounded-2xl 
+                            flex justify-between items-center">
+                                <img class="w-16" src="https://www.svgrepo.com/show/448447/github.svg" alt="source code">
+                                <p class="text-3xl font-bold">{`<source />`}</p>
+                            </a>
+                        </div>
                     </div>
                     {
                         slides.map(slide => {
@@ -29,8 +40,8 @@ const slides = [
                         })
                     }
                 </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev bg-black p-12 rounded-full after:content-['prev'] after:text-4xl after:text-white"></div>
+                <div class="swiper-button-next bg-black p-12 rounded-full after:content-['next'] after:text-4xl after:text-white"></div>
             </div>
         </section>
     </main>
@@ -58,18 +69,18 @@ const slides = [
     main {
         grid-template-columns: minmax(0px, 1fr);
 
-        #swiper-container {
-            max-height: calc(100% - 200px);
+        #main-slide-ctrl {
 
-            .swiper-button-next, .swiper-button-prev {
-                background-color: black;
-                padding: 4rem 2.5rem;
-                border-radius: 2.5rem;
+            .btn-txt-icon {
 
-                &::after {
-                    color: white;
+                img {
+                    @include withRtl('margin', 0 1rem 0 0, 0 0 0 1rem);
                 }
             }
+        }
+
+        #swiper-container {
+            max-height: calc(100% - 200px);
         }
     }
 </style>
