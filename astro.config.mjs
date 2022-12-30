@@ -7,6 +7,7 @@ export default defineConfig({
   integrations: [tailwind()],
   vite: {
     css: {
+      devSourcemap: false,
       preprocessorOptions: {
         scss: {
           additionalData: `

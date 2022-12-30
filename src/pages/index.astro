@@ -25,7 +25,7 @@ const slides = [
                         <div id="main-slide-ctrl" class="flex justify-center mt-14">
                             <a 
                             href="https://github.com/andrew-zachary"
-                            class="btn-txt-icon
+                            class="btn-icon-txt
                             px-4 py-2
                             border border-black rounded-2xl 
                             flex justify-between items-center">
@@ -65,17 +65,22 @@ const slides = [
         document.body.style.backgroundColor = currentSlideBgColor;
     });
 </script>
-<style lang="scss">
+<style lang="scss" is:global>
     main {
         grid-template-columns: minmax(0px, 1fr);
 
-        #main-slide-ctrl {
 
-            .btn-txt-icon {
+        .btn-icon-txt {
 
-                img {
-                    @include withRtl('margin', 0 1rem 0 0, 0 0 0 1rem);
-                }
+            img {
+                @include withRtl('margin', 0 1rem 0 0, 0 0 0 1rem);
+            }
+        }
+
+        .btn-txt-icon {
+
+            p {
+                @include withRtl('margin', 0 1rem 0 0, 0 0 0 1rem);
             }
         }
 

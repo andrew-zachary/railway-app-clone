@@ -1,8 +1,17 @@
 ---
 const { url, img, bgColor } = Astro.props;
 ---
-<div class="swiper-slide px-20 flex items-center" data-bg-color={bgColor}>
+<div class="swiper-slide px-20 flex items-center flex flex-col" data-bg-color={bgColor}>
     <a href={url}>
         <img src={`./images/${img}`} alt="">
+    </a>
+    <a
+    href={url}
+    class="btn-txt-icon 
+    px-4 py-2 mt-14
+    border border-black rounded-2xl 
+    flex justify-between items-center">
+        <p class="text-3xl font-bold capitalize">open</p>
+        <img class="w-8" src="https://www.svgrepo.com/show/410383/right-arrow.svg" alt="source code">
     </a>
 </div>
