@@ -17,7 +17,7 @@ const slides = [
         <section id="swiper-container" class="h-full w-full max-w-6xl mx-auto">
             <div class="swiper h-full">
                 <div class="swiper-wrapper h-full">
-                    <div class="swiper-slide px-28 text-center flex flex-col justify-center">
+                    <div class="swiper-slide home-slide text-center flex flex-col justify-center">
                         <h1 class="text-6xl capitalize font-bold">{title}</h1>
                         <p class="mt-6 text-4xl">
                             cool responsive html web pages with all javascript features implemented.
@@ -40,8 +40,8 @@ const slides = [
                         })
                     }
                 </div>
-                <div class="swiper-button-prev bg-black p-12 rounded-full after:content-['prev'] after:text-4xl after:text-white"></div>
-                <div class="swiper-button-next bg-black p-12 rounded-full after:content-['next'] after:text-4xl after:text-white"></div>
+                <div class="swiper-button-prev bg-black px-9 py-6 rounded-full after:content-['prev'] after:text-4xl after:text-white"></div>
+                <div class="swiper-button-next bg-black px-9 py-6 rounded-full after:content-['next'] after:text-4xl after:text-white"></div>
             </div>
         </section>
     </main>
@@ -69,7 +69,6 @@ const slides = [
     main {
         grid-template-columns: minmax(0px, 1fr);
 
-
         .btn-icon-txt {
 
             img {
@@ -85,7 +84,36 @@ const slides = [
         }
 
         #swiper-container {
-            max-height: calc(100% - 200px);
+            max-height: 46.8rem;
+            
+            .swiper-slide {
+                padding: 0 7rem;
+            }
+
+            @media screen and (max-width: 768px) {
+                
+                .swiper-button-prev, .swiper-button-next {
+                    top: 90%;
+                }
+
+                .swiper-slide {
+                    padding: 0 1rem;
+
+                    .thumbnail-img {
+                        width: 58rem;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                
+                .swiper-slide { 
+
+                    .thumbnail-img {
+                        min-width: 58rem;
+                    }
+                }
+            }
         }
     }
 </style>
