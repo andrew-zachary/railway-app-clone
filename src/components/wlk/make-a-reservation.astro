@@ -9,7 +9,7 @@
                     <div @click="openModal = true; document.body.style.overflow = 'hidden';" class="click-area layout-input with-icon">
                         <input :value="$store.rsSection['people number'].text" @click="openModal = true" class="uppercase placeholder:text-wlk-quaternary-color" type="text" name="people-count" id="people-count" placeholder="people">
                         <button type="button">
-                            <img src="/images/list-arrow-btn.svg" alt="">
+                            <img src="/images/wlk/list-arrow-btn.svg" alt="">
                         </button>
                     </div>
                     <div class="text-4xl text-wlk-tertiary-color mt-6" x-text="$store.rsSection.errors['people number']"></div>
@@ -57,7 +57,7 @@
                     <div @click="openModal = true; document.body.style.overflow = 'hidden';" class="click-area layout-input with-icon">
                         <input :value="$store.rsSection.date" class="uppercase placeholder:text-wlk-quaternary-color" type="text" name="date" id="date" placeholder="date">
                         <button type="button">
-                            <img src="/images/calender-icon.svg" alt="">
+                            <img src="/images/wlk/calender-icon.svg" alt="">
                         </button>
                     </div>
                     <div class="text-4xl text-wlk-tertiary-color mt-6" x-text="$store.rsSection.errors.date"></div>
@@ -74,7 +74,7 @@
                     <div @click="openModal = true; document.body.style.overflow = 'hidden';" class="click-area layout-input with-icon">
                         <input :value="$store.rsSection.time" @click="openModal = true" class="uppercase placeholder:text-wlk-quaternary-color" type="text" name="time" id="time" placeholder="time">
                         <button type="button">
-                            <img src="/images/clock-icon.svg" alt="">
+                            <img src="/images/wlk/clock-icon.svg" alt="">
                         </button>
                     </div>
                     <div class="text-4xl text-wlk-tertiary-color mt-6" x-text="$store.rsSection.errors.time"></div>

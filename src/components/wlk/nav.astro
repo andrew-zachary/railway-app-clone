@@ -1,10 +1,10 @@
 <nav x-data="{collapse: false}" class="w-full z-9998 fixed">
     <div class="layout-container-xlg grid items-center">
         <div @click="collapse = !collapse" id="menu-icon" class="cursor-pointer">
-            <img src="/images/menu-icon.svg" alt="menu">
+            <img src="/images/wlk/menu-icon.svg" alt="menu">
         </div>
         <div id="logo">
-            <img src="/images/logo.svg" alt="logo">
+            <img src="/images/wlk/logo.svg" alt="logo">
         </div>
         <div id="menu-list">
             <ul :class="collapse?'items':''">
@@ -26,7 +26,7 @@
             </ul>
         </div>
         <div id="cart" class="cursor-pointer" @click="$store.cart.openCart = true; document.body.style.overflow = 'hidden';">
-            <img src="/images/vector-cart.svg" alt="cart">
+            <img src="/images/wlk/vector-cart.svg" alt="cart">
         </div>
     </div>
     <template x-teleport="body">

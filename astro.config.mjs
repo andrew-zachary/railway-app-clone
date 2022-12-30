@@ -15,6 +15,9 @@ export default defineConfig({
             @import "tailwindcss/components";
             @import "tailwindcss/utilities";
 
+            @import "swiper/css";
+            @import "swiper/css/navigation";
+
             $wlk-primary-color: #ff9292;
             $wlk-secondary-color: #ffdd67;
             $wlk-tertiary-color: #403f3f;
