@@ -6,6 +6,12 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind()],
   vite: {
+    build: {
+      rollupOptions: {
+        cache: false
+      },
+      sourcemap: false
+    },
     css: {
       devSourcemap: false,
       preprocessorOptions: {

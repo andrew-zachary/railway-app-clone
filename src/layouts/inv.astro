@@ -1,0 +1,35 @@
+---
+const title = 'investment';
+---
+<!DOCTYPE html>
+<html lang="en" data-page="investment">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+    <title>{title}</title>
+</head>
+<body>
+    <div id="bg" class="h-full w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] opacity-50 z-[-1]"></div>
+    <slot />
+</body>
+</html>
+<style lang="scss" is:global>
+
+html[data-page=investment] {
+	font-size: 62.5%;
+
+    &, body {
+        height: 100%;
+    }
+
+    body {
+
+        #bg {
+            background: url(/images/inv/skeleton.png) top no-repeat;
+        }
+    }
+}
+
+</style>
