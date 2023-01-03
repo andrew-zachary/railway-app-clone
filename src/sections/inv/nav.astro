@@ -1,7 +1,7 @@
 ---
 import Btn from "../../components/inv/btn.astro";
 ---
-<nav x-data="{collapse: false}" class="w-full z-9998 fixed">
+<nav id="inv-nav" x-data="{collapse: false}" class="w-full z-9998 fixed">
     <div id="nav-grid" class="inv-nav-grid grid items-center">
         <div id="menu-icon" @click="collapse = !collapse" class="cursor-pointer">
             <img src="/images/wlk/menu-icon.svg" alt="menu">
@@ -25,13 +25,13 @@ import Btn from "../../components/inv/btn.astro";
                 </li>
             </ul>
         </div>
-        <div id="ctrl">
-            <Btn styles="bg-inv-primary-color text-4xl text-white capitalize" text="sign up now" />
+        <div id="ctrl" class="my-4">
+            <Btn styles="capitalize sign-up" text="sign up now" />
         </div>
     </div>
 </nav>
-<style lang="scss">
-    nav {
+<style lang="scss" is:global>
+    #inv-nav {
         transition: all 0.3s ease;
         padding: 2rem 0.3rem;
         
@@ -93,9 +93,23 @@ import Btn from "../../components/inv/btn.astro";
             }
 
             #ctrl {
-                grid-column: 1 / -1;
                 grid-row: 3 / 4;
+                grid-column: 2 / 3;
+                text-align: center;
                 width: 100%;
+            }
+
+            // customize target
+            &.inv-nav-grid {
+
+                #ctrl {
+
+                    .sign-up {
+                        font-size: 1.8rem;
+                        color: white;
+                        background-color: black;
+                    }
+                }
             }
         }
 
@@ -145,6 +159,14 @@ import Btn from "../../components/inv/btn.astro";
                 &.inv-nav-grid {
                     max-width: 768px;
                     margin: 0 auto;
+
+                    #ctrl {
+                        
+                        .sign-up {
+                            font-size: 2rem;
+                            background-color: var(--inv-primary-color);
+                        }
+                    }
                 }
             }
         }
