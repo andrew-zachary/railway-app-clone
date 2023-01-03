@@ -1,0 +1,123 @@
+---
+import Btn from "../../components/inv/btn.astro";
+---
+<nav x-data="{collapse: false}" class="w-full z-9998 fixed">
+    <div class="grid items-center">
+        <div id="menu-icon" @click="collapse = !collapse" class="cursor-pointer">
+            <img src="/images/wlk/menu-icon.svg" alt="menu">
+        </div>
+        <div id="logo">
+            <img src="/images/inv/logo.png" alt="logo">
+        </div>
+        <div id="menu-list">
+            <ul :class="collapse?'items':''">
+                <li>
+                    <a class="nav-links inline-block" data-target-id="food-menu" href="#">home</a>
+                </li>
+                <li>
+                    <a class="nav-links inline-block" data-target-id="combos" href="#">our mission</a>
+                </li>
+                <li>
+                    <a class="nav-links inline-block" data-target-id="make-reservation" href="#">learn</a>
+                </li>
+                <li>
+                    <a class="nav-links inline-block" data-target-id="about-us-footer" href="#">contact us</a>
+                </li>
+            </ul>
+        </div>
+        <div id="ctrl">
+            <Btn styles="bg-inv-primary-color text-4xl text-white capitalize" text="sign up now" />
+        </div>
+    </div>
+</nav>
+<style lang="scss">
+    nav {
+        padding: 3rem 2rem;
+        transition: all 0.3s ease;
+        &.scrolling {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+        }
+        & > div {
+            /**
+            * grid for menu-icon, logo, menu-list, ctrl
+            * ctrl in/out grid
+            */
+            max-width: 768px;
+            margin: 0 auto;
+            grid-template-columns: max-content 1fr max-content;
+            #menu-icon {
+                width: 3.5rem;
+            }
+            #logo { }
+            #menu-icon {
+                display: none;
+            }
+            #menu-list {
+                overflow: hidden;
+                height: 100%;
+                ul {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    transition: all 0.3s linear;
+                    li {
+                        @apply uppercase font-mont font-regular text-[1.875rem] text-wlk-quaternary-color leading-6;
+                        a {
+                            line-height: 18px;
+                            vertical-align: -11px;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 768px) {
+            padding: 2rem 0.3rem;
+            &.scrolling {
+                padding: 0.5rem 0rem;
+            }
+            & > div {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: min-content 1fr;
+                justify-items: center;
+                #menu-icon {
+                    grid-column: 2 / 3;
+                    display: inline-block;
+                }
+                #logo {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+                }
+                #ctrl { 
+                    grid-column: 1 / -1;
+                    grid-row: 3 / 4;
+                    width: 100%;
+                }
+                #menu-list {
+                    grid-row: 2 / 3;
+                    grid-column: 1 / -1;
+                    ul {
+                        max-height: 0;
+                        opacity: 0;
+                        align-items: unset;
+                        &.items {
+                            max-height: 100vh;
+                            opacity: 1;
+                        }
+                        flex-direction: column;
+                        justify-content: center;
+                        li {
+                            padding-top: 3rem;
+                            margin: 0;
+                            text-align: center;
+                            &:last-child {
+                                padding-bottom: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</style>
