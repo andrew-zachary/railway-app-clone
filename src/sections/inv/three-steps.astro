@@ -1,26 +1,95 @@
-<section id="inv-three-steps">
-    <div id="all-steps">
-        <article>
-            <h1>learning</h1>
-            <div>
-                <h2>personalized for you</h2>
-                <p>hanvesting will guide you every step of the way so you can master the courses and make it work for you. The milestones are personalized based what you are looking to achieve.</p>
-            </div>
-        </article>
-        <article>
-            <h1>Investing</h1>
-            <div>
-                <h2>everything you need</h2>
-                <p>hanvesting will guide you every step of the way so you can master the courses and make it work for you. The milestones are personalized based what you are looking to achieve.</p>
-            </div>
-        </article>
-        <article>
-            <h1>Coaching</h1>
-            <div>
-                <h2>all in one place</h2>
-                <p>hanvesting will guide you every step of the way so you can master the courses and make it work for you. The milestones are personalized based what you are looking to achieve.</p>
-            </div>
-        </article>
+<section id="inv-three-steps" class="text-white bg-black capitalize mt-20">
+    <div id="three-steps-box" class="max-w-screen-xlg mx-auto">
+        <div id="all-steps">
+            <article class="mt-24">
+                <h1 class="font-bold text-inv-primary-color">learning</h1>
+                <div class="step-desc">
+                    <h2 class="font-bold">personalized for you</h2>
+                    <p>hanvesting will guide you every step of the way so you can master the courses and make it work for you. The milestones are personalized based what you are looking to achieve.</p>
+                </div>
+            </article>
+            <article class="mt-24">
+                <h1 class="font-bold text-inv-primary-color">investing</h1>
+                <div class="step-desc">
+                    <h2 class="font-bold">everything you need</h2>
+                    <p>hanvesting will guide you every step of the way so you can master the courses and make it work for you. The milestones are personalized based what you are looking to achieve.</p>
+                </div>
+            </article>
+            <article class="mt-24">
+                <h1 class="font-bold text-inv-primary-color">coaching</h1>
+                <div class="step-desc">
+                    <h2 class="font-bold">all in one place</h2>
+                    <p>hanvesting will guide you every step of the way so you can master the courses and make it work for you. The milestones are personalized based what you are looking to achieve.</p>
+                </div>
+            </article>
+        </div>
+        <div class="img-box mt-24 text-center">
+            <img class="inline-block" src="/images/inv/woman-with-lab.png" alt="">
+        </div>
     </div>
-    <img src="/images/inv/woman-with-lab.png" alt="">
 </section>
+<style lang="scss" is:global>
+    #inv-three-steps {
+        padding: 12rem 2rem;
+
+        article {
+            &:first-child {
+                margin-top: 0;
+            }
+    
+            h1 {
+                font-size: 6.5rem;
+            }
+    
+            h2 {
+                font-size: 3rem;
+            }
+    
+            p {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+
+            #three-steps-box {
+                display: grid;
+                grid-template-columns: minmax(0, 60rem) 1fr;
+                align-items: end;
+
+                .img-box {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            display: flex;
+            align-items: center;
+
+            #three-steps-box { 
+                grid-template-columns: minmax(0, 80rem) 1fr;
+
+                #all-steps {
+
+                    article {
+                        display: grid;
+                        grid-template-columns: minmax(0, 26rem) 1fr;
+
+                        h1 {
+                            line-height: 6rem;
+                        }
+
+                        .step-desc {
+                            @include withRtl('margin', 0 0 0 10rem, 0 10rem 0 0);
+                        }
+                    }
+                }
+
+                .img-box {
+                    margin-bottom: -6rem;
+                }
+            }
+        }
+    }
+</style>
