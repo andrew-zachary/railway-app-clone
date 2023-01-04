@@ -1,4 +1,4 @@
-<section id="inv-three-steps" class="text-white bg-black capitalize mt-20">
+<section id="inv-three-steps" class="text-white bg-black capitalize mt-20 py-48 px-8">
     <div id="three-steps-box" class="max-w-screen-xlg mx-auto">
         <div id="all-steps">
             <article class="mt-24">
@@ -30,7 +30,6 @@
 </section>
 <style lang="scss" is:global>
     #inv-three-steps {
-        padding: 12rem 2rem;
 
         article {
             &:first-child {
@@ -39,6 +38,7 @@
     
             h1 {
                 font-size: 6.5rem;
+                line-height: 7rem;
             }
     
             h2 {
@@ -75,10 +75,6 @@
                     article {
                         display: grid;
                         grid-template-columns: minmax(0, 26rem) 1fr;
-
-                        h1 {
-                            line-height: 6rem;
-                        }
 
                         .step-desc {
                             @include withRtl('margin', 0 0 0 10rem, 0 10rem 0 0);
