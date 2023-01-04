@@ -34,9 +34,9 @@ import Btn from "../../components/inv/btn.astro";
     #inv-nav {
         transition: all 0.3s ease;
         padding: 2rem 0.3rem;
+        background-color: rgba(0, 0, 0, 0.6);
         
         &.scrolling {
-            background-color: rgba(0, 0, 0, 0.6);
             padding: 0.5rem 0rem;
         }
         
@@ -114,9 +114,11 @@ import Btn from "../../components/inv/btn.astro";
         }
 
         @media screen and (min-width: 768px) {
+            background-color: unset;
             padding: 3rem 2rem;
 
             &.scrolling {
+                background-color: rgba(0, 0, 0, 0.6);
                 padding: 1rem;
             }
 
