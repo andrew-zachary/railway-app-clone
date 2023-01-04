@@ -10,7 +10,7 @@ const title = 'investment';
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
     <title>{title}</title>
 </head>
-<body>
+<body class="font-ka">
     <div id="bg" class="h-full w-full absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] opacity-50 z-[-1]"></div>
     <slot />
 </body>
@@ -22,6 +22,10 @@ html[data-page=investment] {
 
     --inv-primary-color: #0257B2;
 
+    .font-ka {
+        font-family: 'karla';
+    }
+
     &, body {
         height: 100%;
     }
@@ -30,10 +34,6 @@ html[data-page=investment] {
 
         #bg {
             background: url(/images/inv/skeleton.png) top no-repeat;
-        }
-
-        .font-ka {
-            font-family: 'karla';
         }
     }
 }

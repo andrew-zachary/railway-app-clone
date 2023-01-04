@@ -1,38 +1,92 @@
 ---
 ---
-<section id="topics">
-    <h1>What Topics Interest You?</h1>
-    <h2>make your investment journey easier by learning the basics with hanvesting.</h2>
-    <ul>
-        <li>
-            <div class="blue-box"></div>
-            <h1>investing</h1>
-            <p>hanvesting will guide you every step of the way so you can master the courses and make it work for your milestones</p>
-        </li>
-        <li>
-            <div class="blue-box"></div>
-            <h1>data analysis</h1>
-            <p>hanvesting will guide you every step of the way so you can master the courses and make it work for your milestones</p>
-        </li>
-        <li>
-            <div class="blue-box"></div>
-            <h1>finance</h1>
-            <p>hanvesting will guide you every step of the way so you can master the courses and make it work for your milestones</p>
-        </li>
-        <li>
-            <div class="blue-box"></div>
-            <h1>trading</h1>
-            <p>hanvesting will guide you every step of the way so you can master the courses and make it work for your milestones</p>
-        </li>
-        <li>
-            <div class="blue-box"></div>
-            <h1>economy</h1>
-            <p>hanvesting will guide you every step of the way so you can master the courses and make it work for your milestones</p>
-        </li>
-        <li>
-            <div class="blue-box"></div>
-            <h1>scaling</h1>
-            <p>hanvesting will guide you every step of the way so you can master the courses and make it work for your milestones</p>
-        </li>
-    </ul>
+<section id="topics" class="bg-black text-white py-48">
+    <div id="topics-box" class="max-w-screen-xlg mx-auto px-4">
+        <h1 class="capitalize text-center">What Topics Interest You?</h1>
+        <h2 class="text-center">make your investment journey easier by learning the basics with hanvesting.</h2>
+        <ul id="topics-list" class="mt-24">
+            <li>
+                <div class="blue-box"></div>
+                <h1 class="text-inv-primary-color capitalize">investing</h1>
+                <p>hanvesting will guide you every step of the way so you can master the courses and make it work for your milestones</p>
+            </li>
+            <li>
+                <div class="blue-box"></div>
+                <h1 class="text-inv-primary-color capitalize">data analysis</h1>
+                <p>hanvesting will guide you every step of the way so you can master the courses and make it work for your milestones</p>
+            </li>
+            <li>
+                <div class="blue-box"></div>
+                <h1 class="text-inv-primary-color capitalize">finance</h1>
+                <p>hanvesting will guide you every step of the way so you can master the courses and make it work for your milestones</p>
+            </li>
+            <li>
+                <div class="blue-box"></div>
+                <h1 class="text-inv-primary-color capitalize">trading</h1>
+                <p>hanvesting will guide you every step of the way so you can master the courses and make it work for your milestones</p>
+            </li>
+            <li>
+                <div class="blue-box"></div>
+                <h1 class="text-inv-primary-color capitalize">economy</h1>
+                <p>hanvesting will guide you every step of the way so you can master the courses and make it work for your milestones</p>
+            </li>
+            <li>
+                <div class="blue-box"></div>
+                <h1 class="text-inv-primary-color capitalize">scaling</h1>
+                <p>hanvesting will guide you every step of the way so you can master the courses and make it work for your milestones</p>
+            </li>
+        </ul>
+    </div>
 </section>
+<style lang="scss" is:global>
+    #topics {
+
+        h1 {
+            font-size: 6.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        ul {
+
+            li {
+
+                h1 {
+                    font-size: 3rem;
+                }
+
+                p {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        #topics-box {
+    
+            #topics-list {
+
+                display: grid;
+                justify-content: center;
+                gap: 5rem;
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media screen and (min-width: 425px) {
+            
+            #topics-box {
+    
+                #topics-list {
+
+                    grid-template-columns: repeat(auto-fit, minmax(0, 30rem));
+                    text-align: unset;
+                }
+            }
+        }
+
+
+    }
+</style>
