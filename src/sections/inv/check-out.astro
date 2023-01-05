@@ -1,93 +1,180 @@
 ---
+import Btn from "../../components/inv/btn.astro";
 ---
-<section id="check-out">
-    <h2>ready? check these out.</h2>
-    <h1>our new classes this month</h1>
-    <h3>make your investment journey easier by learning the basics with hanvesting.</h3>
-    <ul>
-        <li>
+<section id="check-out" class="py-48 px-8">
+    <header class="capitalize font-bold text-center">
+        <h2 class="text-inv-primary-color">ready? check these out.</h2>
+        <h1>our new classes this month</h1>
+        <h3 class="font-regular">make your investment journey easier by learning the basics with hanvesting.</h3>
+    </header>
+    <ul id="classes-list-cards" class="mt-48">
+        <li class="card overflow-hidden bg-inv-primary-color rounded-3xl">
             <div class="card-img">
                 <img src="/images/inv/thumbnail-1.png" alt="">
             </div>
-            <div class="card-desc">
-                <h1>
-                    investing 101: the basics
+            <div class="card-desc px-4 pt-20">
+                <h1 class="text-white font-bold capitalize">
+                    investing 101:
                 </h1>
-                <h2>
+                <h1 class="text-white font-bold capitalize">
+                    the basics
+                </h1>
+                <h2 class="text-white">
                     make your investment journey easier by learning the basics with hanvesting.
                 </h2>
-                <a href="#">enroll now</a>
+                <Btn styles="text-inv-primary-color bg-white mt-12 enroll-now" text="enroll now" />
             </div>
         </li>
-        <li>
+        <li class="card overflow-hidden bg-inv-primary-color rounded-3xl">
             <div class="card-img">
                 <img src="/images/inv/thumbnail-2.png" alt="">
             </div>
-            <div class="card-desc">
-                <h1>
-                    investing 101: intermediate
+            <div class="card-desc px-4 pt-20">
+                <h1 class="text-white font-bold capitalize">
+                    investing 101:
                 </h1>
-                <h2>
+                <h1 class="text-white font-bold capitalize">
+                    intermediate
+                </h1>
+                <h2 class="text-white">
                     make your investment journey easier by learning the basics with hanvesting.
                 </h2>
-                <a href="#">enroll now</a>
+                <Btn styles="text-inv-primary-color bg-white mt-12 enroll-now" text="enroll now" />
             </div>
         </li>
-        <li>
+        <li class="card overflow-hidden bg-inv-primary-color rounded-3xl">
             <div class="card-img">
                 <img src="/images/inv/thumbnail-3.png" alt="">
             </div>
-            <div class="card-desc">
-                <h1>
-                    investing 101: advanced
+            <div class="card-desc px-4 pt-20">
+                <h1 class="text-white font-bold capitalize">
+                    investing 101:
                 </h1>
-                <h2>
+                <h1 class="text-white font-bold capitalize">
+                    advanced
+                </h1>
+                <h2 class="text-white">
                     make your investment journey easier by learning the basics with hanvesting.
                 </h2>
-                <a href="#">enroll now</a>
+                <Btn styles="text-inv-primary-color bg-white mt-12 enroll-now" text="enroll now" />
             </div>
         </li>
-        <li>
+        <li class="card overflow-hidden bg-inv-primary-color rounded-3xl">
             <div class="card-img">
                 <img src="/images/inv/thumbnail-4.png" alt="">
             </div>
-            <div class="card-desc">
-                <h1>
-                    economy: data analysis
+            <div class="card-desc px-4 pt-20">
+                <h1 class="text-white font-bold capitalize">
+                    economy:
                 </h1>
-                <h2>
+                <h1 class="text-white font-bold capitalize">
+                    data analysis
+                </h1>
+                <h2 class="text-white">
                     make your investment journey easier by learning the basics with hanvesting.
                 </h2>
-                <a href="#">enroll now</a>
+                <Btn styles="text-inv-primary-color bg-white mt-12 enroll-now" text="enroll now" />
             </div>
         </li>
-        <li>
+        <li class="card overflow-hidden bg-inv-primary-color rounded-3xl">
             <div class="card-img">
                 <img src="/images/inv/thumbnail-5.png" alt="">
             </div>
-            <div class="card-desc">
-                <h1>
+            <div class="card-desc px-4 pt-20">
+                <h1 class="text-white font-bold capitalize">
                     analyzing and predicting
                 </h1>
-                <h2>
+                <h2 class="text-white">
                     make your investment journey easier by learning the basics with hanvesting.
                 </h2>
-                <a href="#">enroll now</a>
+                <Btn styles="text-inv-primary-color bg-white mt-12 enroll-now" text="enroll now" />
             </div>
         </li>
-        <li>
+        <li class="card overflow-hidden bg-inv-primary-color rounded-3xl">
             <div class="card-img">
                 <img src="/images/inv/thumbnail-6.png" alt="">
             </div>
-            <div class="card-desc">
-                <h1>
-                    finance: getting started
+            <div class="card-desc px-4 pt-20">
+                <h1 class="text-white font-bold capitalize">
+                    finance:
                 </h1>
-                <h2>
+                <h1 class="text-white font-bold capitalize">
+                    getting started
+                </h1>
+                <h2 class="text-white">
                     make your investment journey easier by learning the basics with hanvesting.
                 </h2>
-                <a href="#">enroll now</a>
+                <Btn styles="text-inv-primary-color bg-white mt-12 enroll-now" text="enroll now" />
             </div>
         </li>
     </ul>
 </section>
+<style lang="scss" is:global>
+    #check-out {
+
+        header {
+
+            h2 {
+                font-size: 3rem;
+            }
+
+            h1 {
+                font-size: 6.5rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        #classes-list-cards {
+            display: grid;
+            grid-template-columns: 50rem;
+            gap: 5rem 0;
+            justify-content: center;
+
+            .card {
+                height: calc(28.6rem + 1.5rem);
+                display: grid;
+                grid-template-columns: 20rem 1fr;
+
+                .card-img {
+                    padding: 5rem 2rem 0 2rem;
+                    background: url(/images/inv/wave-side.png) right top no-repeat;
+                    background-size: 120%;
+                }
+
+                .card-desc {
+
+                    h1 {
+                        font-size: 3rem;
+                    }
+
+                    h2 {
+                        font-size: 1.5rem;
+                    }
+
+                    .enroll-now {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            
+            #classes-list-cards {
+                grid-template-columns: repeat(2, 45rem);
+                gap: 5rem 3rem;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            
+            #classes-list-cards {
+                grid-template-columns: repeat(2, 55rem);
+                gap: 5rem 5rem;
+            }
+        }
+    }
+</style>
