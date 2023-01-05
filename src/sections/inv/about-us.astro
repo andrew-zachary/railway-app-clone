@@ -1,8 +1,70 @@
 ---
 ---
-<article>
-    <h1>what they say about us</h1>
-    <img src="/images/inv/person.png" alt="">
-    <h2>mark say of reidigital corp</h2>
-    <p>hanvesting helped me achieve more and understand the concept of investing. No more trial and errors, or relying on inconsistent strategies. Their course is beginner friendly and personalized to bring the full experience of helping you attain what you paid for. Hanvesting helped me achieve more and understand the concept of investing. No more trial and errors, or relying on inconsistent strategies. Their course is beginner friendly and personalized to bring the full experience of helping you attain what you paid for.</p>
-</article>
+<section id="about-us" class="py-24 px-8">
+    <div id="about-us-box" class="max-w-screen-xlg mx-auto">
+        <article>
+            <h1 class="font-bold capitalize text-center">what they say about us</h1>
+            <div class="img-box mt-24"></div>
+            <h2 class="text-inv-primary-color font-bold capitalize text-center mt-24">mark say of reidigital corp</h2>
+            <p class="mt-16">hanvesting helped me achieve more and understand the concept of investing. No more trial and errors, or relying on inconsistent strategies. Their course is beginner friendly and personalized to bring the full experience of helping you attain what you paid for. Hanvesting helped me achieve more and understand the concept of investing. No more trial and errors, or relying on inconsistent strategies. Their course is beginner friendly and personalized to bring the full experience of helping you attain what you paid for.</p>
+        </article>
+    </div>
+</section>
+<style lang="scss" is:global>
+    #about-us {
+        
+        article {
+
+            h1 {
+                font-size: 6.5rem;
+                line-height: 6.5rem;
+            }
+
+            h2 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+            }
+
+            .img-box {
+                background: url(/images/inv/person.png) center top no-repeat;
+                height: 48rem;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            
+            article {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                grid-template-rows: max-content 6rem min-content;
+                gap: 0 3rem;
+
+                h1, h2, p {
+                    grid-column: 1 / 2;
+                    text-align: unset;
+                }
+
+                h2, p {
+                    margin: unset;
+                }
+
+                .img-box {
+                    margin-top: unset;
+                    grid-column: 2 / 3;
+                    grid-row: 1 / 4;
+                }
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+
+            article {
+                grid-template-columns: 46rem 1fr;
+                gap: 0 0rem;
+            }
+        }
+    }
+</style>

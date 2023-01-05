@@ -1,6 +1,21 @@
 ---
 import Btn from "../../components/inv/btn.astro";
 ---
+<script>
+    let nav = null;
+
+    window.onload = () => {
+		nav = document.querySelector('nav');
+    }
+
+    window.onscroll = (e) => {
+		if(window.scrollY > 0) {
+			nav.classList.add('scrolling');
+		} else {
+			nav.classList.remove('scrolling');
+		}
+	}
+</script>
 <nav id="inv-nav" x-data="{collapse: false}" class="w-full z-9998 fixed">
     <div id="nav-grid" class="inv-nav-grid grid items-center">
         <div id="menu-icon" @click="collapse = !collapse" class="cursor-pointer">
@@ -118,7 +133,7 @@ import Btn from "../../components/inv/btn.astro";
             padding: 3rem 2rem;
 
             &.scrolling {
-                background-color: rgba(0, 0, 0, 0.6);
+                background-color: rgba(0, 0, 0, 0.6)!important;
                 padding: 1rem;
             }
 
