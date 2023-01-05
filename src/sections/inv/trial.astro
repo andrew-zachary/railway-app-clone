@@ -1,10 +1,59 @@
 ---
+import Btn from "../../components/inv/btn.astro";
 ---
-<section id="trial">
-    <img src="/images/inv/man-with-tab.png" alt="">
-    <article>
-        <h1>skip the trial and errors</h1>
-        <p>hanvesting will guide you every step of the way so you can master the courses and make it work for you. The milestones are personalized based what you are looking to achieve.</p>
-        <a href="#">join us today</a>
-    </article>
+<section id="trial" class="bg-black py-48">
+    <div id="trial-box" class="max-w-screen-xlg mx-auto">
+        <div class="img-box text-center">
+            <img class="inline-block" src="/images/inv/man-with-tab.png" alt="">
+        </div>
+        <article class="mt-24 pt-24 px-8">
+            <h1 class="text-white font-bold capitalize">skip the trial and errors</h1>
+            <p class="text-white mt-8">hanvesting will guide you every step of the way so you can master the courses and make it work for you. The milestones are personalized based what you are looking to achieve.</p>
+            <Btn styles="text-white bg-inv-primary-color mt-8 join-us" text="join us today" />
+        </article>
+    </div>
 </section>
+<style lang="scss" is:global>
+    #trial {
+
+        article {
+
+            h1 {
+                font-size: 6.5rem;
+                line-height: 7rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+            }
+
+            .join-us {
+                font-size: 2rem;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            padding: 0;
+            background: linear-gradient(90deg, rgba(49,87,173,1) 50%, rgba(0,0,0,1) 50%);
+
+            #trial-box {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                align-items: center;
+                gap: 0 5rem;
+                background-color: black;
+
+                .img-box {
+                    padding: 12rem 4rem;
+                    background: url(/images/inv/wave-blue.png) no-repeat;
+                    background-position: 100% 100%;
+                    background-size: cover;
+                }
+
+                article {
+                    padding: 12rem 2rem;
+                }
+            }
+        }
+    }
+</style>

@@ -30,7 +30,7 @@ module.exports = {
 				'wlk-tertiary-color': '#403f3f',
 				'wlk-quaternary-color': 'white',
 				'wlk-dim-modal': '#403f3fcc',
-				'inv-primary-color': '#0257B2'
+				'inv-primary-color': '#3157AD'
 			},
 			boxShadow: {
 				'wlk-primary': '0rem 1.7rem 2.016rem 0.384rem rgba(0, 0, 0, 0.21)'
