@@ -1,44 +1,123 @@
 ---
+import Btn from "../../components/inv/btn.astro";
 ---
 <footer>
-    <div id="footer-row-1">
-        <div>
-            <h1>investments 101</h1>
-            <ul>
-                <li>Our Courses</li>
-                <li>What's New?</li>
-                <li>Hanvesting Blog</li>
-                <li>1:1 Coaching Calls</li>
-            </ul>
+    <div id="footer-box" class="max-w-screen-xlg mx-auto text-inv-primary-color py-48 px-8">
+        <div id="footer-row-1">
+            <div class="col capitalize">
+                <h1>investments 101</h1>
+                <ul>
+                    <li>our Courses</li>
+                    <li>what's New?</li>
+                    <li>hanvesting Blog</li>
+                    <li>1:1 coaching Calls</li>
+                </ul>
+            </div>
+            <div class="col capitalize">
+                <h1>about us</h1>
+                <ul>
+                    <li>meet the team</li>
+                    <li>what we do</li>
+                    <li>our purpose</li>
+                </ul>
+            </div>
+            <div class="col capitalize">
+                <h1>join our newsletter</h1>
+                <form class="mt-8 max-w-screen-sm">
+                    <div>
+                        <input class="border-2 border-inv-primary-color rounded-2xl w-full" type="text" name="email" id="email" />
+                    </div>
+                    <Btn styles="text-center text-white bg-inv-primary-color mt-8 subscribe" text="subscribe" />
+                </form>
+            </div>
         </div>
-        <div>
-            <h1>about us</h1>
-            <ul>
-                <li>meet the team</li>
-                <li>what we do</li>
-                <li>our purpose</li>
-            </ul>
+        <div id="footer-row-2" class="mt-20 text-center">
+            <div class="col capitalize">
+                <h1>copyright 2021 hanvesting all rights reserved.</h1>
+            </div>
+            <div id="social-links" class="col">
+                <ul class="flex justify-around w-full max-w-screen-xs mx-auto">
+                    <li>
+                        <img src="/images/inv/icon1.png" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/inv/icon2.png" alt="">
+                    </li>
+                    <li>
+                        <img src="/images/inv/icon3.png" alt="">
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <h1>join our newsletter</h1>
-            <form>
-                <input type="text" name="email" id="email">
-                <button type="submit">subscribe</button>
-            </form>
-        </div>
-    </div>
-    <div id="footer-row-2">
-        <h1>copyright 2021 hanvesting all rights reserved.</h1>
-        <ul>
-            <li>
-                <img src="/images/inv/icon1.png" alt="">
-            </li>
-            <li>
-                <img src="/images/inv/icon2.png" alt="">
-            </li>
-            <li>
-                <img src="/images/inv/icon3.png" alt="">
-            </li>
-        </ul>
     </div>
 </footer>
+<style lang="scss" is:global>
+    footer {
+
+        ul {
+
+            li {
+                font-size: 1.5rem;
+            }
+        }
+
+        .col {
+            
+            h1 {
+                font-size: 3rem;
+                font-weight: bold;
+            }
+
+            a {
+                font-size: 2rem;
+            }
+        }
+
+        #footer-row-1 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem 0;
+
+            input {
+                font-size: 3rem;
+            }
+        }
+
+        #footer-row-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem 0;
+
+            h1 {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            
+            #footer-row-1 {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0 2rem;
+            }
+
+            #footer-row-2 {
+                text-align: unset;
+                grid-template-columns: repeat(2, 1fr);
+
+                #social-links {
+                    justify-self: end;
+
+                    ul {
+                        justify-content: unset;
+                        margin: 0;
+
+                        li {
+                            @include withRtl('margin', 0 0 0 5rem, 0 5rem 0 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+</style>
