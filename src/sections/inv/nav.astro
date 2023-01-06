@@ -16,16 +16,16 @@ import Btn from "../../components/inv/btn.astro";
 		}
 	}
 </script>
-<nav id="inv-nav" x-data="{collapse: false}" class="w-full z-9998 fixed">
+<nav id="inv-nav" x-data="{open: false}" class="w-full z-9998 fixed" :class="open?'open':''">
     <div id="nav-grid" class="inv-nav-grid grid items-center">
-        <div id="menu-icon" @click="collapse = !collapse" class="cursor-pointer">
+        <div id="menu-icon" @click="open = !open" class="cursor-pointer">
             <img src="/images/wlk/menu-icon.svg" alt="menu">
         </div>
         <div id="logo">
             <img src="/images/inv/logo.png" alt="logo">
         </div>
         <div id="menu-list" class="font-regular text-4xl text-white capitalize leading-6">
-            <ul :class="collapse?'items':''">
+            <ul :class="open?'items':''">
                 <li>
                     <a class="nav-links inline-block" data-target-id="food-menu" href="#">home</a>
                 </li>
@@ -40,7 +40,7 @@ import Btn from "../../components/inv/btn.astro";
                 </li>
             </ul>
         </div>
-        <div id="ctrl" class="my-4">
+        <div id="ctrl">
             <Btn styles="sign-up" text="sign up now" />
         </div>
     </div>
@@ -49,8 +49,11 @@ import Btn from "../../components/inv/btn.astro";
     #inv-nav {
         transition: all 0.3s ease;
         padding: 2rem 0.3rem;
-        background-color: rgba(0, 0, 0, 0.6);
         
+        &.scrolling, &.open {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
         &.scrolling {
             padding: 0.5rem 0rem;
         }
