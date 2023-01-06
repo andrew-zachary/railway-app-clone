@@ -148,7 +148,7 @@ import Btn from "../../components/inv/btn.astro";
 
             .card {
                 display: grid;
-                grid-template-columns: 15rem 1fr;
+                grid-template-columns: 10rem 1fr;
 
                 .card-img {
                     padding: 2rem 2rem 0 0;
@@ -165,7 +165,7 @@ import Btn from "../../components/inv/btn.astro";
                 .card-desc {
 
                     h1 {
-                        font-size: 3rem;
+                        font-size: 6.3vw;
                     }
 
                     h2 {
@@ -173,7 +173,28 @@ import Btn from "../../components/inv/btn.astro";
                     }
 
                     .enroll-now {
-                        font-size: 2rem;
+                        font-size: 6vw;
+                    }
+                }
+            }
+        }
+
+        @media screen and (min-width: 425px) {
+
+            #classes-list-cards {
+
+                .card {
+                    grid-template-columns: 15rem 1fr;
+                    
+                    .card-desc {
+    
+                        h1 {
+                            font-size: 3rem;
+                        }
+    
+                        .enroll-now {
+                            font-size: 2rem;
+                        }
                     }
                 }
             }
