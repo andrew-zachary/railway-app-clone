@@ -22,8 +22,8 @@ export default defineConfig({
             $wlk-tertiary-color: #403f3f;
             $wlk-quaternary-color: white;
 
-            $inv-primary-color: #3157AD;
-            $inv-secondary-color: #ede5da;
+            $hanv-primary-color: #3157AD;
+            $hanv-secondary-color: #ede5da;
             
             @mixin withRtl($property, $ltr-value, $rtl-value) {
               & {

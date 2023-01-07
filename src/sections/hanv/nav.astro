@@ -16,8 +16,8 @@ import Btn from "../../components/inv/btn.astro";
 		}
 	}
 </script>
-<nav id="inv-nav" x-data="{open: false}" class="w-full z-9998 fixed" :class="open?'open':''">
-    <div id="nav-grid" class="inv-nav-grid grid items-center">
+<nav id="hanv-nav" x-data="{open: false}" class="w-full z-9998 fixed" :class="open?'open':''">
+    <div id="nav-grid" class="hanv-nav-grid grid items-center">
         <div id="menu-icon" @click="open = !open" class="cursor-pointer">
             <img src="/images/wlk/menu-icon.svg" alt="menu">
         </div>
@@ -46,7 +46,7 @@ import Btn from "../../components/inv/btn.astro";
     </div>
 </nav>
 <style lang="scss" is:global>
-    #inv-nav {
+    #hanv-nav {
         transition: all 0.3s ease;
         padding: 2rem 0.3rem;
         
@@ -118,7 +118,7 @@ import Btn from "../../components/inv/btn.astro";
             }
 
             // customize target
-            &.inv-nav-grid {
+            &.hanv-nav-grid {
 
                 #ctrl {
 
@@ -176,7 +176,7 @@ import Btn from "../../components/inv/btn.astro";
                 }
 
                 // customize target
-                &.inv-nav-grid {
+                &.hanv-nav-grid {
                     max-width: 768px;
                     margin: 0 auto;
 
@@ -184,7 +184,7 @@ import Btn from "../../components/inv/btn.astro";
                         
                         .sign-up {
                             font-size: 2rem;
-                            background-color: var(--inv-primary-color);
+                            background-color: var(--hanv-primary-color);
                         }
                     }
                 }
