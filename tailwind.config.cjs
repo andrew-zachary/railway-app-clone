@@ -3,15 +3,20 @@ module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			fontSize: {
+				'xs': '1.8rem',
+				'sm': '2.2rem',
+				'md': '3.2rem',
+				'lg': '4rem',
+				'xl': '5.8rem',
+				'xxl': '6.2rem'
+			},
 			screens: {
 				xlg: '1200px',
 				lg: '992px',
 				md: '768px',
 				sm: '412px',
 				xs: '375px'
-			},
-			maxWidth: {
-				'main-container': '120rem'
 			},
 			zIndex: {
 				'9999': '9999',

@@ -1,0 +1,10 @@
+//mixins
+@mixin withRtl($property, $ltr-value, $rtl-value) {
+    & {
+      #{$property}: $ltr-value;
+    }
+  
+    .is-rtl & {
+      #{$property}: $rtl-value;
+    }
+}

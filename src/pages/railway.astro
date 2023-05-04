@@ -1,0 +1,37 @@
+---
+    import Nav from "../layout/Nav.astro";
+---
+<style lang="scss" is:global>
+    html {
+		font-size: 62.5%;
+	}
+
+	html, body {
+		height: 100%;
+	}
+	  
+	.font-mont {
+		@include withRtl('font-family', 'Montserrat', 'Tajawal');
+	}
+	  
+	.font-ssp {
+		@include withRtl('font-family', 'Source Sans Pro', 'Readex Pro');
+	}
+</style>
+<script>
+    import loader from "../js/loader";
+
+    loader(document.body.id);
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="railway">
+    <Nav lang="en" />
+</body>
+</html>

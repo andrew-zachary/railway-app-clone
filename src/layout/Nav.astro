@@ -1,0 +1,158 @@
+---
+import IconBars from "../assets/icon-bars.astro";
+import IconLogo from "../assets/logo.astro";
+
+const { lang } = Astro.props;
+
+const langLinks = {
+    "en": {
+        "label": "",
+        "name": "العربية",
+        "url": "/ar"
+    },
+    "ar": {
+        "label": "",
+        "name": "En",
+        "url": "/"
+    }
+};
+
+const navLinks = {
+    "en": [{
+        "label": "home",
+        "name": "home",
+        "url": "/"
+    },
+    {
+        "label": "posts",
+        "name": "posts",
+        "url": "/posts/all/1"
+    },
+    {
+        "label": "about",
+        "name": "about",
+        "url": "/about"
+    }],
+    "ar": [{
+        "label": "home",
+        "name": "ابدأ",
+        "url": "/ar"
+    },
+    {
+        "label": "posts",
+        "name": "مقالات",
+        "url": "/ar/posts/all/1"
+    },
+    {
+        "label": "about",
+        "name": "عنا",
+        "url": "/ar/about"
+    }]
+};
+---
+<style lang="scss">
+
+    nav {
+
+        #nav-box {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+
+            grid-template-rows: repeat(2, min-content);
+            grid-template-columns: max-content 1fr max-content;
+
+            @media screen and (min-width: 768px) {
+
+                & {
+                    grid-template-rows: 1fr;
+                    grid-template-columns: max-content 1fr max-content;
+                }
+            }
+        }
+
+        #logo {
+            max-width: 18rem;
+        }
+
+        #bars-btn {
+            max-width: 3rem;
+        }
+    }
+
+</style>
+<script>
+
+    const bodyId = document.querySelector('body').id;
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach( navLink => {
+
+        if(navLink.getAttribute('data-label') === bodyId) navLink.classList.add('active-link');
+        
+    });
+
+</script>
+<nav x-data="navmenu">
+
+    <div id="nav-box">
+
+        <div 
+            id="bars-btn" 
+            class="cursor-pointer 
+            md:hidden"
+            @click="open = !open"
+        >
+            <IconBars />
+        </div>
+
+        <div 
+            id="logo" 
+            class="md:col-start-1 md:col-end-2"
+        >
+            <IconLogo />
+        </div>
+
+        <div 
+            id="list-links" 
+            class="w-full 
+            row-start-2 row-end-3 col-start-1 col-end-4
+            md:row-start-1 md:row-end-1 md:col-start-2 md:col-end-3"
+        >
+            <ul
+                class="text-4xl text-center capitalize
+                [&[x-cloak]]:hidden
+                md:!flex md:justify-start md:text-end md:!h-full"
+                x-show="open"
+                x-collapse
+                x-cloak
+            >
+                {
+                    navLinks[lang].map( link => {
+                        return <li class="nav-link
+                                py-6 md:px-4 md:py-0
+                                text-sm 
+                                font-ssp font-regular 
+                                capitalize" 
+                                data-label={link.label}
+                            >
+                            <a href={link.url}>{ link.name }</a>
+                        </li>
+                    })
+                }
+            </ul>
+        </div>
+
+        <div 
+            id="lang-switch-btn" 
+            class="cursor-pointer
+            md:col-start-3 md:col-end-4"
+        >
+            <div class="nav-link text-cd-md font-ssp font-bold capitalize" data-label={langLinks[lang].label}>
+                <a href={langLinks[lang].url}>{ langLinks[lang].name }</a>
+            </div>
+        </div>
+        
+    </div>
+
+</nav>
