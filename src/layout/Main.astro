@@ -5,10 +5,22 @@ import Nav from "../layout/Nav.astro";
 const { title, lang } = Astro.props;
 
 ---
-<style lang="scss">
+<style lang="scss" is:global>
 
     html {
         font-size: 62.5%;
+    }
+
+    .font-robo {
+        @include withRtl('font-family', 'Roboto', 'Tajawal');
+    }
+
+    .active-link {
+
+        a {
+            border-bottom: 0.2rem solid;
+            @apply border-black;
+        }
     }
 
 </style>
@@ -26,8 +38,11 @@ const { title, lang } = Astro.props;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{ title }</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id={title} class="bg-primary font-robo text-white">
 
     <Nav lang={lang} />
 

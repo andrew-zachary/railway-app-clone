@@ -5,8 +5,8 @@ module.exports = {
 		extend: {
 			fontSize: {
 				'xs': '1.8rem',
-				'sm': '2.2rem',
-				'md': '3.2rem',
+				'sm': '2rem',
+				'md': '3rem',
 				'lg': '4rem',
 				'xl': '5.8rem',
 				'xxl': '6.2rem'
@@ -24,6 +24,9 @@ module.exports = {
 				'9997': '9997',
 				'9996': '9996',
 				'9995': '9995'
+			},
+			colors: {
+				'primary': '#12101c'
 			}
 		},
 	},

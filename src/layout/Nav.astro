@@ -1,6 +1,6 @@
 ---
 import IconBars from "../assets/icon-bars.astro";
-import IconLogo from "../assets/logo.astro";
+import IconBlock from "../components/logo-block.astro";
 
 const { lang } = Astro.props;
 
@@ -84,15 +84,18 @@ const navLinks = {
 
     <div id="nav-box"
         class="grid justify-items-center items-center
-        grid-rows-[repeat(2,min-content)] grid-cols-[max-content_1fr_max-content]
-        md:grid-rows-[1fr] md:grid-cols-[max-content_1fr_max-content]"
+        grid-rows-[repeat(2,min-content)] grid-cols-[max-content_1fr]
+        md:grid-rows-[1fr] md:grid-cols-[max-content_1fr]"
     >
 
         <div 
             id="bars-btn" 
-            class="cursor-pointer 
+            class="row-start-1 row-end-2 col-start-2 col-end-3
+            md:col-start-2 md:col-end-3
+            cursor-pointer
             md:hidden
-            max-w-[3rem]"
+            max-w-[3rem]
+            justify-self-end"
             @click="open = !open"
         >
             <IconBars />
@@ -100,23 +103,22 @@ const navLinks = {
 
         <div 
             id="logo" 
-            class="md:col-start-1 md:col-end-2
-            max-w-[18rem]"
+            class="row-start-1 row-end-2 col-start-1 col-end-2
+            md:col-start-1 md:col-end-2"
         >
-            <IconLogo />
+            <IconBlock />
         </div>
 
         <div 
             id="list-links" 
             class="w-full 
-            row-start-2 row-end-3 col-start-1 col-end-4
-            md:row-start-1 md:row-end-1 md:col-start-2 md:col-end-3"
+            row-start-2 row-end-3 col-start-1 col-end-3
+            md:row-start-1 md:row-end-2 md:col-start-2 md:col-end-3"
         >
             <ul
                 class="text-4xl text-center capitalize
                 [&[x-cloak]]:hidden
-                md:!flex md:justify-start md:text-end md:!h-full"
-                x-ref="navLinkList"
+                md:!flex md:justify-end md:text-end md:!h-full"
                 x-show="open"
                 x-collapse
                 x-cloak
@@ -125,8 +127,8 @@ const navLinks = {
                     navLinks[lang].map( link => {
                         return <li class="nav-link
                                 py-6 md:px-4 md:py-0
-                                text-sm 
-                                font-ssp font-regular 
+                                text-md 
+                                font-robo font-bold
                                 capitalize" 
                                 data-label={link.label}
                             >
@@ -135,16 +137,6 @@ const navLinks = {
                     })
                 }
             </ul>
-        </div>
-
-        <div 
-            id="lang-switch-btn" 
-            class="cursor-pointer
-            md:col-start-3 md:col-end-4"
-        >
-            <div class="nav-link text-cd-md font-ssp font-bold capitalize" data-label={langLinks[lang].label}>
-                <a href={langLinks[lang].url}>{ langLinks[lang].name }</a>
-            </div>
         </div>
         
     </div>
