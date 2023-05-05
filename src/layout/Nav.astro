@@ -24,83 +24,75 @@ const navLinks = {
         "url": "/"
     },
     {
-        "label": "posts",
-        "name": "posts",
-        "url": "/posts/all/1"
+        "label": "blog",
+        "name": "blog",
+        "url": "/blog"
     },
     {
         "label": "about",
         "name": "about",
         "url": "/about"
+    },
+    {
+        "label": "help",
+        "name": "help",
+        "url": "/help"
+    },
+    {
+        "label": "careers",
+        "name": "careers",
+        "url": "/careers"
+    },
+    {
+        "label": "pricing",
+        "name": "pricing",
+        "url": "/pricing"
     }],
     "ar": [{
         "label": "home",
-        "name": "ابدأ",
+        "name": "home",
         "url": "/ar"
     },
     {
-        "label": "posts",
-        "name": "مقالات",
-        "url": "/ar/posts/all/1"
+        "label": "blog",
+        "name": "blog",
+        "url": "/ar/blog"
     },
     {
         "label": "about",
-        "name": "عنا",
+        "name": "about",
         "url": "/ar/about"
+    },
+    {
+        "label": "help",
+        "name": "help",
+        "url": "/ar/help"
+    },
+    {
+        "label": "careers",
+        "name": "careers",
+        "url": "/ar/careers"
+    },
+    {
+        "label": "pricing",
+        "name": "pricing",
+        "url": "/ar/pricing"
     }]
 };
 ---
-<style lang="scss">
-
-    nav {
-
-        #nav-box {
-            display: grid;
-            justify-items: center;
-            align-items: center;
-
-            grid-template-rows: repeat(2, min-content);
-            grid-template-columns: max-content 1fr max-content;
-
-            @media screen and (min-width: 768px) {
-
-                & {
-                    grid-template-rows: 1fr;
-                    grid-template-columns: max-content 1fr max-content;
-                }
-            }
-        }
-
-        #logo {
-            max-width: 18rem;
-        }
-
-        #bars-btn {
-            max-width: 3rem;
-        }
-    }
-
-</style>
-<script>
-
-    const bodyId = document.querySelector('body').id;
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach( navLink => {
-
-        if(navLink.getAttribute('data-label') === bodyId) navLink.classList.add('active-link');
-        
-    });
-
-</script>
 <nav x-data="navmenu">
 
-    <div id="nav-box">
+    <div id="nav-box"
+        class="grid justify-items-center items-center
+        grid-rows-[repeat(2,min-content)] grid-cols-[max-content_1fr_max-content]
+        md:grid-rows-[1fr] md:grid-cols-[max-content_1fr_max-content]"
+    >
 
         <div 
             id="bars-btn" 
             class="cursor-pointer 
-            md:hidden"
+            md:hidden
+            max-w-[3rem]"
             @click="open = !open"
         >
             <IconBars />
@@ -108,7 +100,8 @@ const navLinks = {
 
         <div 
             id="logo" 
-            class="md:col-start-1 md:col-end-2"
+            class="md:col-start-1 md:col-end-2
+            max-w-[18rem]"
         >
             <IconLogo />
         </div>
@@ -123,6 +116,7 @@ const navLinks = {
                 class="text-4xl text-center capitalize
                 [&[x-cloak]]:hidden
                 md:!flex md:justify-start md:text-end md:!h-full"
+                x-ref="navLinkList"
                 x-show="open"
                 x-collapse
                 x-cloak
