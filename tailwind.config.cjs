@@ -4,7 +4,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontSize: {
-				'xs': '1.8rem',
+				'xs': '1.4rem',
 				'sm': '2rem',
 				'md': '3rem',
 				'lg': '4rem',
@@ -26,7 +26,8 @@ module.exports = {
 				'9995': '9995'
 			},
 			colors: {
-				'primary': '#12101c'
+				'primary': '#12101c',
+				'secondary': '#878593'
 			}
 		},
 	},

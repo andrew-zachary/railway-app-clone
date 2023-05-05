@@ -126,10 +126,11 @@ const navLinks = {
                 {
                     navLinks[lang].map( link => {
                         return <li class="nav-link
-                                py-6 md:px-4 md:py-0
-                                text-md 
+                                py-6
+                                text-md
                                 font-robo font-bold
-                                capitalize" 
+                                capitalize
+                                md:px-4 md:py-0 md:text-xs" 
                                 data-label={link.label}
                             >
                             <a href={link.url}>{ link.name }</a>
