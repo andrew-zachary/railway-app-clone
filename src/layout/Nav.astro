@@ -19,11 +19,6 @@ const langLinks = {
 
 const navLinks = {
     "en": [{
-        "label": "home",
-        "name": "home",
-        "url": "/"
-    },
-    {
         "label": "blog",
         "name": "blog",
         "url": "/blog"
@@ -49,11 +44,6 @@ const navLinks = {
         "url": "/pricing"
     }],
     "ar": [{
-        "label": "home",
-        "name": "home",
-        "url": "/ar"
-    },
-    {
         "label": "blog",
         "name": "blog",
         "url": "/ar/blog"
@@ -137,6 +127,9 @@ const navLinks = {
                         </li>
                     })
                 }
+                <li class="py-6 text-md font-robo-reversed font-bold capitalize md:px-4 md:py-0 md:text-xs">
+                    <a href={langLinks[lang].url}>{ langLinks[lang].name }</a>
+                </li>
             </ul>
         </div>
         
