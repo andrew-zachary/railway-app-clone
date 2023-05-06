@@ -9,7 +9,9 @@ const loader = (page) => {
             const bodyId = document.querySelector('body').id;
             const navLinks = document.querySelectorAll('.nav-link');
             
-            navLinks.forEach( navLink => {
+            navLinks.forEach( (navLink, index) => {
+
+                navLink.style.setProperty('--item-animiation-delay', index * 100 +"ms");
         
                 if(navLink.getAttribute('data-label') === bodyId) navLink.classList.add('active-link');
                 

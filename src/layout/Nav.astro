@@ -42,6 +42,11 @@ const navLinks = {
         "label": "pricing",
         "name": "pricing",
         "url": "/pricing"
+    },
+    {
+        "label": "login",
+        "name": "login",
+        "url": "/ar/login"
     }],
     "ar": [{
         "label": "blog",
@@ -67,13 +72,64 @@ const navLinks = {
         "label": "pricing",
         "name": "pricing",
         "url": "/ar/pricing"
+    },
+    {
+        "label": "login",
+        "name": "login",
+        "url": "/ar/login"
     }]
 };
 ---
-<nav x-data="navmenu">
+<style lang="scss">
+
+    @keyframes fade-in-up {
+        0% {
+            opacity: 0;
+            transform: translate(0, 30px);
+        }
+
+        30% {
+            opacity: 0.5;
+            transform: translate(0, 15px);
+        }
+        
+        60% {
+            opacity: 1;
+            transform: translate(0, -2px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0, 0px);
+        }
+    }
+
+    .nav-link {
+
+        @media screen and (max-width: 769px) {
+            opacity: 0;
+            
+            animation-name: fade-in-up;
+            animation-duration: 0.3s;
+            animation-delay: var(--item-animiation-delay, 300ms);
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+        }
+
+    }
+
+</style>
+<nav
+    class="w-full
+    absolute top-0 
+    bg-primary 
+    min-h-[7.2rem]" :class="{'h-full': open}"
+    x-data="navmenu"
+>
 
     <div id="nav-box"
-        class="grid justify-items-center items-center
+        class="w-full px-[3.2rem] py-[1.6rem] max-w-screen-xlg mx-auto
+        grid justify-items-center items-center
         grid-rows-[repeat(2,min-content)] grid-cols-[max-content_1fr]
         md:grid-rows-[1fr] md:grid-cols-[max-content_1fr]"
     >
@@ -82,10 +138,10 @@ const navLinks = {
             id="bars-btn" 
             class="row-start-1 row-end-2 col-start-2 col-end-3
             md:col-start-2 md:col-end-3
+            justify-self-end
             cursor-pointer
             md:hidden
-            max-w-[3rem]
-            justify-self-end"
+            max-w-[3rem]"
             @click="open = !open"
         >
             <IconBars />
@@ -106,7 +162,8 @@ const navLinks = {
             md:row-start-1 md:row-end-2 md:col-start-2 md:col-end-3"
         >
             <ul
-                class="text-4xl text-center capitalize
+                class="mt-8
+                text-4xl text-center text-white md:text-secondary capitalize
                 [&[x-cloak]]:hidden
                 md:!flex md:justify-end md:text-end md:!h-full"
                 x-show="open"
@@ -127,7 +184,13 @@ const navLinks = {
                         </li>
                     })
                 }
-                <li class="py-6 text-md font-robo-reversed font-bold capitalize md:px-4 md:py-0 md:text-xs">
+                <li class="nav-link
+                    py-6 
+                    text-md 
+                    font-robo-reversed font-bold 
+                    capitalize 
+                    md:px-4 md:py-0 md:text-xs"
+                >
                     <a href={langLinks[lang].url}>{ langLinks[lang].name }</a>
                 </li>
             </ul>

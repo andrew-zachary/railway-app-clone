@@ -3,7 +3,17 @@
 import Logo from "../assets/logo.astro";
 
 ---
-<a class="flex ">
+<style lang="scss">
+
+    a {
+        
+        span {
+            @include withRtl(margin, 0 0 0 1.6rem, 0 1.6rem 0 0);
+        }
+    }
+
+</style>
+<a class="flex items-center">
     <Logo />
     <span class="text-sm font-bold capitalize">railway</span>
 </a>
