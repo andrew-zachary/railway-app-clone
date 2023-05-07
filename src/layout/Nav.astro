@@ -106,24 +106,32 @@ const navLinks = {
 
     .nav-link {
 
-        @media screen and (max-width: 769px) {
-            opacity: 0;
+        opacity: 0;
             
-            animation-name: fade-in-up;
-            animation-duration: 0.3s;
-            animation-delay: var(--item-animiation-delay, 300ms);
-            animation-fill-mode: forwards;
-            animation-timing-function: linear;
+        animation-name: fade-in-up;
+        animation-duration: 0.3s;
+        animation-delay: var(--item-animiation-delay, 300ms);
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+
+        &:last-child {
+            margin: 0;
+        }
+
+        @media screen and (min-width: 769px) {
+            @include withRtl(margin, 0 3.2rem 0 0, 0 0 0 3.2rem);
+
+            opacity: 1!important;
+            animation-name: unset;
         }
 
     }
 
 </style>
 <nav
-    class="w-full
-    absolute top-0 
-    bg-primary 
-    min-h-[7.2rem]" :class="{'h-full': open}"
+    class="w-full min-h-[7.2rem] absolute top-0 z-50
+    bg-primary" 
+    :class="{'h-full': open}"
     x-data="navmenu"
 >
 
@@ -136,12 +144,12 @@ const navLinks = {
 
         <div 
             id="bars-btn" 
-            class="row-start-1 row-end-2 col-start-2 col-end-3
-            md:col-start-2 md:col-end-3
+            class="cursor-pointer
+            max-w-[3rem]
+            row-start-1 row-end-2 col-start-2 col-end-3
             justify-self-end
-            cursor-pointer
-            md:hidden
-            max-w-[3rem]"
+            md:col-start-2 md:col-end-3
+            md:hidden"
             @click="open = !open"
         >
             <IconBars />
@@ -156,7 +164,7 @@ const navLinks = {
         </div>
 
         <div 
-            id="list-links" 
+            id="list-links-box"
             class="w-full 
             row-start-2 row-end-3 col-start-1 col-end-3
             md:row-start-1 md:row-end-2 md:col-start-2 md:col-end-3"
@@ -164,19 +172,16 @@ const navLinks = {
             <ul
                 class="mt-8
                 text-4xl text-center text-white md:text-secondary capitalize
-                [&[x-cloak]]:hidden
-                md:!flex md:justify-end md:text-end md:!h-full"
+                md:!flex md:justify-end md:text-end md:!h-full
+                [&[x-cloak]]:hidden"
                 x-show="open"
                 x-collapse
                 x-cloak
             >
                 {
                     navLinks[lang].map( link => {
-                        return <li class="nav-link
-                                py-6
-                                text-md
-                                font-robo font-bold
-                                capitalize
+                        return <li class="nav-link py-6
+                                text-md font-robo font-bold capitalize
                                 md:px-4 md:py-0 md:text-xs" 
                                 data-label={link.label}
                             >
@@ -184,11 +189,8 @@ const navLinks = {
                         </li>
                     })
                 }
-                <li class="nav-link
-                    py-6 
-                    text-md 
-                    font-robo-reversed font-bold 
-                    capitalize 
+                <li class="nav-link py-6
+                    text-md font-robo-reversed font-bold capitalize 
                     md:px-4 md:py-0 md:text-xs"
                 >
                     <a href={langLinks[lang].url}>{ langLinks[lang].name }</a>

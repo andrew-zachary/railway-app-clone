@@ -1,0 +1,52 @@
+<style lang="scss">
+
+    #hero {
+
+        #bgs-box {
+
+            direction: ltr!important;
+        }
+
+        #text-box {
+
+            h1 {
+                font-size: clamp(32px, calc(2rem + ((1vw - 5.7px) * 6.4)), 64px);
+            }
+        }
+    }
+
+</style>
+<section id="hero"
+    class="h-full min-h-full relative
+    overflow-hidden"
+>
+
+    <div id="bgs-box" 
+        class="h-full w-full absolute top-[10%] left-[10%]
+        hidden
+        md:flex items-center justify-center"
+    >
+        <div class="h-[40vh] w-full translate-y-[20%] bg-[url('/computer-city-lines--dark.svg')] bg-no-repeat bg-contain bg-right-top"></div>
+        <div class="h-[75vh] w-full bg-[url('/deployments-sc--dark.svg')] bg-no-repeat bg-cover bg-left-top"></div>
+    </div>
+
+    <div id="text-box"
+        class="h-full max-w-screen-xlg mx-auto px-[3.2rem] relative z-10
+        w-full flex flex-col justify-center"
+    >
+        <h1 class="font-bold mb-[2.4rem]">
+            Bring your code,
+            <br />
+            we'll handle the rest.
+        </h1>
+        <p class="max-w-[57.6rem] text-sm text-secondary mb-[4.8rem]">
+            Made for any language, for projects big and small. Railway is the cloud that takes the complexity out of shipping software.
+        </p>
+        <div>
+            <a href="#" class="px-[4.4rem] py-[1.2rem] inline-block text-[1.6rem] bg-[#853BCE] rounded-lg">
+                <span>Start a New Project</span>
+            </a>
+        </div> 
+    </div>
+
+</section>

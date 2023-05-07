@@ -4,7 +4,7 @@
       #{$property}: $ltr-value;
     }
   
-    .is-rtl & {
+    body[dir=rtl] & {
       #{$property}: $rtl-value;
     }
 }
