@@ -1,0 +1,37 @@
+---
+
+import CommonCircleNumber from "./common-circle-number.astro";
+
+---
+<style lang="scss">
+
+    h2 {
+        font-size: clamp(32px,4vw,40px);
+    }
+
+    ul {
+
+        li {
+            box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+        }
+    }
+
+</style>
+<section id="start-tinker"
+    class="h-full min-h-full relative
+    overflow-hidden"
+>
+    <CommonCircleNumber borderColor="border-ternary" textColor="text-ternary" marginB="mb-[6.8rem]" />
+    <p class="text-ternary text-[2.4rem] text-center font-bold capitalize mb-[0.8rem]">now boarding, local.</p>
+    <h2 class="text-center font-bold capitalize">start and tinker</h2>
+    <hr class="w-[16rem] mx-auto my-[2.4rem] border-ternary" />
+    <p class="text-[1.8rem] text-center max-w-[89.6rem] mx-auto">Begin with your repository, or start with a template. Our tooling extends your app with plugins and variable management so environments are the same live as local.</p>
+    <div class="mt-[9.6rem]">
+        <ul>
+            <li class="inline-block pt-[3.2rem] px-[3.2rem] pb-[5.6rem]">
+                <h1 class="font-bold text-[1.8rem] mb-[1.6rem] capitalize">Solid Base</h1>
+                <p class="text-[1.4rem] text-secondary">Start from scratch or pick a template to deploy instantly, from bots to blogs.</p>
+            </li>
+        </ul>
+    </div>
+</section>

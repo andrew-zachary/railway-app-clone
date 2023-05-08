@@ -1,6 +1,13 @@
+---
+
+import Btn from "./common-btn.astro";
+
+---
 <style lang="scss">
 
     #hero {
+        background: linear-gradient(327.21deg, rgba(33, 0, 75, 0.24) 3.65%, rgba(60, 0, 136, 0) 40.32%), linear-gradient(245.93deg, rgba(209, 21, 111, 0.16) -1%, rgba(209, 25, 80, 0) 36.63%), linear-gradient(147.6deg, rgba(58, 19, 255, 0) 29.79%, rgba(98, 19, 255, 0.01) 85.72%), #13111C;
+        clip-path: polygon(0 0%, 100% 0, 100% 100%, 0 94%);
 
         #bgs-box {
 
@@ -10,7 +17,7 @@
         #text-box {
 
             h1 {
-                font-size: clamp(32px, calc(2rem + ((1vw - 5.7px) * 6.4)), 64px);
+                font-size: clamp(3.2rem, calc(3.2rem + ((1vw - 5.7px) * 6.4)), 64px);
             }
         }
     }
@@ -22,12 +29,12 @@
 >
 
     <div id="bgs-box" 
-        class="h-full w-full absolute top-[10%] left-[10%]
+        class="h-full w-full absolute top-[15%] left-[16%]
         hidden
-        md:flex items-center justify-center"
+        lg:flex items-center justify-center"
     >
-        <div class="h-[40vh] w-full translate-y-[20%] bg-[url('/computer-city-lines--dark.svg')] bg-no-repeat bg-contain bg-right-top"></div>
-        <div class="h-[75vh] w-full bg-[url('/deployments-sc--dark.svg')] bg-no-repeat bg-cover bg-left-top"></div>
+        <img class="h-[40vh] translate-y-[5%]" src="/computer-city-lines--dark.svg" alt="computer city" />
+        <img class="h-[75vh] translate-y-[-10%]" src="/deployments-sc--dark.svg" alt="deployments list" />
     </div>
 
     <div id="text-box"
@@ -43,10 +50,8 @@
             Made for any language, for projects big and small. Railway is the cloud that takes the complexity out of shipping software.
         </p>
         <div>
-            <a href="#" class="px-[4.4rem] py-[1.2rem] inline-block text-[1.6rem] bg-[#853BCE] rounded-lg">
-                <span>Start a New Project</span>
-            </a>
-        </div> 
+            <Btn>Start a New Project</Btn>
+        </div>
     </div>
 
 </section>

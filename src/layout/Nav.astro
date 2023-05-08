@@ -129,9 +129,8 @@ const navLinks = {
 
 </style>
 <nav
-    class="w-full min-h-[7.2rem] absolute top-0 z-50
-    bg-primary" 
-    :class="{'h-full': open}"
+    class="w-full min-h-[7.2rem] absolute top-0 z-50 bg-primary"
+    :class="{'h-full bg-primary': open}"
     x-data="navmenu"
 >
 
@@ -175,14 +174,14 @@ const navLinks = {
                 md:!flex md:justify-end md:text-end md:!h-full
                 [&[x-cloak]]:hidden"
                 x-show="open"
-                x-collapse
+                x-collapse.duration.0ms
                 x-cloak
             >
                 {
                     navLinks[lang].map( link => {
                         return <li class="nav-link py-6
                                 text-md font-robo font-bold capitalize
-                                md:px-4 md:py-0 md:text-xs" 
+                                md:py-0 md:text-xs md:hover:text-white" 
                                 data-label={link.label}
                             >
                             <a href={link.url}>{ link.name }</a>
@@ -191,7 +190,7 @@ const navLinks = {
                 }
                 <li class="nav-link py-6
                     text-md font-robo-reversed font-bold capitalize 
-                    md:px-4 md:py-0 md:text-xs"
+                    md:py-0 md:text-xs md:hover:text-white"
                 >
                     <a href={langLinks[lang].url}>{ langLinks[lang].name }</a>
                 </li>

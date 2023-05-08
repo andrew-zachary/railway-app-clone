@@ -12,8 +12,8 @@ module.exports = {
 				'xxl': '6.2rem'
 			},
 			screens: {
-				xlg: '1200px',
-				lg: '992px',
+				xlg: '1160px',
+				lg: '1024px',
 				md: '769px',
 				sm: '412px',
 				xs: '375px'
@@ -27,7 +27,8 @@ module.exports = {
 			},
 			colors: {
 				'primary': '#12101c',
-				'secondary': '#878593'
+				'secondary': '#878593',
+				'ternary': '#853BCE'
 			}
 		},
 	},
