@@ -29,6 +29,9 @@ module.exports = {
 				'primary': '#12101c',
 				'secondary': '#878593',
 				'ternary': '#853BCE'
+			},
+			boxShadow: {
+				'type-1': 'rgba(23, 92, 230, 0.15) 0px 4px 24px'
 			}
 		},
 	},

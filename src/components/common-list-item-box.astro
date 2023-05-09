@@ -1,0 +1,34 @@
+---
+
+import StartTinkerItemShape from "../assets/start-tinker-item-shape.astro";
+
+const { shadowType } = Astro.props;
+
+---
+<li 
+    class:list={[
+    shadowType, 
+    "pt-[3.2rem] px-[3.2rem] pb-[5.6rem] grid grid-cols-4 relative overflow-hidden"]}
+>
+    <div class="col-span-3">
+        <h1 class="mb-[1.6rem] text-[#8caef2] text-[1.8rem] capitalize font-bold">
+            <slot name="header"></slot>
+        </h1>
+        <p class="text-[1.4rem] leading-8 text-secondary">
+            <slot name="desc"></slot>
+        </p>
+    </div>
+    <div class="w-[12.8rem] h-[12.8rem] absolute right-[-4rem] bottom-[-4rem]">
+        <div class="absolute">
+            <StartTinkerItemShape />
+        </div>
+        <div 
+            class="p-[3.6rem]
+            w-[9.6rem] h-[9.6rem] 
+            absolute top-[50%] left-[50%] 
+            translate-y-[-50%] translate-x-[-50%] 
+            border-2 border-ternary rounded-full">
+            <slot name="icon"></slot>
+        </div>
+    </div>
+</li>
