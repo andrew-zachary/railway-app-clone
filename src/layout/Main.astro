@@ -7,6 +7,11 @@ const { title, lang } = Astro.props;
 ---
 <style lang="scss" is:global>
 
+    :root {
+        --blue-track: linear-gradient(0deg, rgb(255 255 255/0) 0%, hsla(220, 62%, 25%, .5) 15%, hsla(220, 62%, 25%, .5) 85%, rgb(255 255 255/0) 100%);
+        --green-track: linear-gradient(0deg, rgb(255 255 255/0) 0%, hsla(150, 60%, 13%, .5) 15%, hsla(150, 60%, 13%, .5) 85%, rgb(255 255 255/0) 100%);
+    }
+
     html {
         font-size: 62.5%;
         line-height: 1.25;
@@ -43,7 +48,7 @@ const { title, lang } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body id={title} class="bg-primary font-robo text-white">
+<body id={title} class="bg-primary font-robo text-white" x-data="moveTrains" @scroll.window="scrolling">
 
     <Nav lang={lang} />
 

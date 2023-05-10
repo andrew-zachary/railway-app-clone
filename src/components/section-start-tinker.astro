@@ -14,19 +14,43 @@ import CommonListItemBox from "./common-list-item-box.astro";
 
 </style>
 <section id="start-tinker"
-    class="h-full min-h-full relative
-    overflow-hidden"
+    class="relative max-w-screen-xlg mx-auto"
 >
     <CommonCircleNumber borderColor="border-ternary" textColor="text-ternary" marginB="mb-[6.8rem]" />
     <p class="text-ternary text-[2.4rem] text-center font-bold capitalize mb-[0.8rem]">now boarding, local.</p>
     <h2 class="text-center font-bold capitalize">start and tinker</h2>
     <hr class="w-[16rem] mx-auto my-[2.4rem] border-ternary" />
     <p class="text-[1.8rem] text-center max-w-[89.6rem] mx-auto">Begin with your repository, or start with a template. Our tooling extends your app with plugins and variable management so environments are the same live as local.</p>
-    <div class="mt-[9.6rem]">
-        <ul>
+    <div class="w-full mt-[9.6rem] pb-[14.4rem]
+        grid grid-cols-1
+        md:grid-cols-10 gap-[3.2rem]
+        lg:px-[9.6rem]"
+    >
+        <ul class="md:col-span-4">
             <CommonListItemBox shadowType="shadow-type-1">
                 <span slot="header">Solid Base</span>
                 <span slot="desc">Start from scratch or pick a template to deploy instantly, from bots to blogs.</span>
+                <ShapeBolt slot="icon" />
+            </CommonListItemBox>
+            <CommonListItemBox shadowType="shadow-type-1">
+                <span slot="header">Infrastructure as Legos</span>
+                <span slot="desc">Add a cron job, a database, or another (micro)service! Railway grows with your application.</span>
+                <ShapeBolt slot="icon" />
+            </CommonListItemBox>
+        </ul>
+        <div class="col-span-2 hidden md:block relative">
+            <img src="/01-train-dark.svg" class="train w-[2.4rem] h-[15rem] absolute top-0 bottom-0 left-1/2" style="transform: translate(-50%);" />
+            <div class="train-line w-[1.6rem] h-[140%] -mt-12 mx-auto" style="background: var(--blue-track)"></div>
+        </div>
+        <ul class="md:col-span-4">
+            <CommonListItemBox shadowType="shadow-type-1">
+                <span slot="header">Secrets Management</span>
+                <span slot="desc">Keep Environment Variables and Secrets for your team, securely, in one place.</span>
+                <ShapeBolt slot="icon" />
+            </CommonListItemBox>
+            <CommonListItemBox shadowType="shadow-type-1">
+                <span slot="header">Railway CLI</span>
+                <span slot="desc">Connect to your infrastructure + secrets, from any terminal in the world.</span>
                 <ShapeBolt slot="icon" />
             </CommonListItemBox>
         </ul>

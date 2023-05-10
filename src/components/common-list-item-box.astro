@@ -5,6 +5,13 @@ import StartTinkerItemShape from "../assets/start-tinker-item-shape.astro";
 const { shadowType } = Astro.props;
 
 ---
+<style lang="scss">
+
+    li:nth-child(even) {
+        margin-top: 3.2rem;
+    }
+
+</style>
 <li 
     class:list={[
     shadowType, 
