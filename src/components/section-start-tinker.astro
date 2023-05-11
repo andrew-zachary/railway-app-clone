@@ -41,9 +41,9 @@ import CommonListItemBox from "./common-list-item-box.astro";
                 <ShapeSquares slot="icon" />
             </CommonListItemBox>
         </ul>
-        <div class="col-span-2 hidden md:block relative">
-            <img x-ref="blueTrain" src="/01-train-dark.svg" class="w-[2.4rem] h-[15rem] absolute top-0 bottom-0 left-1/2" style="transform: translate(-50%, 0px);" />
-            <div x-ref="blueTrainTrack" class="w-[1.6rem] h-[140%] -mt-12 mx-auto" style="background: var(--blue-track)"></div>
+        <div id="blueTrainStation" class="col-span-2 hidden md:block relative">
+            <img id="blueTrain" src="/01-train-dark.svg" class="w-[2.4rem] h-[15rem] absolute top-0 bottom-0 left-1/2" style="transform: translate(-50%, 0px);" />
+            <div class="w-[1.6rem] h-[140%] -mt-12 mx-auto" style="background: var(--blue-track)"></div>
         </div>
         <ul class="md:col-span-4">
             <CommonListItemBox shadowType="shadow-type-1">

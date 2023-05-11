@@ -1,35 +1,14 @@
 import alpine from 'alpinejs';
 import collapse from '@alpinejs/collapse';
-import intersect from '@alpinejs/intersect';
 
 const loader = (page) => {
 
-    // body context 
-    alpine.data('moveTrains', () => ({
-        blueTrainSpeed: 0,
-        oldScrollValue: 0,
-        scrolling() {
+    const blueTrainCtrl = new ScrollMagic.Controller();
 
-            let scrollDir = 1;
-            let newScrollValue = window.pageYOffset;
-
-            if(this.oldScrollValue - newScrollValue < 0) scrollDir = 1;
-            else if(this.oldScrollValue - newScrollValue > 0) scrollDir = -1;
-
-            this.oldScrollValue = newScrollValue;
-
-            this.blueTrainSpeed += (scrollDir * 12.5);
-
-            if(this.blueTrainSpeed > this.$refs.blueTrainTrack.offsetHeight - 200) {
-                this.blueTrainSpeed = this.$refs.blueTrainTrack.offsetHeight - 200;
-            } else if(this.blueTrainSpeed < 0) {
-                this.blueTrainSpeed = 0;
-            }
-
-            this.$refs.blueTrain.style.transform = `translate(-50%, ${this.blueTrainSpeed}px)`;
-
-        }
-    }));
+    let blueTrain = document.getElementById("blueTrain");
+    let scene = new ScrollMagic.Scene({triggerElement: "#blueTrainStation", duration: 350})
+    .setPin(blueTrain)
+    .addTo(blueTrainCtrl);
     
     // navmenu alpinejs context
     alpine.data('navmenu', () => ({
@@ -45,7 +24,6 @@ const loader = (page) => {
         'open': false
     }));
 
-    alpine.plugin(intersect);
     alpine.plugin(collapse);
 
     alpine.start();
