@@ -6,11 +6,28 @@ const loader = (page) => {
 
     // body context 
     alpine.data('moveTrains', () => ({
-        name: '',
+        blueTrainSpeed: 0,
+        oldScrollValue: 0,
         scrolling() {
-            if(this.name === 'st') {
-                console.log(this.name);
+
+            let scrollDir = 1;
+            let newScrollValue = window.pageYOffset;
+
+            if(this.oldScrollValue - newScrollValue < 0) scrollDir = 1;
+            else if(this.oldScrollValue - newScrollValue > 0) scrollDir = -1;
+
+            this.oldScrollValue = newScrollValue;
+
+            this.blueTrainSpeed += (scrollDir * 12.5);
+
+            if(this.blueTrainSpeed > this.$refs.blueTrainTrack.offsetHeight - 200) {
+                this.blueTrainSpeed = this.$refs.blueTrainTrack.offsetHeight - 200;
+            } else if(this.blueTrainSpeed < 0) {
+                this.blueTrainSpeed = 0;
             }
+
+            this.$refs.blueTrain.style.transform = `translate(-50%, ${this.blueTrainSpeed}px)`;
+
         }
     }));
     
