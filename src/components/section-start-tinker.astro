@@ -1,5 +1,6 @@
 ---
 
+import ShapeBlocks from "../assets/shape-blocks.astro";
 import ShapeBolt from "../assets/shape-bolt.astro";
 import ShapeSquares from "../assets/shape-squares.astro";
 import ShapeBook from "../assets/shape-book.astro";
@@ -19,7 +20,7 @@ import CommonListItemBox from "./common-list-item-box.astro";
 <section id="start-tinker"
     class="relative max-w-screen-xlg mx-auto"
 >
-    <CommonCircleNumber borderColor="border-ternary" textColor="text-ternary" marginB="mb-[6.8rem]" />
+<CommonCircleNumber borderColor="border-green-1" textColor="text-green-1" marginB="mb-[6.8rem]">1</CommonCircleNumber>
     <p class="text-ternary text-[2.4rem] text-center font-bold capitalize mb-[0.8rem]">now boarding, local.</p>
     <h2 class="text-center font-bold capitalize">start and tinker</h2>
     <hr class="w-[16rem] mx-auto my-[2.4rem] border-ternary" />
@@ -30,14 +31,30 @@ import CommonListItemBox from "./common-list-item-box.astro";
         lg:px-[9.6rem]"
     >
         <ul class="md:col-span-4">
-            <CommonListItemBox shadowType="shadow-type-1">
+            <CommonListItemBox
+                shadowType="shadow-type-1" 
+                boxBorder="border-2 border-blue-1 rounded-lg"
+                boxBg="bg-primary"
+                circleStyle="border-2 border-blue-2 rounded-full bg-primary"
+                headerTxtColor="text-blue-3"
+                paraTxtColor="text-white"
+            >
                 <span slot="header">Solid Base</span>
                 <span slot="desc">Start from scratch or pick a template to deploy instantly, from bots to blogs.</span>
+                <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
                 <ShapeBolt slot="icon" />
             </CommonListItemBox>
-            <CommonListItemBox shadowType="shadow-type-1">
+            <CommonListItemBox
+                shadowType="shadow-type-1" 
+                boxBorder="border-2 border-blue-1 rounded-lg"
+                boxBg="bg-primary"
+                circleStyle="border-2 border-blue-2 rounded-full bg-primary"
+                headerTxtColor="text-blue-3"
+                paraTxtColor="text-white"
+            >
                 <span slot="header">Infrastructure as Legos</span>
                 <span slot="desc">Add a cron job, a database, or another (micro)service! Railway grows with your application.</span>
+                <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
                 <ShapeSquares slot="icon" />
             </CommonListItemBox>
         </ul>
@@ -46,14 +63,30 @@ import CommonListItemBox from "./common-list-item-box.astro";
             <div class="w-[1.6rem] h-[140%] -mt-12 mx-auto" style="background: var(--blue-track)"></div>
         </div>
         <ul class="md:col-span-4">
-            <CommonListItemBox shadowType="shadow-type-1">
+            <CommonListItemBox
+                shadowType="shadow-type-1" 
+                boxBorder="border-2 border-blue-1 rounded-lg"
+                boxBg="bg-primary"
+                circleStyle="border-2 border-blue-2 rounded-full bg-primary"
+                headerTxtColor="text-blue-3"
+                paraTxtColor="text-white"
+            >
                 <span slot="header">Secrets Management</span>
                 <span slot="desc">Keep Environment Variables and Secrets for your team, securely, in one place.</span>
+                <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
                 <ShapeBook slot="icon" />
             </CommonListItemBox>
-            <CommonListItemBox shadowType="shadow-type-1">
+            <CommonListItemBox
+                shadowType="shadow-type-1" 
+                boxBorder="border-2 border-blue-1 rounded-lg"
+                boxBg="bg-primary"
+                circleStyle="border-2 border-blue-2 rounded-full bg-primary"
+                headerTxtColor="text-blue-3"
+                paraTxtColor="text-white"
+            >
                 <span slot="header">Railway CLI</span>
                 <span slot="desc">Connect to your infrastructure + secrets, from any terminal in the world.</span>
+                <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
                 <ShapeConsole slot="icon" />
             </CommonListItemBox>
         </ul>

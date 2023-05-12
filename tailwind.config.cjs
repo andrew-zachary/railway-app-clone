@@ -28,10 +28,17 @@ module.exports = {
 			colors: {
 				'primary': '#12101c',
 				'secondary': '#878593',
-				'ternary': '#853BCE'
+				'ternary': '#853BCE',
+				'blue-1': '#0f1b33',
+				'blue-2': '#1d4596',
+				'blue-3': '#8caef2',
+				'green-1': '#42946e',
+				'green-2': '#26543f',
+				'green-3': '#95d0b4'
 			},
 			boxShadow: {
-				'type-1': 'rgba(23, 92, 230, 0.15) 0px 4px 24px'
+				'type-1': 'rgba(23, 92, 230, 0.15) 0px 4px 24px',
+				'type-2': 'rgba(66, 148, 110, 0.15) 0px 4px 24px'
 			}
 		},
 	},

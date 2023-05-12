@@ -3,12 +3,13 @@ import collapse from '@alpinejs/collapse';
 
 const loader = (page) => {
 
-    const blueTrainCtrl = new ScrollMagic.Controller();
+    const trainsCtrl = new ScrollMagic.Controller();
 
     let blueTrain = document.getElementById("blueTrain");
+
     let scene = new ScrollMagic.Scene({triggerElement: "#blueTrainStation", duration: 350})
     .setPin(blueTrain)
-    .addTo(blueTrainCtrl);
+    .addTo(trainsCtrl);
     
     // navmenu alpinejs context
     alpine.data('navmenu', () => ({
