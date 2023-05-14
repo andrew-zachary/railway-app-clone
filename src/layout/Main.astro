@@ -53,7 +53,9 @@ const { title, lang } = Astro.props;
 
     <Nav lang={lang} />
 
-    <slot></slot>
+    <main class="px-[2rem] md:px-[3.2rem]">
+        <slot></slot>
+    </main>
 
 </body>
 </html>

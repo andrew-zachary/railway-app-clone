@@ -1,0 +1,82 @@
+---
+
+import CommonBtnSubTxt from "../components/common-btn-subtxt.astro";
+import ShapeWhiteArrow from "../assets/shape-white-arrow.astro";
+
+---
+<section id="first-class" class="pt-[17.6rem]">
+    <div class="px-[2rem] mb-[6.4rem] flex flex-col items-center">
+        <p class="text-[4.8rem] font-bold capitalize">first-class features</p>
+        <p class="text-[2rem] mt-[1.6rem]">A dashboard that provides unparalleled hospitality.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-[3.6rem] md:grid-cols-2 max-w-screen-xlg mx-auto px-[2rem] md:px-[3.2rem]">
+        <div
+            class="xl:min-h-[420px]
+            md:col-span-2
+            px-[3.2rem] pt-[4.8rem] lg:pt-[0] lg:px-[6.4rem]
+            grid grid-cols-1 gap-[3.2rem] items-center md:grid-cols-2 lg:grid-cols-[40%_1fr] lg:gap-[9.6rem]
+            bg-[linear-gradient(141.64deg,_#26066B_3.52%,_#0E3551_66.02%,_#052847_88.03%)]
+            overflow-hidden
+            rounded-[1.6rem]"
+        >
+            <div class="md:pb-[3.2rem] lg:py-[4.8rem]">
+                <p class="text-[2.8rem] font-bold mb-[2rem]">Keyboard Friendly</p>
+                <p class="text-[2rem] text-[#a1a0ab] mb-[2.8rem]">Command the interface at your fingertips. Go to any page, create an object, secret, and much more.</p>
+                <CommonBtnSubTxt>
+                    <span slot="txt" class="px-[0.8rem] py-[0.4rem] bg-[#ffffff40] rounded-md">Ctrl+K</span>
+                    <span slot="subtxt" class="px-[0.8rem] py-[0.4rem]">Show Palette</span>
+                </CommonBtnSubTxt>
+            </div>
+            <div class="flex flex-col justify-end h-full md:pt-[3.2rem]">
+                <img class="max-w-full md:w-[500px] -mb-[3rem]" src="/command palette - dark.svg" />
+            </div>
+        </div>
+        <div 
+            class="grid grid-rows-[auto_1fr] gap-[3.2rem] md:gap-[4rem]
+            bg-[linear-gradient(200.41deg,_rgba(99,_29,_62,_0.4)_-5.53%,_rgba(35,_98,_111,_0.5)_97.77%)]
+            overflow-hidden
+            rounded-[1.6rem]"
+        >
+            <div class="pt-[4.4rem] px-[3.2rem] md:px-[4rem]">
+                <p class="text-[2.2rem] font-bold mb-[2rem]">Secrets Management</p>
+                <p class="text-[1.8rem] text-[#878593] mb-[2.4rem]">Maintain and sync different variables from development, staging, to prod.</p>
+                <a href="#" class="text-[1.6rem] text-[#a667e4]">View Docs -></a>
+            </div>
+            <div class="flex justify-end items-end pl-[4rem]">
+                <img class="w-full" src="/variables - dark.svg" alt="">
+            </div>
+        </div>
+        <div
+            class="grid grid-rows-[auto_1fr] gap-[3.2rem] md:gap-[4rem]
+            bg-[linear-gradient(110.1deg,_rgba(46,_29,_99,_0.4)_0%,_#3D0F34_100%)]
+            overflow-hidden
+            rounded-[1.6rem]"
+        >
+            <div class="pt-[4.4rem] px-[3.2rem] md:px-[4rem]">
+                <p class="text-[2.2rem] font-bold mb-[2rem]">Usage-based Pricing</p>
+                <p class="text-[1.8rem] text-[#878593] mb-[2.4rem]">Extend your runway. Railway bills only for compute performed on the platform.</p>
+                <a href="#" class="text-[1.6rem] text-[#a667e4]">View our Plans -></a>
+            </div>
+            <div class="px-[4rem] flex flex-end">
+                <img class="w-full" src="/project usage - dark.svg" alt="">
+            </div>
+        </div>
+        <div
+            class="md:col-span-2
+            grid grid-cols-1 gap-[1.6rem] items-center md:grid-cols-2
+            bg-[linear-gradient(108.49deg,_rgba(3,_56,_99,_0.3)_0%,_rgba(20,_107,_77,_0.3)_100%)]
+            overflow-hidden
+            rounded-[1.6rem]"
+        >
+            <div class="py-[4.8rem] px-[3.2rem] md:py-[6.4rem] md:pl-[6.4rem] md:pr-0">
+                <p class="text-[2.8rem] font-bold mb-[2rem]">Start or Extend your Infrastructure with One Click.</p>
+                <p class="text-[2rem] text-[#a1a0ab] mb-[2.8rem]">Command the interface at your fingertips. Go to any page, create an object, secret, and much more.</p>
+                <CommonBtnSubTxt>
+                    <ShapeWhiteArrow slot="txt" />
+                    <span slot="subtxt" class="px-[0.8rem] py-[0.4rem]">View our 75+ Templates</span>
+                </CommonBtnSubTxt>
+            </div>
+            <div class="w-full h-full" style="background-image: url('/logo grid - dark.svg'); background-position-y: -16px;"></div>
+        </div>
+    </div>
+</section>
