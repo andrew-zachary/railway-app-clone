@@ -9,6 +9,7 @@ import SectionBrands from "../components/section-brands.astro";
 import SectionFirstClass from "../components/section-first-class.astro";
 import SectionLovedBy from "../components/section-loved-by.astro";
 import SectionDeployApp from "../components/section-deploy-app.astro";
+import Footer from "../components/footer.astro";
 
 const title = 'home';
 const lang = 'en';
@@ -22,7 +23,10 @@ const lang = 'en';
     <SectionLaunchScale />
     <SectionBrands />
     <SectionFirstClass />
-    <SectionLovedBy />
-    <SectionDeployApp />
+    <section class="-mx-[2rem] md:-mx-[3.2rem]" style="background-image:linear-gradient(38.73deg, rgba(204, 0, 187, 0.25) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.25) 100%);">
+        <SectionLovedBy />
+        <SectionDeployApp />
+        <Footer />
+    </section>
 
 </Main>
