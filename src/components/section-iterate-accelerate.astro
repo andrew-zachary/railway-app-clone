@@ -9,6 +9,8 @@ import ShapeRefresh from "../assets/shape-refresh.astro";
 import CommonCircleNumber from "./common-circle-number.astro";
 import CommonListItemBox from "./common-list-item-box.astro";
 
+import BoxEdge from "../parts/box-edge.astro";
+
 ---
 <style lang="scss">
 
@@ -26,6 +28,9 @@ import CommonListItemBox from "./common-list-item-box.astro";
     class="relative -mx-[2rem] md:-mx-[3.2rem]"
 >
     <div id="iterate-accelerate__box" class="max-w-screen-xlg mx-auto">
+
+        <BoxEdge bg="bg-[#13111c]" />
+
         <CommonCircleNumber borderColor="border-green-1" textColor="text-green-1" marginB="mb-[6.8rem]">2</CommonCircleNumber>
         <p class="text-green-1 text-[2.4rem] text-center font-bold capitalize mb-[0.8rem]">Up and Running</p>
         <h2 class="text-center font-bold capitalize">Iterate and Accelerate</h2>
