@@ -1,5 +1,5 @@
 ---
-    import CommonBtnSubtxt from "./common-btn-subtxt.astro";
+import CommonBtnSubtxt from "./common-btn-subtxt.astro";
 ---
 <style lang="scss">
     #deploy-app {
@@ -11,15 +11,20 @@
 <section 
     id="deploy-app" 
     class="max-w-[116rem] mx-auto
-    flex flex-col items-center
-    text-center 
-    px-[3.2rem] py-[6.4rem] mb-[9.6rem] 
-    border-white border-opacity-10
-    bg-white bg-opacity-5 rounded-[1.2rem]"
+    px-[2rem] mb-[9.6rem]
+    relative z-20"
 >
-    <h2 class="text-[3.55rem] font-bold mb-[2.4rem] max-w-[44.8rem]">Deploy an App to Production in Minutes</h2>
-    <p class="text-[2rem] text-[#878593] mb-[3.2rem] max-w-[51.2rem]">Join thousands of people deploying hundreds of thousands of applications effortlessly on Railway</p>
-    <CommonBtnSubtxt>
-        <span slot="subtxt" class="px-[0.8rem] py-[0.4rem]">Click this Button</span>
-    </CommonBtnSubtxt>
+    <div 
+        class="flex flex-col items-center
+        text-center
+        border-white border-opacity-10
+        bg-white bg-opacity-5 rounded-[1.2rem]
+        px-[2rem] py-[6.4rem]"
+    >
+        <h2 class="text-[3.55rem] font-bold mb-[2.4rem] max-w-[44.8rem]">Deploy an App to Production in Minutes</h2>
+        <p class="text-[2rem] text-[#878593] mb-[3.2rem] max-w-[51.2rem]">Join thousands of people deploying hundreds of thousands of applications effortlessly on Railway</p>
+        <CommonBtnSubtxt>
+            <span slot="subtxt" class="px-[0.8rem] py-[0.4rem]">Click this Button</span>
+        </CommonBtnSubtxt>
+    </div>
 </section>
