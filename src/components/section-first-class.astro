@@ -4,9 +4,28 @@ import CommonBtnSubTxt from "../components/common-btn-subtxt.astro";
 import ShapeWhiteArrow from "../assets/shape-white-arrow.astro";
 
 ---
+<style lang="scss">
+
+    .title-1 {
+        font-size: clamp(40px,5vw,48px);
+    }
+
+    .title-2 {
+        font-size: clamp(28px,2.5vw,32px);
+    }
+
+    .title-3 {
+        font-size: clamp(22px,2.5vw,24px);
+    }
+
+    .title-4 {
+        font-size: clamp(24px,3vw,28px);
+    }
+
+</style>
 <section id="first-class" class="py-[6.4rem] md:py-[17.6rem] -mx-[2rem] md:-mx-[3.2rem]">
     <div class="px-[2rem] mb-[6.4rem] text-center flex flex-col items-center">
-        <p class="text-[4.8rem] font-bold capitalize">first-class features</p>
+        <p class="title-1 text-[4.8rem] font-bold capitalize">first-class features</p>
         <p class="text-[2rem] mt-[1.6rem]">A dashboard that provides unparalleled hospitality.</p>
     </div>
     <div class="grid grid-cols-1 gap-[3.6rem] md:grid-cols-2 max-w-screen-xlg mx-auto px-[2rem] md:px-[3.2rem]">
@@ -20,7 +39,7 @@ import ShapeWhiteArrow from "../assets/shape-white-arrow.astro";
             rounded-[1.6rem]"
         >
             <div class="md:pb-[3.2rem] lg:py-[4.8rem]">
-                <p class="text-[2.8rem] font-bold mb-[2rem]">Keyboard Friendly</p>
+                <p class="title-2 text-[2.8rem] font-bold mb-[2rem]">Keyboard Friendly</p>
                 <p class="text-[2rem] text-[#a1a0ab] mb-[2.8rem]">Command the interface at your fingertips. Go to any page, create an object, secret, and much more.</p>
                 <CommonBtnSubTxt>
                     <span slot="txt" class="px-[0.8rem] py-[0.4rem] bg-[#ffffff40] rounded-md">Ctrl+K</span>
@@ -38,7 +57,7 @@ import ShapeWhiteArrow from "../assets/shape-white-arrow.astro";
             rounded-[1.6rem]"
         >
             <div class="pt-[4.4rem] px-[3.2rem] md:px-[4rem]">
-                <p class="text-[2.2rem] font-bold mb-[2rem]">Secrets Management</p>
+                <p class="title-3 font-bold mb-[2rem]">Secrets Management</p>
                 <p class="text-[1.8rem] text-[#878593] mb-[2.4rem]">Maintain and sync different variables from development, staging, to prod.</p>
                 <a href="#" class="text-[1.6rem] text-[#a667e4]">View Docs -></a>
             </div>
@@ -53,7 +72,7 @@ import ShapeWhiteArrow from "../assets/shape-white-arrow.astro";
             rounded-[1.6rem]"
         >
             <div class="pt-[4.4rem] px-[3.2rem] md:px-[4rem]">
-                <p class="text-[2.2rem] font-bold mb-[2rem]">Usage-based Pricing</p>
+                <p class="title-3 font-bold mb-[2rem]">Usage-based Pricing</p>
                 <p class="text-[1.8rem] text-[#878593] mb-[2.4rem]">Extend your runway. Railway bills only for compute performed on the platform.</p>
                 <a href="#" class="text-[1.6rem] text-[#a667e4]">View our Plans -></a>
             </div>
@@ -69,7 +88,7 @@ import ShapeWhiteArrow from "../assets/shape-white-arrow.astro";
             rounded-[1.6rem]"
         >
             <div class="py-[4.8rem] px-[3.2rem] md:py-[6.4rem] md:pl-[6.4rem] md:pr-0">
-                <p class="text-[2.8rem] font-bold mb-[2rem]">Start or Extend your Infrastructure with One Click.</p>
+                <p class="title-4 font-bold mb-[2rem]">Start or Extend your Infrastructure with One Click.</p>
                 <p class="text-[2rem] text-[#a1a0ab] mb-[2.8rem]">Command the interface at your fingertips. Go to any page, create an object, secret, and much more.</p>
                 <CommonBtnSubTxt>
                     <ShapeWhiteArrow slot="txt" />
