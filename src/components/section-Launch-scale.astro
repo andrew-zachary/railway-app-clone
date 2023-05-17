@@ -12,14 +12,14 @@ import CommonCircleNumber from "./common-circle-number.astro";
 import CommonListItemBox from "./common-list-item-box.astro";
 
 ---
-<style lang="scss">
+<style lang="scss" is:global>
 
     h2 {
         font-size: clamp(32px,4vw,40px);
     }
 
 </style>
-<section id="start-tinker"
+<section id="launch-scale"
     class="relative max-w-screen-xlg mx-auto"
 >
 
@@ -30,7 +30,7 @@ import CommonListItemBox from "./common-list-item-box.astro";
         <h2 class="text-center font-bold capitalize">Launch and Scale</h2>
         <hr class="w-[16rem] mx-auto my-[2.4rem] border-ternary" />
         <p class="text-[1.8rem] text-center max-w-[89.6rem] mx-auto">As you push the limits of what is possible, Railway keeps your applications on track. Keep your sites seen without costing a fortune.</p>
-        <div class="w-full absolute inset-0 -z-10 flex items-center justify-center">
+        <div id="bigTrain" class="w-full absolute inset-0 -z-10 flex items-center justify-center">
             <img src="/big-train.svg" alt="">
         </div>
         <div class="relative z-20 w-full mt-[9.6rem] pb-[14.4rem] px-[2rem]

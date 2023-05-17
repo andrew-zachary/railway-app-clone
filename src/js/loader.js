@@ -5,20 +5,27 @@ const loader = (page) => {
 
     const trainsCtrl = new ScrollMagic.Controller();
 
-    let blueTrain = document.getElementById("blueTrain");
-    let greenTrain1 = document.getElementById("greenTrain1");
-    let greenTrain2 = document.getElementById("greenTrain2");
-    let greenTrain3 = document.getElementById("greenTrain3");
+    const blueTrain = document.getElementById('blueTrain');
+    const greenTrain1 = document.getElementById('greenTrain1');
+    const greenTrain2 = document.getElementById('greenTrain2');
+    const greenTrain3 = document.getElementById('greenTrain3');
+    const bigTrain = document.getElementById('bigTrain');
 
-    let scene1 = new ScrollMagic.Scene({triggerElement: "#blueTrainStation", duration: 350});
+    const scene1 = new ScrollMagic.Scene({triggerElement: '#blueTrainStation', duration: 350});
     scene1.setPin(blueTrain).addTo(trainsCtrl);
 
-    let scene2 = new ScrollMagic.Scene({triggerElement: "#greenTrainStation", duration: 350, offset: 100});
+    const scene2 = new ScrollMagic.Scene({triggerElement: '#greenTrainStation', duration: 350, offset: 100});
     scene2.setPin(greenTrain1).addTo(trainsCtrl);
-    let scene3 = new ScrollMagic.Scene({triggerElement: "#greenTrainStation", duration: 350});
+    const scene3 = new ScrollMagic.Scene({triggerElement: '#greenTrainStation', duration: 350});
     scene3.setPin(greenTrain2).addTo(trainsCtrl);
-    let scene4 = new ScrollMagic.Scene({triggerElement: "#greenTrainStation", duration: 350, offset: 50});
+    const scene4 = new ScrollMagic.Scene({triggerElement: '#greenTrainStation', duration: 350, offset: 50});
     scene4.setPin(greenTrain3).addTo(trainsCtrl);
+
+    const scene5 = new ScrollMagic.Scene({triggerElement: '#launch-scale', duration: 500});
+    scene5.addTo(trainsCtrl).on('progress', (e) => {
+        const scaleAmount = parseFloat(e.progress.toFixed(2)) + 0.5;
+        bigTrain.style.transform = `scale(${scaleAmount})`;
+    });
     
     // navmenu alpinejs context
     alpine.data('navmenu', () => ({
