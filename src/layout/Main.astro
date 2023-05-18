@@ -67,7 +67,7 @@ const { title, lang } = Astro.props;
 
     import loader from "../js/loader.js";
 
-    loader();
+    window.onload = () => loader();
 
 </script>
 <!DOCTYPE html>
