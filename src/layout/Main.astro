@@ -29,6 +29,17 @@ const { title, lang } = Astro.props;
         @include withRtl('font-family', 'Tajawal', 'Roboto');
     }
 
+    ul.to-reveal {
+        transition: transform 0.8s ease-out, opacity 2s ease-out;
+        transform: translateY(150px);
+        opacity: 0;
+
+        &.reveal {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
 </style>
 <script>
 

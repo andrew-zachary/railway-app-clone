@@ -27,12 +27,12 @@ import CommonListItemBox from "./common-list-item-box.astro";
         <h2 class="text-center font-bold capitalize">start and tinker</h2>
         <hr class="w-[16rem] mx-auto my-[2.4rem] border-ternary" />
         <p class="text-[1.8rem] text-center max-w-[89.6rem] mx-auto">Begin with your repository, or start with a template. Our tooling extends your app with plugins and variable management so environments are the same live as local.</p>
-        <div class="w-full mt-[9.6rem] pb-[14.4rem] px-[2rem]
+        <div id="start-tinker-box" class="w-full mt-[9.6rem] pb-[14.4rem] px-[2rem]
             grid grid-cols-1
             md:grid-cols-10 gap-[3.2rem]
             lg:px-[9.6rem]"
         >
-            <ul class="md:col-span-4">
+            <ul class="to-reveal start-tinker-lists md:col-span-4">
                 <CommonListItemBox
                     shadowType="shadow-type-1" 
                     boxBorder="border-2 border-blue-1 rounded-lg"
@@ -64,7 +64,7 @@ import CommonListItemBox from "./common-list-item-box.astro";
                 <img id="blueTrain" src="/01-train-dark.svg" class="w-[2.4rem] h-[15rem] absolute top-0 bottom-0 left-1/2" style="transform: translate(-50%, 0px);" />
                 <div class="w-[1.6rem] h-[140%] -mt-12 mx-auto" style="background: var(--blue-track)"></div>
             </div>
-            <ul class="md:col-span-4">
+            <ul class="to-reveal start-tinker-lists md:col-span-4">
                 <CommonListItemBox
                     shadowType="shadow-type-1" 
                     boxBorder="border-2 border-blue-1 rounded-lg"

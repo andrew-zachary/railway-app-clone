@@ -33,12 +33,12 @@ import CommonListItemBox from "./common-list-item-box.astro";
         <div id="bigTrain" class="w-full absolute inset-0 -z-10 flex items-center justify-center">
             <img src="/big-train.svg" alt="">
         </div>
-        <div class="relative z-20 w-full mt-[9.6rem] pb-[14.4rem] px-[2rem]
+        <div id="launch-scale-box" class="relative z-20 w-full mt-[9.6rem] pb-[14.4rem] px-[2rem]
             grid grid-cols-1
             md:grid-cols-12 gap-[3.2rem]
             lg:px-[9.6rem]"
         >
-            <ul class="md:col-span-4">
+            <ul class="to-reveal launch-scale-lists md:col-span-4">
                 <CommonListItemBox
                     shadowType="shadow-type-1" 
                     boxBorder="border-2 border-blue-1 rounded-lg"
@@ -66,7 +66,7 @@ import CommonListItemBox from "./common-list-item-box.astro";
                     <ShapeLock slot="icon" />
                 </CommonListItemBox>
             </ul>
-            <ul class="md:col-span-4">
+            <ul class="to-reveal launch-scale-lists md:col-span-4">
                 <CommonListItemBox
                     shadowType="shadow-type-1" 
                     boxBorder="border-2 border-blue-1 rounded-lg"
@@ -94,7 +94,7 @@ import CommonListItemBox from "./common-list-item-box.astro";
                     <ShapeCheck slot="icon" />
                 </CommonListItemBox>
             </ul>
-            <ul class="md:col-span-4">
+            <ul class="to-reveal launch-scale-lists md:col-span-4">
                 <CommonListItemBox
                     shadowType="shadow-type-1" 
                     boxBorder="border-2 border-blue-1 rounded-lg"
