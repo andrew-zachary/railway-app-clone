@@ -13,6 +13,8 @@ const loader = (page) => {
     const startTinkerLists = document.querySelectorAll('.start-tinker-lists');
     const iterateAccelerateLists = document.querySelectorAll('.iterate-accelerate-lists');
     const launchScaleLists = document.querySelectorAll('.launch-scale-lists');
+    const imgToRight = document.querySelectorAll('.to-translate-right');
+    const imgToLeft = document.querySelectorAll('.to-translate-left');
 
     const blueTrainScene = new ScrollMagic.Scene({triggerElement: '#blueTrainStation', duration: 350});
     blueTrainScene.setPin(blueTrain).addTo(trainsCtrl);
@@ -38,6 +40,11 @@ const loader = (page) => {
 
     const launchScaleScene = new ScrollMagic.Scene({triggerElement: '#launch-scale-box', offset: -235});
     launchScaleScene.addTo(trainsCtrl).setClassToggle(launchScaleLists, 'reveal');
+
+    const heroScene1 = new ScrollMagic.Scene({triggerElement: '#hero'});
+    heroScene1.addTo(trainsCtrl).setClassToggle(imgToRight, 'translate-right');
+    const heroScene2 = new ScrollMagic.Scene({triggerElement: '#hero'});
+    heroScene2.addTo(trainsCtrl).setClassToggle(imgToLeft, 'translate-left');
     
     // navmenu alpinejs context
     alpine.data('navmenu', () => ({

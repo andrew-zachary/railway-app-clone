@@ -40,6 +40,28 @@ const { title, lang } = Astro.props;
         }
     }
 
+    img.to-translate-right {
+        transition: all 0.5s ease-out;
+        transform: translateX(150px);
+        opacity: 0;
+
+        &.translate-right {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    img.to-translate-left {
+        transition: all 0.5s ease-out;
+        transform: translateX(-150px);
+        opacity: 0;
+
+        &.translate-left {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
 </style>
 <script>
 
