@@ -57,6 +57,14 @@ const loader = (page) => {
             });
                 
         },
+        toggleMenu() {
+
+            this.open = !this.open;
+
+            if(this.open) document.body.style.overflowY = 'hidden';
+            else document.body.style.overflowY = 'scroll';
+
+        },
         'open': false
     }));
 
