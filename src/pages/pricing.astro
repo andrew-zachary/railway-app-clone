@@ -1,6 +1,7 @@
 ---
 
 import Main from "../layout/Main.astro";
+import Footer from "../components/footer.astro";
 
 const title = 'pricing';
 const lang = 'en';
@@ -8,6 +9,11 @@ const lang = 'en';
 ---
 <Main title={title} lang={lang}>
 
-    <h1>pricing</h1>
+    <section class="h-screen flex justify-center items-center">
+        <h2 class="text-[3.2rem] capitalize">{title} page</h2>
+    </section>
+    <section class="-mx-[2rem] md:-mx-[3.2rem]">
+        <Footer />
+    </section>
 
 </Main>
