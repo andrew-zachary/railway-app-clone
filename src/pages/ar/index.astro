@@ -1,18 +1,32 @@
 ---
 
 import Main from "../../layout/Main.astro";
+import SectionHero from "../../components/section-hero.astro";
+import SectionStartTinker from "../../components/section-start-tinker.astro";
+import SectionIterateAccelerate from "../../components/section-iterate-accelerate.astro";
+import SectionLaunchScale from "../../components/section-Launch-scale.astro";
+import SectionBrands from "../../components/section-brands.astro";
+import SectionFirstClass from "../../components/section-first-class.astro";
+import SectionLovedBy from "../../components/section-loved-by.astro";
+import SectionDeployApp from "../../components/section-deploy-app.astro";
 import Footer from "../../components/footer.astro";
 
-const title = 'أهلاً';
+const title = 'اهلاً';
 const lang = 'ar';
+const dir = 'rtl';
 
 ---
-<Main title={title} lang={lang}>
+<Main title={title} lang={lang} dir={dir}>
 
-    <section class="h-screen flex justify-center items-center">
-        <h2 class="text-[3.2rem] capitalize">{title}</h2>
-    </section>
-    <section class="-mx-[2rem] md:-mx-[3.2rem]">
+    <SectionHero />
+    <SectionStartTinker />
+    <SectionIterateAccelerate />
+    <SectionLaunchScale />
+    <SectionBrands />
+    <SectionFirstClass />
+    <section class="-mx-[2rem] md:-mx-[3.2rem]" style="background-image:linear-gradient(38.73deg, rgba(204, 0, 187, 0.25) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.25) 100%);">
+        <SectionLovedBy />
+        <SectionDeployApp />
         <Footer />
     </section>
 

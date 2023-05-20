@@ -1,3 +1,13 @@
+
+<style lang="scss">
+    article {
+        text-align: left;
+
+        body[dir=rtl] & {
+            text-align: right;
+        }
+    }
+</style>
 <section id="loved-by" class="px-[2rem] max-w-[116rem] mx-auto">
 
     <header class="text-center">
@@ -12,7 +22,7 @@
         <div class="grid gap-[3.2rem] grid-cols-1 md:grid-cols-3 items-center">
             <div class="md:block">
                 <a href="#">
-                    <article class="p-[2.4rem] rounded-[0.8rem] border border-[#211f2d] text-left">
+                    <article class="p-[2.4rem] rounded-[0.8rem] border border-[#211f2d]">
                         <header class="flex mb-[1.6rem]">
                             <img src="/pulpmint.avif" alt="" class="w-[3.2rem] h-[3.2rem] rounded-full" />
                             <div class="flex flex-col">

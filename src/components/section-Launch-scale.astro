@@ -23,8 +23,16 @@ import CommonListItemBox from "./common-list-item-box.astro";
         <h2 class="title-1 text-center font-bold capitalize">Launch and Scale</h2>
         <hr class="w-[16rem] mx-auto my-[2.4rem] border-ternary" />
         <p class="text-[1.8rem] text-center max-w-[89.6rem] mx-auto">As you push the limits of what is possible, Railway keeps your applications on track. Keep your sites seen without costing a fortune.</p>
-        <div id="bigTrain" class="w-full absolute inset-0 -z-10 flex items-center justify-center">
-            <img src="/big-train.svg" alt="">
+        <div 
+            id="bigTrainContainer"
+            class="w-screen h-full
+            absolute left-[50%] top-[50%] -z-10
+            -translate-x-[50%] -translate-y-[50%]
+            flex items-center justify-center overflow-hidden"
+        >
+            <div id="bigTrain" class="w-full">
+                <img src="/big-train.svg" alt="">
+            </div>
         </div>
         <div id="launch-scale-box" class="relative z-20 w-full mt-[9.6rem] pb-[14.4rem] px-[2rem]
             grid grid-cols-1

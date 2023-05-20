@@ -15,6 +15,18 @@ const {
         margin-top: 3.2rem;
     }
 
+    .icons-blocks {
+        position: absolute;
+        bottom: -4rem;
+        right: -4rem;
+
+        body[dir=rtl] & {
+            
+            right: unset;
+            left: -4rem!important;
+        }
+    }
+
 </style>
 <li 
     class:list={[
@@ -31,7 +43,7 @@ const {
             <slot name="desc"></slot>
         </p>
     </div>
-    <div class="w-[12.8rem] h-[12.8rem] absolute right-[-4rem] bottom-[-4rem]">
+    <div class="icons-blocks w-[12.8rem] h-[12.8rem]">
         <div class="absolute">
             <slot name="blocks"></slot>
         </div>
