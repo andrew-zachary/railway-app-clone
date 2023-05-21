@@ -16,10 +16,10 @@ import CommonListItemBox from "./common-list-item-box.astro";
     <div class="-mx-[2rem] md:-mx-[3.2rem] -mt-[3.2rem]">
 
         <CommonCircleNumber borderColor="border-blue-2" textColor="text-blue-2" marginB="mb-[6.8rem]">1</CommonCircleNumber>
-        <p class="text-ternary text-[2.4rem] text-center font-bold capitalize mb-[0.8rem]">now boarding, local.</p>
-        <h2 class="title-1 text-center font-bold capitalize">start and tinker</h2>
+        <slot name="topHeader"></slot>
+        <slot name="header"></slot>
         <hr class="w-[16rem] mx-auto my-[2.4rem] border-ternary" />
-        <p class="text-[1.8rem] text-center max-w-[89.6rem] mx-auto">Begin with your repository, or start with a template. Our tooling extends your app with plugins and variable management so environments are the same live as local.</p>
+        <slot name="subHeader"></slot>
         <div id="start-tinker-box" class="w-full mt-[9.6rem] pb-[14.4rem] px-[2rem]
             grid grid-cols-1
             md:grid-cols-10 gap-[3.2rem]

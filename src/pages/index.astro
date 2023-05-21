@@ -18,12 +18,46 @@ const dir = 'ltr';
 ---
 <Main title={title} lang={lang} dir={dir}>
 
-    <SectionHero />
-    <SectionStartTinker />
-    <SectionIterateAccelerate />
-    <SectionLaunchScale />
-    <SectionBrands />
-    <SectionFirstClass />
+    <SectionHero>
+        <h1 slot="header" class="font-bold text-[clamp(3.2rem,calc(3.2rem+((1vw-5.7px)*6.4)),64px)] mb-[2.4rem]">
+            Bring your code,
+            <br />
+            we'll handle the rest.
+        </h1>
+        <p slot="subHeader" class="max-w-[57.6rem] text-sm text-secondary mb-[4.8rem]">
+            Made for any language, for projects big and small. Railway is the cloud that takes the complexity out of shipping software.
+        </p>
+        <span slot="btn">Start a New Project</span>
+    </SectionHero>
+    <SectionStartTinker>
+        <p slot="topHeader" class="text-ternary text-[2.4rem] text-center font-bold capitalize mb-[0.8rem]">now boarding, local.</p>
+        <h2 slot="header" class="title-1 text-center font-bold capitalize">start and tinker</h2>
+        <p slot="subHeader" class="text-[1.8rem] text-center max-w-[89.6rem] mx-auto">Begin with your repository, or start with a template. Our tooling extends your app with plugins and variable management so environments are the same live as local.</p>
+    </SectionStartTinker>
+    <SectionIterateAccelerate>
+        <p slot="topHeader" class="text-green-1 text-[2.4rem] text-center font-bold capitalize mb-[0.8rem]">Up and Running</p>
+        <h2 slot="header" class="title-1 text-center font-bold capitalize">Iterate and Accelerate</h2>
+        <p slot="subHeader" class="text-[1.8rem] text-center max-w-[89.6rem] mx-auto">From the first deploy, anything is possible. Railway helps you ship quickly by removing common developer hurdles</p>
+    </SectionIterateAccelerate>
+    <SectionLaunchScale>
+        <p slot="topHeader" class="text-ternary text-[2.4rem] text-center font-bold capitalize mb-[0.8rem]">Next Stop, Production.</p>
+        <h2 slot="header" class="title-1 text-center font-bold capitalize">Launch and Scale</h2>
+        <p slot="subHeader" class="text-[1.8rem] text-center max-w-[89.6rem] mx-auto">As you push the limits of what is possible, Railway keeps your applications on track. Keep your sites seen without costing a fortune.</p>
+    </SectionLaunchScale>
+    <SectionBrands>
+        <p slot="head" class="text-[2.4rem] font-bold text-left">
+            Ideal for any kind of product.&nbsp;&nbsp;
+            <br />
+            Such as...
+        </p>
+        <p slot="tail" class="text-[2.4rem] font-bold text-left">
+            and many more...
+        </p>
+    </SectionBrands>
+    <SectionFirstClass>
+        <p slot="header" class="first-class-title-1 text-[4.8rem] font-bold capitalize">first-class features</p>
+        <p slot="supHeader" class="text-[2rem] mt-[1.6rem]">A dashboard that provides unparalleled hospitality.</p>
+    </SectionFirstClass>
     <section class="-mx-[2rem] md:-mx-[3.2rem]" style="background-image:linear-gradient(38.73deg, rgba(204, 0, 187, 0.25) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.25) 100%);">
         <SectionLovedBy />
         <SectionDeployApp />

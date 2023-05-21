@@ -28,10 +28,10 @@ import BoxEdge from "../parts/box-edge.astro";
         <BoxEdge bg="bg-[#13111c]" />
 
         <CommonCircleNumber borderColor="border-green-1" textColor="text-green-1" marginB="mb-[6.8rem]">2</CommonCircleNumber>
-        <p class="text-green-1 text-[2.4rem] text-center font-bold capitalize mb-[0.8rem]">Up and Running</p>
-        <h2 class="title-1 text-center font-bold capitalize">Iterate and Accelerate</h2>
+        <slot name="topHeader"></slot>
+        <slot name="header"></slot>
         <hr class="w-[16rem] mx-auto my-[2.4rem] border-green-1" />
-        <p class="text-[1.8rem] text-center max-w-[89.6rem] mx-auto">From the first deploy, anything is possible. Railway helps you ship quickly by removing common developer hurdles</p>
+        <slot name="subHeader"></slot>
         <div id="iterate-accelerate-box" class="w-full mt-[9.6rem] pb-[14.4rem] px-[2rem]
             grid grid-cols-1
             md:grid-cols-10 gap-[3.2rem]

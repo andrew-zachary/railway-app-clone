@@ -2,11 +2,7 @@
     <div id="brands-layout" class="grid grid-cols-2 md:grid-cols-4">
         <div 
             class="bg-[#181622] flex flex-col justify-center items-center px-[2.4rem] py-[4.8rem] md:px-[4.8rem]">
-            <p class="text-[2.4rem] font-bold text-left">
-                Ideal for any kind of product.&nbsp;&nbsp;
-                <br />
-                Such as...
-            </p>
+            <slot name="head"></slot>
         </div>
         <a 
             href="#" 
@@ -95,9 +91,7 @@
         </a>
         <div 
             class="bg-[#181622] flex flex-col justify-center items-center px-[2.4rem] py-[4.8rem] md:px-[4.8rem]">
-            <p class="text-[2.4rem] font-bold text-left">
-                and many more...
-            </p>
+            <slot name="tail"></slot>
         </div>
     </div>
 </section>

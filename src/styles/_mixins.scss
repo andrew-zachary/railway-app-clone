@@ -7,4 +7,8 @@
     body[dir=rtl] & {
       #{$property}: $rtl-value;
     }
+
+    &[dir=rtl] {
+      #{$property}: $rtl-value;
+    }
 }

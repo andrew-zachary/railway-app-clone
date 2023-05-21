@@ -29,12 +29,6 @@ import Btn from "./common-btn.astro";
             }
         }
 
-        #text-box {
-
-            h1 {
-                font-size: clamp(3.2rem, calc(3.2rem + ((1vw - 5.7px) * 6.4)), 64px);
-            }
-        }
     }
 
 </style>
@@ -55,16 +49,10 @@ import Btn from "./common-btn.astro";
         class="h-full max-w-screen-xlg mx-auto px-[3.2rem] relative z-10
         w-full flex flex-col justify-center"
     >
-        <h1 class="font-bold mb-[2.4rem]">
-            Bring your code,
-            <br />
-            we'll handle the rest.
-        </h1>
-        <p class="max-w-[57.6rem] text-sm text-secondary mb-[4.8rem]">
-            Made for any language, for projects big and small. Railway is the cloud that takes the complexity out of shipping software.
-        </p>
+        <slot name="header"></slot>
+        <slot name="subHeader"></slot>
         <div>
-            <Btn>Start a New Project</Btn>
+            <Btn><slot name="btn"></slot></Btn>
         </div>
     </div>
 

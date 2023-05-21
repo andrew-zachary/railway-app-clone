@@ -18,7 +18,17 @@ const dir = 'rtl';
 ---
 <Main title={title} lang={lang} dir={dir}>
 
-    <SectionHero />
+    <SectionHero>
+        <h1 slot="header" class="font-bold text-[clamp(3.2rem,calc(3.2rem+((1vw-5.7px)*6.4)),64px)] mb-[2.4rem]">
+            أحضر الكود الخاص بك,
+            <br />
+            سنتعامل مع الباقي.
+        </h1>
+        <p slot="subHeader" class="max-w-[57.6rem] text-sm text-secondary mb-[4.8rem]">
+            صنعت لأي لغة ، للمشاريع الكبيرة والصغيرة. السكك الحديدية هي السحابة التي تزيل التعقيد من برامج الشحن.
+        </p>
+        <span slot="btn">ابدأ مشروع جديد</span>
+    </SectionHero>
     <SectionStartTinker />
     <SectionIterateAccelerate />
     <SectionLaunchScale />
