@@ -10,95 +10,30 @@
         <div class="hidden col-span-3 md:flex flex-col justify-between lg:col-span-4">
             <a href="#" class="max-w-[2.4rem] md:max-w-[3.2rem]"><Logo /></a>
             <div class="text-[1.2rem] text-[#878593] w-full">
-                Copyright © 
-                2023
-                Railway Corp. 
-                All rights reserved.
+                <slot name="copyright"></slot>
             </div>
         </div>
         <div class="col-span-1 md:col-span-2 text-[#878593]">
-            <p class="text-[1.2rem] font-bold uppercase ">Product</p>
-            <ul>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">Changelog</a>
-                </li>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">Pricing</a>
-                </li>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">Templates</a>
-                </li>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">Feedback</a>
-                </li>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">OSS Kickback</a>
-                </li>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">Migrate from Heroku</a>
-                </li>
-            </ul>
+            <slot name="list1Header"></slot>
+            <slot name="list1Items"></slot>
         </div>
         <div class="col-span-1 md:col-span-2 text-[#878593]">
-            <p class="text-[1.2rem] font-bold uppercase ">COMPANY</p>
-            <ul>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">About</a>
-                </li>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">Careers</a>
-                </li>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">Blog</a>
-                </li>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">Shop</a>
-                </li>
-            </ul>
+            <slot name="list2Header"></slot>
+            <slot name="list2Items"></slot>
         </div>
         <div class="col-span-1 md:col-span-2 text-[#878593]">
-            <p class="text-[1.2rem] font-bold uppercase ">CONTACT</p>
-            <ul>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">Discord</a>
-                </li>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">Twitter</a>
-                </li>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">GitHub</a>
-                </li>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">Email</a>
-                </li>
-            </ul>
+            <slot name="list3Header"></slot>
+            <slot name="list3Items"></slot>
         </div>
         <div class="col-span-1 md:col-span-2 text-[#878593]">
-            <p class="text-[1.2rem] font-bold uppercase ">LEGAL</p>
-            <ul>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">Fair Use</a>
-                </li>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">Privacy Policy</a>
-                </li>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">Terms of Service</a>
-                </li>
-                <li class="pt-[1.6rem]">
-                    <a href="#" class="text-[1.6rem] hover:text-white">Bug Bounty Program</a>
-                </li>
-            </ul>
+            <slot name="list4Header"></slot>
+            <slot name="list4Items"></slot>
         </div>
     </div>
     <div class="flex flex-col md:hidden mt-[3.2rem] text-center items-center">
         <a href="#" class="block min-w-[3.2rem] min-h-[2.5rem] h-[4rem] w-[4rem] flex items-center"><Logo /></a>
         <div class="text-[1.2rem] text-[#878593] w-full mt-[1.6rem]">
-            Copyright © 
-            2023
-            Railway Corp. 
-            <br />
-            All rights reserved.
+            <slot name="copyright"></slot>
         </div>
     </div>
 </footer>

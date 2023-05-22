@@ -4,7 +4,7 @@ import CommonBtnSubTxt from "../components/common-btn-subtxt.astro";
 import ShapeWhiteArrow from "../assets/shape-white-arrow.astro";
 
 ---
-<style lang="scss">
+<style lang="scss" is:global>
 
     .first-class-title-1 {
         font-size: clamp(40px,5vw,48px);
@@ -53,11 +53,11 @@ import ShapeWhiteArrow from "../assets/shape-white-arrow.astro";
             rounded-[1.6rem]"
         >
             <div class="md:pb-[3.2rem] lg:py-[4.8rem]">
-                <p class="first-class-title-2 text-[2.8rem] font-bold mb-[2rem]">Keyboard Friendly</p>
-                <p class="text-[2rem] text-[#a1a0ab] mb-[2.8rem]">Command the interface at your fingertips. Go to any page, create an object, secret, and much more.</p>
+                <slot name="card1Header"></slot>
+                <slot name="card1SubHeader"></slot>
                 <CommonBtnSubTxt>
                     <span slot="txt" class="px-[0.8rem] py-[0.4rem] bg-[#ffffff40] rounded-md">Ctrl+K</span>
-                    <span slot="subtxt" class="px-[0.8rem] py-[0.4rem]">Show Palette</span>
+                    <span slot="subtxt" class="px-[0.8rem] py-[0.4rem]"><slot name="card1Btn"></slot></span>
                 </CommonBtnSubTxt>
             </div>
             <div class="flex flex-col justify-end h-full md:pt-[3.2rem]">
@@ -71,9 +71,9 @@ import ShapeWhiteArrow from "../assets/shape-white-arrow.astro";
             rounded-[1.6rem]"
         >
             <div class="pt-[4.4rem] px-[3.2rem] md:px-[4rem]">
-                <p class="first-class-title-3 font-bold mb-[2rem]">Secrets Management</p>
-                <p class="text-[1.8rem] text-[#878593] mb-[2.4rem]">Maintain and sync different variables from development, staging, to prod.</p>
-                <a href="#" class="text-[1.6rem] text-[#a667e4]">View Docs -></a>
+                <slot name="card2Header"></slot>
+                <slot name="card2SubHeader"></slot>
+                <slot name="card2Btn"></slot>
             </div>
             <div class="flex justify-end items-end pl-[4rem]">
                 <img class="w-full" src="/variables - dark.svg" alt="">
@@ -86,9 +86,9 @@ import ShapeWhiteArrow from "../assets/shape-white-arrow.astro";
             rounded-[1.6rem]"
         >
             <div class="pt-[4.4rem] px-[3.2rem] md:px-[4rem]">
-                <p class="first-class-title-3 font-bold mb-[2rem]">Usage-based Pricing</p>
-                <p class="text-[1.8rem] text-[#878593] mb-[2.4rem]">Extend your runway. Railway bills only for compute performed on the platform.</p>
-                <a href="#" class="text-[1.6rem] text-[#a667e4]">View our Plans -></a>
+                <slot name="card3Header"></slot>
+                <slot name="card3SubHeader"></slot>
+                <slot name="card3Btn"></slot>
             </div>
             <div class="px-[4rem] flex flex-end">
                 <img class="w-full" src="/project usage - dark.svg" alt="">
@@ -102,11 +102,11 @@ import ShapeWhiteArrow from "../assets/shape-white-arrow.astro";
             rounded-[1.6rem]"
         >
             <div id="start-extend" class="py-[4.8rem] px-[3.2rem] md:py-[6.4rem] md:pl-[6.4rem] md:pr-0">
-                <p class="first-class-title-4 font-bold mb-[2rem]">Start or Extend your Infrastructure with One Click.</p>
-                <p class="text-[2rem] text-[#a1a0ab] mb-[2.8rem]">Command the interface at your fingertips. Go to any page, create an object, secret, and much more.</p>
+                <slot name="card4Header"></slot>
+                <slot name="card4SubHeader"></slot>
                 <CommonBtnSubTxt>
                     <ShapeWhiteArrow slot="txt" />
-                    <span slot="subtxt" class="px-[0.8rem] py-[0.4rem]">View our 75+ Templates</span>
+                    <span slot="subtxt" class="px-[0.8rem] py-[0.4rem]"><slot name="card4Btn"></slot></span>
                 </CommonBtnSubTxt>
             </div>
             <div class="w-full h-full" style="background-image: url('/logo grid - dark.svg'); background-position-y: -16px;"></div>
