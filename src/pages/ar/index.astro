@@ -20,24 +20,173 @@ const dir = 'rtl';
 
     <SectionHero>
         <h1 slot="header" class="font-bold text-[clamp(3.2rem,calc(3.2rem+((1vw-5.7px)*6.4)),64px)] mb-[2.4rem]">
-            أحضر الكود الخاص بك,
+            أحضر الكود الخاص بك ،
             <br />
             سنتعامل مع الباقي.
         </h1>
         <p slot="subHeader" class="max-w-[57.6rem] text-sm text-secondary mb-[4.8rem]">
-            صنعت لأي لغة ، للمشاريع الكبيرة والصغيرة. السكك الحديدية هي السحابة التي تزيل التعقيد من برامج الشحن.
+            صنعت لأي لغة ، للمشاريع الكبيرة والصغيرة. ريال واي هي السحابة التي تزيل التعقيد من برامج الشحن.
         </p>
-        <span slot="btn">ابدأ مشروع جديد</span>
+        <span slot="btn">Start a New Project</span>
     </SectionHero>
-    <SectionStartTinker />
-    <SectionIterateAccelerate />
-    <SectionLaunchScale />
-    <SectionBrands />
-    <SectionFirstClass />
+
+    <SectionStartTinker>
+        <p slot="topHeader" class="text-ternary text-[2.4rem] text-center font-bold capitalize mb-[0.8rem]">الصعود الآن ، المحلية.</p>
+        <h2 slot="header" class="title-1 text-center font-bold capitalize">ابدأ و شغل</h2>
+        <p slot="subHeader" class="text-[1.8rem] text-center max-w-[89.6rem] mx-auto">ابدأ بالمستودع الخاص بك ، أو ابدأ بقالب. تعمل أدواتنا على توسيع تطبيقك بمكونات إضافية وإدارة متغيرة بحيث تكون البيئات هي نفسها الحية المحلية.</p>
+    </SectionStartTinker>
+
+    <SectionIterateAccelerate>
+        <p slot="topHeader" class="text-green-1 text-[2.4rem] text-center font-bold capitalize mb-[0.8rem]">التشغيل</p>
+        <h2 slot="header" class="title-1 text-center font-bold capitalize">اختصر الوقت</h2>
+        <p slot="subHeader" class="text-[1.8rem] text-center max-w-[89.6rem] mx-auto">من أول عملية نشر ، كل شيء ممكن. تساعدك الريال واي على الشحن بسرعة عن طريق إزالة عقبات المطورين الشائعة</p>
+    </SectionIterateAccelerate>
+
+    <SectionLaunchScale>
+        <p slot="topHeader" class="text-ternary text-[2.4rem] text-center font-bold capitalize mb-[0.8rem]">المحطة التالية ، الإنتاج.</p>
+        <h2 slot="header" class="title-1 text-center font-bold capitalize">اطلق و توسع</h2>
+        <p slot="subHeader" class="text-[1.8rem] text-center max-w-[89.6rem] mx-auto">بينما تتخطى حدود ما هو ممكن ، تبقي ريال واي تطبيقاتك على المسار الصحيح. حافظ على مواقعك مرئية دون أن تكلف ثروة.</p>
+    </SectionLaunchScale>
+
+    <SectionBrands>
+        <p slot="head" class="text-[2.4rem] font-bold text-left">
+            مثالي لأي نوع من المنتجات.&nbsp;&nbsp;
+            <br />
+            مثل...
+        </p>
+        <p slot="tail" class="text-[2.4rem] font-bold text-left">
+            و أكثر من ذلك بكثير...
+        </p>
+    </SectionBrands>
+
+    <SectionFirstClass>
+
+        <!-- section slots -->
+        <p slot="header" class="first-class-title-1 text-[4.8rem] font-bold capitalize">ميزات من الدرجة الأولى</p>
+        <p slot="supHeader" class="text-[2rem] mt-[1.6rem]">لوحة تحكم تقدم ضيافة لا مثيل لها.</p>
+        <!-- section slots -->
+
+        <!-- card1 slots -->
+        <p slot="card1Header" class="first-class-title-2 text-[2.8rem] font-bold mb-[2rem]">ودية لوحة المفاتيح</p>
+        <p slot="card1SubHeader" class="text-[2rem] text-[#a1a0ab] mb-[2.8rem]">تحكم في الواجهة في متناول يدك. انتقل إلى أي صفحة ، وأنشئ كائنًا وسريًا وغير ذلك الكثير.</p>
+        <span slot="card1Btn">عرض لوحة</span>
+        <!-- card1 slots -->
+
+        <!-- card2 slots -->
+        <p slot="card2Header" class="first-class-title-3 font-bold mb-[2rem]">إدارة الأسرار</p>
+        <p slot="card2SubHeader" class="text-[1.8rem] text-[#878593] mb-[2.4rem]">الحفاظ على ومزامنة المتغيرات المختلفة من التطوير ، التدريج ، إلى الإنتاج.</p>
+        <a slot="card2Btn" href="#" class="text-[1.6rem] text-[#a667e4]">عرض المستندات -></a>
+        <!-- card2 slots -->
+
+        <!-- card3 slots -->
+        <p slot="card3Header" class="first-class-title-3 font-bold mb-[2rem]">التسعير على أساس الاستخدام</p>
+        <p slot="card3SubHeader" class="text-[1.8rem] text-[#878593] mb-[2.4rem]">قم بتمديد المدرج الخاص بك. فواتير الريال واي للحساب فقط التي يتم إجراؤها على المنصة.</p>
+        <a slot="card3Btn" href="#" class="text-[1.6rem] text-[#a667e4]">عرض خططنا -></a>
+        <!-- card3 slots -->
+
+        <!-- card4 slots -->
+        <p slot="card4Header" class="first-class-title-4 font-bold mb-[2rem]">ابدأ أو وسع البنية التحتية الخاصة بك بنقرة واحدة.</p>
+        <p slot="card4SubHeader" class="text-[2rem] text-[#a1a0ab] mb-[2.8rem]">تحكم في الواجهة في متناول يدك. انتقل إلى أي صفحة ، وأنشئ كائنًا وسريًا وغير ذلك الكثير.</p>
+        <a slot="card4Btn">شاهد أكثر من 75 قالبًا لدينا</a>
+        <!-- card4 slots -->
+    </SectionFirstClass>
+
     <section class="-mx-[2rem] md:-mx-[3.2rem]" style="background-image:linear-gradient(38.73deg, rgba(204, 0, 187, 0.25) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.25) 100%);">
-        <SectionLovedBy />
-        <SectionDeployApp />
-        <Footer />
+        <SectionLovedBy>
+            <h2 slot="header" class="title-1 font-bold mb-[2.4rem]">محبوب من قبل المطورين</h2>
+            <p slot="subHeader" class="text-[1.8rem] text-[#878593] mb-[6.4rem]">
+                انضم إلى أكثر من 2500 مبنى مطور مع تشغيل ريال واي
+                <a href="#" class="underline">الخلاف -></a>
+            </p>
+        </SectionLovedBy>
+        <SectionDeployApp>
+            <h2 slot="header" class="title-1 text-[3.55rem] font-bold mb-[2.4rem] max-w-[44.8rem]">نشر تطبيق في الإنتاج في دقائق</h2>
+            <p slot="subHeader" class="text-[2rem] text-[#878593] mb-[3.2rem] max-w-[51.2rem]">انضم إلى آلاف الأشخاص الذين ينشرون مئات الآلاف من التطبيقات بسهولة على ريال واي</p>
+            <spane slot="btn">انقر فوق هذا الزر</spane>
+        </SectionDeployApp>
+        <Footer>
+
+            <span slot="copyright">حقوق النشر © 2023 Railway Corp. جميع الحقوق محفوظة.</span>
+
+            <!-- list1 -->
+            <p slot="list1Header" class="text-[1.2rem] font-bold uppercase ">منتج</p>
+            <ul slot="list1Items">
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">التغيير</a>
+                </li>
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">التسعير</a>
+                </li>
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">القوالب</a>
+                </li>
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">تعليق</a>
+                </li>
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">عمولة OSS</a>
+                </li>
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">الهجرة من Heroku</a>
+                </li>
+            </ul>
+            <!-- list1 -->
+
+            <!-- list2 -->
+            <p slot="list2Header" class="text-[1.2rem] font-bold uppercase ">شركة</p>
+            <ul slot="list2Items">
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">عنا</a>
+                </li>
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">وظائف</a>
+                </li>
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">مدونة</a>
+                </li>
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">محل</a>
+                </li>
+            </ul>
+            <!-- list2 -->
+
+            <!-- list3 -->
+            <p slot="list3Header" class="text-[1.2rem] font-bold uppercase">اتصال</p>
+            <ul slot="list3Items">
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">الخلاف</a>
+                </li>
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">تويتر</a>
+                </li>
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">جيثب</a>
+                </li>
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">بريد إلكتروني</a>
+                </li>
+            </ul>
+            <!-- list3 -->
+
+            <!-- list4 -->
+            <p slot="list4Header" class="text-[1.2rem] font-bold uppercase">قانوني</p>
+            <ul slot="list4Items">
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">استخدام عادل</a>
+                </li>
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">سياسة الخصوصية</a>
+                </li>
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white">شروط الخدمة</a>
+                </li>
+                <li class="pt-[1.6rem]">
+                    <a href="#" class="text-[1.6rem] hover:text-white"></a>
+                </li>
+            </ul>
+            <!-- list4 -->
+
+        </Footer>
     </section>
 
 </Main>
