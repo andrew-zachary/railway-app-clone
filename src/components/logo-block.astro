@@ -2,6 +2,8 @@
 
 import Logo from "../assets/logo.astro";
 
+const { homePageLink } = Astro.props;
+
 ---
 <style lang="scss">
 
@@ -13,7 +15,7 @@ import Logo from "../assets/logo.astro";
     }
 
 </style>
-<a class="flex items-center" href="/">
+<a class="flex items-center" href={homePageLink}>
     <div class="max-w-[2.4rem] md:max-w-[3.2rem]">
         <Logo />
     </div>
