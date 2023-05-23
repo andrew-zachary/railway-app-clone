@@ -188,7 +188,51 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"iterate-accelerate-list1": {
+		"brands": {
+"atmos.md": {
+	id: "atmos.md";
+  slug: "atmos";
+  body: string;
+  collection: "brands";
+  data: any
+} & { render(): Render[".md"] };
+"fion-tech.md": {
+	id: "fion-tech.md";
+  slug: "fion-tech";
+  body: string;
+  collection: "brands";
+  data: any
+} & { render(): Render[".md"] };
+"operand.md": {
+	id: "operand.md";
+  slug: "operand";
+  body: string;
+  collection: "brands";
+  data: any
+} & { render(): Render[".md"] };
+"slip.md": {
+	id: "slip.md";
+  slug: "slip";
+  body: string;
+  collection: "brands";
+  data: any
+} & { render(): Render[".md"] };
+"stepzen.md": {
+	id: "stepzen.md";
+  slug: "stepzen";
+  body: string;
+  collection: "brands";
+  data: any
+} & { render(): Render[".md"] };
+"zora.md": {
+	id: "zora.md";
+  slug: "zora";
+  body: string;
+  collection: "brands";
+  data: any
+} & { render(): Render[".md"] };
+};
+"iterate-accelerate-list1": {
 "automagic-builds.md": {
 	id: "automagic-builds.md";
   slug: "automagic-builds";
