@@ -1,3 +1,8 @@
+---
+title: "Automagic Builds"
+desc: "Say Bye to CI. Every push is built and deployed, including dependent infrastructure."
+order: 0
+---
 <svg width="100%" height="100%" viewBox="0 0 56 56" fill="none">
     <path
         fill-rule="evenodd"

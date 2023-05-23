@@ -1,3 +1,8 @@
+---
+title: "Solid Base"
+desc: "Start from scratch or pick a template to deploy instantly, from bots to blogs."
+order: 0
+---
 <svg
     width="100%"
     height="100%"
@@ -7,6 +12,5 @@
     stroke-linecap="round"
     stroke-linejoin="round"
     class="feather feather-zap stroke-ternary"
-    ><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path
-        d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+    ><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path>
 </svg>

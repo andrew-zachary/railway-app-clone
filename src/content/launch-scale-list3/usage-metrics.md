@@ -1,3 +1,8 @@
+---
+title: "Usage Metrics"
+desc: "Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+order: 1
+---
 <svg
     width="100%"
     height="100%"
@@ -7,5 +12,5 @@
     stroke-linecap="round"
     stroke-linejoin="round"
     class="feather feather-zap stroke-ternary"
-    ><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path>
+    ><path d="M12 19V5m-7 7 7-7 7 7"></path>
 </svg>

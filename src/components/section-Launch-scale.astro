@@ -1,15 +1,15 @@
 ---
 
+import { sortAsc } from "../js/utils.js"
+
 import ShapeBlocks from "../assets/shape-blocks.astro";
-import ShapeArrows from "../assets/shape-arrows.astro";
-import ShapeLock from "../assets/shape-lock.astro";
-import ShapeMetrics from "../assets/shape-metrics.astro";
-import ShapeCheck from "../assets/shape-check.astro";
-import ShapeArrowTop from "../assets/shape-arrow-top.astro";
-import ShapeSupport from "../assets/shape-support.astro";
 
 import CommonCircleNumber from "./common-circle-number.astro";
 import CommonListItemBox from "./common-list-item-box.astro";
+
+const items1 = (await Astro.glob('../content/launch-scale-list1/*.md')).sort(sortAsc);
+const items2 = (await Astro.glob('../content/launch-scale-list2/*.md')).sort(sortAsc);
+const items3 = (await Astro.glob('../content/launch-scale-list3/*.md')).sort(sortAsc);
 
 ---
 <section id="launch-scale"
@@ -40,88 +40,67 @@ import CommonListItemBox from "./common-list-item-box.astro";
             lg:px-[9.6rem]"
         >
             <ul class="to-reveal launch-scale-lists md:col-span-4">
-                <CommonListItemBox
-                    shadowType="shadow-type-1" 
-                    boxBorder="border-2 border-blue-1 rounded-lg"
-                    boxBg="bg-primary"
-                    circleStyle="border-2 border-blue-2 rounded-full bg-primary"
-                    headerTxtColor="text-blue-3"
-                    paraTxtColor="text-white"
-                >
-                    <span slot="header">Autoscaling</span>
-                    <span slot="desc">Railway scales apps to meet user demand, automagically, based on load.</span>
-                    <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
-                    <ShapeArrows slot="icon" />
-                </CommonListItemBox>
-                <CommonListItemBox
-                    shadowType="shadow-type-1" 
-                    boxBorder="border-2 border-blue-1 rounded-lg"
-                    boxBg="bg-primary"
-                    circleStyle="border-2 border-blue-2 rounded-full bg-primary"
-                    headerTxtColor="text-blue-3"
-                    paraTxtColor="text-white"
-                >
-                    <span slot="header">Production-ready</span>
-                    <span slot="desc">Railway runs on Railway, join us and others serving requests at web scale.</span>
-                    <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
-                    <ShapeLock slot="icon" />
-                </CommonListItemBox>
+
+                {
+                    items1.map( item => {
+                        return <CommonListItemBox
+                            shadowType="shadow-type-1" 
+                            boxBorder="border-2 border-blue-1 rounded-lg"
+                            boxBg="bg-primary"
+                            circleStyle="border-2 border-blue-2 rounded-full bg-primary"
+                            headerTxtColor="text-blue-3"
+                            paraTxtColor="text-white"
+                        >
+                            <span slot="header">{item.frontmatter.title}</span>
+                            <span slot="desc">{item.frontmatter.desc}</span>
+                            <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
+                            <item.Content />
+                        </CommonListItemBox>
+                    })
+                }
+
             </ul>
             <ul class="to-reveal launch-scale-lists md:col-span-4">
-                <CommonListItemBox
-                    shadowType="shadow-type-1" 
-                    boxBorder="border-2 border-blue-1 rounded-lg"
-                    boxBg="bg-primary"
-                    circleStyle="border-2 border-blue-2 rounded-full bg-primary"
-                    headerTxtColor="text-blue-3"
-                    paraTxtColor="text-white"
-                >
-                    <span slot="header">Safe and Sound</span>
-                    <span slot="desc">A secure mission control, without the policy headache. Permissions, 2FA, and more.</span>
-                    <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
-                    <ShapeMetrics slot="icon" />
-                </CommonListItemBox>
-                <CommonListItemBox
-                    shadowType="shadow-type-1" 
-                    boxBorder="border-2 border-blue-1 rounded-lg"
-                    boxBg="bg-primary"
-                    circleStyle="border-2 border-blue-2 rounded-full bg-primary"
-                    headerTxtColor="text-blue-3"
-                    paraTxtColor="text-white"
-                >
-                    <span slot="header">+99% Uptime</span>
-                    <span slot="desc">Applications stay on the grid with high availability and high uptime guarantees.</span>
-                    <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
-                    <ShapeCheck slot="icon" />
-                </CommonListItemBox>
+
+                {
+                    items2.map( item => {
+                        return <CommonListItemBox
+                            shadowType="shadow-type-1" 
+                            boxBorder="border-2 border-blue-1 rounded-lg"
+                            boxBg="bg-primary"
+                            circleStyle="border-2 border-blue-2 rounded-full bg-primary"
+                            headerTxtColor="text-blue-3"
+                            paraTxtColor="text-white"
+                        >
+                            <span slot="header">{item.frontmatter.title}</span>
+                            <span slot="desc">{item.frontmatter.desc}</span>
+                            <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
+                            <item.Content />
+                        </CommonListItemBox>
+                    })
+                }
+
             </ul>
             <ul class="to-reveal launch-scale-lists md:col-span-4">
-                <CommonListItemBox
-                    shadowType="shadow-type-1" 
-                    boxBorder="border-2 border-blue-1 rounded-lg"
-                    boxBg="bg-primary"
-                    circleStyle="border-2 border-blue-2 rounded-full bg-primary"
-                    headerTxtColor="text-blue-3"
-                    paraTxtColor="text-white"
-                >
-                    <span slot="header">Usage Metrics</span>
-                    <span slot="desc">Real-time metrics to debug issues. Slow query added? We’ll show you exactly where.</span>
-                    <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
-                    <ShapeArrowTop slot="icon" />
-                </CommonListItemBox>
-                <CommonListItemBox
-                    shadowType="shadow-type-1" 
-                    boxBorder="border-2 border-blue-1 rounded-lg"
-                    boxBg="bg-primary"
-                    circleStyle="border-2 border-blue-2 rounded-full bg-primary"
-                    headerTxtColor="text-blue-3"
-                    paraTxtColor="text-white"
-                >
-                    <span slot="header">Supreme Support</span>
-                    <span slot="desc">Overcome any challenge with a supporting team ready to respond.</span>
-                    <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
-                    <ShapeSupport slot="icon" />
-                </CommonListItemBox>
+
+                {
+                    items3.map( item => {
+                        return <CommonListItemBox
+                            shadowType="shadow-type-1" 
+                            boxBorder="border-2 border-blue-1 rounded-lg"
+                            boxBg="bg-primary"
+                            circleStyle="border-2 border-blue-2 rounded-full bg-primary"
+                            headerTxtColor="text-blue-3"
+                            paraTxtColor="text-white"
+                        >
+                            <span slot="header">{item.frontmatter.title}</span>
+                            <span slot="desc">{item.frontmatter.desc}</span>
+                            <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
+                            <item.Content />
+                        </CommonListItemBox>
+                    })
+                }
+
             </ul>
         </div>
 

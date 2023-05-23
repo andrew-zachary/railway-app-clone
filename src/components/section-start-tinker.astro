@@ -1,13 +1,13 @@
 ---
+import { sortAsc } from "../js/utils.js"
 
 import ShapeBlocks from "../assets/shape-blocks.astro";
-import ShapeBolt from "../assets/shape-bolt.astro";
-import ShapeSquares from "../assets/shape-squares.astro";
-import ShapeBook from "../assets/shape-book.astro";
-import ShapeConsole from "../assets/shape-console.astro";
 
 import CommonCircleNumber from "./common-circle-number.astro";
 import CommonListItemBox from "./common-list-item-box.astro";
+
+const items1 = (await Astro.glob('../content/start-tinker-list1/*.md')).sort(sortAsc);
+const items2 = (await Astro.glob('../content/start-tinker-list2/*.md')).sort(sortAsc);
 
 ---
 <section id="start-tinker"
@@ -26,64 +26,50 @@ import CommonListItemBox from "./common-list-item-box.astro";
             lg:px-[9.6rem]"
         >
             <ul class="to-reveal start-tinker-lists md:col-span-4">
-                <CommonListItemBox
-                    shadowType="shadow-type-1" 
-                    boxBorder="border-2 border-blue-1 rounded-lg"
-                    boxBg="bg-primary"
-                    circleStyle="border-2 border-blue-2 rounded-full bg-primary"
-                    headerTxtColor="text-blue-3"
-                    paraTxtColor="text-white"
-                >
-                    <span slot="header">Solid Base</span>
-                    <span slot="desc">Start from scratch or pick a template to deploy instantly, from bots to blogs.</span>
-                    <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
-                    <ShapeBolt slot="icon" />
-                </CommonListItemBox>
-                <CommonListItemBox
-                    shadowType="shadow-type-1" 
-                    boxBorder="border-2 border-blue-1 rounded-lg"
-                    boxBg="bg-primary"
-                    circleStyle="border-2 border-blue-2 rounded-full bg-primary"
-                    headerTxtColor="text-blue-3"
-                    paraTxtColor="text-white"
-                >
-                    <span slot="header">Infrastructure as Legos</span>
-                    <span slot="desc">Add a cron job, a database, or another (micro)service! Railway grows with your application.</span>
-                    <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
-                    <ShapeSquares slot="icon" />
-                </CommonListItemBox>
+
+                {
+                    items1.map( item => {
+                        return <CommonListItemBox
+                            shadowType="shadow-type-1" 
+                            boxBorder="border-2 border-blue-1 rounded-lg"
+                            boxBg="bg-primary"
+                            circleStyle="border-2 border-blue-2 rounded-full bg-primary"
+                            headerTxtColor="text-blue-3"
+                            paraTxtColor="text-white"
+                        >
+                            <span slot="header">{item.frontmatter.title}</span>
+                            <span slot="desc">{item.frontmatter.desc}</span>
+                            <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
+                            <item.Content />
+                        </CommonListItemBox>
+                    })
+                }
+
             </ul>
             <div id="blueTrainStation" class="col-span-2 hidden md:block relative">
                 <img id="blueTrain" src="/01-train-dark.svg" class="w-[2.4rem] h-[15rem] absolute top-0 bottom-0 left-1/2" style="transform: translate(-50%, 0px);" />
                 <div class="w-[1.6rem] h-[140%] -mt-12 mx-auto" style="background: var(--blue-track)"></div>
             </div>
             <ul class="to-reveal start-tinker-lists md:col-span-4">
-                <CommonListItemBox
-                    shadowType="shadow-type-1" 
-                    boxBorder="border-2 border-blue-1 rounded-lg"
-                    boxBg="bg-primary"
-                    circleStyle="border-2 border-blue-2 rounded-full bg-primary"
-                    headerTxtColor="text-blue-3"
-                    paraTxtColor="text-white"
-                >
-                    <span slot="header">Secrets Management</span>
-                    <span slot="desc">Keep Environment Variables and Secrets for your team, securely, in one place.</span>
-                    <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
-                    <ShapeBook slot="icon" />
-                </CommonListItemBox>
-                <CommonListItemBox
-                    shadowType="shadow-type-1" 
-                    boxBorder="border-2 border-blue-1 rounded-lg"
-                    boxBg="bg-primary"
-                    circleStyle="border-2 border-blue-2 rounded-full bg-primary"
-                    headerTxtColor="text-blue-3"
-                    paraTxtColor="text-white"
-                >
-                    <span slot="header">Railway CLI</span>
-                    <span slot="desc">Connect to your infrastructure + secrets, from any terminal in the world.</span>
-                    <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
-                    <ShapeConsole slot="icon" />
-                </CommonListItemBox>
+
+                {
+                    items2.map( item => {
+                        return <CommonListItemBox
+                            shadowType="shadow-type-1" 
+                            boxBorder="border-2 border-blue-1 rounded-lg"
+                            boxBg="bg-primary"
+                            circleStyle="border-2 border-blue-2 rounded-full bg-primary"
+                            headerTxtColor="text-blue-3"
+                            paraTxtColor="text-white"
+                        >
+                            <span slot="header">{item.frontmatter.title}</span>
+                            <span slot="desc">{item.frontmatter.desc}</span>
+                            <ShapeBlocks slot="blocks" blocksColor="stroke-blue-1" />
+                            <item.Content />
+                        </CommonListItemBox>
+                    })
+                }
+
             </ul>
         </div>
     </div>    

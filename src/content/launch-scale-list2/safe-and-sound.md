@@ -1,3 +1,8 @@
+---
+title: "Safe and Sound"
+desc: "A secure mission control, without the policy headache. Permissions, 2FA, and more."
+order: 0
+---
 <svg
     width="100%"
     height="100%"
@@ -7,5 +12,5 @@
     stroke-linecap="round"
     stroke-linejoin="round"
     class="feather feather-zap stroke-ternary"
-    ><path d="M20 6 9 17l-5-5"></path>
+    ><path d="M18 20V10m-6 10V4M6 20v-6"></path>
 </svg>

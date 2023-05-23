@@ -1,3 +1,8 @@
+---
+title: "+99% Uptime"
+desc: "Applications stay on the grid with high availability and high uptime guarantees."
+order: 1
+---
 <svg
     width="100%"
     height="100%"
@@ -7,5 +12,5 @@
     stroke-linecap="round"
     stroke-linejoin="round"
     class="feather feather-zap stroke-ternary"
-    ><path d="M18 20V10m-6 10V4M6 20v-6"></path>
+    ><path d="M20 6 9 17l-5-5"></path>
 </svg>

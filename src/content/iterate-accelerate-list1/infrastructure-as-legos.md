@@ -1,3 +1,8 @@
+---
+title: "Infrastructure as Legos"
+desc: "Add a cron job, a database, or another (micro)service! Railway grows with your application."
+order: 1
+---
 <svg
     width="100%"
     height="100%"

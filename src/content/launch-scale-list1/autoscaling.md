@@ -1,3 +1,8 @@
+---
+title: "Autoscaling"
+desc: "Railway scales apps to meet user demand, automagically, based on load."
+order: 0
+---
 <svg
     width="100%"
     height="100%"
@@ -7,5 +12,5 @@
     stroke-linecap="round"
     stroke-linejoin="round"
     class="feather feather-zap stroke-ternary"
-    ><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path>
+    ><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path>
 </svg>

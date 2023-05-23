@@ -4,6 +4,15 @@ import IconBlock from "../components/logo-block.astro";
 
 const { lang } = Astro.props;
 
+const homeLinks = {
+    "en": {
+        "url": "/"
+    },
+    "ar": {
+        "url": "/ar"
+    },
+};
+
 const langLinks = {
     "en": {
         "label": "",
@@ -159,7 +168,7 @@ const navLinks = {
             class="row-start-1 row-end-2 col-start-1 col-end-2
             md:col-start-1 md:col-end-2"
         >
-            <IconBlock homePageLink={langLinks[lang].url} />
+            <IconBlock homePageLink={homeLinks[lang].url} />
         </div>
 
         <div 

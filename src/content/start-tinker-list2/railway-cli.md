@@ -1,3 +1,8 @@
+---
+title: Railway CLI
+desc: Connect to your infrastructure + secrets, from any terminal in the world.
+order: 1
+---
 <svg
     width="100%"
     height="100%"

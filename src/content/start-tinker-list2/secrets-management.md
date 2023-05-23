@@ -1,3 +1,8 @@
+---
+title: "Secrets Management"
+desc: "Keep Environment Variables and Secrets for your team, securely, in one place."
+order: 0
+---
 <svg
     width="100%"
     height="100%"
