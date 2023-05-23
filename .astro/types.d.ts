@@ -232,6 +232,71 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".md"] };
 };
+"developers": {
+"devs1/dev1.md": {
+	id: "devs1/dev1.md";
+  slug: "devs1/dev1";
+  body: string;
+  collection: "developers";
+  data: any
+} & { render(): Render[".md"] };
+"devs1/dev2.md": {
+	id: "devs1/dev2.md";
+  slug: "devs1/dev2";
+  body: string;
+  collection: "developers";
+  data: any
+} & { render(): Render[".md"] };
+"devs1/dev3.md": {
+	id: "devs1/dev3.md";
+  slug: "devs1/dev3";
+  body: string;
+  collection: "developers";
+  data: any
+} & { render(): Render[".md"] };
+"devs2/dev1.md": {
+	id: "devs2/dev1.md";
+  slug: "devs2/dev1";
+  body: string;
+  collection: "developers";
+  data: any
+} & { render(): Render[".md"] };
+"devs2/dev2.md": {
+	id: "devs2/dev2.md";
+  slug: "devs2/dev2";
+  body: string;
+  collection: "developers";
+  data: any
+} & { render(): Render[".md"] };
+"devs2/dev3.md": {
+	id: "devs2/dev3.md";
+  slug: "devs2/dev3";
+  body: string;
+  collection: "developers";
+  data: any
+} & { render(): Render[".md"] };
+"devs3/dev1.md": {
+	id: "devs3/dev1.md";
+  slug: "devs3/dev1";
+  body: string;
+  collection: "developers";
+  data: any
+} & { render(): Render[".md"] };
+"devs3/dev2.md": {
+	id: "devs3/dev2.md";
+  slug: "devs3/dev2";
+  body: string;
+  collection: "developers";
+  data: any
+} & { render(): Render[".md"] };
+"devs3/dev3.md": {
+	id: "devs3/dev3.md";
+  slug: "devs3/dev3";
+  body: string;
+  collection: "developers";
+  data: any
+} & { render(): Render[".md"] };
+};
 "iterate-accelerate-list1": {
 "automagic-builds.md": {
 	id: "automagic-builds.md";

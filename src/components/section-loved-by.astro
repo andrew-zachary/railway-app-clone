@@ -1,5 +1,23 @@
+---
 
+import { sortAsc } from "../js/utils.js";
+
+const items1 = (await Astro.glob('../content/developers/devs1/*.md')).sort(sortAsc);
+const items2 = (await Astro.glob('../content/developers/devs2/*.md')).sort(sortAsc);
+const items3 = (await Astro.glob('../content/developers/devs3/*.md')).sort(sortAsc);
+
+---
 <style lang="scss">
+
+    a {
+        display: block;
+        margin-top: 3.2rem;
+
+        &:first-child {
+            margin-top: 0rem;
+        }
+    }
+
     article {
         text-align: left;
 
@@ -7,6 +25,7 @@
             text-align: right;
         }
     }
+
 </style>
 <section id="loved-by" class="px-[2rem] max-w-[116rem] mx-auto">
 
@@ -18,244 +37,64 @@
     <div class="w-full mb-[9.6rem]">
         <div class="grid gap-[3.2rem] grid-cols-1 md:grid-cols-3 items-center">
             <div class="md:block">
-                <a href="#">
-                    <article class="p-[2.4rem] rounded-[0.8rem] border border-[#211f2d]">
-                        <header class="flex mb-[1.6rem]">
-                            <img src="/pulpmint.avif" alt="" class="w-[3.2rem] h-[3.2rem] rounded-full" />
-                            <div class="flex flex-col">
-                                <p class="text-[1.4rem] font-bold">First Name</p>
-                                <p class="text-[1.2rem] text-[#a1a0ab] font-medium">@fname</p>
-                            </div>
-                        </header>
-                        <p class="text-[1.4rem]">
-                            <span class="inline-block">
-                                <span class="">I just tries </span>
-                                <span class="text-[#a667e4]">@Railway_App</span>
-                                <span class=""> &amp; </span>
-                                <span class="text-[#a667e4]">@prisma</span>
-                                <span class=""> for the very first time and it's just so easy to use! 🔥💣✨</span>
-                            </span>
-                            <br />
-                            <span class="inline-block mt-[1.6rem]">
-                                <span class="">Never found working with </span>
-                                <span class="text-pink-600">#PostgreSQL</span>
-                                <span class=""> so interesting! Love it!</span>
-                            </span>
-                        </p>
-                    </article>
-                </a>
-                <a href="#" class="block mt-[3.2rem]">
-                    <article class="p-[2.4rem] rounded-[0.8rem] border border-[#211f2d] text-left">
-                        <header class="flex mb-[1.6rem]">
-                            <img src="/pulpmint.avif" alt="" class="w-[3.2rem] h-[3.2rem] rounded-full" />
-                            <div class="flex flex-col">
-                                <p class="text-[1.4rem] font-bold">First Name</p>
-                                <p class="text-[1.2rem] text-[#a1a0ab] font-medium">@fname</p>
-                            </div>
-                        </header>
-                        <p class="text-[1.4rem]">
-                            <span class="inline-block">
-                                <span class="">I just tries </span>
-                                <span class="text-[#a667e4]">@Railway_App</span>
-                                <span class=""> &amp; </span>
-                                <span class="text-[#a667e4]">@prisma</span>
-                                <span class=""> for the very first time and it's just so easy to use! 🔥💣✨</span>
-                            </span>
-                            <br />
-                            <span class="inline-block mt-[1.6rem]">
-                                <span class="">Never found working with </span>
-                                <span class="text-pink-600">#PostgreSQL</span>
-                                <span class=""> so interesting! Love it!</span>
-                            </span>
-                        </p>
-                    </article>
-                </a>
-                <a href="#" class="block mt-[3.2rem]">
-                    <article class="p-[2.4rem] rounded-[0.8rem] border border-[#211f2d] text-left">
-                        <header class="flex mb-[1.6rem]">
-                            <img src="/pulpmint.avif" alt="" class="w-[3.2rem] h-[3.2rem] rounded-full" />
-                            <div class="flex flex-col">
-                                <p class="text-[1.4rem] font-bold">First Name</p>
-                                <p class="text-[1.2rem] text-[#a1a0ab] font-medium">@fname</p>
-                            </div>
-                        </header>
-                        <p class="text-[1.4rem]">
-                            <span class="inline-block">
-                                <span class="">I just tries </span>
-                                <span class="text-[#a667e4]">@Railway_App</span>
-                                <span class=""> &amp; </span>
-                                <span class="text-[#a667e4]">@prisma</span>
-                                <span class=""> for the very first time and it's just so easy to use! 🔥💣✨</span>
-                            </span>
-                            <br />
-                            <span class="inline-block mt-[1.6rem]">
-                                <span class="">Never found working with </span>
-                                <span class="text-pink-600">#PostgreSQL</span>
-                                <span class=""> so interesting! Love it!</span>
-                            </span>
-                        </p>
-                    </article>
-                </a>
+
+                {
+                    items1.map( item => {
+                        return <a href="#">
+                            <article class="p-[2.4rem] rounded-[0.8rem] border border-[#211f2d]">
+                                <header class="flex mb-[1.6rem]">
+                                    <img src={item.frontmatter.avatar} alt="" class="w-[3.2rem] h-[3.2rem] rounded-full" />
+                                    <div class="flex flex-col">
+                                        <p class="text-[1.4rem] font-bold">{item.frontmatter.title}</p>
+                                        <p class="text-[1.2rem] text-[#a1a0ab] font-medium">{item.frontmatter.twi}</p>
+                                    </div>
+                                </header>
+                                <item.Content />
+                            </article>
+                        </a>
+                    })
+                }
+
             </div>
             <div class="hidden md:block">
-                <a href="#">
-                    <article class="p-[2.4rem] rounded-[0.8rem] border border-[#211f2d] text-left">
-                        <header class="flex mb-[1.6rem]">
-                            <img src="/pulpmint.avif" alt="" class="w-[3.2rem] h-[3.2rem] rounded-full" />
-                            <div class="flex flex-col">
-                                <p class="text-[1.4rem] font-bold">First Name</p>
-                                <p class="text-[1.2rem] text-[#a1a0ab] font-medium">@fname</p>
-                            </div>
-                        </header>
-                        <p class="text-[1.4rem]">
-                            <span class="inline-block">
-                                <span class="">I just tries </span>
-                                <span class="text-[#a667e4]">@Railway_App</span>
-                                <span class=""> &amp; </span>
-                                <span class="text-[#a667e4]">@prisma</span>
-                                <span class=""> for the very first time and it's just so easy to use! 🔥💣✨</span>
-                            </span>
-                            <br />
-                            <span class="inline-block mt-[1.6rem]">
-                                <span class="">Never found working with </span>
-                                <span class="text-pink-600">#PostgreSQL</span>
-                                <span class=""> so interesting! Love it!</span>
-                            </span>
-                        </p>
-                    </article>
-                </a>
-                <a href="#" class="block mt-[3.2rem]">
-                    <article class="p-[2.4rem] rounded-[0.8rem] border border-[#211f2d] text-left">
-                        <header class="flex mb-[1.6rem]">
-                            <img src="/pulpmint.avif" alt="" class="w-[3.2rem] h-[3.2rem] rounded-full" />
-                            <div class="flex flex-col">
-                                <p class="text-[1.4rem] font-bold">First Name</p>
-                                <p class="text-[1.2rem] text-[#a1a0ab] font-medium">@fname</p>
-                            </div>
-                        </header>
-                        <p class="text-[1.4rem]">
-                            <span class="inline-block">
-                                <span class="">I just tries </span>
-                                <span class="text-[#a667e4]">@Railway_App</span>
-                                <span class=""> &amp; </span>
-                                <span class="text-[#a667e4]">@prisma</span>
-                                <span class=""> for the very first time and it's just so easy to use! 🔥💣✨</span>
-                            </span>
-                            <br />
-                            <span class="inline-block mt-[1.6rem]">
-                                <span class="">Never found working with </span>
-                                <span class="text-pink-600">#PostgreSQL</span>
-                                <span class=""> so interesting! Love it!</span>
-                            </span>
-                        </p>
-                    </article>
-                </a>
-                <a href="#" class="block mt-[3.2rem]">
-                    <article class="p-[2.4rem] rounded-[0.8rem] border border-[#211f2d] text-left">
-                        <header class="flex mb-[1.6rem]">
-                            <img src="/pulpmint.avif" alt="" class="w-[3.2rem] h-[3.2rem] rounded-full" />
-                            <div class="flex flex-col">
-                                <p class="text-[1.4rem] font-bold">First Name</p>
-                                <p class="text-[1.2rem] text-[#a1a0ab] font-medium">@fname</p>
-                            </div>
-                        </header>
-                        <p class="text-[1.4rem]">
-                            <span class="inline-block">
-                                <span class="">I just tries </span>
-                                <span class="text-[#a667e4]">@Railway_App</span>
-                                <span class=""> &amp; </span>
-                                <span class="text-[#a667e4]">@prisma</span>
-                                <span class=""> for the very first time and it's just so easy to use! 🔥💣✨</span>
-                            </span>
-                            <br />
-                            <span class="inline-block mt-[1.6rem]">
-                                <span class="">Never found working with </span>
-                                <span class="text-pink-600">#PostgreSQL</span>
-                                <span class=""> so interesting! Love it!</span>
-                            </span>
-                        </p>
-                    </article>
-                </a>
+                
+                {
+                    items2.map( item => {
+                        return <a href="#">
+                            <article class="p-[2.4rem] rounded-[0.8rem] border border-[#211f2d]">
+                                <header class="flex mb-[1.6rem]">
+                                    <img src={item.frontmatter.avatar} alt="" class="w-[3.2rem] h-[3.2rem] rounded-full" />
+                                    <div class="flex flex-col">
+                                        <p class="text-[1.4rem] font-bold">{item.frontmatter.title}</p>
+                                        <p class="text-[1.2rem] text-[#a1a0ab] font-medium">{item.frontmatter.twi}</p>
+                                    </div>
+                                </header>
+                                <item.Content />
+                            </article>
+                        </a>
+                    })
+                }
+
             </div>
             <div class="hidden md:block">
-                <a href="#">
-                    <article class="p-[2.4rem] rounded-[0.8rem] border border-[#211f2d] text-left">
-                        <header class="flex mb-[1.6rem]">
-                            <img src="/pulpmint.avif" alt="" class="w-[3.2rem] h-[3.2rem] rounded-full" />
-                            <div class="flex flex-col">
-                                <p class="text-[1.4rem] font-bold">First Name</p>
-                                <p class="text-[1.2rem] text-[#a1a0ab] font-medium">@fname</p>
-                            </div>
-                        </header>
-                        <p class="text-[1.4rem]">
-                            <span class="inline-block">
-                                <span class="">I just tries </span>
-                                <span class="text-[#a667e4]">@Railway_App</span>
-                                <span class=""> &amp; </span>
-                                <span class="text-[#a667e4]">@prisma</span>
-                                <span class=""> for the very first time and it's just so easy to use! 🔥💣✨</span>
-                            </span>
-                            <br />
-                            <span class="inline-block mt-[1.6rem]">
-                                <span class="">Never found working with </span>
-                                <span class="text-pink-600">#PostgreSQL</span>
-                                <span class=""> so interesting! Love it!</span>
-                            </span>
-                        </p>
-                    </article>
-                </a>
-                <a href="#" class="block mt-[3.2rem]">
-                    <article class="p-[2.4rem] rounded-[0.8rem] border border-[#211f2d] text-left">
-                        <header class="flex mb-[1.6rem]">
-                            <img src="/pulpmint.avif" alt="" class="w-[3.2rem] h-[3.2rem] rounded-full" />
-                            <div class="flex flex-col">
-                                <p class="text-[1.4rem] font-bold">First Name</p>
-                                <p class="text-[1.2rem] text-[#a1a0ab] font-medium">@fname</p>
-                            </div>
-                        </header>
-                        <p class="text-[1.4rem]">
-                            <span class="inline-block">
-                                <span class="">I just tries </span>
-                                <span class="text-[#a667e4]">@Railway_App</span>
-                                <span class=""> &amp; </span>
-                                <span class="text-[#a667e4]">@prisma</span>
-                                <span class=""> for the very first time and it's just so easy to use! 🔥💣✨</span>
-                            </span>
-                            <br />
-                            <span class="inline-block mt-[1.6rem]">
-                                <span class="">Never found working with </span>
-                                <span class="text-pink-600">#PostgreSQL</span>
-                                <span class=""> so interesting! Love it!</span>
-                            </span>
-                        </p>
-                    </article>
-                </a>
-                <a href="#" class="block mt-[3.2rem]">
-                    <article class="p-[2.4rem] rounded-[0.8rem] border border-[#211f2d] text-left">
-                        <header class="flex mb-[1.6rem]">
-                            <img src="/pulpmint.avif" alt="" class="w-[3.2rem] h-[3.2rem] rounded-full" />
-                            <div class="flex flex-col">
-                                <p class="text-[1.4rem] font-bold">First Name</p>
-                                <p class="text-[1.2rem] text-[#a1a0ab] font-medium">@fname</p>
-                            </div>
-                        </header>
-                        <p class="text-[1.4rem]">
-                            <span class="inline-block">
-                                <span class="">I just tries </span>
-                                <span class="text-[#a667e4]">@Railway_App</span>
-                                <span class=""> &amp; </span>
-                                <span class="text-[#a667e4]">@prisma</span>
-                                <span class=""> for the very first time and it's just so easy to use! 🔥💣✨</span>
-                            </span>
-                            <br />
-                            <span class="inline-block mt-[1.6rem]">
-                                <span class="">Never found working with </span>
-                                <span class="text-pink-600">#PostgreSQL</span>
-                                <span class=""> so interesting! Love it!</span>
-                            </span>
-                        </p>
-                    </article>
-                </a>
+                
+                {
+                    items3.map( item => {
+                        return <a href="#">
+                            <article class="p-[2.4rem] rounded-[0.8rem] border border-[#211f2d]">
+                                <header class="flex mb-[1.6rem]">
+                                    <img src={item.frontmatter.avatar} alt="" class="w-[3.2rem] h-[3.2rem] rounded-full" />
+                                    <div class="flex flex-col">
+                                        <p class="text-[1.4rem] font-bold">{item.frontmatter.title}</p>
+                                        <p class="text-[1.2rem] text-[#a1a0ab] font-medium">{item.frontmatter.twi}</p>
+                                    </div>
+                                </header>
+                                <item.Content />
+                            </article>
+                        </a>
+                    })
+                }
+
             </div>
         </div>
     </div>
