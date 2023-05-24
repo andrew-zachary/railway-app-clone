@@ -7,8 +7,14 @@ import ShapeBlocks from "../assets/shape-blocks.astro";
 import CommonCircleNumber from "./common-circle-number.astro";
 import CommonListItemBox from "./common-list-item-box.astro";
 
-const items1 = (await Astro.glob('../content/iterate-accelerate-list1/*.md')).sort(sortAsc);
-const items2 = (await Astro.glob('../content/iterate-accelerate-list2/*.md')).sort(sortAsc);
+const { lang } = Astro.props;
+
+const items1 = lang === 'en' ? 
+    (await Astro.glob('../content/en/iterate-accelerate-list1/*.md')).sort(sortAsc) :
+    (await Astro.glob('../content/ar/iterate-accelerate-list1/*.md')).sort(sortAsc);
+const items2 = lang === 'en' ? 
+    (await Astro.glob('../content/en/iterate-accelerate-list2/*.md')).sort(sortAsc) :
+    (await Astro.glob('../content/ar/iterate-accelerate-list2/*.md')).sort(sortAsc);
 
 import BoxEdge from "../parts/box-edge.astro";
 

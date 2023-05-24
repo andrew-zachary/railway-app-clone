@@ -1,6 +1,6 @@
 ---
-title: "Infrastructure as Legos"
-desc: "Add a cron job, a database, or another (micro)service! Railway grows with your application."
+title: "Multiple Environments"
+desc: "Evolve your application over time, with fork joinable environments."
 order: 1
 ---
 <svg

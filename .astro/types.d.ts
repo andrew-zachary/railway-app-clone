@@ -188,226 +188,433 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"brands": {
-"atmos.md": {
-	id: "atmos.md";
-  slug: "atmos";
+		"ar": {
+"brands/atmos.md": {
+	id: "brands/atmos.md";
+  slug: "brands/atmos";
   body: string;
-  collection: "brands";
+  collection: "ar";
   data: any
 } & { render(): Render[".md"] };
-"fion-tech.md": {
-	id: "fion-tech.md";
-  slug: "fion-tech";
+"brands/fion-tech.md": {
+	id: "brands/fion-tech.md";
+  slug: "brands/fion-tech";
   body: string;
-  collection: "brands";
+  collection: "ar";
   data: any
 } & { render(): Render[".md"] };
-"operand.md": {
-	id: "operand.md";
-  slug: "operand";
+"brands/operand.md": {
+	id: "brands/operand.md";
+  slug: "brands/operand";
   body: string;
-  collection: "brands";
+  collection: "ar";
   data: any
 } & { render(): Render[".md"] };
-"slip.md": {
-	id: "slip.md";
-  slug: "slip";
+"brands/slip.md": {
+	id: "brands/slip.md";
+  slug: "brands/slip";
   body: string;
-  collection: "brands";
+  collection: "ar";
   data: any
 } & { render(): Render[".md"] };
-"stepzen.md": {
-	id: "stepzen.md";
-  slug: "stepzen";
+"brands/stepzen.md": {
+	id: "brands/stepzen.md";
+  slug: "brands/stepzen";
   body: string;
-  collection: "brands";
+  collection: "ar";
   data: any
 } & { render(): Render[".md"] };
-"zora.md": {
-	id: "zora.md";
-  slug: "zora";
+"brands/zora.md": {
+	id: "brands/zora.md";
+  slug: "brands/zora";
   body: string;
-  collection: "brands";
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"developers/devs1/dev1.md": {
+	id: "developers/devs1/dev1.md";
+  slug: "developers/devs1/dev1";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"developers/devs1/dev2.md": {
+	id: "developers/devs1/dev2.md";
+  slug: "developers/devs1/dev2";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"developers/devs1/dev3.md": {
+	id: "developers/devs1/dev3.md";
+  slug: "developers/devs1/dev3";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"developers/devs2/dev1.md": {
+	id: "developers/devs2/dev1.md";
+  slug: "developers/devs2/dev1";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"developers/devs2/dev2.md": {
+	id: "developers/devs2/dev2.md";
+  slug: "developers/devs2/dev2";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"developers/devs2/dev3.md": {
+	id: "developers/devs2/dev3.md";
+  slug: "developers/devs2/dev3";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"developers/devs3/dev1.md": {
+	id: "developers/devs3/dev1.md";
+  slug: "developers/devs3/dev1";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"developers/devs3/dev2.md": {
+	id: "developers/devs3/dev2.md";
+  slug: "developers/devs3/dev2";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"developers/devs3/dev3.md": {
+	id: "developers/devs3/dev3.md";
+  slug: "developers/devs3/dev3";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"iterate-accelerate-list1/automagic-builds.md": {
+	id: "iterate-accelerate-list1/automagic-builds.md";
+  slug: "iterate-accelerate-list1/automagic-builds";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"iterate-accelerate-list1/multiple-environments.md": {
+	id: "iterate-accelerate-list1/multiple-environments.md";
+  slug: "iterate-accelerate-list1/multiple-environments";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"iterate-accelerate-list2/deployment-rollbacks.md": {
+	id: "iterate-accelerate-list2/deployment-rollbacks.md";
+  slug: "iterate-accelerate-list2/deployment-rollbacks";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"iterate-accelerate-list2/invite-your-team.md": {
+	id: "iterate-accelerate-list2/invite-your-team.md";
+  slug: "iterate-accelerate-list2/invite-your-team";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"launch-scale-list1/autoscaling.md": {
+	id: "launch-scale-list1/autoscaling.md";
+  slug: "launch-scale-list1/autoscaling";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"launch-scale-list1/production-ready.md": {
+	id: "launch-scale-list1/production-ready.md";
+  slug: "launch-scale-list1/production-ready";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"launch-scale-list2/safe-and-sound.md": {
+	id: "launch-scale-list2/safe-and-sound.md";
+  slug: "launch-scale-list2/safe-and-sound";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"launch-scale-list2/uptime.md": {
+	id: "launch-scale-list2/uptime.md";
+  slug: "launch-scale-list2/uptime";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"launch-scale-list3/supreme-support.md": {
+	id: "launch-scale-list3/supreme-support.md";
+  slug: "launch-scale-list3/supreme-support";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"launch-scale-list3/usage-metrics.md": {
+	id: "launch-scale-list3/usage-metrics.md";
+  slug: "launch-scale-list3/usage-metrics";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"start-tinker-list1/infrastructure-as-legos.md": {
+	id: "start-tinker-list1/infrastructure-as-legos.md";
+  slug: "start-tinker-list1/infrastructure-as-legos";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"start-tinker-list1/solid-base.md": {
+	id: "start-tinker-list1/solid-base.md";
+  slug: "start-tinker-list1/solid-base";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"start-tinker-list2/railway-cli.md": {
+	id: "start-tinker-list2/railway-cli.md";
+  slug: "start-tinker-list2/railway-cli";
+  body: string;
+  collection: "ar";
+  data: any
+} & { render(): Render[".md"] };
+"start-tinker-list2/secrets-management.md": {
+	id: "start-tinker-list2/secrets-management.md";
+  slug: "start-tinker-list2/secrets-management";
+  body: string;
+  collection: "ar";
   data: any
 } & { render(): Render[".md"] };
 };
+"brands": {
+};
 "developers": {
-"devs1/dev1.md": {
-	id: "devs1/dev1.md";
-  slug: "devs1/dev1";
+};
+"en": {
+"brands/atmos.md": {
+	id: "brands/atmos.md";
+  slug: "brands/atmos";
   body: string;
-  collection: "developers";
+  collection: "en";
   data: any
 } & { render(): Render[".md"] };
-"devs1/dev2.md": {
-	id: "devs1/dev2.md";
-  slug: "devs1/dev2";
+"brands/fion-tech.md": {
+	id: "brands/fion-tech.md";
+  slug: "brands/fion-tech";
   body: string;
-  collection: "developers";
+  collection: "en";
   data: any
 } & { render(): Render[".md"] };
-"devs1/dev3.md": {
-	id: "devs1/dev3.md";
-  slug: "devs1/dev3";
+"brands/operand.md": {
+	id: "brands/operand.md";
+  slug: "brands/operand";
   body: string;
-  collection: "developers";
+  collection: "en";
   data: any
 } & { render(): Render[".md"] };
-"devs2/dev1.md": {
-	id: "devs2/dev1.md";
-  slug: "devs2/dev1";
+"brands/slip.md": {
+	id: "brands/slip.md";
+  slug: "brands/slip";
   body: string;
-  collection: "developers";
+  collection: "en";
   data: any
 } & { render(): Render[".md"] };
-"devs2/dev2.md": {
-	id: "devs2/dev2.md";
-  slug: "devs2/dev2";
+"brands/stepzen.md": {
+	id: "brands/stepzen.md";
+  slug: "brands/stepzen";
   body: string;
-  collection: "developers";
+  collection: "en";
   data: any
 } & { render(): Render[".md"] };
-"devs2/dev3.md": {
-	id: "devs2/dev3.md";
-  slug: "devs2/dev3";
+"brands/zora.md": {
+	id: "brands/zora.md";
+  slug: "brands/zora";
   body: string;
-  collection: "developers";
+  collection: "en";
   data: any
 } & { render(): Render[".md"] };
-"devs3/dev1.md": {
-	id: "devs3/dev1.md";
-  slug: "devs3/dev1";
+"developers/devs1/dev1.md": {
+	id: "developers/devs1/dev1.md";
+  slug: "developers/devs1/dev1";
   body: string;
-  collection: "developers";
+  collection: "en";
   data: any
 } & { render(): Render[".md"] };
-"devs3/dev2.md": {
-	id: "devs3/dev2.md";
-  slug: "devs3/dev2";
+"developers/devs1/dev2.md": {
+	id: "developers/devs1/dev2.md";
+  slug: "developers/devs1/dev2";
   body: string;
-  collection: "developers";
+  collection: "en";
   data: any
 } & { render(): Render[".md"] };
-"devs3/dev3.md": {
-	id: "devs3/dev3.md";
-  slug: "devs3/dev3";
+"developers/devs1/dev3.md": {
+	id: "developers/devs1/dev3.md";
+  slug: "developers/devs1/dev3";
   body: string;
-  collection: "developers";
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"developers/devs2/dev1.md": {
+	id: "developers/devs2/dev1.md";
+  slug: "developers/devs2/dev1";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"developers/devs2/dev2.md": {
+	id: "developers/devs2/dev2.md";
+  slug: "developers/devs2/dev2";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"developers/devs2/dev3.md": {
+	id: "developers/devs2/dev3.md";
+  slug: "developers/devs2/dev3";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"developers/devs3/dev1.md": {
+	id: "developers/devs3/dev1.md";
+  slug: "developers/devs3/dev1";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"developers/devs3/dev2.md": {
+	id: "developers/devs3/dev2.md";
+  slug: "developers/devs3/dev2";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"developers/devs3/dev3.md": {
+	id: "developers/devs3/dev3.md";
+  slug: "developers/devs3/dev3";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"iterate-accelerate-list1/automagic-builds.md": {
+	id: "iterate-accelerate-list1/automagic-builds.md";
+  slug: "iterate-accelerate-list1/automagic-builds";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"iterate-accelerate-list1/multiple-environments.md": {
+	id: "iterate-accelerate-list1/multiple-environments.md";
+  slug: "iterate-accelerate-list1/multiple-environments";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"iterate-accelerate-list2/deployment-rollbacks.md": {
+	id: "iterate-accelerate-list2/deployment-rollbacks.md";
+  slug: "iterate-accelerate-list2/deployment-rollbacks";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"iterate-accelerate-list2/invite-your-team.md": {
+	id: "iterate-accelerate-list2/invite-your-team.md";
+  slug: "iterate-accelerate-list2/invite-your-team";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"launch-scale-list1/autoscaling.md": {
+	id: "launch-scale-list1/autoscaling.md";
+  slug: "launch-scale-list1/autoscaling";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"launch-scale-list1/production-ready.md": {
+	id: "launch-scale-list1/production-ready.md";
+  slug: "launch-scale-list1/production-ready";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"launch-scale-list2/safe-and-sound.md": {
+	id: "launch-scale-list2/safe-and-sound.md";
+  slug: "launch-scale-list2/safe-and-sound";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"launch-scale-list2/uptime.md": {
+	id: "launch-scale-list2/uptime.md";
+  slug: "launch-scale-list2/uptime";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"launch-scale-list3/supreme-support.md": {
+	id: "launch-scale-list3/supreme-support.md";
+  slug: "launch-scale-list3/supreme-support";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"launch-scale-list3/usage-metrics.md": {
+	id: "launch-scale-list3/usage-metrics.md";
+  slug: "launch-scale-list3/usage-metrics";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"start-tinker-list1/infrastructure-as-legos.md": {
+	id: "start-tinker-list1/infrastructure-as-legos.md";
+  slug: "start-tinker-list1/infrastructure-as-legos";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"start-tinker-list1/solid-base.md": {
+	id: "start-tinker-list1/solid-base.md";
+  slug: "start-tinker-list1/solid-base";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"start-tinker-list2/railway-cli.md": {
+	id: "start-tinker-list2/railway-cli.md";
+  slug: "start-tinker-list2/railway-cli";
+  body: string;
+  collection: "en";
+  data: any
+} & { render(): Render[".md"] };
+"start-tinker-list2/secrets-management.md": {
+	id: "start-tinker-list2/secrets-management.md";
+  slug: "start-tinker-list2/secrets-management";
+  body: string;
+  collection: "en";
   data: any
 } & { render(): Render[".md"] };
 };
 "iterate-accelerate-list1": {
-"automagic-builds.md": {
-	id: "automagic-builds.md";
-  slug: "automagic-builds";
-  body: string;
-  collection: "iterate-accelerate-list1";
-  data: any
-} & { render(): Render[".md"] };
-"infrastructure-as-legos.md": {
-	id: "infrastructure-as-legos.md";
-  slug: "infrastructure-as-legos";
-  body: string;
-  collection: "iterate-accelerate-list1";
-  data: any
-} & { render(): Render[".md"] };
 };
 "iterate-accelerate-list2": {
-"railway-cli.md": {
-	id: "railway-cli.md";
-  slug: "railway-cli";
-  body: string;
-  collection: "iterate-accelerate-list2";
-  data: any
-} & { render(): Render[".md"] };
-"secrets-management.md": {
-	id: "secrets-management.md";
-  slug: "secrets-management";
-  body: string;
-  collection: "iterate-accelerate-list2";
-  data: any
-} & { render(): Render[".md"] };
 };
 "launch-scale-list1": {
-"autoscaling.md": {
-	id: "autoscaling.md";
-  slug: "autoscaling";
-  body: string;
-  collection: "launch-scale-list1";
-  data: any
-} & { render(): Render[".md"] };
-"production-ready.md": {
-	id: "production-ready.md";
-  slug: "production-ready";
-  body: string;
-  collection: "launch-scale-list1";
-  data: any
-} & { render(): Render[".md"] };
 };
 "launch-scale-list2": {
-"safe-and-sound.md": {
-	id: "safe-and-sound.md";
-  slug: "safe-and-sound";
-  body: string;
-  collection: "launch-scale-list2";
-  data: any
-} & { render(): Render[".md"] };
-"uptime.md": {
-	id: "uptime.md";
-  slug: "uptime";
-  body: string;
-  collection: "launch-scale-list2";
-  data: any
-} & { render(): Render[".md"] };
 };
 "launch-scale-list3": {
-"supreme-support.md": {
-	id: "supreme-support.md";
-  slug: "supreme-support";
-  body: string;
-  collection: "launch-scale-list3";
-  data: any
-} & { render(): Render[".md"] };
-"usage-metrics.md": {
-	id: "usage-metrics.md";
-  slug: "usage-metrics";
-  body: string;
-  collection: "launch-scale-list3";
-  data: any
-} & { render(): Render[".md"] };
 };
 "start-tinker-list1": {
-"infrastructure-as-legos.md": {
-	id: "infrastructure-as-legos.md";
-  slug: "infrastructure-as-legos";
-  body: string;
-  collection: "start-tinker-list1";
-  data: any
-} & { render(): Render[".md"] };
-"solid-base.md": {
-	id: "solid-base.md";
-  slug: "solid-base";
-  body: string;
-  collection: "start-tinker-list1";
-  data: any
-} & { render(): Render[".md"] };
 };
 "start-tinker-list2": {
-"railway-cli.md": {
-	id: "railway-cli.md";
-  slug: "railway-cli";
-  body: string;
-  collection: "start-tinker-list2";
-  data: any
-} & { render(): Render[".md"] };
-"secrets-management.md": {
-	id: "secrets-management.md";
-  slug: "secrets-management";
-  body: string;
-  collection: "start-tinker-list2";
-  data: any
-} & { render(): Render[".md"] };
 };
 
 	};

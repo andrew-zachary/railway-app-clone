@@ -2,9 +2,17 @@
 
 import { sortAsc } from "../js/utils.js";
 
-const items1 = (await Astro.glob('../content/developers/devs1/*.md')).sort(sortAsc);
-const items2 = (await Astro.glob('../content/developers/devs2/*.md')).sort(sortAsc);
-const items3 = (await Astro.glob('../content/developers/devs3/*.md')).sort(sortAsc);
+const { lang } = Astro.props;
+
+const items1 = lang === 'en' ? 
+    (await Astro.glob('../content/en/developers/devs1/*.md')).sort(sortAsc) : 
+    (await Astro.glob('../content/ar/developers/devs1/*.md')).sort(sortAsc);
+const items2 = lang === 'en' ? 
+    (await Astro.glob('../content/en/developers/devs2/*.md')).sort(sortAsc) :
+    (await Astro.glob('../content/ar/developers/devs2/*.md')).sort(sortAsc);
+const items3 = lang === 'en' ? 
+    (await Astro.glob('../content/en/developers/devs3/*.md')).sort(sortAsc) :
+    (await Astro.glob('../content/ar/developers/devs3/*.md')).sort(sortAsc);
 
 ---
 <style lang="scss">

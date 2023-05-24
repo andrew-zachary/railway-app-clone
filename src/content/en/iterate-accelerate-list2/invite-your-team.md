@@ -1,6 +1,6 @@
 ---
-title: "Secrets Management"
-desc: "Keep Environment Variables and Secrets for your team, securely, in one place."
+title: "Invite your team"
+desc: "Better, together. Onboard your team with invite links and user role scopes."
 order: 0
 ---
 <svg

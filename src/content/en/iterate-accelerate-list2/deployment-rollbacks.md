@@ -1,6 +1,6 @@
 ---
-title: "Railway CLI"
-desc: "Connect to your infrastructure + secrets, from any terminal in the world."
+title: "Deployment Rollbacks"
+desc: "Avoid derailments. One-click, instant rollbacks for every change."
 order: 1
 ---
 <svg

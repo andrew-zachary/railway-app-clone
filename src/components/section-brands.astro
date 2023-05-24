@@ -1,8 +1,12 @@
 ---
 
-import { sortAsc } from "../js/utils.js"
+import { sortAsc } from "../js/utils.js";
 
-const brands = (await Astro.glob('../content/brands/*.md')).sort(sortAsc);
+const { lang } = Astro.props;
+
+const brands = lang === 'en' ? 
+    (await Astro.glob('../content/en/brands/*.md')).sort(sortAsc) : 
+    (await Astro.glob('../content/ar/brands/*.md')).sort(sortAsc);
 
 ---
 <section id=brands class="-mx-[2rem] md:-mx-[3.2rem]">
