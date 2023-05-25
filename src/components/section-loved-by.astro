@@ -27,11 +27,7 @@ const items3 = lang === 'en' ?
     }
 
     article {
-        text-align: left;
-
-        body[dir=rtl] & {
-            text-align: right;
-        }
+        @include withRtl(text-align, left, right);
     }
 
 </style>

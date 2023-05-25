@@ -56,8 +56,8 @@ import ShapeWhiteArrow from "../assets/shape-white-arrow.astro";
                 <slot name="card1Header"></slot>
                 <slot name="card1SubHeader"></slot>
                 <CommonBtnSubTxt>
-                    <span slot="txt" class="px-[0.8rem] py-[0.4rem] bg-[#ffffff40] rounded-md">Ctrl+K</span>
-                    <span slot="subtxt" class="px-[0.8rem] py-[0.4rem]"><slot name="card1Btn"></slot></span>
+                    <span slot="left" class="px-[0.8rem] py-[0.4rem] bg-[#ffffff40] rounded-md">Ctrl+K</span>
+                    <span slot="right" class="px-[0.8rem] py-[0.4rem]"><slot name="card1Btn"></slot></span>
                 </CommonBtnSubTxt>
             </div>
             <div class="flex flex-col justify-end h-full md:pt-[3.2rem]">
@@ -105,8 +105,8 @@ import ShapeWhiteArrow from "../assets/shape-white-arrow.astro";
                 <slot name="card4Header"></slot>
                 <slot name="card4SubHeader"></slot>
                 <CommonBtnSubTxt>
-                    <ShapeWhiteArrow slot="txt" />
-                    <span slot="subtxt" class="px-[0.8rem] py-[0.4rem]"><slot name="card4Btn"></slot></span>
+                    <ShapeWhiteArrow slot="left" />
+                    <span slot="right" class="px-[0.8rem] py-[0.4rem]"><slot name="card4Btn"></slot></span>
                 </CommonBtnSubTxt>
             </div>
             <div class="w-full h-full" style="background-image: url('/logo grid - dark.svg'); background-position-y: -16px;"></div>
