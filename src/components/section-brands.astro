@@ -9,9 +9,25 @@ const brands = lang === 'en' ?
     (await Astro.glob('../content/ar/brands/*.md')).sort(sortAsc);
 
 ---
-<section id=brands class="-mx-[2rem] md:-mx-[3.2rem]">
+<style lang="scss" is:global>
+
+    #brands {
+
+        #brands-layout {
+
+            div:first-child, div:last-child {
+        
+                p {
+                    @include withRtl(text-align, left, right);
+                }
+            }
+        }
+    }
+
+</style>
+<section id="brands" class="-mx-[2rem] md:-mx-[3.2rem]">
     <div id="brands-layout" class="grid grid-cols-2 md:grid-cols-4">
-        <div 
+        <div
             class="bg-[#181622] flex flex-col justify-center items-center px-[2.4rem] py-[4.8rem] md:px-[4.8rem]">
             <slot name="head"></slot>
         </div>

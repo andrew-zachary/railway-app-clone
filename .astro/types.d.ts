@@ -393,10 +393,6 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".md"] };
 };
-"brands": {
-};
-"developers": {
-};
 "en": {
 "brands/atmos.md": {
 	id: "brands/atmos.md";
@@ -601,20 +597,6 @@ declare module 'astro:content' {
   collection: "en";
   data: any
 } & { render(): Render[".md"] };
-};
-"iterate-accelerate-list1": {
-};
-"iterate-accelerate-list2": {
-};
-"launch-scale-list1": {
-};
-"launch-scale-list2": {
-};
-"launch-scale-list3": {
-};
-"start-tinker-list1": {
-};
-"start-tinker-list2": {
 };
 
 	};
