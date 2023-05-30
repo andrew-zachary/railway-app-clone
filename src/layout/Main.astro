@@ -70,6 +70,18 @@ const { title, lang, dir } = Astro.props;
         font-size: clamp(32px,4vw,40px);
     }
 
+    .open-menu {
+
+        .simplebar-scrollbar::before {
+            opacity: 0!important;
+        }
+    }
+
+    .simplebar-scrollbar::before {
+        @apply bg-[#292932];
+        opacity: 1;
+    }
+
 </style>
 <script>
 
@@ -88,9 +100,18 @@ const { title, lang, dir } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
 </head>
-<body id={title} dir={dir} class="bg-primary font-robo text-white overflow-x-hidden">
+<body 
+    data-simplebar
+    data-simplebar-auto-hide="false"
+    data-simplebar-direction={dir}
+    id={title} 
+    dir={dir} 
+    class="bg-primary font-robo text-white overflow-x-hidden"
+>
 
     <Nav lang={lang} />
 

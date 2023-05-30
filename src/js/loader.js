@@ -49,7 +49,8 @@ const loader = (page) => {
         const heroScene2 = new ScrollMagic.Scene({triggerElement: '#hero'});
         heroScene2.addTo(trainsCtrl).setClassToggle(imgToLeft, 'translate-left');
 
-    }
+    };
+    
 
     // navmenu alpinejs context
     alpine.data('navmenu', () => ({
@@ -66,8 +67,15 @@ const loader = (page) => {
 
             this.open = !this.open;
 
-            if(this.open) document.body.style.overflowY = 'hidden';
-            else document.body.style.overflowY = 'scroll';
+            if(this.open) { 
+                document.body.classList.add('open-menu');
+                document.querySelector('.simplebar-content-wrapper').style.overflowY = 'hidden';
+            }
+            else 
+            { 
+                document.body.classList.remove('open-menu');
+                document.querySelector('.simplebar-content-wrapper').style.overflowY = 'scroll';
+            }
 
         },
         'open': false
