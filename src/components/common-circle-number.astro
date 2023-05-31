@@ -1,9 +1,21 @@
 ---
- const { borderColor, textColor, marginB } = Astro.props;
+const { borderColor, textColor, marginB } = Astro.props;
 ---
+<style lang="scss">
+    body[dir=rtl] p span {
+        display: flex;
+        line-height: 50px;
+        height: 100%;
+        align-items: end;
+    }
+</style>
 <p class:list={[
     borderColor, 
     textColor, 
     marginB, 
     "flex items-center justify-center w-[7.2rem] h-[7.2rem] mx-auto bg-primary border-4 rounded-full text-[3.6rem] relative z-20"]}
-><slot></slot></p>
+>
+    <span>
+        <slot></slot>
+    </span>
+</p>
